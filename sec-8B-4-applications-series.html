@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:22Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Applications of Taylor Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-8B-3-taylor-series.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="C-7.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-8B-3-taylor-series.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a class="next-button button toolbar-item" href="C-7.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="active">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="cnW"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.4</span> <span class="title">Applications of Taylor Series</span>
+</h2>
+<article class="objectives goal-like" id="WyJ"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="fSt"><p id="JeW">How can we use the Taylor series that we already know to build new ones?</p></li>
+<li id="LZD"><p id="pmg">How can we use Taylor series to approximate values of functions or irrational numbers?</p></li>
+<li id="li-5521"><p id="p-9470">How can we use Taylor series to put several functions in order, near a specific value?</p></li>
+</ul></article><section class="introduction" id="CFt"><p id="Avg">We have now built several examples of Taylor series using the definition, and we have seen in the process that nearly all of the work needed to find a Taylor series is done in finding the coefficients. This can be done for any function by taking derivatives; however, some functions have very complicated derivatives, and the process of finding these derivatives can take a serious amount of time and effort.</p>
+<p id="p-9472">Recall the Taylor series expansions about <span class="process-math">\(x=0\)</span> for the following important functions:</p>
+<article class="assemblage assemblage-like" id="assemblage-71"><h3 class="heading"><span class="title">Important Taylor Series.</span></h3>
+<ul id="p-9473" class="disc">
+<li id="li-5522"><p id="p-9474"><span class="process-math">\(\displaystyle \displaystyle e^x = 1 + x+ \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots = \sum_{k=0}^{\infty} \frac{x^{k}}{k!}\)</span></p></li>
+<li id="li-5523"><p id="p-9475"><span class="process-math">\(\displaystyle \displaystyle \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{(2k+1)!}\)</span></p></li>
+<li id="li-5524"><p id="p-9476"><span class="process-math">\(\displaystyle \displaystyle \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!}\)</span></p></li>
+<li id="li-5525"><p id="p-9477"><span class="process-math">\(\displaystyle \displaystyle \frac{1}{1-x} = 1+ x + x^2 + x^3 +x^4 + \cdots = \sum_{k=0}^{\infty} x^k\)</span></p></li>
+<li id="li-5526"><p id="p-9478"><span class="process-math">\(\displaystyle \displaystyle \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots = \sum_{k=1}^{\infty} \frac{(-1)^{k-1}x^k}{k}\)</span></p></li>
+<li id="li-5527"><p id="p-9479"><span class="process-math">\(\displaystyle \displaystyle (1+x)^p = 1+ px + \frac{p(p-1)}{2!}x^2 + \frac{p(p-1)(p-2)}{3!}x^3 + \cdots = \sum_{k=0}^{\infty} \frac{p!}{{k!}{(p-k)!}} x^k\)</span></p></li>
+</ul></article><p id="p-9480">In many situations, we can use the Taylor series that we already know to find Taylor series for more complicated functions, as illustrated in <a href="" class="xref" data-knowl="./knowl/PA-8B-4.html" title="Preview Activity 8.4.1">Preview Activity 8.4.1</a>.</p>
+<article class="exploration project-like" id="DxM"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.4.1</span><span class="period">.</span>
+</h3>
+<p id="dZp">The goal of this activity is to find the Taylor series centered at <span class="process-math">\(x=0\)</span> for <span class="process-math">\(f(x)=\sin(x^2)\)</span> in two different ways.</p>
+<ol class="lower-alpha">
+<li id="BSG"><p id="DHv">Find the first two derivatives of <span class="process-math">\(f(x)\text{.}\)</span> Explain why each time you take another derivative, the result has more terms than the previous derivative. For example, the second derivative has more terms than the first derivative.</p></li>
+<li id="hZm"><p id="jOz">Take the Taylor series for <span class="process-math">\(\sin(y)\)</span> about <span class="process-math">\(y=0\)</span> and then substitute <span class="process-math">\(y=x^2\text{.}\)</span> Simplify this and you have the Taylor series for <span class="process-math">\(\sin(x^2)\text{.}\)</span></p></li>
+<li id="une"><p id="wcr">Verify that the derivatives you found in part (a) match the Taylor series from part (b).</p></li>
+<li id="unH"><p id="wcA">What is the radius of convergence of the Taylor series for <span class="process-math">\(\sin(x^2)\text{?}\)</span></p></li>
+</ol></article><p id="p-9493">We can also use Taylor series to obtain approximations of function values, and put functions in order. We will develop these methods in this section.</p></section><section class="subsection" id="subsection-168"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.1</span> <span class="title">New Taylor Series from Old</span>
+</h3>
+<p id="p-9494">There are several ways we can obtain Taylor series expansions for functions using known Taylor series expansions for different related functions. This includes the method of substitution, multiplying Taylor series, and differentiating and integrating Taylor series.</p>
+<article class="activity project-like" id="iKv"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.2</span><span class="period">.</span>
+</h4>
+<p id="xSg">Our goal in this activity is to find a power series expansion for <span class="process-math">\(f(x) = \frac{1}{1+x^2}\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p>
+<p id="p-9496">While we could use previous methods to differentiate <span class="process-math">\(f(x)=\frac{1}{1+x^2}\)</span> several times to look for patterns and find the Taylor series for <span class="process-math">\(f(x)\text{,}\)</span> we seek an alternative approach because of how complicated the derivatives of <span class="process-math">\(f(x)\)</span> quickly become.</p>
+<ol id="dZm" class="lower-alpha">
+<li id="BSf"><p id="DHs">What is the Taylor series expansion for <span class="process-math">\(g(x) = \frac{1}{1-x}\text{?}\)</span>  What is the interval of convergence for this series?</p></li>
+<li id="hZln"><p id="jOb">How is <span class="process-math">\(g(-x^2)\)</span> related to <span class="process-math">\(f(x)\text{?}\)</span>  Explain, and then substitute <span class="process-math">\(-x^2\)</span> for <span class="process-math">\(x\)</span> in the power series expansion for <span class="process-math">\(g(x)\text{.}\)</span>  Given the relationship between <span class="process-math">\(g(-x^2)\)</span> and <span class="process-math">\(f(x)\text{,}\)</span> how is the resulting series related to <span class="process-math">\(f(x)\text{?}\)</span></p></li>
+<li id="hZr"><p id="jOh">For which values of <span class="process-math">\(x\)</span> will this power series expansion for <span class="process-math">\(f(x)\)</span> be valid?</p></li>
+</ol></article><p id="p-9505">In addition to the substitution technique used in <a href="" class="xref" data-knowl="./knowl/act-8B-4-1.html" title="Activity 8.4.2">Activity 8.4.2</a>, we can also add, subtract, and multiply by variables to construct new series from old.</p>
+<article class="example example-like" id="example-83"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.1</span><span class="period">.</span>
+</h4>
+<p id="p-9506">Find the Taylor series expansion of <span class="process-math">\(f(t) = t\sin(t^3) - t^4\)</span> about <span class="process-math">\(t=0\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-517" id="solution-517"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-517"><div class="solution solution-like">
+<p id="p-9507">We begin with the Taylor series for <span class="process-math">\(\sin(x)\)</span> about <span class="process-math">\(x=0\text{,}\)</span> and build the desired series from there.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">Next, substitute <span class="process-math">\(t^3\)</span> in for <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-325">
+\begin{align*}
+\sin(t^3) \amp = t^3 - \frac{(t^3)^3}{3!} + \frac{(t^3)^5}{5!} - \frac{(t^3)^7}{7!} + \cdots\\
+\amp = t^3 - \frac{t^9}{3!} + \frac{t^{15}}{5!} - \frac{t^{21}}{7!} + \cdots
+\end{align*}
+</div>
+<p class="continuation">Now multiply the entire series by <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+t\sin(t^3) = t^4 - \frac{t^{10}}{3!} + \frac{t^{16}}{5!} - \frac{t^{22}}{7!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">And finally, subtract <span class="process-math">\(t^4\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+t\sin(t^3) - t^4 = -\frac{t^{10}}{3!} + \frac{t^{16}}{5!} - \frac{t^{22}}{7!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">Now that we've got the final series, we can write this with <span class="process-math">\(\sum\)</span>-notation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+t\sin(t^3) - t^4 = \sum_{k=1}^{\infty} (-1)^k \frac{t^{3(2k+1)+1}}{(2k+1)!} = \sum_{k=1}^{\infty} (-1)^k \frac{t^{6k+4}}{(2k+1)!}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="example-84"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.2</span><span class="period">.</span>
+</h4>
+<p id="p-9508">Find the Taylor series of <span class="process-math">\(f(t) = \frac{1}{\sqrt{1+2t}}\)</span> about <span class="process-math">\(x=0\)</span> and determine its interval of convergence.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-518" id="solution-518"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-518"><div class="solution solution-like">
+<p id="p-9509">We write <span class="process-math">\(f(t) = \frac{1}{\sqrt{1+2t}} = (1+2t)^{-\frac{1}{2}}\text{.}\)</span>  Note that the (well-known) Taylor series about <span class="process-math">\(x=0\)</span> for the function <span class="process-math">\((1+x)^{-\frac{1}{2}}\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(1+x)^{-\frac{1}{2}} = 1 + \left( -\frac{1}{2} \right)x + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right)}{2!} x^2 + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right) \left( -\frac{5}{2} \right)}{3!} x^3+\cdots
+\end{equation*}
+</div>
+<p class="continuation">This series converges for <span class="process-math">\(x\)</span> in the interval <span class="process-math">\((-1,1)\text{.}\)</span>  Substituting <span class="process-math">\(2t\)</span> for <span class="process-math">\(x\)</span> yields</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(1+2t)^{-\frac{1}{2}} = 1 + \left( -\frac{1}{2} \right)(2t) + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right)}{2!} (2t)^2 + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right) \left( -\frac{5}{2} \right)}{3!} (2t)^3+\cdots
+\end{equation*}
+</div>
+<p class="continuation">which simplifies to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(1+2t)^{-\frac{1}{2}} = 1 -t + \frac{ 3 \cdot 1}{2!} t^2 - \frac{ 5 \cdot 3 \cdot 1}{3!} t^3+ \frac{ 7 \cdot 5 \cdot 3 \cdot 1}{4!} t^4 + \cdots
+\end{equation*}
+</div>
+<p class="continuation">For the series to converge, we need <span class="process-math">\(2t\)</span> to fall in the interval <span class="process-math">\((-1,1)\text{,}\)</span> which means the interval of convergence is <span class="process-math">\((-1/2,1/2)\text{.}\)</span></p>
+</div></div>
+</div></article><article class="activity project-like" id="iKY"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.3</span><span class="period">.</span>
+</h4>
+<p id="xSj">Let <span class="process-math">\(f\)</span> be the function given by the Taylor series expansion</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!}\text{.}
+\end{equation*}
+</div>
+<ol id="dZn" class="lower-alpha">
+<li id="BSg">
+<p id="DHt">Assume that we can differentiate a power series term by term, just like we can differentiate a (finite) polynomial.  Use the fact that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots + (-1)^k \frac{x^{2k}}{(2k)!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">to find a power series expansion for <span class="process-math">\(f'(x)\text{.}\)</span></p>
+</li>
+<li id="hZlp"><p id="jOc">Observe that <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(f'(x)\)</span> have familiar Taylor series.  What familiar functions are these?  What known relationship does our work demonstrate?</p></li>
+<li id="hZs"><p id="jOi">What is the series expansion for <span class="process-math">\(f''(x)\text{?}\)</span>  What familiar function is <span class="process-math">\(f''(x)\text{?}\)</span></p></li>
+</ol></article><p id="p-9519">The process used in <a href="" class="xref" data-knowl="./knowl/act-8B-4-2.html" title="Activity 8.4.3">Activity 8.4.3</a> holds more generally. That is, indeed we can differentiate a power series for a function <span class="process-math">\(f\)</span> term by term and obtain the series expansion for <span class="process-math">\(f'\text{.}\)</span>  Similarly we can integrate a series expansion for a function <span class="process-math">\(f\)</span> term by term and obtain the series expansion for <span class="process-math">\(\int f(x) \ dx\text{.}\)</span>  For both, the radius of convergence of the resulting series is the same as the original, though it is possible that the convergence status of the various series may differ at the endpoints.</p>
+<article class="assemblage assemblage-like" id="assemblage-72"><h4 class="heading"><span class="title">Differentiation and Integration of Power Series.</span></h4>
+<p id="p-9520">Suppose <span class="process-math">\(f(x)\)</span> has a power series expansion</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/genpowerseriesdiff.html ./knowl/genpowerseriesdiff.html" id="genpowerseriesdiff">
+\begin{equation}
+f(x) = \sum_{k=0}^{\infty} c_kx^k\tag{8.9}
+\end{equation}
+</div>
+<p class="continuation">and that the series converges absolutely to <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\((-R,R)\text{.}\)</span>  Then,</p>
+<ul class="disc">
+<li id="li-5549">
+<p id="p-9521">the power series obtained by differentiating <a href="" class="xref" data-knowl="./knowl/genpowerseriesdiff.html" title="Equation 8.9">Equation (8.9)</a> term by term converges absolutely to <span class="process-math">\(f'(x)\)</span> on <span class="process-math">\((-R,R)\text{.}\)</span>  That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/genpowerseriesdiff.html" id="men-63">
+\begin{equation}
+f'(x) = \sum_{k=1}^{\infty} kc_kx^{k-1}\tag{8.10}
+\end{equation}
+</div>
+<p class="continuation">for <span class="process-math">\(|x| &lt; R\text{.}\)</span></p>
+</li>
+<li id="li-5550">
+<p id="p-9522">the power series obtained by integrating <a href="" class="xref" data-knowl="./knowl/genpowerseriesdiff.html" title="Equation 8.9">Equation (8.9)</a> term by term converges absolutely on the interval <span class="process-math">\((-R,R)\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/genpowerseriesdiff.html" id="men-64">
+\begin{equation}
+\int f(x) \ dx = \sum_{k=0}^{\infty} c_k \frac{x^{k+1}}{k+1} + C\tag{8.11}
+\end{equation}
+</div>
+<p class="continuation">for <span class="process-math">\(|x| &lt; R\text{.}\)</span></p>
+</li>
+</ul></article><p id="p-9523">We can differentiate and integrate term by term on the interior of the interval of convergence, but it does not tell us what happens at the endpoints of this interval. We always need to check what happens at the endpoints separately. More importantly, we can use use the approach of differentiating or integrating a series term by term to find new series.</p>
+<article class="example example-like" id="integrate-series-term-by-term"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.3</span><span class="period">.</span>
+</h4>
+<p id="p-9524">We can use Taylor series to approximate definite integrals for which known techniques of integration do not apply.</p>
+<ol class="lower-alpha">
+<li id="li-5551"><p id="p-9525">Integrate the Taylor series for <span class="process-math">\(\sin(x^2)\)</span> term by term to obtain a power series expansion for <span class="process-math">\(\int \sin(x^2) \ dx\text{.}\)</span></p></li>
+<li id="li-5552"><p id="p-9526">Use the result from (a) to explain how to evaluate <span class="process-math">\(\int_0^1 \sin(x^2) \ dx\text{.}\)</span>  Determine the number of terms needed to approximate <span class="process-math">\(\int_0^1 \sin(x^2) \ dx\)</span> to three decimal places.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-519" id="solution-519"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-519"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5553">
+<p id="p-9527">Substituting <span class="process-math">\(x^2\)</span> for <span class="process-math">\(x\)</span> in the Taylor series expansion for <span class="process-math">\(\sin(x)\)</span> gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sin(x^2) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2(2k+1)}}{(2k+1)!}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as the Taylor series for <span class="process-math">\(\sin(x^2)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span>   We can the integrate this Taylor series term by term on its interval of convergence to find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-326">
+\begin{align*}
+\int \sin(x^2) \ dx \amp = \int \sum_{k=0}^{\infty} (-1)^k \frac{x^{2(2k+1)}}{(2k+1)!} \ dx\\
+\amp = \sum_{k=0}^{\infty} \int (-1)^k \frac{x^{2(2k+1)}}{(2k+1)!} \ dx\\
+\amp = \sum_{k=0}^{\infty} \int (-1)^k \frac{x^{4k+2)}}{(2k+1)!} \ dx\\
+\amp = \sum_{k=0}^{\infty} (-1)^k \frac{x^{4k+3)}}{(2k+1)!(4k+3)} + C
+\end{align*}
+</div>
+</li>
+<li id="li-5554">
+<p id="p-9528">To evaluate <span class="process-math">\(\int_0^1 \sin(x^2) \ dx\text{,}\)</span> we evaluate an antiderivative such as the one found in (a) at both 1 and 0 and subtract.  So</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-327">
+\begin{align*}
+\int_0^1 \sin(x^2) \ dx \amp = \sum_{k=0}^{\infty} (-1)^k \frac{x^{4k+3}}{(2k+1)!(4k+3)} \bigg\|_0^1\\
+\amp = \sum_{k=0}^{\infty} (-1)^k \frac{1}{(2k+1)!(4k+3)} 
+\end{align*}
+</div>
+<p class="continuation">The resulting series is an alternating series, so we can find a value of <span class="process-math">\(n\)</span> that makes the <span class="process-math">\(n\)</span>th partial sum of the series approximate the sum of the series to three decimal places by determining a value of <span class="process-math">\(n\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_{n+1} = \frac{1}{(2(n+1)+1)! (4(n+1)+3)} &lt; 0.001\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is not an inequality that we can solve algebraically, so we use trial and error.  Doing so shows, perhaps surprisingly, that <span class="process-math">\(n=1\)</span> will work.</p>
+</li>
+</ol></div></div>
+</div></article><article class="example example-like" id="example-86"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.4</span><span class="period">.</span>
+</h4>
+<p id="p-9529">Find a power series expansion for <span class="process-math">\(\ln (1+x)\)</span> centered at <span class="process-math">\(x=0\)</span> and determine its interval of convergence.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-134" id="hint-134"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-134"><div class="hint solution-like"><p id="p-9530">Use the Taylor series expansion for <span class="process-math">\(\frac{1}{1+x}\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-520" id="solution-520"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-520"><div class="solution solution-like">
+<p id="p-9531">Using the Taylor series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{1-x} = \sum_{k=0}^{\infty} x^k
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(-1 &lt; x &lt; 1\)</span> we have that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{1+x} = \sum_{k=0}^{\infty} (-1)^k x^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Integrating the left and right sides of this last equation gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln (1+x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{k+1}}{k+1} + C
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(-1 &lt; x &lt; 1\text{.}\)</span>  To determine the value of the constant <span class="process-math">\(C\text{,}\)</span> note that since <span class="process-math">\(\ln(1) = 0\)</span> we have that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0 = \sum_{k=0}^{\infty} \frac{0^{k+1}}{k+1} + C
+\end{equation*}
+</div>
+<p class="continuation">and so <span class="process-math">\(C=0\text{.}\)</span>  We conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln (1+x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{k+1}}{k+1}
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(-1 &lt; x &lt; 1\text{.}\)</span></p>
+</div></div>
+</div></article><article class="activity project-like" id="iKZ"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.4</span><span class="period">.</span>
+</h4>
+<ol id="dZp" class="lower-alpha">
+<li id="BSh"><p id="DHu">Using a known Taylor series, find the first four nonzero terms of the Maclaurin series for <span class="process-math">\(\arcsin (x)\text{.}\)</span></p></li>
+<li id="hZlq"><p id="jOd">Find the sum of the series <span class="process-math">\(\sum_{p=1}^{\infty} px^{p-1}\)</span> for <span class="process-math">\(|x| &lt; 1\text{.}\)</span></p></li>
+<li id="hZt"><p id="jOj">Find the Maclaurin series for <span class="process-math">\(f(x) = \frac{e^x + e^{-x}}{2}\text{.}\)</span>  From the series, can you determine if the function <span class="process-math">\(f(x)\)</span> is even or odd?  Based on its Taylor series, is <span class="process-math">\(f'(x)\)</span> even or odd?  How about <span class="process-math">\(f''(x)\text{?}\)</span></p></li>
+</ol></article></section><section class="subsection" id="subsection-169"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.2</span> <span class="title">Using Taylor Series to Evaluate Limits</span>
+</h3>
+<p id="p-9540">One big takeaway from our study of Taylor series is that they behave just like polynomials. For instance, differentiation and integration of Taylor series can be done term-by-term. In the same spirit, we can apply our knowledge about limits of polynomials to compute limits involving complicated functions by replacing them with their Taylor series.</p>
+<article class="example example-like" id="example-87"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.5</span><span class="period">.</span>
+</h4>
+<p id="p-9541">Evaluate <span class="process-math">\(\lim_{x \rightarrow 0} \frac{\sin x}{x}\)</span> using the Maclaurin series expansion for <span class="process-math">\(\sin(x)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-521" id="solution-521"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-521"><div class="solution solution-like">
+<p id="p-9542">The taylor series for <span class="process-math">\(\sin(x)\)</span> about <span class="process-math">\(x=0\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-329">
+\begin{align*}
+\lim_{x \rightarrow 0} \frac{\sin(x)}{x} \amp = \lim_{x \rightarrow 0} \frac{x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots}{x}\\
+\amp = \lim_{x \rightarrow 0} 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \cdots\\
+\amp = 1
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="iKA"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.5</span><span class="period">.</span>
+</h4>
+<p id="dZq">Evaluate the following limits by first finding a Taylor series expansion of each function, and then evaluating the limit of the series term-by-term.</p>
+<ol class="lower-alpha">
+<li id="BSj"><p id="DHx"><span class="process-math">\(\displaystyle \lim_{x \rightarrow 0} \frac{1-\cos(x^2)}{x^4}\)</span></p></li>
+<li id="hZlr"><p id="jOe"><span class="process-math">\(\displaystyle \lim_{x \rightarrow 0} \frac{\ln (x^6+1)}{5x^6}\)</span></p></li>
+</ol></article><p id="p-9549">While many limits like the ones above can also be evaluated using other methods, such as L'Hopital's Rule, the Taylor series approach often turns out to be easier. Because Taylor series behave like polynomials, to take the limit of a Taylor series we only need to know the dominant (first) term!</p></section><section class="subsection" id="subsection-170"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.3</span> <span class="title">Computing with Taylor Series</span>
+</h3>
+<p id="p-9550">One application of Taylor series is that they give us an alternate way of computing many functions. For example, the first definition we see for the sine and cosine functions is in terms of triangles. Those definitions, however, do not lend themselves to computing sine and cosine except at very special angles. Armed with power series representations, however, we can compute them to very high precision at any angle.</p>
+<article class="example example-like" id="example-88"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="period">.</span>
+</h4>
+<p id="p-9551">The computation of <span class="process-math">\(\pi\)</span> is a problem that dates back to the Babylonians.  Use the Maclaurin expansion of <span class="process-math">\(\arctan(x)\)</span> to compute <span class="process-math">\(\pi\)</span> accurate to two decimal places.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-522" id="solution-522"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-522"><div class="solution solution-like">
+<p id="p-9552">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\arctan(x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(\arctan(1) = \frac{\pi}{4}\text{,}\)</span> the series gives us a pretty formula for <span class="process-math">\(\pi\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-332">
+\begin{align*}
+\frac{\pi}{4} \amp = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}\\
+\amp = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots
+\end{align*}
+</div>
+<p class="continuation">So</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi = 4 \left( 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots \right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Unfortunately, this series is not very useful for computing <span class="process-math">\(\pi\)</span> because it converges so slowly. If we approximate the series by its <span class="process-math">\(n\)</span>th partial sum, then the alternating series test tells us that the error is bounded by the first term we drop. To guarantee that we have 2 decimals of <span class="process-math">\(\pi\)</span> correct, we need to sum the first 100 terms!  That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi \approx 4\sum_{k=0}^{99} \frac{(-1)^k}{2k+1} = 4\left( 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots - \frac{1}{199} \right)\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="example-89"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.7</span><span class="period">.</span>
+</h4>
+<p id="p-9553">The <dfn class="terminology">error function</dfn></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\erf(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} \ dt
+\end{equation*}
+</div>
+<p class="continuation">is used in computing "bell curve" probabilities.  For example, for a normal distribution (i.e. one shaped like a bell curve), the probability of being within one standard deviation from the mean is <span class="process-math">\(\erf \left( \frac{1}{\sqrt{2}} \right)\text{.}\)</span>  Use a Maclaurin series for <span class="process-math">\(e^{-t^2}\)</span> to evaluate <span class="process-math">\(\erf \left( \frac{1}{\sqrt{2}}\right)\)</span> with an error of less than <span class="process-math">\(2 \times 10^{-5}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-523" id="solution-523"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-523"><div class="solution solution-like">
+<p id="p-9554">Start with the Maclaurin series for <span class="process-math">\(e^x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^x = \sum_{k=0}^{\infty} \frac{1}{k!} x^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then substitute <span class="process-math">\(x=-t^2\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^{-t^2} = \sum_{k=0}^{\infty} \frac{(-1)^k}{k!} t^{2k}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We can then integrate term by term to find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-333">
+\begin{align*}
+\erf (x) \amp = \frac{2}{\sqrt{\pi}} \int_0^x \left[ \sum_{k=0}^{\infty} \frac{(-t^2)^k}{k!} \right] \ dt\\
+\amp = \frac{2}{\sqrt{\pi}} \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)k!}
+\end{align*}
+</div>
+<p class="continuation">So</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-334">
+\begin{align*}
+\erf \left( \frac{1}{\sqrt{2}}\right) \amp = \frac{2}{\sqrt{\pi}} \sum_{k=0}^{\infty} (-1)^k \frac{ \left( \frac{1}{\sqrt{2}} \right)^{2k+1}}{(2k+1)k!}\\
+\amp = \frac{2}{\sqrt{2\pi}} \sum_{k=0}^{\infty} (-1)^k \frac{1}{(2k+1)2^k k!}\\
+\amp = \sqrt{ \frac{2}{\pi}} \left( 1 - \frac{1}{3 \cdot 2} + \frac{1}{5 \cdot 2^2 \cdot 2} - \frac{1}{7 \cdot 2^3 \cdot 3!} + \frac{1}{9 \cdot 2^4 \cdot 4!} - \cdots \right)
+\end{align*}
+</div>
+<p class="continuation">This is an alternating series.  If we keep 5 terms, we get <span class="process-math">\(0.68271\)</span> with an error between <span class="process-math">\(0\)</span> and the first dropped term, which is minus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sqrt{ \frac{2}{\pi}} \frac{ 1}{11 \cdot 2^5 \cdot 5!} &lt; 2 \times 10^{-5}\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="iKB"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="period">.</span>
+</h4>
+<p id="dZr">In this activity, we quickly calculate the value of <span class="process-math">\(f^{(15)}(0)\text{,}\)</span> the fifteenth derivative of <span class="process-math">\(f(x) = \sin (2x^3)\)</span> at <span class="process-math">\(x=0\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="hZs">
+<p id="jOf">For a general Taylor series of <span class="process-math">\(f(x)\)</span> about <span class="process-math">\(x=0\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x)=\sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!} x^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In this series, what is the coefficient of <span class="process-math">\(x^{15}\text{?}\)</span></p>
+</li>
+<li id="BSk"><p id="DHy">Find the the first three terms of the Taylor series for <span class="process-math">\(f(x) = \sin(2x^3)\)</span> about <span class="process-math">\(x=0\text{.}\)</span>  What is the coefficient of <span class="process-math">\(x^{15}\)</span> in this expression?</p></li>
+<li id="li-5567"><p id="p-9558">Use your answers to (a) and (b) to determine the value of <span class="process-math">\(f^{(15)}(0)\)</span> when <span class="process-math">\(f(x) = \sin(2x^3)\text{.}\)</span></p></li>
+</ol></article><article class="example example-like" id="example-90"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.8</span><span class="period">.</span>
+</h4>
+<p id="p-9563">For values near <span class="process-math">\(0\text{,}\)</span> put the following functions in order from smallest to largest:</p>
+<ul class="disc">
+<li id="li-5571"><p id="p-9564"><span class="process-math">\(\displaystyle \sin(y^2)\)</span></p></li>
+<li id="li-5572"><p id="p-9565"><span class="process-math">\(\displaystyle 1-\cos(y)\)</span></p></li>
+<li id="li-5573"><p id="p-9566"><span class="process-math">\(\displaystyle \ln(1+y^2)\)</span></p></li>
+</ul>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-524" id="solution-524"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-524"><div class="solution solution-like">
+<p id="p-9567">We build three Maclaurin series and then compare them.</p>
+<p id="p-9568">For <span class="process-math">\(\sin(y^2)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-336">
+\begin{align*}
+\sin(x) \amp = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \cdots\\
+\sin(y^2) \amp = y^2 - \frac{y^6}{3!} + \frac{y^{10}}{5!} - \frac{y^{14}}{7!} + \frac{y^{18}}{9!} - \cdots
+\end{align*}
+</div>
+<p id="p-9569">For <span class="process-math">\(1-\cos(y)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-337">
+\begin{align*}
+\cos(y) \amp = 1 - \frac{y^2}{2!} + \frac{y^4}{4!} - \frac{y^6}{6!} + \frac{y^8}{8!} - \cdots\\
+1-\cos(y) \amp = \frac{y^2}{2!} - \frac{y^4}{4!} + \frac{y^{6}}{6!} - \frac{y^{8}}{8!} +  \cdots
+\end{align*}
+</div>
+<p id="p-9570">For <span class="process-math">\(\ln (1+y^2)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-338">
+\begin{align*}
+\ln (1+t) \amp = t - \frac{t^2}{2} + \frac{t^3}{3} - \frac{t^4}{4} + \frac{t^5}{5} - \cdots\\
+\ln (1+y^2) \amp = y^2 - \frac{y^4}{2} + \frac{y^{6}}{3} - \frac{y^{8}}{4} + \frac{y^{10}}{5} -  \cdots
+\end{align*}
+</div>
+<p id="p-9571">Now, let's use, say, the degree six Taylor polynomials as an estimate, and compare the three series.  For values of <span class="process-math">\(y\)</span> near <span class="process-math">\(0\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-339">
+\begin{align*}
+\sin(y^2) \amp \approx y^2 - \frac{y^6}{3!}\\
+1-\cos(y) \amp \approx \frac{y^2}{2!} - \frac{y^4}{4!} + \frac{y^6}{6!}\\
+\ln (1+y^2) \amp \approx y^2 - \frac{y^4}{2} + \frac{y^6}{3}
+\end{align*}
+</div>
+<p id="p-9572">We can compare term by term and decide which is smaller, or we can substitute in a value near <span class="process-math">\(0\)</span> to all three approximations; say, <span class="process-math">\(y=0.5\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-340">
+\begin{align*}
+\sin((0.5)^2) \amp \approx (0.5)^2 - \frac{(0.5)^6}{3!} \approx 0.2474\\
+1-\cos(0.5) \amp \approx \frac{(0.5)^2}{2!} - \frac{(0.5)^4}{4!} + \frac{ (0.5)^6}{6!} \approx 0.1224\\
+\ln (1+(0.5)^2) \amp \approx (0.5)^2 - \frac{ (0.5)^4}{2} + \frac{ (0.5)^6 }{3} \approx 0.2234
+\end{align*}
+</div>
+<p id="p-9573">Thus, the order is <span class="process-math">\(1 - \cos(y) \leq \ln (1+y^2) \leq \sin(y^2)\text{.}\)</span></p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-171"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.4</span> <span class="title">Summary</span>
+</h3>
+<ul class="disc">
+<li id="li-5574"><p id="p-9574">Taylor series can sometimes be found by manipulating Taylor series for known functions. Some techniques for manipulation are addition, substraction, multiplication, division, substitution, differentiation, and integration.</p></li>
+<li id="li-5575"><p id="p-9575">Taylor series can be used to calculate limits.  The leading term in a Taylor series is often sufficient in these calculations.</p></li>
+<li id="li-5576"><p id="p-9576">Taylor series can help in approximating the value of otherwise difficult to calculate values or functions.</p></li>
+</ul></section><section class="exercises" id="NyF"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.4.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="iiu"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Using substitution to determine a Taylor series.</span>
+</h4>
+<div id="webwork-225" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="225" data-sourceFilePath="Library/Michigan/Chap10Sec3/Q03.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9577">Find the first four nonzero terms of the Taylor series about 0 for the function <span class="process-math">\(f(x) = x^5 \sin(7 x)\text{.}\)</span>  Note that you may want to find these in a manner other than by direct differentiation of the function.</p>
+<p id="p-9578"><span class="process-math">\(x^5 \sin(7 x) =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\cdots\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-225')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwp"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Match each function to the correct Taylor series.</span>
+</h4>
+<div id="webwork-226" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="226" data-sourceFilePath="Library/ma123DB/set13/s11_10_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-9583">Match each of the Maclaurin series with correct function.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-226')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwy"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series of an inverse trigonometric function.</span>
+</h4>
+<div id="webwork-227" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="227" data-sourceFilePath="Library/Michigan/Chap10Sec3/Q05.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9584">Find the first four nonzero terms of the Taylor series about 0 for the function <span class="process-math">\(f(x) = \arcsin(x)\text{.}\)</span>  Note that you may want to find these in a manner other than by direct differentiation of the function.</p>
+<p id="p-9585"><span class="process-math">\(\arcsin(x) =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+\cdots\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-227')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="OpC"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Modifying a well-known Taylor series.</span>
+</h4>
+<div id="webwork-228" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="228" data-sourceFilePath="Library/Michigan/Chap10Sec3/Q09.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9590">Find the first four nonzero terms of the Taylor series about 0 for the function <span class="process-math">\(t^{3}\sin\!\left(2t\right)\text{.}\)</span></p>
+<p id="p-9591"><span class="process-math">\(t^{3}\sin\!\left(2t\right) \approx\)</span> <span class="fillin" role="img" aria-label="55-character blank" style="width: 25em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-228')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwk"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for an exponential function.</span>
+</h4>
+<div id="webwork-229" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="229" data-sourceFilePath="Library/ma123DB/set13/s11_10_25.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9593">Find the Maclaurin series of the function <span class="process-math">\(f(x) = (5 x^2) e^{- 6 x}\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9594">
+\begin{equation*}
+f(x) =  \sum_{n=0}^\infty c_n x^n
+\end{equation*}
+</div>
+<p id="p-9595">Determine the following coefficients:</p>
+<p id="p-9596"><span class="process-math">\(c_1 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9597"><span class="process-math">\(c_2 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9598"><span class="process-math">\(c_3 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9599"><span class="process-math">\(c_4 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9600"><span class="process-math">\(c_5 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-229')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwM"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for a rational function.</span>
+</h4>
+<div id="webwork-230" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="230" data-sourceFilePath="Library/ma123DB/set12/s11_9_10.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9606">Suppose that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{5 x}{x + 7}  =  \sum_{n=0}^\infty c_n x^n .
+\end{equation*}
+</div>
+<p id="p-9607">Find the following coefficients.</p>
+<p id="p-9608"><span class="process-math">\(c_0 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9609"><span class="process-math">\(c_1 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9610"><span class="process-math">\(c_2 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9611"><span class="process-math">\(c_3 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9612"><span class="process-math">\(c_4 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9613">Find the radius of convergence <span class="process-math">\(R\)</span> of the power series.</p>
+<p id="p-9614"><span class="process-math">\(R =\)</span>  <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-230')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwn"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Finding a few terms for a Taylor series.</span>
+</h4>
+<div id="webwork-231" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="231" data-sourceFilePath="Library/ma123DB/set12/s11_9_19.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9621">The function <span class="process-math">\(f(x) = \frac{6}{(1 + 6 x)^2}\)</span> is represented as a power series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9622">
+\begin{equation*}
+f(x) = \sum_{n=0}^\infty c_n x^n
+\end{equation*}
+</div>
+<p id="p-9623">Find the first few coefficients in the power series.</p>
+<p id="p-9624"><span class="process-math">\(c_0 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9625"><span class="process-math">\(c_1 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9626"><span class="process-math">\(c_2 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9627"><span class="process-math">\(c_3 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9628"><span class="process-math">\(c_4 =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9629">Find the radius of convergence <span class="process-math">\(R\)</span> of the series.</p>
+<p id="p-9630"><span class="process-math">\(R =\)</span>  <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>  .</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-231')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwL"><h4 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Ordering functions.</span>
+</h4>
+<div id="webwork-232" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="232" data-sourceFilePath="Library/Michigan/Chap10Sec3/Q29.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9637">Consider the functions <span class="process-math">\(y=\cos(x)\)</span> and <span class="process-math">\(y=e^{-x^2}\text{.}\)</span></p>
+<p id="p-9638"><em class="alert">A.</em> Write the Taylor expansions for the two functions about <span class="process-math">\(x=0\text{.}\)</span> What is similar about the two series?  What is different?</p>
+<p id="p-9639">Looking at the series, which function do you predict will be greater over the interval (-1,1)? <ul style="list-style:circle;">
+<li id="li-5577"><p id="p-9640"><span class="process-math">\(\displaystyle \cos(x)\)</span></p></li>
+<li id="li-5578"><p id="p-9641"><span class="process-math">\(\displaystyle e^{-x^2}\)</span></p></li>
+</ul></p>
+<p id="p-9642"><em class="emphasis">(Graph the functions to verify that your answer is correct!)</em></p>
+<p id="p-9643"><em class="alert">B.</em></p>
+<p id="p-9644">Are these functions even or odd? <ul style="list-style:circle;">
+<li id="li-5579"><p id="p-9645">Even</p></li>
+<li id="li-5580"><p id="p-9646">Odd</p></li>
+</ul></p>
+<p id="p-9647"><em class="alert">C.</em> Find the radii of convergence for your two series.</p>
+<p id="p-9648">For <span class="process-math">\(\cos(x)\text{,}\)</span> the radius of convergence is <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-9649">For <span class="process-math">\(e^{-x^2}\text{,}\)</span> the radius of convergence is <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-9650"><em class="emphasis">(Enter</em> <em class="alert">infinity</em> <em class="emphasis">if the radius of convergence is infinite.)</em></p>
+<p id="p-9651">Looking at the relative sizes of the successive terms in your series, note how the radii of convergence you found make sense.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-232')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwV"><h4 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">Find a limit using Taylor series.</span>
+</h4>
+<div id="webwork-233" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="233" data-sourceFilePath="Library/ma123DB/set13/s11_10_45.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9654">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9655">
+\begin{equation*}
+\lim_{x \to 0} \frac{\ln (1-x) + x + \frac{x^2}{2}}{13 x^3}
+\end{equation*}
+</div>
+<p id="p-9656"><em class="alert">Hint:</em> Use power series.</p>
+<p id="p-9657">Answer: <span class="fillin" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-233')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwz"><h4 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">Use a Taylor series to evaluate an indefinite integral.</span>
+</h4>
+<div id="webwork-234" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="234" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_10_40.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9659">Evaluate the indefinite integral as an infinite series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{\sin x}{5 x} \, dx.
+\end{equation*}
+</div>
+<p class="continuation">Find the first five non-zero terms of series representation centered at <span class="process-math">\(x = 0.\)</span></p>
+<p id="p-9660">Answer: <span class="process-math">\(f(x) =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+ \cdots\)</span></p>
+<p id="p-9661">What is the radius of convergence?</p>
+<p id="p-9662">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9663"><em class="alert">Note:</em>  <em class="emphasis">Remember to include a constant "C".</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-234')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwz"><h4 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">Determine the value of the sum of this series.</span>
+</h4>
+<div id="webwork-235" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="235" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_10_58.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9670">Find the sum of the following series.  If it is divergent, type "Diverges" or "D".</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{3^n}{5^n n!}
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9671"><em class="alert">Note:</em>  <em class="emphasis">You cannot write a decimal number for the answer.</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-235')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-414"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-9673">Evaluate, using Taylor series expansions,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \rightarrow 0} \frac{\arctan(x) - x}{\sin(x) - x}\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-415"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="p-9674">Approximate the value of the definite integral <span class="process-math">\(\int_0^{\sqrt{\pi}} \sin(x^2) \ dx\)</span> by using the first 4 nonzero terms of the integrand's Taylor series.</p></article></section></section></div></main>
+</div>
+</body>
+</html>
