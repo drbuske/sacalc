@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:43:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<em class="alert">(a)</em> In this case the graph of <span class="process-math">\(E_1 = \ln\!\left(x+1\right) - (x)\)</span> looks like a parabola, which makes sense because we know that the error bound for Taylor polynomials gives <span class="process-math">\(E_1 \propto x^2\text{.}\)</span>  In fact, because<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|E_1(x)| \le \frac{M}{(2)!}|x|^{2},
+\end{equation*}
+</div>where <span class="process-math">\(M\)</span> is a good error bound for <span class="process-math">\(f''(x)\text{,}\)</span> and knowing that <span class="process-math">\(|f''(x)| = \frac{1}{(x+1)^2} \le \frac{1}{(0.9)^2}\)</span> on <span class="process-math">\(-0.1\le x\le 0.1\text{,}\)</span> we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|E_1(x)| \le \frac{x^{2}}{2\cdot 0.9^{2}}.
+\end{equation*}
+</div>A graph of <span class="process-math">\(|E_1| = |\ln\!\left(x+1\right) - (x)|\)</span> and <span class="process-math">\(\frac{x^{2}}{2\cdot 0.9^{2}}\)</span> is shown below. <div class="image-box" style="width: 41.6666666666667%; margin-left: 29.1666666666667%; margin-right: 29.1666666666667%;"><img src="generated/webwork/images/webwork-224-image-1.png" class="contained"></div>
+<em class="alert">(b)</em> In this case the graph of <span class="process-math">\(E_2 = \ln\!\left(x+1\right) - (x-\frac{x^{2}}{2})\)</span> looks like a cubic, which makes sense because we know that the error bound for Taylor polynomials gives <span class="process-math">\(E_2 \propto x^3\text{.}\)</span>  As above, because<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|E_2(x)| \le \frac{M}{(3)!}|x|^{3},
+\end{equation*}
+</div>where <span class="process-math">\(M\)</span> is a good error bound for <span class="process-math">\(f'''(x)\text{,}\)</span> and knowing that <span class="process-math">\(|f'''(x)| = \frac{2}{(x+1)^3} \le \frac{2}{(0.9)^3}\)</span> on <span class="process-math">\(-0.1\le x\le 0.1\text{,}\)</span> we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|E_2(x)| \le \frac{\left|x\right|^{3}}{3\cdot 0.9^{3}}.
+\end{equation*}
+</div>A graph of <span class="process-math">\(|E_2| = |\ln\!\left(x+1\right) - (x-\frac{x^{2}}{2})|\)</span> and <span class="process-math">\(\frac{\left|x\right|^{3}}{3\cdot 0.9^{3}}\)</span> is shown below. <div class="image-box" style="width: 41.6666666666667%; margin-left: 29.1666666666667%; margin-right: 29.1666666666667%;"><img src="generated/webwork/images/webwork-224-image-2.png" class="contained"></div>
+</div></body>
+</html>

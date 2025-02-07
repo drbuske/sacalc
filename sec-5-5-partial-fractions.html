@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:12:43Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Partial Fractions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-5-4-parts.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-5-7-trig-integrals.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-5-4-parts.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-5-7-trig-integrals.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="active">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="GxK"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Partial Fractions</span>
+</h2>
+<article class="objectives goal-like" id="XvV"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Zli"><p id="Kck">How does the method of partial fractions enable many rational functions to be antidifferentiated?</p></li>
+<li id="li-3491"><p id="p-5845">How does one use the method of partial fractions to decompose a rational function into a sum of terms that can more easily be antidifferentiated?</p></li>
+</ul></article><section class="introduction" id="DDe"><p id="IWR">So far, we've learned two integration techniques: <span class="process-math">\(u\)</span>-substitution and integration by parts. The former is used to reverse the chain rule, while the latter is used to reverse the product rule. But we have seen that each works only in specialized circumstances. For example, while <span class="process-math">\(\int \frac{2x+4}{x^2+4x+13} \ dx\)</span> may be evaluated by <span class="process-math">\(u\)</span>-substitution and <span class="process-math">\(\int xe^x \ dx\)</span> by integration by parts, neither method provides a route to evaluate <span class="process-math">\(\int \frac{1}{x^2+4x+13} \ dx\text{.}\)</span></p>
+<p id="pea">In this section of the text, our goal is to identify one particular class of functions (rational functions) that can be antidifferentiated, and to apply the method of partial fractions to do so.</p>
+<article class="exploration project-like" id="XEz"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span>
+</h3>
+<p id="rxq">For each of the indefinite integrals below, the main question is to decide whether the integral can be evaluated using <span class="process-math">\(u\)</span>-substitution, integration by parts, a combination of the two, or neither. For integrals for which your answer is affirmative, state the substitution(s) you would use. It is not necessary to actually evaluate any of the integrals completely, unless the integral can be evaluated immediately using a familiar basic antiderivative.</p>
+<ol class="lower-alpha">
+<li id="urW"><p id="SUG"><span class="process-math">\(\int x^2 \sin(x^3) \, dx\text{,}\)</span>  <span class="process-math">\(\int x^2 \sin(x) \, dx\text{,}\)</span>   <span class="process-math">\(\int \sin(x^3) \, dx\text{,}\)</span>   <span class="process-math">\(\int x^5 \sin(x^3) \, dx\)</span></p></li>
+<li id="azf"><p id="zbP"><span class="process-math">\(\int \frac{1}{1+x^2} \, dx\text{,}\)</span>   <span class="process-math">\(\int \frac{x}{1+x^2} \, dx\text{,}\)</span>   <span class="process-math">\(\int \frac{2x+3}{1+x^2} \, dx\text{,}\)</span>  <span class="process-math">\(\int \frac{e^x}{1+(e^x)^2} \, dx\text{,}\)</span></p></li>
+<li id="GGo"><p id="fiY"><span class="process-math">\(\int x \ln(x) \, dx\text{,}\)</span>   <span class="process-math">\(\int \frac{\ln(x)}{x} \, dx\text{,}\)</span>   <span class="process-math">\(\int \ln(1+x^2) \, dx\text{,}\)</span>  <span class="process-math">\(\int x\ln(1+x^2) \, dx\text{,}\)</span></p></li>
+<li id="mNx"><p id="Lqh"><span class="process-math">\(\int x \sqrt{1-x^2} \, dx\text{,}\)</span>   <span class="process-math">\(\int \frac{1}{\sqrt{1-x^2}} \, dx\text{,}\)</span>   <span class="process-math">\(\int \frac{x}{\sqrt{1-x^2}}\, dx\text{,}\)</span>  <span class="process-math">\(\int \frac{1}{x\sqrt{1-x^2}} \, dx\text{,}\)</span></p></li>
+</ol></article></section><section class="subsection" id="mET"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">The Method of Partial Fractions</span>
+</h3>
+<p id="Vlj">The method of partial fractions is used to integrate rational functions, which are functions that can we written as a quotient of polynomials.</p>
+<p id="p-5854">For example, the function <span class="process-math">\(f(x) = \frac{1}{x(x-1)}\)</span> is the quotient of the polynomial funtions <span class="process-math">\(p(x)=1\)</span> and <span class="process-math">\(q(x)=x(x-1)\text{.}\)</span>  While it is not immediately clear how to compute <span class="process-math">\(\int \frac{1}{x(x-1)}\)</span> as written, it turns out that a simple algebraic maneuver will make the task much simpler. In particular, before attempting to integrate we rewrite the integrand as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{x(x-1)} = \frac{1}{x} - \frac{1}{x-1}.
+\end{equation*}
+</div>
+<p class="continuation">One can check that this equality holds by finding a common denominator for the right-hand side and simplifying. The integral can then be calculated as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{1}{x(x-1)} \ dx = \int \frac{1}{x} \ dx - \int \frac{1}{x-1} \ dx = \ln |x| - \ln |x-1| + C.
+\end{equation*}
+</div>
+<p class="continuation">The expression <span class="process-math">\(\frac{1}{x} - \frac{1}{x-1}\)</span> is a <dfn class="terminology">partial fraction decomposition</dfn> of <span class="process-math">\(\frac{1}{x(x-1)}\text{.}\)</span></p>
+<p id="p-5855">A partial fraction decomposition can be thought of as reversing the process of finding a common denominator. Thus, the method is applicable when the denominator of a rational function can be factored into smaller degree polynomials. In the examples that follow, we'll demonstrate how to find more complicated partial fraction decompositions and use them to integrate rational functions.</p>
+<article class="example example-like" id="LhD"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span>
+</h4>
+<p id="wIz">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{5x}{x^2-x-2} \, dx\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKn" id="jKn"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKn"><div class="solution solution-like">
+<p id="uTm">If we factor the denominator, we can see how <span class="process-math">\(R\)</span> might be the sum of two fractions of the form <span class="process-math">\(\frac{A}{x-2} + \frac{B}{x+1}\text{,}\)</span> so we suppose that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="firstparfracex">
+\begin{equation}
+\frac{5x}{(x-2)(x+1)} = \frac{A}{x-2} + \frac{B}{x+1}\tag{5.11}
+\end{equation}
+</div>
+<p class="continuation">and look for the constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span></p>
+<p id="bav">Multiplying both sides of this equation by <span class="process-math">\((x-2)(x+1)\text{,}\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+5x = A(x+1) + B(x-2)\text{.}
+\end{equation*}
+</div>
+<p id="HhE">Since we want this equation to hold for every value of <span class="process-math">\(x\text{,}\)</span> we can use insightful choices of specific <span class="process-math">\(x\)</span>-values to help us find <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Taking <span class="process-math">\(x = -1\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/firstparfracex.html">
+\begin{equation*}
+5(-1) = A(0) + B(-3)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so <span class="process-math">\(B = \frac{5}{3}\text{.}\)</span> Choosing <span class="process-math">\(x = 2\text{,}\)</span> it follows</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/firstparfracex.html">
+\begin{equation*}
+5(2) = A(3) + B(0)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so <span class="process-math">\(A = \frac{10}{3}\text{.}\)</span> Using Equation <a href="" class="xref" data-knowl="./knowl/firstparfracex.html" title="Equation 5.11">(5.11)</a>, we can rewrite the original integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/firstparfracex.html">
+\begin{equation*}
+\int \frac{5x}{x^2-x-2} \, dx = \int \frac{10/3}{x-2} + \frac{5/3}{x+1} \ dx\text{.}
+\end{equation*}
+</div>
+<p id="noN">This integral is straightforward to evaluate, and we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{5x}{x^2-x-2} \ dx = \frac{10}{3} \ln|x-2| + \frac{5}{3}\ln|x+1| + C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="LhE"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
+</h4>
+<p id="wIa">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{2x^2+5}{x^3-2x^2+x} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKo" id="jKo"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKo"><div class="solution solution-like">
+<p id="uTm">If we factor the denominator of the integrand, we can see that<span class="process-math">\(\frac{2x^2+5}{x^3-2x^2+x}=\frac{2x^2+5}{x(x-1)^2}\text{.}\)</span> Notice that the factor <span class="process-math">\((x-1)\)</span> shows up twice in the denominator.  We call <span class="process-math">\((x-1)^2\)</span> a repeated linear root.  The repeated linear root slightly changes our partial fraction decomposition.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{2x^2+5}{x(x-1)^2}
+\end{equation*}
+</div>
+<p class="continuation">can be decomposed into the sum of fractions <span class="process-math">\(\frac{A}{x} + \frac{B}{x-1} + \frac{C}{(x-1)^2}\text{.}\)</span>  We need both <span class="process-math">\(\frac{B}{x-1}\)</span> and <span class="process-math">\(\frac{C}{(x-1)^2}\)</span> since both <span class="process-math">\(x-1\)</span> and <span class="process-math">\((x-1)^2\)</span> divide <span class="process-math">\(x(x-1)^2\text{.}\)</span>  Suppose</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="secondparfracex">
+\begin{equation}
+\frac{2x^2+5}{x(x-1)^2} = \frac{A}{x} + \frac{B}{x-1} + \frac{C}{(x-1)^2}\tag{5.12}
+\end{equation}
+</div>
+<p class="continuation">and look for constants <span class="process-math">\(A, B\)</span> and <span class="process-math">\(C\text{.}\)</span></p>
+<p id="baw">Multiplying both sides of this equation by the denominator on the left hand side, <span class="process-math">\(x(x-1)^2\text{,}\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x^2+5 = A(x-1)^2 + Bx(x-1)+Cx\text{.}
+\end{equation*}
+</div>
+<p id="HhF">To find <span class="process-math">\(A, B\)</span> and <span class="process-math">\(C\text{,}\)</span> we will rearrange the right hand side of the equation so that similar terms are grouped.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/secondparfracex.html" id="md-166">
+\begin{align*}
+2x^2+5 = \mathstrut \amp A(x^2-2x+1) + B(x^2+x) + Cx \\
+2x^2 + 0x + 5 = \mathstrut \amp (A+B)x^2 + (-2A - B +C)x + A
+\end{align*}
+</div>
+<p class="continuation">Like the previous example, we need the coefficients for <span class="process-math">\(x^2\)</span> to be the same on each side of the equation, the coeffiecients for <span class="process-math">\(x\)</span> to be the same on each side of the equation, and the constant terms to be the same on each side of the equation. Thus, we obtain the system of equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/secondparfracex.html">
+\begin{equation*}
+A+B=2, -2A-B+C=0, \text{and } A=5.
+\end{equation*}
+</div>
+<p class="continuation">We find that <span class="process-math">\(A=5, B=-3\text{,}\)</span> and <span class="process-math">\(C=7\text{.}\)</span>  Using Equation <a href="" class="xref" data-knowl="./knowl/secondparfracex.html" title="Equation 5.12">(5.12)</a> we can rewrite the original integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/secondparfracex.html">
+\begin{equation*}
+\int \frac{2x^2+5}{x(x-1)^2} \ dx = \int \frac{5}{x} - \frac{3}{x-1} + \frac{7}{(x-1)^2} \ dx
+\end{equation*}
+</div>
+<p id="p-5865">This integral can be evaluated by using the fact that <span class="process-math">\(\int \frac{1}{u} \ du = \ln |u| + C\)</span> and by using appropriate substitutions, and hence we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-167">
+\begin{align*}
+\int \frac{2x^2+5}{x(x-1)^2} \ dx = \mathstrut \amp \int \frac{5}{x} \ dx - 3\int \frac{1}{x-1} \ dx  + 7\int (x-1)^{-2} \ dx\\
+= \mathstrut \amp 5\ln|x| - 3\ln|x-1| - 7(x-1)^{-1} +C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="LhF"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+</h4>
+<p id="wIb">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{3x^2-1}{(x^2+2x+3)(x-2)} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKp" id="jKp"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKp"><div class="solution solution-like">
+<p id="uTn">The denominator of the integrand is already factored, and the quadratic polynomial <span class="process-math">\(x^2+2x+3\)</span> cannot be factored anymore. We call this factor an irreducible quadratic factor. The irreducible quadratic factor slightly changes our partial fraction decomposition.  <span class="process-math">\(\frac{3x^2-1}{(x^2+2x+3)(x-2)}\)</span> can be decomposed into the sum of fractions <span class="process-math">\(\frac{Ax+B}{x^2+2x+3} + \frac{C}{x-2}\text{.}\)</span>  We need the term <span class="process-math">\(\frac{Ax+B}{x^2+2x+3}\)</span> to include all possibilities where the degree of the numerator is less than the degree of the denominator. Suppose</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="thirdparfracex">
+\begin{equation}
+\frac{3x^2-1}{(x^2+2x+3)(x-2)} = \frac{Ax+B}{x^2+2x+3} + \frac{C}{x-2}\tag{5.13}
+\end{equation}
+</div>
+<p class="continuation">and look for constants <span class="process-math">\(A, B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span></p>
+<p id="bax">Multiplying both sides of this equation by the denominator of the left hand side, <span class="process-math">\((x^2+2x+3)(x-2)\text{,}\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3x^2-1 = (Ax+B)(x-2) + C(x^2 + 2x+3).
+\end{equation*}
+</div>
+<p class="continuation">To find <span class="process-math">\(A, B\text{,}\)</span> and <span class="process-math">\(C\text{,}\)</span> we will rearrange the right hand side of the equation so that similar terms are grouped.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-168">
+\begin{align*}
+3x^2-1 = \mathstrut \amp Ax^2 - 2Ax + Bx - 2B + Cx^2 + 2Cx + 3C\\
+3x^2+0x-1 = \mathstrut \amp (A+C)x^2 + (-2A+B-2C)x + (-2B+3C)
+\end{align*}
+</div>
+<p id="HhG">Like the first example, we need the coefficients for <span class="process-math">\(x^2\)</span> to be the same on each side of the equation, the coeffiecients for <span class="process-math">\(x\)</span> to be the same on each side of the equation, and the constant terms to be the same on each side of the equation. Thus, we obtain the system of equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thirdparfracex.html">
+\begin{equation*}
+A+C=3, -2A+B-2C=0, \text{ and} -2B+3C=-1.
+\end{equation*}
+</div>
+<p class="continuation">We find that <span class="process-math">\(A=2, B=2\text{,}\)</span> and <span class="process-math">\(C=1\text{.}\)</span>  Thus, using Equation <a href="" class="xref" data-knowl="./knowl/thirdparfracex.html" title="Equation 5.13">(5.13)</a> we can rewrite the original integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thirdparfracex.html">
+\begin{equation*}
+\int \frac{3x^2-1}{(x^2+2x+3)(x-2)} \ dx = \int \frac{2x+2}{x^2+2x+3} + \frac{1}{x-2} \ dx.
+\end{equation*}
+</div>
+<p class="continuation">This integral can be evaluated by using the fact that <span class="process-math">\(\int \frac{1}{u} \ du = \ln |u| + C\)</span> and by using appropriate substitutions, and hence we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thirdparfracex.html" id="md-169">
+\begin{align*}
+\int \frac{3x^2-1}{(x^2+2x+3)(x-2)} \ dx = \mathstrut \amp \int \frac{2x+2}{x^2+2x+3} + \frac{1}{x-2} \ dx\\
+= \mathstrut \amp \ln |x^2+2x+3| + \ln |x-2|+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="LhG"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+</h4>
+<p id="wIb">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKq" id="jKq"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKq"><div class="solution solution-like">
+<p id="uTo">Before decomposing the integrand into partial fractions, we need to perform polynomial long division because the degree of the numerator, 3, is greater than the degree of the denominator, 2. We need to do this because partial fraction decompsition leads to a sum of rational functions where the degree of the numerator is less than the degree of the denominator.</p>
+<p id="bax">After completing polynomial long division, we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} = 3x + \frac{7-3x}{-x^2+3x-2},
+\end{equation*}
+</div>
+<p class="continuation">hence, we can change the original integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="partialfracdividefirst">
+\begin{equation}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \int 3x \ dx + \int \frac{7-3x}{-x^2+3x-2} \ dx.\tag{5.14}
+\end{equation}
+</div>
+<p class="continuation">We'll proceed by using the method of partial fraction decomposition on the integrand <span class="process-math">\(\frac{7-3x}{-x^2+3x-2}\text{.}\)</span></p>
+<p id="Hhg">Notice that the denominator factors as <span class="process-math">\(-x^2+3x-2 = (x-1)(2-x)\text{,}\)</span> so we'll suppose the integrand decomposes as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{7-3x}{(x-1)(2-x)} = \frac{A}{x-1} + \frac{B}{2-x}
+\end{equation*}
+</div>
+<p class="continuation">and we'll look for constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span></p>
+<p id="p-5874">Multiplying both sides of the equation by the denominator of the left hand side, <span class="process-math">\((x-1)(2-x)\text{,}\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{equation*}
+7-3x = A(2-x) + B(x-1).
+\end{equation*}
+</div>
+<p class="continuation">To find <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we will rearrange the right hand side of the equation so that similar terms are grouped.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html" id="md-170">
+\begin{align*}
+7-3x = \mathstrut \amp 2A - Ax + Bx - B\\
+7-3x = \mathstrut \amp (B-A)x + (2A-B)
+\end{align*}
+</div>
+<p class="continuation">To make sure the coefficients of <span class="process-math">\(x\)</span> match on each side of the equation and that the constant terms are the same on each side of the equation, we obtain the following system of equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{equation*}
+-3=B-A \text{ and } 7=2A-B
+\end{equation*}
+</div>
+<p class="continuation">We find that <span class="process-math">\(A=4\)</span> and <span class="process-math">\(B=1\text{.}\)</span>  Thus, using Equation <a href="" class="xref" data-knowl="./knowl/partialfracdividefirst.html" title="Equation 5.14">(5.14)</a>, we can rewrite the original integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html" id="md-171">
+\begin{align*}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \mathstrut \amp \int 3x \ dx + \int \frac{7-3x}{-x^2+3x-2} \ dx\\
+= \mathstrut \amp \int 3x \ dx + \int \frac{4}{x-1} + \frac{1}{2-x} \ dx.
+\end{align*}
+</div>
+<p class="continuation">These integrals can be evaluated by using the antidifferentiation rules and using appropriate substitutions, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html" id="md-172">
+\begin{align*}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \mathstrut \amp \int 3x \ dx + \int \frac{4}{x-1} \ dx + \int \frac{1}{2-x} \ dx\\
+= \mathstrut \amp \frac{3}{2}x^2 + 4\ln|x-1| - \ln|2-x| + C.
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="Bsu">Now that we've seen some examples, we give a general description of the method of partial fractions.  This method works best on rational functions when <span class="process-math">\(Q(x)\)</span> can be factored into linear and irreducible quadratic terms.</p>
+<article class="assemblage assemblage-like" id="RVf"><h4 class="heading"><span class="title">Partial Fraction Decomposition for a Rational Function <span class="process-math">\(R(x)=\frac{P(x)}{Q(x)}\)</span>.</span></h4>
+<ul id="hNX" class="disc">
+<li id="li-3496"><p id="p-5877">If the degree of <span class="process-math">\(P(x)\)</span> is greater than or equal to the degree of <span class="process-math">\(Q(x)\text{,}\)</span> then perform polynomial division to write <span class="process-math">\(R(x) = S(x) + \frac{P_2(x)}{Q(x)}\)</span> where <span class="process-math">\(S(x)\)</span> is a polynomial and <span class="process-math">\(P_2(x)\)</span> is a polynomial of degree strictly less than that of <span class="process-math">\(Q(x)\text{.}\)</span></p></li>
+<li id="li-3497">
+<p id="p-5878">If the degree of <span class="process-math">\(P(x)\)</span> is less than the degree of <span class="process-math">\(Q(x)\text{,}\)</span> then factor <span class="process-math">\(Q(x)\)</span> and decompose <span class="process-math">\(\frac{P(x)}{Q(x)}\)</span> based on the following:</p>
+<ul class="circle">
+<li id="li-3498">
+<p id="p-5879">For each distinct linear factor <span class="process-math">\((x-c)\)</span> of <span class="process-math">\(Q(x)\text{,}\)</span> add the term</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{A}{x-c}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-3499">
+<p id="p-5880">For each repeated linear factor <span class="process-math">\((x-c)^n\)</span> of <span class="process-math">\(Q(x)\)</span> where integer <span class="process-math">\(n&gt;0\text{,}\)</span> add the term</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{A_1}{x-c} + \frac{A_2}{(x-c)^2} + \cdots + \frac{A_n}{(x-c)^n}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-3500">
+<p id="p-5881">For each irreducible quadratic factor <span class="process-math">\(ax^2+bx+c\)</span> of <span class="process-math">\(Q(x)\text{,}\)</span> add the term</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{Ax+B}{ax^2+bx+c}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-3501">
+<p id="p-5882">For each repeated irreducible quadratic factor <span class="process-math">\((ax^2+bx+c)^n\)</span> of <span class="process-math">\(Q(x)\)</span> where integer <span class="process-math">\(n&gt;0\text{,}\)</span> add the term</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{A_1x+B_1}{ax^2+bx+c} + \frac{A_2x+B_2}{(ax^2+bx+c)^2}+\cdots+\frac{A_nx+B_n}{(ax^2+bx+c)^n}\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Finally, solve for the value of the constants <span class="process-math">\(A_1, A_2, \cdots, B_1, B_2, \cdots\)</span> and integrate each piece separately.</p>
+</li>
+</ul></article><p id="Bst">The smaller blocks that <span class="process-math">\(R(x)\)</span> is broken into often lead to more manageable antidifferentiation.  For example, if <span class="process-math">\(A\)</span> and <span class="process-math">\(c\)</span> are real numbers, then <span class="process-math">\(\displaystyle \int \frac{A}{x-c} \ dx = A\ln |x-c| + C\)</span> by using the substitution <span class="process-math">\(u=x-c\text{.}\)</span>  We also know the antiderivative of other common partial fractions like <span class="process-math">\(\displaystyle \int \frac{A}{x^2+1} \ dx = A \arctan(x) + C\text{.}\)</span>  For integrals such as <span class="process-math">\(\displaystyle \int \frac{A}{x^2+2x+5} \ dx\text{,}\)</span> completing the square to arrive at <span class="process-math">\(\displaystyle \int \frac{A}{(x+1)^2+4} \ dx\)</span> is a useful strategy.  And, integrals such as <span class="process-math">\(\displaystyle \int \frac{2x+3}{x^2+2x+5} \ dx\)</span> can be written as <span class="process-math">\(\displaystyle \int \frac{2x+2}{x^2+2x+5} \ dx + \int \frac{1}{x^2+2x+5} \ dx\)</span> where <span class="process-math">\(u\)</span>-substitution can be applied on the first integral.</p>
+<article class="activity project-like" id="TTE"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
+</h4>
+<p id="byd">For each of the following problems, evaluate the integral by using the partial fraction decomposition provided.</p>
+<ol class="lower-alpha">
+<li id="rMu"><p id="Nuy"><span class="process-math">\(\displaystyle \int \frac{1}{x^2 - 2x - 3} \, dx\text{,}\)</span> given that <span class="process-math">\(\displaystyle \frac{1}{x^2 - 2x - 3} = \frac{1/4}{x-3} - \frac{1/4}{x+1}\)</span></p></li>
+<li id="XTD"><p id="tBH"><span class="process-math">\(\displaystyle \int \frac{x^2+1}{x^3 - x^2} \, dx\text{,}\)</span> given that <span class="process-math">\(\displaystyle \frac{x^2+1}{x^3 - x^2} = -\frac{1}{x} - \frac{1}{x^2} + \frac{2}{x-1}\)</span></p></li>
+<li id="EaM"><p id="ZIQ"><span class="process-math">\(\displaystyle \int \frac{x-2}{x^4 + x^2}\, dx\text{,}\)</span> given that <span class="process-math">\(\displaystyle \frac{x-2}{x^4 + x^2} = \frac{1}{x} - \frac{2}{x^2} + \frac{-x+2}{1+x^2}\)</span></p></li>
+</ol></article><article class="activity project-like" id="OOn"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+</h4>
+<p id="xQc">Evaluate each indefinite integral using partial fractions.</p>
+<ol class="lower-alpha">
+<li id="QYY"><p id="LjM"><span class="process-math">\(\displaystyle \displaystyle \int \frac{x+1}{6x+x^2} \ dx\)</span></p></li>
+<li id="xgh"><p id="rqV"><span class="process-math">\(\displaystyle \int \frac{1}{x^3-x^2} \ dx\text{;}\)</span> use <span class="process-math">\(\displaystyle \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-1}\)</span></p></li>
+<li id="dnq"><p id="Xye"><span class="process-math">\(\displaystyle \int \frac{10x+2}{x^3-5x^2+x-5} \ dx\text{;}\)</span> use <span class="process-math">\(\displaystyle \frac{A}{x-5} + \frac{Bx+C}{x^2+1}\)</span></p></li>
+<li id="Juz"><p id="DFn"><span class="process-math">\(\displaystyle \int \frac{x^4 + 12x^3 + 15x^2 + 25x+11}{x^3 + 12x^2+11x} \ dx\text{;}\)</span> use division and <span class="process-math">\(\displaystyle \frac{A}{x} + \frac{B}{x+1} + \frac{C}{x+11}\)</span></p></li>
+</ol></article></section><section class="subsection" id="subsection-98"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.2</span> <span class="title">Technology and Partial Fractions</span>
+</h3>
+<p id="hzB">A computer algebra system such as <em class="emphasis">Maple</em>, <em class="emphasis">Mathematica</em>, <em class="emphasis">GeoGebra</em>, or <em class="emphasis">WolframAlpha</em> can be used to find the partial fraction decomposition of any rational function. In <em class="emphasis">WolframAlpha</em>, entering</p>
+<blockquote class="blockquote" id="vYF"><p id="fKo"><code class="code-inline tex2jax_ignore">partial fraction 5x/(x^2-x-2)</code></p></blockquote>
+<p id="NGK">results in the output</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{5x}{x^2-x-2} = \frac{10}{3(x-2)} + \frac{5}{3(x+1)}\text{.}
+\end{equation*}
+</div>
+<p id="tNT">We will use technology to generate partial fraction decompositions of rational functions, and then evaluate the integrals using established methods.</p>
+<article class="activity project-like" id="OOn"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+</h4>
+<p id="xQc">Use technology to generate partial fraction decompositions of each rational function. Then evaluate each integral by hand and check your result by using technology to directly evaluate the integral.</p>
+<ol class="lower-alpha">
+<li id="QYY"><p id="LjM"><span class="process-math">\(\displaystyle \displaystyle \int \frac{2}{(x-4)(x^2+2x+6)} \ dx\)</span></p></li>
+<li id="xgh"><p id="rqV"><span class="process-math">\(\displaystyle \displaystyle \int \frac{x^2}{x^3-x^2+4x-4} \ dx\)</span></p></li>
+</ol></article></section><section class="subsection" id="fau"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.3</span> <span class="title">Summary</span>
+</h3>
+<ul id="dzC" class="disc"><li id="RGJ"><p id="CxL">We can antidifferentiate any rational function with the method of partial fractions. Any polynomial function can be factored into a product of linear and irreducible quadratic terms, so any rational function may be written as the sum of a polynomial plus rational terms of the form <span class="process-math">\(\frac{A}{(x-c)^n}\)</span> (<span class="process-math">\(n&gt;0\)</span> is an integer) and <span class="process-math">\(\frac{Ax+B}{(ax^2 + bx+c)^n}\)</span> (<span class="process-math">\(n&gt;0\)</span> is an integer).</p></li></ul></section><section class="exercises" id="okl"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.5.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="fHx"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Partial fractions: linear over difference of squares.</span>
+</h4>
+<div id="webwork-135" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="135" data-sourceFilePath="Library/Michigan/Chap7Sec4/Q57.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-5922">Calculate the integral below by partial fractions and by using the indicated substitution. Be sure that you can show how the results you obtain are the same.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{2x}{x^{2}-64}\,dx
+\end{equation*}
+</div>
+<p id="p-5923">First, rewrite this with partial fractions:</p>
+<p id="p-5924"><span class="process-math">\(\int \frac{2x}{x^{2}-64}\,dx = \int\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(dx + \int\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(dx =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+ C\text{.}\)</span></p>
+<p id="p-5925"><em class="emphasis">(Note that you should not include the <span class="process-math">\(+C\)</span> in your entered answer, as it has been provided at the end of the expression.)</em></p>
+<p id="p-5926">Next, use the substitution <span class="process-math">\(w = x^2 - 64\)</span> to find the integral:</p>
+<p id="p-5927"><span class="process-math">\(\int \frac{2x}{x^{2}-64}\,dx = \int\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(dw =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+ C =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(+ C\text{.}\)</span></p>
+<p id="p-5928"><em class="emphasis">(For the second answer blank, give your antiderivative in terms of the variable <span class="process-math">\(w\text{.}\)</span>  Again, note that you should not include the <span class="process-math">\(+C\)</span> in your answer.)</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-135')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="LOG"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Partial fractions: constant over product.</span>
+</h4>
+<div id="webwork-136" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="136" data-sourceFilePath="Library/Michigan/Chap7Sec4/Q33.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-5936">Calculate the integral:</p>
+<p id="p-5937"><span class="process-math">\(\displaystyle \int \frac{1}{(x+6)(x+8)}\,dx =\)</span> <span class="fillin" role="img" aria-label="55-character blank" style="width: 25em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-136')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="rVP"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Partial fractions: linear over quadratic.</span>
+</h4>
+<div id="webwork-137" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="137" data-sourceFilePath="Library/Michigan/Chap7Sec4/Q39.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-5939">Calculate the integral</p>
+<p id="p-5940"><span class="process-math">\(\displaystyle \int \frac{3 x + 3}{x^2-3x+2}dx =\)</span> <span class="fillin" role="img" aria-label="55-character blank" style="width: 25em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-137')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="YcY"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Partial fractions: cubic over 4th degree.</span>
+</h4>
+<div id="webwork-138" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="138" data-sourceFilePath="Library/ma123DB/set3/s7_4_39.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-5942">Consider the following indefinite integral.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{4 x^3+ 8 x^2+ 2 x+ 4 }{x^4+1 x^2}\, dx
+\end{equation*}
+</div>
+<p id="p-5943">The integrand has partial fractions decomposition:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-5944">
+\begin{equation*}
+\frac{a}{x^2} + \frac{b}{x} + \frac{cx + d}{x^2+1}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<p id="p-5945"><span class="process-math">\(a =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-5946"><span class="process-math">\(b =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-5947"><span class="process-math">\(c =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-5948"><span class="process-math">\(d =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-5949">Now integrate term by term to evaluate the integral.</p>
+<p id="p-5950">Answer: <span class="fillin" role="img" aria-label="60-character blank" style="width: 27.2727272727273em;"></span> <span class="process-math">\(+C\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-138')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ekh"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Partial fractions: quadratic over factored cubic.</span>
+</h4>
+<div id="webwork-139" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="139" data-sourceFilePath="Library/ma123DB/set3/s7_4_31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-5956">The form of the partial fraction decomposition of a rational function is given below.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-5957">
+\begin{equation*}
+\frac{2x^{2}-5x+23}{(x - 1)(x^2+9)} 
+= \frac{A}{x - 1} + \frac{B x + C}{x^2+9}
+\end{equation*}
+</div>
+<p id="p-5958"><span class="process-math">\(A =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(B =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(C =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+<p id="p-5959">Now evaluate the indefinite integral.</p>
+<p id="p-5960"><span class="process-math">\(\displaystyle \int \frac{2x^{2}-5x+23}{(x - 1)(x^2+9)} dx =\)</span> <span class="fillin" role="img" aria-label="50-character blank" style="width: 22.7272727272727em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-139')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="krq"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="fVS">For each of the following integrals involving rational functions, (1) use a CAS to find the partial fraction decomposition of the integrand; (2) evaluate the integral of the resulting function without the assistance of technology; (3) use a CAS to evaluate the original integral to test and compare your result in (2).</p>
+<ol class="lower-alpha">
+<li id="KJn"><p id="mQx"><span class="process-math">\(\displaystyle \int \frac{x^3 + x + 1}{x^4 - 1} \, dx\)</span></p></li>
+<li id="qQw"><p id="SXG"><span class="process-math">\(\displaystyle \int \frac{x^5 + x^2 + 3}{x^3 - 6x^2 + 11x - 6} \, dx\)</span></p></li>
+<li id="WXF"><p id="zeP"><span class="process-math">\(\displaystyle \int \frac{x^2 - x - 1}{(x-3)^3} \, dx\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-251"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Find the Error.</span>
+</h4>Explain what is wrong with this statement: To integrate<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{1}{(x-1)^2(x-2)} \ dx
+\end{equation*}
+</div>using a partial fraction decomposition, let<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{(x-1)^2(x-2)} = \frac{B}{(x-1)^2} + \frac{C}{x-2}.
+\end{equation*}
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

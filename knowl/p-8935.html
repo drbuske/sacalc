@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:42:26Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p><a href="" class="xref" data-knowl="./knowl/FindingIntevalConvergePowerSeries.html" title="Example 8.1.5">Example 8.1.5</a> gives us significant insight as to the process of determining the values of <span class="process-math">\(x\)</span> for which a power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/FindingIntevalConvergePowerSeries.html">
+\begin{equation*}
+\sum_{k =0}^{\infty} c_k(x-a)^k\text{,}
+\end{equation*}
+</div>
+<p class="continuation">centered at <span class="process-math">\(x=a\)</span> will converge.  In general we apply the Ratio Test with <span class="process-math">\(a_k = \left|c_k (x-a)^k \right|\text{.}\)</span>  This series converges if <span class="process-math">\(\lim_{k \rightarrow \infty} \frac{a_{k+1}}{a_k} &lt; 1\text{.}\)</span>  But if we have <span class="process-math">\(\lim_{k \rightarrow \infty} \frac{\left| c_{k+1} \right|}{\left| c_k \right|} = L\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/FindingIntevalConvergePowerSeries.html">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{a_{k+1}}{a_k} \amp = \lim_{k \rightarrow \infty} \left| x-a \right| \frac{ \left| c_{k+1}\right|}{\left| c_k \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| x-a \right| \cdot L
+\end{align*}
+</div>
+<p class="continuation">There are three possibilities for <span class="process-math">\(L\text{:}\)</span> <span class="process-math">\(L\)</span> can be <span class="process-math">\(0\text{,}\)</span> it can be a finite positive value, or it can be infinite.  Based on this value of <span class="process-math">\(L\text{,}\)</span> we can determine for which values of <span class="process-math">\(x\)</span> the original power series converges.</p>
+<ul class="disc">
+<li><p>If <span class="process-math">\(L=0\text{,}\)</span> then the power series converges on <span class="process-math">\((-\infty, \infty)\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(L\)</span> is infinite, then the power series converges only at <span class="process-math">\(x=a\text{.}\)</span></p></li>
+<li>
+<p>If <span class="process-math">\(L\)</span> is finite and nonzero, then the power series converges absolutely for all <span class="process-math">\(x\)</span> that satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| x-a \right| \cdot L &lt; 1
+\end{equation*}
+</div>
+<p class="continuation">or for all <span class="process-math">\(x\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| x-a \right| &lt; \frac{1}{L}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is the interval</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left( a - \frac{1}{L}, a+\frac{1}{L} \right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This interval is centered at <span class="process-math">\(x=a\)</span> and has radius <span class="process-math">\(R=\frac{1}{L}\text{.}\)</span>  Because the Ratio Test is inconclusive when <span class="process-math">\(\left| x-a \right| \cdot L = 1\text{,}\)</span> the endpoints <span class="process-math">\(x=a\pm \frac{1}{L}\)</span> must be checked separately.</p>
+</li>
+</ul>
+<span class="incontext"><a href="sec-8B-1-power-series.html#p-8935" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:14:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc The Divergence and Integral Tests</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-8-3B-series.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-8.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-8-3D-comparisons.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-8-3B-series.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-8.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-8-3D-comparisons.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="active">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="nbh"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.4</span> <span class="title">The Divergence and Integral Tests</span>
+</h2>
+<article class="objectives goal-like" id="hlV"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="erx"><p id="kQn">Are there any properties a series can have to guarantee it diverges?  That it converges?</p></li>
+<li id="Kyy"><p id="QXE">What can integrals tells us about convergence or divergence of certain series?</p></li>
+</ul></article><section class="introduction" id="Nte"><p id="p-8092">In <a href="sec-8-3B-series.html" class="internal" title="Section 7.3: Infinite Series of Real Numbers">Section 7.3</a>, we determined the convergence or divergence of several series by explicitly calculating the limit of a sequence of partial sums <span class="process-math">\(\left\{ S_k \right\}\text{.}\)</span>  In practice, explicitly calculating this limit can be difficult or impossible. Luckily, several tests exist that allow us to determine convergence or divergence for many types of series. In this section, we discuss two of these tests: the divergence test and the integral test. We will examine several other tests in the rest of this chapter.</p>
+<article class="exploration project-like" id="MoC"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">7.4.1</span><span class="period">.</span>
+</h3>
+<ol class="lower-alpha">
+<li id="li-4778"><p id="p-8093">Compute the value of the improper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^2} \ dx\text{.}\)</span></p></li>
+<li id="li-4779">
+<p id="p-8094">Using <span class="process-math">\(n=5\text{,}\)</span> sketch the right Riemann sum <span class="process-math">\(R_5\)</span> for <span class="process-math">\(\int_1^6 \frac{1}{x^2} \ dx\text{.}\)</span>  Is <span class="process-math">\(R_5\)</span> an underestimate or an overestimate or neither?</p>
+<figure class="figure figure-like" id="graph1overx2"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/graph1overx2pic.svg" role="img" class="contained" alt="The graph of \(f(x)=\frac{1}{x^2}\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.4.1<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(f(x)=\frac{1}{x^2}\)</span> on <span class="process-math">\([1,6]\text{.}\)</span></figcaption></figure>
+</li>
+<li id="li-4780"><p id="p-8095">Compare <span class="process-math">\(1+R_5\)</span> (as found above) with <span class="process-math">\(\sum_{k=1}^6 \frac{1}{k^2}\text{.}\)</span></p></li>
+<li id="li-4781"><p id="p-8096">For any <span class="process-math">\(n\text{,}\)</span> how do <span class="process-math">\(1+R_n\)</span> and <span class="process-math">\(\int_1^{n+1} \frac{1}{x^2} \ dx\)</span> compare?  By extension, how does <span class="process-math">\(\sum_{k=1}^{n+1} \frac{1}{k^2}\)</span> compare to <span class="process-math">\(\int_1^{\infty} \frac{1}{x^2} \ dx\)</span> for any <span class="process-math">\(n\text{?}\)</span></p></li>
+<li id="li-4782"><p id="p-8097">Discuss the convergence or divergence of <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2}\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="zpx"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.4.1</span> <span class="title">The Divergence Test</span>
+</h3>
+<p id="dVO">The first question we ask about any infinite series is usually “Does the series converge or diverge?” There is a straightforward way to check that certain series diverge, and we explore this test in the next activity.</p>
+<article class="activity project-like" id="yfW"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span>
+</h4>
+<p id="hhL">If the <em class="emphasis">series</em> <span class="process-math">\(\sum a_k\)</span> converges, then an important result necessarily follows regarding the <em class="emphasis">sequence</em> <span class="process-math">\(\{a_n\}\text{.}\)</span> This activity explores this result.</p>
+<p id="NoU">Assume that the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> converges and has sum equal to <span class="process-math">\(L\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="Dlo"><p id="VYM">What is the <span class="process-math">\(n\)</span>th partial sum <span class="process-math">\(S_n\)</span> of the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{?}\)</span></p></li>
+<li id="jsx"><p id="CfV">What is the <span class="process-math">\((n-1)\)</span>st partial sum <span class="process-math">\(S_{n-1}\)</span> of the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{?}\)</span></p></li>
+<li id="PzG"><p id="ine">What is the difference between the <span class="process-math">\(n\)</span>th partial sum and the <span class="process-math">\((n-1)\)</span>st partial sum of the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{?}\)</span></p></li>
+<li id="vGP"><p id="Oun">Since we are assuming that <span class="process-math">\(\sum_{k=1}^{\infty} a_k = L\text{,}\)</span> what does that tell us about <span class="process-math">\(\lim_{n \to \infty} S_n\text{?}\)</span> Why? What does that tell us about <span class="process-math">\(\lim_{n \to \infty} S_{n-1}\text{?}\)</span> Why?</p></li>
+<li id="bNY"><p id="uBw">Combine the results of the previous two parts of this activity to determine <span class="process-math">\(\lim_{n \to \infty} a_n = \lim_{n \to \infty} (S_n - S_{n-1})\text{.}\)</span></p></li>
+</ol></article><p id="KcX">The result of <a href="" class="xref" data-knowl="./knowl/act-8-3-2.html" title="Activity 7.4.2">Activity 7.4.2</a> is the following important conditional statement:</p>
+<blockquote class="blockquote" id="tAl"><p id="mFG">If the series <span class="process-math">\(\sum_{k = 1}^{\infty} a_k\)</span> converges, then the sequence <span class="process-math">\(\{a_k\}\)</span> of <span class="process-math">\(k\)</span>th terms converges to 0.</p></blockquote>
+<p id="qkg">It is logically equivalent to say that if the sequence <span class="process-math">\(\{a_k\}\)</span> does not converge to 0, then the series <span class="process-math">\(\sum_{k = 1}^{\infty} a_k\)</span> cannot converge. This statement is called the Divergence Test. </p>
+<article class="assemblage assemblage-like" id="DZq"><h4 class="heading"><span class="title">The Divergence Test.</span></h4>
+<p id="Wrp">If <span class="process-math">\(\displaystyle \lim_{k \to \infty} a_k \neq 0\text{,}\)</span> then the series <span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} a_k\)</span> diverges.</p></article><article class="activity project-like" id="Lei"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.3</span><span class="period">.</span>
+</h4>
+<p id="eWZ">Determine if the Divergence Test applies to the following series. If the test does not apply, explain why. If the test does apply, what does it tell us about the series?</p>
+<ol class="lower-alpha cols3">
+<li id="vlq"><p id="QTu"><span class="process-math">\(\displaystyle \sum \frac{k}{k+1}\)</span></p></li>
+<li id="bsz"><p id="xaD"><span class="process-math">\(\displaystyle \sum (-1)^k\)</span></p></li>
+<li id="HzI"><p id="dhM"><span class="process-math">\(\displaystyle \sum \frac{1}{k}\)</span></p></li>
+</ol></article><p id="Cyy"><em class="emphasis">Note well:</em> be very careful with the Divergence Test. This test only tells us what happens to a series if the terms of the corresponding sequence do not converge to 0. If the sequence of the terms of the series does converge to 0, the Divergence Test does not apply: indeed, as we will soon see, a series whose terms go to zero may either converge or diverge.</p></section><section class="subsection" id="fwG"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.4.2</span> <span class="title">The Integral Test</span>
+</h3>
+<p id="iFH">The Divergence Test settles the questions of divergence or convergence of series <span class="process-math">\(\sum a_k\)</span> in which <span class="process-math">\(\lim_{k \to \infty} a_k \neq 0\text{.}\)</span> Determining the convergence or divergence of series <span class="process-math">\(\sum a_k\)</span> in which <span class="process-math">\(\lim_{k \to \infty} a_k = 0\)</span> turns out to be more complicated. Often, we have to investigate the sequence of partial sums or apply some other technique.</p>
+<p id="OMQ">Next, we consider the <dfn class="terminology">harmonic series</dfn> <a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-114" id="fn-114"><sup> 114 </sup></a></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{1}{k}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The first 9 partial sums of this series are shown following.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="AnM">
+\begin{align*}
+\sum_{k=1}^{1} \frac{1}{k} \amp= 1 \amp \sum_{k=1}^{4} \frac{1}{k} \amp= 2.083333333 \amp \sum_{k=1}^{7} \frac{1}{k} \amp= 2.592857143\\
+\sum_{k=1}^{2} \frac{1}{k} \amp= 1.5 \amp \sum_{k=1}^{5} \frac{1}{k} \amp= 2.283333333 \amp \sum_{k=1}^{8} \frac{1}{k} \amp= 2.717857143\\
+\sum_{k=1}^{3} \frac{1}{k} \amp= 1.833333333 \amp \sum_{k=1}^{6} \frac{1}{k} \amp= 2.450000000 \amp \sum_{k=1}^{9} \frac{1}{k} \amp= 2.828968254
+\end{align*}
+</div>
+<p id="uTZ">This information alone doesn't seem to be enough to tell us if the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\)</span> converges or diverges. The partial sums could eventually level off to some fixed number or continue to grow without bound. Even if we look at larger partial sums, such as <span class="process-math">\(\sum_{n=1}^{1000} \frac{1}{k} \approx 7.485470861\text{,}\)</span> the result isn't particularly convincing one way or another. The Integral Test is one way to determine whether or not the harmonic series converges, and we explore this test further in the next activity.</p>
+<article class="activity project-like" id="NDp"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span>
+</h4>
+<p id="QxV">Consider the harmonic series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\text{.}\)</span> Recall that the harmonic series will converge provided that its sequence of partial sums converges. The <span class="process-math">\(n\)</span>th partial sum <span class="process-math">\(S_n\)</span> of the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="paF">
+\begin{align*}
+S_n =\mathstrut \amp  \sum_{k=1}^{n} \frac{1}{k}\\
+=\mathstrut \amp  1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n}\\
+=\mathstrut \amp  1(1) + (1)\left(\frac{1}{2}\right) + (1)\left(\frac{1}{3}\right) + \cdots + (1)\left(\frac{1}{n}\right)\text{.}
+\end{align*}
+</div>
+<p id="wFe">Through this last expression for <span class="process-math">\(S_n\text{,}\)</span> we can visualize this partial sum as a sum of areas of rectangles with heights <span class="process-math">\(\frac{1}{m}\)</span> and bases of length 1, as shown in <a href="" class="xref" data-knowl="./knowl/F-8-3-4-Integral-Test.html" title="Figure 7.4.2">Figure 7.4.2</a>, which uses the 9th partial sum.</p>
+<figure class="figure figure-like" id="ITw"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="external/images/8_3_Integral_test1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.4.2<span class="period">.</span></span><span class="space"> </span>A picture of the 9th partial sum of the harmonic series as a sum of areas of rectangles.</figcaption></figure><p id="cMn">The graph of the continuous function <span class="process-math">\(f\)</span> defined by <span class="process-math">\(f(x) = \frac{1}{x}\)</span> is overlaid on this plot.</p>
+<ol class="lower-alpha">
+<li id="IjC"><p id="qfY">Explain how this picture represents a particular Riemann sum.</p></li>
+<li id="oqL"><p id="Wnh">What is the definite integral that corresponds to the Riemann sum you considered in (a)?</p></li>
+<li id="UxU"><p id="Cuq">Which is larger, the definite integral in (b), or the corresponding partial sum <span class="process-math">\(S_9\)</span> of the series? Why?</p></li>
+<li id="AFd"><p id="iBz">If instead of considering the 9th partial sum, we consider the <span class="process-math">\(n\)</span>th partial sum, and we let <span class="process-math">\(n\)</span> go to infinity, we can then compare the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\)</span> to the improper integral <span class="process-math">\(\int_{1}^{\infty} \frac{1}{x} \ dx\text{.}\)</span> Which of these quantities is larger? Why?</p></li>
+<li id="gMm"><p id="OII">Does the improper integral <span class="process-math">\(\int_{1}^{\infty} \frac{1}{x} \ dx\)</span> converge or diverge? What does that result, together with your work in (d), tell us about the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\text{?}\)</span></p></li>
+</ol></article><p id="bbi">The ideas from <a href="" class="xref" data-knowl="./knowl/act-8-3-4.html" title="Activity 7.4.4">Activity 7.4.4</a> and <a href="" class="xref" data-knowl="./knowl/PA-8-3C.html" title="Preview Activity 7.4.1">Preview Activity 7.4.1</a> hold more generally. Suppose that <span class="process-math">\(f\)</span> is a continuous decreasing function and that <span class="process-math">\(a_k = f(k)\)</span> for each value of <span class="process-math">\(k\text{.}\)</span> Consider the corresponding series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{.}\)</span> The partial sum</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/act-8-3-4.html ./knowl/PA-8-3C.html ./knowl/F-8-3-Integral-Test.html">
+\begin{equation*}
+S_n = \sum_{k=1}^{n} a_k
+\end{equation*}
+</div>
+<p class="continuation">can always be viewed as a left hand Riemann sum of <span class="process-math">\(f(x)\text{,}\)</span> using rectangles with bases of width 1 and heights given by the values <span class="process-math">\(a_k\text{.}\)</span> A representative picture is shown at left in <a href="" class="xref" data-knowl="./knowl/F-8-3-Integral-Test.html" title="Figure 7.4.3">Figure 7.4.3</a>. Since <span class="process-math">\(f\)</span> is a decreasing function, we have that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/act-8-3-4.html ./knowl/PA-8-3C.html ./knowl/F-8-3-Integral-Test.html">
+\begin{equation*}
+S_n \gt \int_1^n f(x) \ dx\text{.}
+\end{equation*}
+</div>
+<p id="Hir">Taking the limit as <span class="process-math">\(n\)</span> goes to infinity shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} a_k \gt \int_{1}^{\infty} f(x) \ dx\text{.}
+\end{equation*}
+</div>
+<p id="npA">Therefore, if the improper integral <span class="process-math">\(\int_{1}^{\infty} f(x) \ dx\)</span> diverges, so does the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{.}\)</span></p>
+<figure class="figure figure-like" id="rZt"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:48%;"><img src="external/images/8_3_Integral_test1.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:48%;"><img src="external/images/8_3_Integral_test2.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.4.3<span class="period">.</span></span><span class="space"> </span>Comparing an improper integral to a series</figcaption></figure><p id="TwJ">What's more, if we look at the right hand Riemann sums of <span class="process-math">\(f\)</span> on <span class="process-math">\([1,n]\)</span> as shown at right in <a href="" class="xref" data-knowl="./knowl/F-8-3-Integral-Test.html" title="Figure 7.4.3">Figure 7.4.3</a>, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/F-8-3-Integral-Test.html">
+\begin{equation*}
+\int_{1}^{\infty} f(x) \ dx \gt  \sum_{k=2}^{\infty} a_k\text{.}
+\end{equation*}
+</div>
+<p id="zDS">So if <span class="process-math">\(\int_{1}^{\infty} f(x) \ dx\)</span> converges, then so does <span class="process-math">\(\sum_{k=2}^{\infty} a_k\text{,}\)</span> which also means that the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> also converges. Our preceding discussion has demonstrated the truth of the Integral Test. </p>
+<article class="assemblage assemblage-like" id="kgz"><h4 class="heading"><span class="title">The Integral Test.</span></h4>
+<p id="fLb">Let <span class="process-math">\(f\)</span> be a real valued function and assume <span class="process-math">\(f\)</span> is decreasing and positive for all <span class="process-math">\(x\)</span> larger than some number <span class="process-math">\(c\text{.}\)</span> Let <span class="process-math">\(a_k = f(k)\)</span> for each positive integer <span class="process-math">\(k\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="ggA"><p id="Jtd">If the improper integral <span class="process-math">\(\int_{c}^{\infty} f(x) \, dx\)</span> converges, then the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> converges.</p></li>
+<li id="MnJ"><p id="pAm">If the improper integral <span class="process-math">\(\int_{c}^{\infty} f(x) \, dx\)</span> diverges, then the series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> diverges.</p></li>
+</ol></article><p id="LSk">The Integral Test compares a given infinite series to a natural, corresponding improper integral and says that the infinite series and corresponding improper integral both have the same convergence status. In the next activity, we apply the Integral Test to determine the convergence or divergence of a class of important series.</p>
+<article class="activity project-like" id="cqO"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span>
+</h4>
+<p id="rzM">The series <span class="process-math">\(\sum \frac{1}{k^p}\)</span> are special series called <span class="process-math">\(p\)</span>-series. We have already seen that the <span class="process-math">\(p\)</span>-series with <span class="process-math">\(p=1\)</span> (the harmonic series) diverges. We investigate the behavior of other <span class="process-math">\(p\)</span>-series in this activity.</p>
+<ol class="lower-alpha">
+<li id="Dek"><p id="ETx">Evaluate the improper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^2} \ dx\text{.}\)</span> Does the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2}\)</span> converge or diverge? Explain.</p></li>
+<li id="jlt"><p id="laG">Evaluate the improper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^p} \ dx\)</span> where <span class="process-math">\(p \gt 1\text{.}\)</span> For which values of <span class="process-math">\(p\)</span> can we conclude that the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^p}\)</span> converges?</p></li>
+<li id="PsC"><p id="RhP">Evaluate the improper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^p} \ dx\)</span> where <span class="process-math">\(p \lt 1\text{.}\)</span> What does this tell us about the corresponding <span class="process-math">\(p\)</span>-series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^p}\text{?}\)</span></p></li>
+<li id="vzL">
+<p id="xoY">Summarize your work in this activity by completing the following statement.</p>
+<blockquote class="blockquote" id="mfZ"><p id="dwh">The <span class="process-math">\(p\)</span>-series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^p}\)</span> converges if and only if <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p></blockquote>
+</li>
+</ol></article><article class="definition definition-like" id="definition-25"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">The <span class="process-math">\(p\)</span>-series.</span>
+</h4> For any real number <span class="process-math">\(p\text{,}\)</span> the series<div class="displaymath process-math" data-contains-math-knowls="" id="men-49">
+\begin{equation}
+\sum_{k=1}^{\infty} \frac{1}{k^p}\tag{7.14}
+\end{equation}
+</div>is called a <dfn class="terminology"><span class="process-math">\(p\)</span>-series</dfn>.</article><article class="assemblage assemblage-like" id="assemblage-60"><h4 class="heading"><span class="title">Convergence of <span class="process-math">\(p\)</span>-series.</span></h4>
+<p id="p-8196">The series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{1}{k^p}
+\end{equation*}
+</div>
+<p class="continuation">converges if <span class="process-math">\(p &gt; 1\)</span> and diverges if <span class="process-math">\(0 &lt; p \leq 1\text{.}\)</span></p></article></section><section class="subsection" id="XSi"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.4.3</span> <span class="title">Summary</span>
+</h3>
+<ul id="p-8197" class="disc">
+<li id="li-4844"><p id="p-derived-li-4844"><em class="emphasis">Divergence Test:</em> For a series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> to converge, the <span class="process-math">\(k\)</span>th term <span class="process-math">\(a_k\)</span> must satisfy <span class="process-math">\(a_k \longrightarrow 0\)</span> as <span class="process-math">\(k \longrightarrow \infty\text{.}\)</span></p></li>
+<li id="li-4845"><p id="p-derived-li-4845"><em class="emphasis">Integral Test:</em> For a series <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> of positive terms <span class="process-math">\(a_k\text{,}\)</span> if <span class="process-math">\(a_k = f(k)\)</span> for a continuous, decreasing function <span class="process-math">\(f\)</span> (for all <span class="process-math">\(k \geq K\text{,}\)</span> some <span class="process-math">\(K\)</span>), then <span class="process-math">\(\sum_{k=1}^{\infty} a_k\)</span> and <span class="process-math">\(\int_K^{\infty} f(x) \ dx\)</span> both converge or both diverge.</p></li>
+</ul></section><section class="exercises" id="HXz"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">7.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="pME"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Convergence of a series and its sequence.</span>
+</h4>
+<div id="webwork-188" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="188" data-sourceFilePath="Library/maCalcDB/setSeries4Geometric/ns8_2_9.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8198">Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_n = \frac{8n}{8n+3}.
+\end{equation*}
+</div>
+<p class="continuation">For the following answer blanks, decide whether the given sequence or series is convergent or divergent.  If convergent, enter the limit (for a sequence) or the sum (for a series).  If divergent, enter 'infinity' if it diverges to <span class="process-math">\(\infty\text{,}\)</span> '-infinity' if it diverges to <span class="process-math">\(- \infty\)</span> or 'DNE' otherwise.</p>
+<p id="p-8199">(a) The series <span class="process-math">\(\displaystyle
+\sum_{n=1}^\infty \frac{8n}{8n+3}\text{.}\)</span> <span class="fillin" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-8200">(b) The sequence <span class="process-math">\(\displaystyle
+\biggl \lbrace \frac{8n}{8n+3} \biggr \rbrace\text{.}\)</span> <span class="fillin" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-188')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTC"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Convergence of a sequence and related series.</span>
+</h4>
+<div id="webwork-189" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="189" data-sourceFilePath="Library/Rochester/setSeries3Convergent/ns8_2_9d.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8203">Given:</p>
+<p id="p-8204"><span class="process-math">\(\displaystyle A_n = \frac{9^{n}}{90}\)</span></p>
+<p id="p-8205">Determine:</p>
+<p id="p-8206">(a) whether <span class="process-math">\(\displaystyle \sum_{n=1}^\infty( A_n )\)</span> is convergent. <span class="fillin" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+<p id="p-8207">(b) whether <span class="process-math">\(\lbrace A_n \rbrace\)</span>is convergent. <span class="fillin" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+<p id="p-8208">If convergent, enter the limit of convergence. If not, enter DIV.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-189')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTO"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">What does the integral test say?</span>
+</h4>
+<div id="webwork-190" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="190" data-sourceFilePath="Library/Hope/Calc2/APEX_08_03_Integral_test/Reading_Q_02.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8211">Suppose <span class="process-math">\(a(x)\)</span> is a continuous, positive, decreasing function for <span class="process-math">\(x\)</span> in the interval <span class="process-math">\(\lbrack 1, \infty)\text{,}\)</span> and <span class="process-math">\(\lbrace a_n \rbrace\)</span> is the sequence defined by <span class="process-math">\(a_n = a(n)\)</span> for every natural number <span class="process-math">\(n\text{.}\)</span></p>
+<ol id="p-8212" class="lower-alpha">
+<li id="li-4846"><p id="p-8213">If <span class="process-math">\(\displaystyle{ \sum_{n=1}^{\infty} a_n }\)</span> diverges, then <span class="process-math">\(\displaystyle{\int_{1}^{\infty} a(x) \, dx }\)</span> <ul style="list-style:circle;">
+<li id="li-4847"><p id="p-8214">choose</p></li>
+<li id="li-4848"><p id="p-8215">converges</p></li>
+<li id="li-4849"><p id="p-8216">diverges</p></li>
+<li id="li-4850"><p id="p-8217">cannot be determined</p></li>
+</ul> because <ul style="list-style:circle;">
+<li id="li-4851"><p id="p-8218"><span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} a_n \lt  a_1 + \int_{1}^{\infty} a(x) \, dx\text{.}\)</span></p></li>
+<li id="li-4852"><p id="p-8219"><span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} a_n \lt  \int_{1}^{\infty} a(x) \, dx\text{.}\)</span></p></li>
+<li id="li-4853"><p id="p-8220"><span class="process-math">\(\displaystyle \int_{0}^{\infty} a(x) \, dx \lt  \sum_{n=1}^{\infty} a_n\text{.}\)</span></p></li>
+<li id="li-4854"><p id="p-8221"><span class="process-math">\(\displaystyle \int_{1}^{\infty} a(x) \, dx \lt  \sum_{n=1}^{\infty} a_n\text{.}\)</span></p></li>
+</ul></p></li>
+<li id="li-4855"><p id="p-8222">If <span class="process-math">\(\displaystyle{ \sum_{n=1}^{\infty} a_n }\)</span> converges, then <span class="process-math">\(\displaystyle{\int_{1}^{\infty} a(x) \, dx }\)</span> <ul style="list-style:circle;">
+<li id="li-4856"><p id="p-8223">choose</p></li>
+<li id="li-4857"><p id="p-8224">converges</p></li>
+<li id="li-4858"><p id="p-8225">diverges</p></li>
+<li id="li-4859"><p id="p-8226">cannot be determined</p></li>
+</ul> because <ul style="list-style:circle;">
+<li id="li-4860"><p id="p-8227"><span class="process-math">\(\displaystyle \int_{1}^{\infty} a(x) \, dx \lt  \sum_{n=1}^{\infty} a_n\text{.}\)</span></p></li>
+<li id="li-4861"><p id="p-8228"><span class="process-math">\(\displaystyle \int_{0}^{\infty} a(x) \, dx \lt  \sum_{n=1}^{\infty} a_n\text{.}\)</span></p></li>
+<li id="li-4862"><p id="p-8229"><span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} a_n \lt  \int_{1}^{\infty} a(x) \, dx\text{.}\)</span></p></li>
+<li id="li-4863"><p id="p-8230"><span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} a_n \lt  a_1 + \int_{1}^{\infty} a(x) \, dx\text{.}\)</span></p></li>
+</ul></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-190')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTN"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Convergence of an integral and a related series.</span>
+</h4>
+<div id="webwork-191" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="191" data-sourceFilePath="Library/Rochester/setSeries5IntegralTest/ur_sr_5_12.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8233">Compute the value of the following improper integral.  If it converges, enter its value.  Enter <em class="alert">infinity</em> if it diverges to <span class="process-math">\(\infty\text{,}\)</span> and <em class="alert">-infinity</em> if it diverges to <span class="process-math">\(-\infty\text{.}\)</span>  Otherwise, enter <em class="alert">diverges.</em></p>
+<p id="p-8234"><span class="process-math">\(\displaystyle \int_{1}^{\infty} \frac{3 \, dx}{x^2 + 1}\)</span> = <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-8235">Does the series <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty} \frac{3}{n^2 + 1}\)</span> converge or diverge? <ul style="list-style:circle;">
+<li id="li-4865"><p id="p-8237">converges</p></li>
+<li id="li-4866"><p id="p-8238">diverges to +infinity</p></li>
+<li id="li-4867"><p id="p-8239">diverges to -infinity</p></li>
+<li id="li-4868"><p id="p-8240">diverges</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-191')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTb"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Applying the integral test.</span>
+</h4>
+<div id="webwork-192" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="192" data-sourceFilePath="Library/Michigan/Chap9Sec3/Q03.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8243">Use the integral test to determine whether each of the following series converges or diverges.  For each, fill in the integrand and the value of the integral.  Enter <em class="alert">diverges</em> if the integral diverges.  Then indicate the convergence of the sum.</p>
+<p id="p-8244"><em class="alert">A.</em> <span class="process-math">\(\sum\limits_{n=1}^{\infty} {1\over 4^n}\)</span></p>
+<p id="p-8245">Compare with <span class="process-math">\(\int_c^{\infty}\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(dn\)</span> = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-8246"><em class="emphasis">(Evaluate your integral with bottom limit <span class="process-math">\(c = 1\text{.}\)</span>)</em></p>
+<p id="p-8247">This sum <ul style="list-style:circle;">
+<li id="li-4869"><p id="p-8248">converges</p></li>
+<li id="li-4870"><p id="p-8249">diverges</p></li>
+</ul></p>
+<p id="p-8250"><em class="alert">B.</em> <span class="process-math">\(\sum\limits_{n=1}^{\infty} {n+7\over n^2 + 14 n + 9}\)</span></p>
+<p id="p-8251">Compare with <span class="process-math">\(\int_c^{\infty}\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(dn\)</span> = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-8252"><em class="emphasis">(Evaluate your integral with bottom limit <span class="process-math">\(c = 1\text{.}\)</span>)</em></p>
+<p id="p-8253">This sum <ul style="list-style:circle;">
+<li id="li-4871"><p id="p-8254">converges</p></li>
+<li id="li-4872"><p id="p-8255">diverges</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-192')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTw"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Applying the integral test on an exponential series.</span>
+</h4>
+<div id="webwork-193" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="193" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_3_19.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8260">Compute the value of the following improper integral.  If it is divergent, type "Diverges" or "D".</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^{\infty} 2 x^{2} e^{-x^{3}}\,dx
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-8261">Using the improper integral from above and the Integral Test, determine whether the following series <em class="emphasis">converges</em> or <em class="emphasis">diverges.</em>  Answer "Converges" or "Diverges."</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-8262">
+\begin{equation*}
+\sum_{n=1}^{\infty} 2 n^{2} e^{-n^{3}}
+\end{equation*}
+</div>
+<p class="continuation">Answer: <ul style="list-style:circle;">
+<li id="li-4874"><p id="p-8264">Converges</p></li>
+<li id="li-4875"><p id="p-8265">Diverges</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-193')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-347"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-8268">Select the series below that diverge by the divergence test.</p>
+<ol class="lower-alpha">
+<li id="li-4876"><p id="p-8269"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{1}{k}\)</span></p></li>
+<li id="li-4877"><p id="p-8270"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{k^2}{k+1}\)</span></p></li>
+<li id="li-4878"><p id="p-8271"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \sin k\)</span></p></li>
+<li id="li-4879"><p id="p-8272"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \sin (\pi k)\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-348"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-8281">Select the series below whose terms satisfy the conditions to apply the integral test.</p>
+<ol class="lower-alpha">
+<li id="li-4888"><p id="p-8282"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{1}{k}\)</span></p></li>
+<li id="li-4889"><p id="p-8283"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{k^2}{k+1}\)</span></p></li>
+<li id="li-4890"><p id="p-8284"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \sin k\)</span></p></li>
+<li id="li-4891"><p id="p-8285"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{\sin k + 1}{k^2}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-349"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-8290">Give an example of a series <span class="process-math">\(\sum_{k=a}^{\infty} a_k\text{,}\)</span> with a function <span class="process-math">\(f(x)\)</span> such that <span class="process-math">\(f(k)=a_k\)</span> for all whole numbers <span class="process-math">\(k\text{,}\)</span> such that</p>
+<ul class="disc">
+<li id="li-4896"><p id="p-8291"><span class="process-math">\(\int_a^{\infty} f(x) \ dx\)</span> diverges, while</p></li>
+<li id="li-4897"><p id="p-8292"><span class="process-math">\(\sum_{k=a}^{\infty} a_k\)</span> converges.</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-350"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-8297">Does the series <span class="process-math">\(\sum_{k=2}^{\infty} \frac{k^2}{3k^2 + \sqrt{k}}\)</span> converge?</p></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-114"><div class="fn">This series is called harmonic because each term in the series after the first is the harmonic mean of the term  before it and the term after it. The harmonic mean of two numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is <span class="process-math">\(\frac{2ab}{a+b}\text{.}\)</span> See “What's Harmonic about the Harmonic Series”, by David E. Kullman (in the <span class="booktitle">College Mathematics Journal</span>, Vol. 32, No. 3 (May, 2001), 201-203) for an interesting discussion of the harmonic mean.</div></div>
+</div></main>
+</div>
+</body>
+</html>

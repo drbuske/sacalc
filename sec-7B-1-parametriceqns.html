@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Parametric Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="C-7.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7B-2-calc-parametric.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="C-7.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7B-2-calc-parametric.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="active">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="KjB"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.1</span> <span class="title">Parametric Equations</span>
+</h2>
+<article class="objectives goal-like" id="LYP"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Jej"><p id="tVl">What types of equations can be used to describe motion in multiple dimensions as a function of time?</p></li>
+<li id="pls"><p id="acu">How are basic curves, such as lines and circles, parametrically described?</p></li>
+<li id="VsB"><p id="GjD">How do parametric equations help in the modeling process?</p></li>
+</ul></article><section class="introduction" id="sfY"><p id="CjE">Up to this point, we have been representing a graph by a single equation involving two variables such as <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> However, some graphs are not well described by such equations. In this section, we study situations in which it is useful to introduce a third variable called a <dfn class="terminology">parameter</dfn> to represent a curve in the plane. For example, if the parameter is <span class="process-math">\(t\)</span> (a common choice), then <span class="process-math">\(t\)</span> might represent time.  Then <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are defined as functions of time, and <span class="process-math">\((x(t),y(t))\)</span> can describe the position in the plane of a given object as it moves along a curved path.  This process is commonly called <dfn class="terminology">parameterization</dfn> and is the basis for our study of parametric curves.</p>
+<article class="exploration project-like" id="Mox"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span>
+</h3>
+<p id="ghp">A sea gull swoops down and grabs your keys while you are at the beach.  The sea gull drops the keys from a height of 256 feet above the ground.  Suppose the wind is blowing sideways at a speed of 4 feet per second, so the horizontal component of the keys is give by <span class="process-math">\(x=4t\)</span> where <span class="process-math">\(t\)</span> is time (in seconds).  The vertical component of the keys with no air resistance at time <span class="process-math">\(t\)</span> is given by <span class="process-math">\(y=-16t^2+256\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="ykS">
+<p id="Pjd">Fill out <a href="" class="xref" data-knowl="./knowl/keyposition.html" title="Table 9.1.1: Position of keys at various times t">Table 9.1.1</a>.</p>
+<p id="p-9682"><figure class="table table-like" id="keyposition"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1.1<span class="period">.</span></span><span class="space"> </span>Position of keys at various times <span class="process-math">\(t\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t1 lines">Time <span class="process-math">\(t\)</span> (sec)</td>
+<td class="c m b1 r0 l0 t1 lines">Horizontal position (feet)<br><span class="process-math">\(x=4t\)</span>
+</td>
+<td class="c m b1 r0 l0 t1 lines">Vertical position (feet)<br><span class="process-math">\(y=-16t^2+256\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure></p>
+</li>
+<li id="esb"><p id="vqm">Sketch a graph of the path of the keys.  Draw arrows to represent the direction of their path. <figure class="figure figure-like" id="pathkeys"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/pathkeyspic.svg" role="img" class="contained" alt="Path of the Keys."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.2<span class="period">.</span></span><span class="space"> </span>Path of the keys in <a href="" class="xref" data-knowl="./knowl/PA-7B-1.html" title="Preview Activity 9.1.1">Preview Activity 9.1.1</a>.</figcaption></figure></p></li>
+<li id="Kzk"><p id="bxv">Determine an equation that <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> satisfy for <span class="process-math">\(0 \leq t \leq 4\text{.}\)</span></p></li>
+<li id="qGt"><p id="HEE">Suppose the wind now blows at 2 feet per second.  Determine <span class="process-math">\(x\)</span> in terms of <span class="process-math">\(t\text{.}\)</span>  Then, determine an equation that <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> satisfy for <span class="process-math">\(0 \leq t \leq 4\text{.}\)</span></p></li>
+<li id="WNC"><p id="nLN">When do the keys hit the ground in both instances?</p></li>
+</ol></article></section><section class="subsection" id="qqL"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.1.1</span> <span class="title">Parametric Equations and Their Graphs</span>
+</h3>
+<p id="qUi">Consider the orbit of Earth around the Sun. Our year lasts approximately 365.25 days, but for this discussion we will use 365 days. On January 1 of each year, the physical location of Earth with respect to the Sun is nearly the same, except for leap years, when the lag introduced by the extra <span class="process-math">\(\frac{1}{4}\)</span> day of orbiting time is built into the calendar. We call January 1 "day 1" of the year. Then, for example, day 31 is January 31, day 59 is February 28, and so on.</p>
+<p id="ruv">The number of the day in a year can be considered a variable that determines Earth’s position in its orbit. As Earth revolves around the Sun, its physical location changes relative to the Sun. After one full year, we are back where we started, and a new year begins. According to Kepler’s laws of planetary motion, the shape of the orbit is elliptical, with the Sun at one focus of the ellipse.</p>
+<figure class="figure figure-like" id="earthorbit"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/earthorbitA.jpg" class="contained" alt="Earth's orbit."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.3<span class="period">.</span></span><span class="space"> </span>Earth's orbit around the sun in one year.</figcaption></figure><p id="p-9689"><a href="" class="xref" data-knowl="./knowl/earthorbit.html" title="Figure 9.1.3">Figure 9.1.3</a> depicts Earth’s orbit around the Sun during one year. The point labeled <span class="process-math">\(F_2\)</span> is one of the foci of the ellipse; the other focus is occupied by the Sun. If we superimpose coordinate axes over this graph, then we can assign ordered pairs to each point on the ellipse (<a href="" class="xref" data-knowl="./knowl/earthorbitgrid.html" title="Figure 9.1.4">Figure 9.1.4</a>). Then each <span class="process-math">\(x\)</span> value on the graph is a value of position as a function of time, and each <span class="process-math">\(y\)</span> value is also a value of position as a function of time. Therefore, each point on the graph corresponds to a value of Earth’s position as a function of time.</p>
+<figure class="figure figure-like" id="earthorbitgrid"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/earthorbitB.jpg" class="contained" alt="Earth's orbit on a grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.4<span class="period">.</span></span><span class="space"> </span>Coordinate axes superimposed on the orbit of Earth.</figcaption></figure><p id="p-9690">We can determine the functions for <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\text{,}\)</span> thereby parameterizing the orbit of Earth around the Sun. The variable <span class="process-math">\(t\)</span> is an independent parameter and, in this context, represents time relative to the beginning of each year.</p>
+<article class="definition definition-like" id="ipn"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h4>
+<p id="iZh">If <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are continuous functions of <span class="process-math">\(t\)</span> on an interval <span class="process-math">\(I\text{,}\)</span> then the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=x(t) \text{ and } y=y(t)
+\end{equation*}
+</div>
+<p class="continuation">are called parametric equations and <span class="process-math">\(t\)</span> is called the parameter.  The set of points <span class="process-math">\((x,y)\)</span> obtained as <span class="process-math">\(t\)</span> varies over the interval <span class="process-math">\(I\)</span> is called the <dfn class="terminology">graph of the parametric equations</dfn>.  The graph of parametric equations is called a <dfn class="terminology">parametric curve</dfn> or <em class="emphasis">plane curve</em>, and is denoted by <span class="process-math">\(C\text{.}\)</span></p></article><article class="example example-like" id="fRG"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Graphing a Parametrically Defined Curve.</span>
+</h4>
+<p id="Wcv">Sketch the curves described by the following parametric equations.</p>
+<ol class="lower-alpha">
+<li id="ParaCurveA"><p id="p-9693"><span class="process-math">\(x(t)=t-1\text{,}\)</span> <span class="process-math">\(y(t)=2t+4\text{,}\)</span> <span class="process-math">\(-3 \leq t \leq 2\)</span></p></li>
+<li id="ParaCurveB"><p id="p-9694"><span class="process-math">\(x(t)=t^2-3\text{,}\)</span> <span class="process-math">\(y(t)=2t+1\text{,}\)</span> <span class="process-math">\(-2 \leq t \leq 3\)</span></p></li>
+<li id="ParaCurveC"><p id="p-9695"><span class="process-math">\(x(t)=4\cos t\text{,}\)</span> <span class="process-math">\(y(t)=4\sin t\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 2\pi\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-QII" id="QII"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-QII"><div class="solution solution-like"><ol id="Fek" class="lower-alpha">
+<li id="li-5592">
+<p id="p-9697">To create a graph of this curve, first set up a table of values. Since the independent variable in both  <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> is <span class="process-math">\(t\text{,}\)</span> let <span class="process-math">\(t\)</span> appear in the first column. Then <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> will appear in the second and third columns of <a href="" class="xref" data-knowl="./knowl/firstgraphparametric.html" title="Table 9.1.7">Table 9.1.7</a>.</p>
+<figure class="table table-like" id="firstgraphparametric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(t\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(x(t)\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(y(t)\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-3\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-3\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(8\)</span></td>
+</tr>
+</table></div></figure><p id="p-9698">The second and third columns in <a href="" class="xref" data-knowl="./knowl/firstgraphparametric.html" title="Table 9.1.7">Table 9.1.7</a> provide a set of points to be plotted. The graph of these points appears in <a href="" class="xref" data-knowl="./knowl/firstgraphparametricpic.html" title="Figure 9.1.8">Figure 9.1.8</a>. The arrows on the graph indicate the <dfn class="terminology">orientation</dfn> of the graph, that is, the direction that a point moves on the graph as <span class="process-math">\(t\)</span> varies from −3 to 2.</p>
+<figure class="figure figure-like" id="firstgraphparametricpic"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS74a.jpg" class="contained" alt="Plane Curve for part a."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.8<span class="period">.</span></span><span class="space"> </span>Graph of the plane curve described by the parametric equations in <a href="" class="xref" data-knowl="./knowl/GraphingParametricCurve1.html" title="Example 9.1.6: Graphing a Parametrically Defined Curve">Example 9.1.6</a><a href="" class="xref" data-knowl="./knowl/ParaCurveA.html" title="Item a">a</a>.</figcaption></figure>
+</li>
+<li id="li-5593">
+<p id="p-9699">To create a graph of the curve, again set up a table of values as in <a href="" class="xref" data-knowl="./knowl/secondgraphparametric.html" title="Table 9.1.9">Table 9.1.9</a>.</p>
+<figure class="table table-like" id="secondgraphparametric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1.9<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(t\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(x(t)\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(y(t)\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-3\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-3\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(7\)</span></td>
+</tr>
+</table></div></figure><p id="p-9700">The second and third columns in <a href="" class="xref" data-knowl="./knowl/secondgraphparametric.html" title="Table 9.1.9">Table 9.1.9</a> provide a set of points to be plotted ( <a href="" class="xref" data-knowl="./knowl/secondgraphparametricpic.html" title="Figure 9.1.10">Figure 9.1.10</a>).  The first point on the graph (corresponding to <span class="process-math">\(t=-2\)</span>) has coordinates <span class="process-math">\((1,-3)\text{,}\)</span> and the last point (corresponding to <span class="process-math">\(t=3\)</span>)  has coordinates <span class="process-math">\((6,7)\text{.}\)</span>  As <span class="process-math">\(t\)</span> progresses from -2 to 3, the point on the curve travels along a parabola.</p>
+<figure class="figure figure-like" id="secondgraphparametricpic"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS74b.jpg" class="contained" alt="Plane Curve for part b."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.10<span class="period">.</span></span><span class="space"> </span>Graph of the plane curve described by the parametric equations in <a href="" class="xref" data-knowl="./knowl/GraphingParametricCurve1.html" title="Example 9.1.6: Graphing a Parametrically Defined Curve">Example 9.1.6</a><a href="" class="xref" data-knowl="./knowl/ParaCurveB.html" title="Item b">b</a>.</figcaption></figure>
+</li>
+<li id="li-5594">
+<p id="p-9701">In this case, use multiples of <span class="process-math">\(\frac{\pi}{6}\)</span> for <span class="process-math">\(t\)</span> and create the table of values found in <a href="" class="xref" data-knowl="./knowl/thirdgraphparametric.html" title="Table 9.1.11">Table 9.1.11</a>.</p>
+<figure class="table table-like" id="thirdgraphparametric"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1.11<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(t\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(x(t)\)</span></td>
+<td class="c m b1 r0 l0 t1 lines"><span class="process-math">\(y(t)\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{6}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3}\approx 3.5\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{3}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3}\approx 3.5\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{2}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{2\pi}{3}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3}\approx 3.5\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{5\pi}{6}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3}\approx -3.5\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\pi\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{7\pi}{6}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3}\approx -3.5\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{4\pi}{3}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3}\approx -3.5\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{3\pi}{2}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{5\pi}{3}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3}\approx -3.5\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{11\pi}{6}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3}\approx 3.5\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(2\pi\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+</table></div></figure><p id="p-9702">The graph of this plane curve appears in <a href="" class="xref" data-knowl="./knowl/thirdgraphparametricpic.html" title="Figure 9.1.12">Figure 9.1.12</a>.</p>
+<figure class="figure figure-like" id="thirdgraphparametricpic"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS74c.jpg" class="contained" alt="Plane Curve for part c."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.12<span class="period">.</span></span><span class="space"> </span>Graph of the plane curve described by the parametric equations in <a href="" class="xref" data-knowl="./knowl/GraphingParametricCurve1.html" title="Example 9.1.6: Graphing a Parametrically Defined Curve">Example 9.1.6</a><a href="" class="xref" data-knowl="./knowl/ParaCurveC.html" title="Item c">c</a>.</figcaption></figure><p id="p-9703">This is the graph of a circle with radius 4 centered at the origin, with a counterclockwise orientation. The starting point and ending points of the curve both have coordinates <span class="process-math">\((4,0)\text{.}\)</span></p>
+</li>
+</ol></div></div>
+</div></article></section><section class="subsection" id="rtd"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.1.2</span> <span class="title">Eliminating the Parameter</span>
+</h3>
+<p id="p-9704">To better understand the graph of a curve represented parametrically, it is useful to rewrite the two equations as a single equation relating the variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Then we can apply any previous knowledge of equations of curves in the plane to identify the curve. For example, the equations describing the plane curve in <a href="" class="xref" data-knowl="./knowl/GraphingParametricCurve1.html" title="Example 9.1.6: Graphing a Parametrically Defined Curve">Example 9.1.6</a><a href="" class="xref" data-knowl="./knowl/ParaCurveB.html" title="Item b">b</a>. are</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/GraphingParametricCurve1.html ./knowl/ParaCurveB.html ./knowl/secondgraphparametricpic.html">
+\begin{equation*}
+x(t)=t^2-3, \ y(t)=2t+1, \ -2 \leq t \leq 3.
+\end{equation*}
+</div>
+<p class="continuation">Solving the second equation for <span class="process-math">\(t\)</span> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/GraphingParametricCurve1.html ./knowl/ParaCurveB.html ./knowl/secondgraphparametricpic.html">
+\begin{equation*}
+t=\frac{y-1}{2}.
+\end{equation*}
+</div>
+<p class="continuation">This can be substituted into the first equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/GraphingParametricCurve1.html ./knowl/ParaCurveB.html ./knowl/secondgraphparametricpic.html">
+\begin{equation*}
+x=\left( \frac{x-1}{2}\right)^2-3 = \frac{y^2-2y+1}{4}-3 = \frac{y^2-2y-11}{4}.
+\end{equation*}
+</div>
+<p class="continuation">This equation describes <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y\text{.}\)</span>  These steps give an example of <em class="emphasis">eliminating the parameter</em>. The graph of this function is a parabola opening to the right (see <a href="" class="xref" data-knowl="./knowl/secondgraphparametricpic.html" title="Figure 9.1.10">Figure 9.1.10</a>). Recall that the plane curve started at  <span class="process-math">\((1,-3)\)</span> and ended at <span class="process-math">\((6,7)\text{.}\)</span>  These terminations were due to the restriction on the parameter <span class="process-math">\(t\text{.}\)</span></p>
+<article class="example example-like" id="fRH"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.13</span><span class="period">.</span>
+</h4>
+<p id="Wcb">Eliminate the parameter for each of the plane curves described by the following parametric equations and describe the resulting graph.</p>
+<ol class="lower-alpha">
+<li id="ParaCurveD"><p id="p-9706"><span class="process-math">\(x(t)=\sqrt{2t+4}\text{,}\)</span> <span class="process-math">\(y(t)=2t+1\text{,}\)</span> <span class="process-math">\(-2 \leq t \leq 6\)</span></p></li>
+<li id="ParaCurveE"><p id="p-9707"><span class="process-math">\(x(t)=4\cos t\text{,}\)</span> <span class="process-math">\(y(t)= 3\sin t\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 2\pi\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-QIM" id="QIM"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-QIM"><div class="solution solution-like"><ol id="FeC" class="lower-alpha">
+<li id="li-5597">
+<p id="p-9709">To eliminate the parameter, we can solve either of the equaitons for <span class="process-math">\(t\text{.}\)</span>   For example, solving the first equation for <span class="process-math">\(t\)</span> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fourthparametricgraph.html">
+\begin{equation*}
+t=\frac{x^2-4}{2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Note that when we square both sides it is important to observe that <span class="process-math">\(x \geq 0\text{.}\)</span>  Substituting <span class="process-math">\(t=\frac{x^2-4}{2}\)</span> this into <span class="process-math">\(y(t)\)</span> yields</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fourthparametricgraph.html">
+\begin{equation*}
+y(t)=2t+1=2\left(\frac{x^2-4}{2}\right) + 1 = x^2-3\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is the equation of a parabola opening upward. There is, however, a domain restriction because of the limits on the parameter <span class="process-math">\(t\text{.}\)</span> When <span class="process-math">\(t=-2\text{,}\)</span> <span class="process-math">\(x=\sqrt{2(-2)+4} = 0\text{,}\)</span>  and when <span class="process-math">\(t=6\text{,}\)</span> <span class="process-math">\(x=\sqrt{2(6)+4}=4\text{.}\)</span>  The graph of this plane curve appears in <a href="" class="xref" data-knowl="./knowl/fourthparametricgraph.html" title="Figure 9.1.14">Figure 9.1.14</a>.</p>
+<figure class="figure figure-like" id="fourthparametricgraph"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/ParametricPlotOS77a.jpg" class="contained" alt="Plane Curve for part a."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.14<span class="period">.</span></span><span class="space"> </span>Graph of the plane curve described by the parametric equations in <a href="" class="xref" data-knowl="./knowl/eliminateparameter.html" title="Example 9.1.13">Example 9.1.13</a><a href="" class="xref" data-knowl="./knowl/ParaCurveD.html" title="Item a">a</a>.</figcaption></figure>
+</li>
+<li id="li-5598">
+<p id="p-9710">Sometimes it is necessary to be a bit creative in eliminating the parameter. The parametric equations for this example are</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fifthparametricgraph.html">
+\begin{equation*}
+x(t)=4\cos t \text{ and } y(t)=3\sin t\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Solving either equation for <span class="process-math">\(t\)</span> directly is not advisable because sine and cosine are not one-to-one functions. However, dividing the first equation by 4 and the second equation by 3 (and suppressing the <span class="process-math">\(t\)</span>) gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fifthparametricgraph.html">
+\begin{equation*}
+\cos t = \frac{x}{4} \text{ and } \sin t = \frac{y}{3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(\cos^2 t + \sin^2 t = 1\text{,}\)</span> we then have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fifthparametricgraph.html">
+\begin{equation*}
+\left(\frac{x}{4}\right)^2 + \left( \frac{y}{3}\right)^2 = \frac{x^2}{16} + \frac{y^2}{9} = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is the equation of an ellipse centered at the origin, with semimajor axis 4 and semiminor axis 3 as shown in <a href="" class="xref" data-knowl="./knowl/fifthparametricgraph.html" title="Figure 9.1.15">Figure 9.1.15</a>.</p>
+<figure class="figure figure-like" id="fifthparametricgraph"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/ParametricPlotOS77b.jpg" class="contained" alt="Plane Curve for part b."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.15<span class="period">.</span></span><span class="space"> </span>Graph of the plane curve described by the parametric equations in <a href="" class="xref" data-knowl="./knowl/eliminateparameter.html" title="Example 9.1.13">Example 9.1.13</a><a href="" class="xref" data-knowl="./knowl/ParaCurveE.html" title="Item b">b</a>.</figcaption></figure><p id="p-9711">As <span class="process-math">\(t\)</span> progresses from <span class="process-math">\(0\)</span> to <span class="process-math">\(2\pi\text{,}\)</span> a point on the curve traverses the ellipse once, in a counterclockwise direction. Recall from the section opener that the orbit of Earth around the Sun is also elliptical. This is a perfect example of using parameterized curves to model a real-world phenomenon.</p>
+</li>
+</ol></div></div>
+</div></article><p id="FEi">So far we have seen the method of eliminating the parameter, assuming we know a set of parametric equations that describe a plane curve. What if we would like to start with the equation of a curve and determine a pair of parametric equations for that curve? This is certainly possible, and in fact it is possible to do so in many different ways for a given curve. The process is known as <dfn class="terminology">parameterization of a curve</dfn>.</p>
+<article class="example example-like" id="fRK"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.16</span><span class="period">.</span>
+</h4>
+<p id="WcG">Find two different pairs of parametric equations to represent the graph of <span class="process-math">\(y=2x^2-3\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-QIP" id="QIP"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-QIP"><div class="solution solution-like">
+<p id="FeE">First, it is always possible to parameterize a curve by defining <span class="process-math">\(x(t)=t\text{,}\)</span> then replacing <span class="process-math">\(x\)</span> with <span class="process-math">\(t\)</span> in the equation for <span class="process-math">\(y(t)\text{.}\)</span>  This gives the parameterization</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x(t)=t, \ y(t)=2t^2-3, \ -\infty &lt; t &lt; \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since there is no restriction on the domain in the original graph, there is no restriction on the values of t.</p>
+<p id="p-9715">We have complete freedom in the choice for the second parameterization. For example, we can choose <span class="process-math">\(x(t)=3t-2\text{.}\)</span>  The only thing we need to check is that there are no restrictions imposed on <span class="process-math">\(x\text{;}\)</span> that is, the range of <span class="process-math">\(x(t)\)</span> is all real numbers. This isv indeed the case for <span class="process-math">\(x(t)=3t−2\text{.}\)</span>  Now since <span class="process-math">\(y=2x^2-3\text{,}\)</span>  we can substitute  <span class="process-math">\(x(t)=3t-2\)</span> for <span class="process-math">\(x\text{.}\)</span> This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-342">
+\begin{align*}
+y(t) = \mathstrut \amp 2(3t-2)^2-3\\
+= \mathstrut \amp 2(9t^2-12t+4)-3\\
+= \mathstrut \amp 18t^2-24t+5.
+\end{align*}
+</div>
+<p id="p-9716">Therefore, a second parameterization of the curve can be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x(t)=3t-2, \ y(t)=18t^2-24t+5, \ -\infty &lt; t &lt; \infty\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="TTF"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h4>
+<p id="byg">Candice gets on a Ferris wheel at its lowest point, 3 feet off the ground.  The Ferris wheel spins clockwise to a maximum height of 103 feet, making a complete cycle in 5 minutes.</p>
+<ol class="lower-alpha">
+<li id="XTH"><p id="tBB">Write a set of parametric equations to model Candice’s position.</p></li>
+<li id="li-5600"><p id="p-9719">Where will Candice be in two minutes?</p></li>
+<li id="li-5601"><p id="p-9720">Ten seconds before Candice gets on the Ferris wheel, a bolt falls from the top of the Ferris wheel and falls under the influence of gravity (no air resistance).  When it falls, the bolt has a velocity of 2 feet per second in the direction it is moving at that instant.  Write a set of parametric equations to model the position of the bolt.  Be sure that <span class="process-math">\(t=0\)</span> corresponds to the moment Candice gets on the Ferris wheel.  <em class="emphasis">Hint:</em> We know that <span class="process-math">\(y''(t) = -32\)</span> feet per second.  So <span class="process-math">\(y'(t) = -32t+C_0\)</span> and <span class="process-math">\(y(t) = -16t^2 + C_0t + C_1\text{.}\)</span></p></li>
+</ol></article><article class="activity project-like" id="TTG"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+</h4>
+<p id="bys">The path of an object propelled at an inclination of <span class="process-math">\(\theta\)</span> to the horizontal, with initial speed <span class="process-math">\(v_0\text{,}\)</span> and at height <span class="process-math">\(h\)</span> above the horizontal, is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-343">
+\begin{align*}
+x = \mathstrut \amp (v_0\cos\theta)t\\
+y = \mathstrut \amp -\frac{1}{2}gt^2 + (v_0\sin\theta) t + h
+\end{align*}
+</div>
+<p class="continuation">where <span class="process-math">\(g\)</span> accounts for the effects of gravity and <span class="process-math">\(h\)</span> is the initial height of the object.  Depending on the units involved in the problem, use <span class="process-math">\(g=32\)</span> feet per second squared or <span class="process-math">\(g = 9.8\)</span> meters per second squared.  The equation for <span class="process-math">\(x\)</span> gives horizontal distance, and the equation for <span class="process-math">\(y\)</span> gives the vertical distance. <p id="p-9726">It is the bottom of the ninth inning, with two outs and two men on base. The home team is losing by two runs. The batter swings and hits the baseball at 140 feet per second and at an angle of approximately <span class="process-math">\(45^{\circ}\)</span> to the horizontal, making contact 3 feet above the ground.</p></p>
+<ol class="lower-alpha">
+<li id="XTI"><p id="tBC">Find parametric equations to model the path of the baseball.</p></li>
+<li id="li-5606"><p id="p-9728">Where is the ball after 2 seconds?</p></li>
+<li id="li-5607"><p id="p-9729">How long is the ball in the air?</p></li>
+<li id="li-5608"><p id="p-9730">Is it a home run?</p></li>
+</ol></article></section><section class="subsection" id="subsection-174"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.1.3</span> <span class="title">Cycloids</span>
+</h3>
+<p id="p-9736">Imagine going on a bicycle ride through the country. The tires stay in contact with the road and rotate in a predictable pattern. Now suppose a very determined ant is tired after a long day and wants to get home. So he hangs onto the side of the tire and gets a free ride. The path that this ant travels down a straight road is called a <dfn class="terminology">cycloid</dfn> (<a href="" class="xref" data-knowl="./knowl/cycloidpic.html" title="Figure 9.1.17">Figure 9.1.17</a>). A cycloid generated by a circle (or bicycle wheel) of radius <span class="process-math">\(a\)</span> is given by the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cycloidpic.html" id="cycloideqns">
+\begin{equation}
+x(t) = a(t-\sin t), \ y(t) = a(1-\cos t)\text{.}\tag{9.1}
+\end{equation}
+</div>
+<figure class="figure figure-like" id="cycloidpic"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/CycloidOS79.jpg" class="contained" alt="A cycloid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.17<span class="period">.</span></span><span class="space"> </span>A wheel traveling along a road without slipping; the point on the edge of the wheel traces out a cycloid.</figcaption></figure><p id="p-9737">To see why this is true, consider the path that the center of the wheel takes. The center moves along the <span class="process-math">\(x\)</span>-axis at a constant height equal to the radius of the wheel. If the radius is <span class="process-math">\(a\text{,}\)</span> then the coordinates of the center can be given by the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cycloideqns.html">
+\begin{equation*}
+x(t)=at, \ y(t)=a
+\end{equation*}
+</div>
+<p class="continuation">for any value of <span class="process-math">\(t\text{.}\)</span>  Next, consider the ant, which rotates around the center along a circular path. If the bicycle is moving from left to right then the wheels are rotating in a clockwise direction. A possible parameterization of the circular motion of the ant (relative to the center of the wheel) is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cycloideqns.html">
+\begin{equation*}
+x(t)=-a\sin t, \ y(t)=-a\cos t\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(The negative sign is needed to reverse the orientation of the curve. If the negative sign were not there, we would have to imagine the wheel rotating counterclockwise.) Adding these equations together gives the <a href="" class="xref" data-knowl="./knowl/cycloideqns.html" title="Equation 9.1">equations (9.1)</a> for the cycloid.</p></section><section class="subsection" id="iMm"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.1.4</span> <span class="title">Summary</span>
+</h3>
+<p id="XRi">A parametric curve is described by a pair of functions <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> and consists of the set of ordered pairs <span class="process-math">\((x(t), y(t))\text{,}\)</span> where <span class="process-math">\(t\)</span> varies over a specified domain.  These functions describe how the <span class="process-math">\(x-\)</span> and <span class="process-math">\(y\)</span>-coordinates depend upon a third variable (<span class="process-math">\(t\text{,}\)</span> often thought of as representing time), allowing somewhat more freedom than when <span class="process-math">\(y\)</span> is forced to depend upon <span class="process-math">\(x\)</span> directly. Parametric curves can be used, for example, to describe the motion of an object in a plane over a period of time.</p></section><section class="exercises" id="okp"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.1.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="fHx"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Write Parametric Equations in Cartesian Form.</span>
+</h4>
+<div id="webwork-236" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="236" data-sourceFilePath="Library/ma123DB/set8/s10_1_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9739">Write the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9740">
+\begin{equation*}
+x = 2 t-1 , \quad y = 1-2 t
+\end{equation*}
+</div>
+<p id="p-9741">as a function of <span class="process-math">\(x\)</span> in Cartesian form.</p>
+<p id="p-9742"><span class="process-math">\(y =\)</span> <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-236')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="LOH"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">When <span class="process-math">\(x\)</span> is a function of <span class="process-math">\(y\)</span>.</span>
+</h4>
+<div id="webwork-237" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="237" data-sourceFilePath="Library/ma123DB/set8/s10_1_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9744">Write the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9745">
+\begin{equation*}
+x = 2 t-t^3 , \quad  y = 7-4 t
+\end{equation*}
+</div>
+<p id="p-9746">in the given Cartesian form.</p>
+<p id="p-9747"><span class="process-math">\(x =\)</span> <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-237')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="rVR"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Recognizing an Ellipse.</span>
+</h4>
+<div id="webwork-238" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="238" data-sourceFilePath="Library/ma123DB/set8/s10_1_7.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9749">Write the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9750">
+\begin{equation*}
+x = 3 \sin \theta , \quad y = 4 \cos \theta , \quad 0 \le \theta \le \pi
+\end{equation*}
+</div>
+<p id="p-9751">in the given Cartesian form.</p>
+<p id="p-9752"><span class="process-math">\(\frac{y^2}{16} =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> with <span class="process-math">\(x\ge 0\text{.}\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-238')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="YcA"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Parameterizing a Vertical Line.</span>
+</h4>
+<div id="webwork-239" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="239" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q17.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9754">Write a parameterization for the curve in the <span class="process-math">\(xy\)</span>-plane that is a vertical line through the point <span class="process-math">\((-5,-8)\text{.}\)</span></p>
+<p id="p-9755"><span class="process-math">\(x(t) =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9756"><span class="process-math">\(y(t) =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-239')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ekk"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Another Parameterization of a Circle?</span>
+</h4>
+<div id="webwork-240" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="240" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q09.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9759">Consider the parameterization of the unit circle given by <span class="process-math">\(x =\cos( \ln\!\left(5t\right) )\text{,}\)</span> <span class="process-math">\(y = \sin( \ln\!\left(5t\right) )\)</span> for <span class="process-math">\(t\)</span> in <span class="process-math">\((0,\infty)\text{.}\)</span> Describe in words and sketch how the circle is traced out, and use this to answer the following questions.</p>
+<p id="p-9760"><em class="alert">(a)</em> When is the parameterization tracing the circle out in a <em class="emphasis">clockwise</em> direction?</p>
+<p id="p-9762"><em class="emphasis">(Give your answer as a comma-separated list of intervals, for example, (0,1), (3,Inf)).  Enter the word <em class="alert">None</em> if there are no such intervals.</em></p>
+<p id="p-9763"><em class="alert">(b)</em> When is the parameterization tracing the circle out in a <em class="emphasis">counter-clockwise</em> direction?</p>
+<p id="p-9765"><em class="emphasis">(Give your answer as a comma-separated list of intervals, for example, (0,1), (3,Inf)).  Enter the word <em class="alert">None</em> if there are no such intervals.</em></p>
+<p id="p-9766"><em class="alert">(c)</em> Does the entire unit circle get traced by this parameterization? <ul style="list-style:circle;">
+<li id="li-5613"><p id="p-9767">yes</p></li>
+<li id="li-5614"><p id="p-9768">no</p></li>
+</ul></p>
+<p id="p-9769"><em class="alert">(d)</em> Give a time <span class="process-math">\(t\)</span> at which the point being traced out on the circle is at <span class="process-math">\((1,0)\text{:}\)</span></p>
+<p id="p-9770"><span class="process-math">\(t =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-240')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="EkV"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Line Segments.</span>
+</h4>
+<div id="webwork-241" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="241" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q27.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9774">A line is parameterized by <span class="process-math">\(x= 6+4t\)</span> and <span class="process-math">\(y = 3+4t\text{.}\)</span></p>
+<p id="p-9775"><em class="alert">(a)</em> Which of the following points are on the section of the line obtained by restricting <span class="process-math">\(t\)</span> to nonnegative numbers (for each, enter Y if the point is on the section, and N if not)?</p>
+<p id="p-9776"><span class="process-math">\(\left(-2,-5\right)\)</span> : <span class="fillin" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span></p>
+<p id="p-9777"><span class="process-math">\(\left(22,19\right)\)</span> : <span class="fillin" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span></p>
+<p id="p-9778"><span class="process-math">\(\left(34,31\right)\)</span> : <span class="fillin" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span></p>
+<p id="p-9779">Then, give one more point that <em class="emphasis">is</em> on the section of the line obtained by this restriction: <span class="fillin" role="img" aria-label="7-character blank" style="width: 3.181818181818182em;"></span></p>
+<p id="p-9780"><em class="alert">(b)</em> What are the endpoints of the line segment obtained by restricting <span class="process-math">\(t\)</span> to <span class="process-math">\(-4\le t\le -3\text{?}\)</span></p>
+<p id="p-9781">left endpoint : <span class="fillin" role="img" aria-label="7-character blank" style="width: 3.181818181818182em;"></span></p>
+<p id="p-9782">right endpoint : <span class="fillin" role="img" aria-label="7-character blank" style="width: 3.181818181818182em;"></span></p>
+<p id="p-9783"><em class="alert">(c)</em> How should <span class="process-math">\(t\)</span> be restricted to give the part of the line above the <span class="process-math">\(x\)</span>-axis (give your answer as an interval for <span class="process-math">\(t\text{,}\)</span> for example, (3,8) or [-2,Inf))?</p>
+<p id="p-9784"><span class="process-math">\(t\)</span> must be in : <span class="fillin" role="img" aria-label="7-character blank" style="width: 3.181818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-241')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="EkS"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">What's My Line?</span>
+</h4>
+<div id="webwork-242" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="242" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9792">Suppose <span class="process-math">\(a, b, c, m, p, q &gt; 0\)</span> and <span class="process-math">\(d, n \lt  0\text{.}\)</span> Match each pair of parametric equations with one of the lines <span class="process-math">\(L1, L2, L3, L4\)</span> in the figure below.  For each, enter the appropriate name of the line (L1, L2, etc.).</p>
+<p id="p-9793">I. <span class="process-math">\(x = a + c t,\quad y = b + d t\)</span> : <span class="fillin" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span></p>
+<p id="p-9794">II. <span class="process-math">\(x = m + p t,\quad y = n + q t\)</span> : <span class="fillin" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span></p>
+<div class="image-box" style="width: 33.3333333333333%; margin-left: 33.3333333333333%; margin-right: 33.3333333333333%;"><img src="generated/webwork/images/webwork-242-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-242')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-423"><h4 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Name the Parameterization.</span>
+</h4>
+<p id="p-9797">Name the type of basic curve (e.g. line, parabola, circle, ellipse, hyperbola) that each pair of equations represents.</p>
+<ol class="lower-alpha">
+<li id="li-5615"><p id="p-9798"><span class="process-math">\(\displaystyle x=3t+4, \ y(t)=5t-2\)</span></p></li>
+<li id="li-5616"><p id="p-9799"><span class="process-math">\(\displaystyle x=2t+1, \ y(t)=t^2-3\)</span></p></li>
+<li id="li-5617"><p id="p-9800"><span class="process-math">\(\displaystyle x=3\cos t, \ y(t)=4\sin t\)</span></p></li>
+<li id="li-5618"><p id="p-9801"><span class="process-math">\(\displaystyle x=2\cos(3t), \ y(t)=2\sin(3t)\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="krS"><h4 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">Parameterizing Circles and Ellipses.</span>
+</h4>
+<ol id="fVT" class="lower-alpha">
+<li id="KJg">
+<p id="mQy">Show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=h + r\cos\theta, \ y=k+r\sin\theta, \ 0 \leq \theta \leq 2\pi
+\end{equation*}
+</div>
+<p class="continuation">parameterize a circle.  Give the center and radius of this circle.  Is the circle oriented clockwise or counterclockwise?</p>
+</li>
+<li id="qQc"><p id="SXw">Find a set of parametric equations for a circle whose radius is 5 and whose center is <span class="process-math">\((-2,3)\text{.}\)</span>  Give bounds on the parameter so that the circle is traversed exactly once.</p></li>
+<li id="WXB"><p id="zeZ">Use the applet found at <a class="external" href="https://www.geogebra.org/m/yJNhQMQa" target="_blank">www.geogebra.org/m/yJNhQMQa</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-116" id="fn-116"><sup> 116 </sup></a> to verify your result in (b).</p></li>
+<li id="li-5626"><p id="p-9810">Parameterize an ellipse centered at <span class="process-math">\((-2,3)\)</span> having semi-major axis parallel to the <span class="process-math">\(x\)</span>-axis of length 5 and semi-minor axis parallel to the <span class="process-math">\(y\)</span>-axis of length 4.  Again, verify your parameterization using the applet found at <a class="external" href="https://www.geogebra.org/m/yJNhQMQa" target="_blank">www.geogebra.org/m/yJNhQMQa</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-117" id="fn-117"><sup> 117 </sup></a>.</p></li>
+</ol></article><article class="exercise exercise-like" id="unitsquarepara"><h4 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">Parameterizing a Square.</span>
+</h4>Imagine a particle that starts at time <span class="process-math">\(t=0\text{,}\)</span> ends at time <span class="process-math">\(t=10\text{,}\)</span> and moves counterclockwise around the unit square parameterized by<div class="displaymath process-math" data-contains-math-knowls="./knowl/UnitSquare.html ./knowl/unitsquarepara.html">
+\begin{equation*}
+x=f(t), y=g(t)
+\end{equation*}
+</div>as shown in <a href="" class="xref" data-knowl="./knowl/UnitSquare.html" title="Figure 9.1.18">Figure 9.1.18</a>.  Sketch possible graphs of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span>  For simplicity, assume the motion is of a constant speed on each edge of the square. <figure class="figure figure-like" id="UnitSquare"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/unitsquarepic.svg" role="img" class="contained" alt="A unit square."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.18<span class="period">.</span></span><span class="space"> </span>A unit square used in <a href="" class="xref" data-knowl="./knowl/unitsquarepara.html" title="Exercise 9.1.5.10: Parameterizing a Square">Exercise 9.1.5.10</a>.</figcaption></figure></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-116"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/yJNhQMQa</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-117"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/m/yJNhQMQa</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

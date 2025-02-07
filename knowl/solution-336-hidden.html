@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:32:38Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Before decomposing the integrand into partial fractions, we need to perform polynomial long division because the degree of the numerator, 3, is greater than the degree of the denominator, 2. We need to do this because partial fraction decompsition leads to a sum of rational functions where the degree of the numerator is less than the degree of the denominator.</p>
+<p>After completing polynomial long division, we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} = 3x + \frac{7-3x}{-x^2+3x-2},
+\end{equation*}
+</div>
+<p class="continuation">hence, we can change the original integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \int 3x \ dx + \int \frac{7-3x}{-x^2+3x-2} \ dx.\tag{5.14}
+\end{equation}
+</div>
+<p class="continuation">We'll proceed by using the method of partial fraction decomposition on the integrand <span class="process-math">\(\frac{7-3x}{-x^2+3x-2}\text{.}\)</span></p>
+<p>Notice that the denominator factors as <span class="process-math">\(-x^2+3x-2 = (x-1)(2-x)\text{,}\)</span> so we'll suppose the integrand decomposes as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{7-3x}{(x-1)(2-x)} = \frac{A}{x-1} + \frac{B}{2-x}
+\end{equation*}
+</div>
+<p class="continuation">and we'll look for constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span></p>
+<p>Multiplying both sides of the equation by the denominator of the left hand side, <span class="process-math">\((x-1)(2-x)\text{,}\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{equation*}
+7-3x = A(2-x) + B(x-1).
+\end{equation*}
+</div>
+<p class="continuation">To find <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we will rearrange the right hand side of the equation so that similar terms are grouped.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{align*}
+7-3x = \mathstrut \amp 2A - Ax + Bx - B\\
+7-3x = \mathstrut \amp (B-A)x + (2A-B)
+\end{align*}
+</div>
+<p class="continuation">To make sure the coefficients of <span class="process-math">\(x\)</span> match on each side of the equation and that the constant terms are the same on each side of the equation, we obtain the following system of equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{equation*}
+-3=B-A \text{ and } 7=2A-B
+\end{equation*}
+</div>
+<p class="continuation">We find that <span class="process-math">\(A=4\)</span> and <span class="process-math">\(B=1\text{.}\)</span>  Thus, using Equation <a href="" class="xref" data-knowl="./knowl/partialfracdividefirst.html" title="Equation 5.14">(5.14)</a>, we can rewrite the original integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{align*}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \mathstrut \amp \int 3x \ dx + \int \frac{7-3x}{-x^2+3x-2} \ dx\\
+= \mathstrut \amp \int 3x \ dx + \int \frac{4}{x-1} + \frac{1}{2-x} \ dx.
+\end{align*}
+</div>
+<p class="continuation">These integrals can be evaluated by using the antidifferentiation rules and using appropriate substitutions, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/partialfracdividefirst.html">
+\begin{align*}
+\int \frac{-3x^3+9x^2-9x+7}{-x^2+3x-2} \ dx = \mathstrut \amp \int 3x \ dx + \int \frac{4}{x-1} \ dx + \int \frac{1}{2-x} \ dx\\
+= \mathstrut \amp \frac{3}{2}x^2 + 4\ln|x-1| - \ln|2-x| + C.
+\end{align*}
+</div>
+</div></body>
+</html>

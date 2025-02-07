@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:14:28Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Comparison Tests</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-8-3C-divergence.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-8.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-8-3E-ratio-test.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-8-3C-divergence.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-8.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-8-3E-ratio-test.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="active">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="nbV"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.5</span> <span class="title">Comparison Tests</span>
+</h2>
+<article class="objectives goal-like" id="hlN"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="li-4900"><p id="p-8299">How can we use series which are known to converge or diverge to test for convergence of more complicated series?</p></li>
+<li id="li-4901"><p id="p-8300">What is the limit comparison test and how can it be applied to determine convergence or divergence of a given series?</p></li>
+</ul></article><section class="introduction" id="NtG"><p id="jLX">In <a href="sec-8-3C-divergence.html" class="internal" title="Section 7.4: The Divergence and Integral Tests">Section 7.4</a>, we encountered more infinite series and began discussing how to test for convergence or divergence using the divergence and integral tests. But what can we do when presented with series that are similar to simpler series that we know converge or diverge, such as <span class="process-math">\(p\)</span>-series, but that we are unable to apply a different test to? In this section, we will consider two tests which involve comparing the convergence or divergence of two series -- the direct comparison test and the limit comparison test.</p>
+<article class="exploration project-like" id="DxD"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">7.5.1</span><span class="period">.</span>
+</h3>
+<ol id="p-8302" class="lower-alpha">
+<li id="li-4902">
+<p id="p-8303">Consider the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{k-2}{k^4+1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the convergence or divergence of a series only depends on the behavior of the series for large values of <span class="process-math">\(k\text{,}\)</span> we might examine the terms of this series more closely as <span class="process-math">\(k\)</span> gets large. By computing the value of <span class="process-math">\(\frac{k-2}{k^4+1}\)</span> for <span class="process-math">\(k=100\)</span> and <span class="process-math">\(k=1000\text{,}\)</span> explain why the terms <span class="process-math">\(\frac{k-2}{k^4+1}\)</span> are essentially <span class="process-math">\(\frac{k}{k^4}\)</span> when <span class="process-math">\(k\)</span> is large.</p>
+</li>
+<li id="li-4903"><p id="p-8304">This gives us the sense that the series <span class="process-math">\(\sum \frac{k-2}{k^4+1}\)</span> should behave the same way that <span class="process-math">\(\sum \frac{k}{k^4} = \sum \frac{1}{k^3}\)</span> behaves.  Does <span class="process-math">\(\sum \frac{1}{k^3}\)</span> converge or diverge?  Why?</p></li>
+<li id="li-4904"><p id="p-8305">Explain why for all <span class="process-math">\(k \geq 2\text{,}\)</span> <span class="process-math">\(0 \leq \frac{k-2}{k^4+1} \leq \frac{k}{k^4} = \frac{1}{k^3}\text{.}\)</span></p></li>
+<li id="li-4905"><p id="p-8306">Suppose that <span class="process-math">\(S_n = \sum_{k=1}^n \frac{k-2}{k^4+1}\)</span> and <span class="process-math">\(T_n = \sum_{k=1}^n \frac{1}{k^3}\)</span> are partial sums for the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{k-2}{k^2+1}\)</span> and <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^3}\)</span> respectively.  Explain why we have <span class="process-math">\(S_n \leq T_n\)</span> for all values of <span class="process-math">\(n \geq 1\text{.}\)</span></p></li>
+<li id="li-4906"><p id="p-8307">Does the <em class="emphasis">sequence</em> <span class="process-math">\(\{ T_n \}\)</span> converge or diverge?  Why?</p></li>
+<li id="li-4907"><p id="p-8308">We now so that the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{k-2}{k^4+1}\)</span> is convergent by showing the sequence of partial sums <span class="process-math">\(\{S_n\}\)</span> converge.  Suppose that <span class="process-math">\(T = \lim_{n \rightarrow \infty} T_n\text{.}\)</span>  Then, since each term in the partial sum <span class="process-math">\(T_n\)</span> is positive, we have that <span class="process-math">\(\{ T_n \}\)</span> is an increasing sequence and <span class="process-math">\(T_n \leq T\)</span> for all <span class="process-math">\(n\text{.}\)</span>  Show that the sequence <span class="process-math">\(\{S_n\}\)</span> is monotone and bounded and hence also converges.</p></li>
+</ol></article></section><section class="subsection" id="Tio"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.5.1</span> <span class="title">The Direct Comparison Test</span>
+</h3>
+<p id="p-8316">The Integral Test in <a href="sec-8-3C-divergence.html" class="internal" title="Section 7.4: The Divergence and Integral Tests">Section 7.4</a> allows us to determine the convergence of an entire family of series: the <span class="process-math">\(p\)</span>-series. However, we have seen that it is often difficult to integrate functions, so the Integral Test is not one that we can use all of the time. In fact, even for a relatively simple series such as <span class="process-math">\(\sum \frac{k^2+1}{k^4+2k+2}\text{,}\)</span> the Integral Test is not an option. In what follows we develop a test that applies to series of rational functions by comparing their behavior to that of other series whose convergence behavior we know.</p>
+<article class="example example-like" id="example-71"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.5.1</span><span class="period">.</span>
+</h4>
+<p id="p-8317">Determine whether the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{1}{k^2+1}
+\end{equation*}
+</div>
+<p class="continuation">converges or diverges.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-463" id="solution-463"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-463"><div class="solution solution-like">
+<p id="p-8318">This series looks similar to the convergent series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2}\text{.}\)</span>  Since the terms in each of these series are positive, the sequence of partial sums for each series is monotone increasing.  Also, since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/T-Comparison-Test.html">
+\begin{equation*}
+0 &lt; \frac{1}{k^2+1} &lt; \frac{1}{k^2}
+\end{equation*}
+</div>
+<p class="continuation">for all positive integers <span class="process-math">\(k\text{,}\)</span> the <span class="process-math">\(n\)</span>th partial sum <span class="process-math">\(S_n\)</span> of <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2+1}\)</span> satisfies</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/T-Comparison-Test.html">
+\begin{equation*}
+S_n = \sum_{k=1}^n \frac{1}{k^2+1} &lt; \sum_{k=1}^n \frac{1}{k^2} &lt; \sum_{k=1}^{\infty} \frac{1}{k^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Values of the first <span class="process-math">\(8\)</span> partial sums of these two series are found in <a href="" class="xref" data-knowl="./knowl/T-Comparison-Test.html" title="Table 7.5.2">Table 7.5.2</a>.</p>
+<figure class="table table-like" id="Lxz"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.5.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular" id="rEI">
+<tr>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(n\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(2\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(3\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(4\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(5\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(6\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(7\)</span></td>
+<td class="c t b1 r0 l0 t1 lines"><span class="process-math">\(8\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\displaystyle S_n = \sum_{k=1}^n \frac{1}{k^2+1}\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.7\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.8\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.8588\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.8973\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.9243\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.9443\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(0.9597\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\displaystyle T_n = \sum_{k=1}^n \frac{1}{k^2}\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.25\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.3611\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.4236\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.4636\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.4914\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.5118\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1.5274\)</span></td>
+</tr>
+</table></div></figure><p id="p-8319">Values from <a href="" class="xref" data-knowl="./knowl/T-Comparison-Test.html" title="Table 7.5.2">Table 7.5.2</a> are plotted in <a href="" class="xref" data-knowl="./knowl/ComparisonTestPlot.html" title="Figure 7.5.3">Figure 7.5.3</a>.</p>
+<figure class="figure figure-like" id="ComparisonTestPlot"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/ComparisonTestPlotpic.svg" role="img" class="contained" alt="Plotting two partial sums"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.5.3<span class="period">.</span></span><span class="space"> </span>Each of the partial sums <span class="process-math">\(S_n = \sum_{k=1}^n \frac{1}{k^2+1}\)</span> for the series <span class="process-math">\(\sum \frac{1}{k^2+1}\)</span> is less than the corresponding partial sum <span class="process-math">\(T_n = \sum_{k=1}^n \frac{1}{k^2}\)</span> of the <span class="process-math">\(p\)</span>-series <span class="process-math">\(\sum \frac{1}{k^2}\text{.}\)</span></figcaption></figure><p id="p-8320">Since the "larger" series, <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2}\text{,}\)</span> converges, the sequence <span class="process-math">\(\{ S_n\}\)</span> of partial sums is bounded above.  In fact, since each term in the series is positive, <span class="process-math">\(\{ S_n \}\)</span> is a monotone increasing sequence that is bounded above.  As we saw in what is often referred to as the <a href="" class="xref" data-knowl="./knowl/MonotoneConvergenceThm.html" title="Assemblage: Convergence of Monotone Bounded Sequences">Monotone Convergence Theorem, </a> <span class="process-math">\(\{S_n \}\)</span> converges.  Thus, since the partial sums converge, the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k^2+1}\)</span> converges.</p>
+</div></div>
+</div></article><article class="assemblage assemblage-like" id="assemblage-61"><h4 class="heading"><span class="title">The Direct Comparison Test.</span></h4>
+<p id="p-8321">Suppose that <span class="process-math">\(0 \leq a_k \leq b_k\)</span> for all <span class="process-math">\(k\)</span> beyond a certain value.</p>
+<ul class="disc">
+<li id="li-4914"><p id="p-8322">If <span class="process-math">\(\sum b_k\)</span> converges, then <span class="process-math">\(\sum a_k\)</span> converges.</p></li>
+<li id="li-4915"><p id="p-8323">If <span class="process-math">\(\sum a_k\)</span> diverges, then <span class="process-math">\(\sum b_k\)</span> diverges.</p></li>
+</ul></article><p id="p-8324">The idea behind the direct comparison test is very intuitive. If a series <span class="process-math">\(\sum a_k\)</span> has terms that are all (beyond a certain <span class="process-math">\(k\)</span>) smaller than the corresponding terms in a series <span class="process-math">\(\sum b_k\)</span> that we know converges, then the unknown series <span class="process-math">\(\sum a_k\)</span> must also converge, because it is "smaller" than something finite. Thus, we can use the first bullet point above to prove that a series (<span class="process-math">\(\sum a_k\)</span>) converges.</p>
+<p id="p-8325">On the other hand, if a series <span class="process-math">\(\sum b_k\)</span> has terms that are all (beyond a certain <span class="process-math">\(k\)</span>) larger than the corresponding terms in a series <span class="process-math">\(\sum a_k\)</span> that we know diverges, then the series <span class="process-math">\(\sum b_k\)</span> must also diverge, because it is "larger" than something infinite. Thus, we can use the second bullet point to prove that a series (<span class="process-math">\(\sum b_n\)</span>) diverges.</p>
+<p id="p-8326">In <a href="" class="xref" data-knowl="./knowl/PA-8-3D.html" title="Preview Activity 7.5.1">Preview Activity 7.5.1</a>, we saw that the series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{k-2}{k^4+1}\)</span> converges since <span class="process-math">\(0 \leq \frac{k-2}{k^4+1} \leq \frac{1}{k^3}\)</span> for <span class="process-math">\(k \geq 2\)</span> and <span class="process-math">\(\sum \frac{1}{k^3}\)</span> converges by virtue of being a <span class="process-math">\(p\)</span>-series with <span class="process-math">\(p=3\text{.}\)</span></p>
+<article class="example example-like" id="example-72"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.5.4</span><span class="period">.</span>
+</h4>
+<p id="p-8327">Determine whether</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{3k+2}{4k^2-3}
+\end{equation*}
+</div>
+<p class="continuation">converges or diverges.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-464" id="solution-464"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-464"><div class="solution solution-like">
+<p id="p-8328">We first get a feel for what we expect the series to do.  For very large <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(\frac{3k+2}{4k^2-3}\)</span> behaves like <span class="process-math">\(\frac{3k}{4k^2} = \frac{3}{4k} = \frac{3}{4} \cdot \frac{1}{k}\text{.}\)</span>  Since <span class="process-math">\(\sum \frac{1}{k}\)</span> diverges, then <span class="process-math">\(\sum \frac{3}{4k}\)</span> also diverges, so we expect <span class="process-math">\(\sum \frac{3k+2}{4k^2 -3}\)</span> to diverge as well.</p>
+<p id="p-8329">Our goal is to build the inequality</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{3k+2}{4k^2-3} \geq \cdots \geq 0
+\end{equation*}
+</div>
+<p class="continuation">where the middle is filled in with a series that we know diverges.  To make a fraction smaller, we should decrease the numerator and increase the denominator.  So we can build the inequality</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{3k+2}{4k^2-3} \geq \frac{3k}{4k^2-3} \geq \frac{3k}{4k^2} \geq \frac{3}{4k} \geq 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now since <span class="process-math">\(\sum \frac{3}{4n}\)</span> diverges, then <span class="process-math">\(\sum \frac{3k+2}{4k^2-3}\)</span> also diverges by the direct comparison test.</p>
+</div></div>
+</div></article><p id="p-8330">In order to use the direct comparison test, we have to be able to set up the inequalities requried by the test, which can sometimes be difficult.</p>
+<article class="example example-like" id="example-73"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.5.5</span><span class="period">.</span>
+</h4>
+<p id="p-8331">Consider the series <span class="process-math">\(\sum \frac{k+1}{k^3+2}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-4916"><p id="p-8332">For large <span class="process-math">\(k\text{,}\)</span> what <span class="process-math">\(p\)</span>-series does <span class="process-math">\(\sum \frac{k+1}{k^3+2}\)</span> behave like?  Do you expect <span class="process-math">\(\sum \frac{k+1}{k^3+2}\)</span> to converge or diverge?</p></li>
+<li id="li-4917"><p id="p-8333">Set up an inequality to apply the direct comparison test to prove that the series converges or diverges. What makes this challenging?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-465" id="solution-465"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-465"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-4918"><p id="p-8334">For large <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(\frac{k+1}{k^3+2}\)</span> behaves like <span class="process-math">\(\frac{k}{k^3} = \frac{1}{k^2}\text{.}\)</span>  Since <span class="process-math">\(\sum \frac{1}{k^2}\)</span> is a <span class="process-math">\(p\)</span>-series with <span class="process-math">\(p=2\text{,}\)</span> then <span class="process-math">\(\sum \frac{1}{k^2}\)</span> converges, so we expect <span class="process-math">\(\frac{k+1}{k^3+2}\)</span> to converge as well.</p></li>
+<li id="li-4919">
+<p id="p-8335">We need to find a series whose <span class="process-math">\(k\)</span>th term is larger than <span class="process-math">\(\frac{k+1}{k^3+2}\text{.}\)</span>  We can begin with</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0 \leq \frac{k+1}{k^3+2} \leq \frac{k+1}{k^3}
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(k \geq 1\text{.}\)</span> However, <span class="process-math">\(\frac{k}{k^3}\)</span> is <em class="emphasis">smaller</em> than <span class="process-math">\(\frac{k+1}{k^3}\text{,}\)</span> not larger.  Thus, we need to make more of an effort to find a useful inequality.  For example,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0 \leq \frac{k+1}{k^3+2} \leq \frac{k+1}{k^3} \leq \frac{k+k}{k^3} = \frac{2k}{k^3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This works because in the numerator, <span class="process-math">\(k+1 \leq k + k\)</span> for <span class="process-math">\(k \geq 1\text{.}\)</span>  Then <span class="process-math">\(\frac{2k}{k^3} =2 \left( \frac{1}{k^2} \right)\text{,}\)</span> which yields a convergent <span class="process-math">\(p\)</span>-series.   By the direct comparison test, <span class="process-math">\(\sum \frac{k+1}{k^3 + 2}\)</span> also converges.</p>
+</li>
+</ol></div></div>
+</div></article><article class="activity project-like" id="MxM"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.2</span><span class="period">.</span>
+</h4>
+<p id="p-8336">Use the direct comparison test to determine whether each series below converges or diverges.  The following are necessary components of a complete solution.</p>
+<ul class="disc">
+<li id="li-4920"><p id="p-8337">Define <span class="process-math">\(a_k\text{,}\)</span> and make a good choice for <span class="process-math">\(b_k\)</span> to which you will compare it.</p></li>
+<li id="li-4921"><p id="p-8338">Confirm that both <span class="process-math">\(a_k \geq 0\)</span> and <span class="process-math">\(b_k \geq 0\text{.}\)</span></p></li>
+<li id="li-4922"><p id="p-8339">Determine which is larger (for all <span class="process-math">\(n\)</span> after some point), <span class="process-math">\(a_k\)</span> or <span class="process-math">\(b_k\text{.}\)</span></p></li>
+<li id="li-4923"><p id="p-8340">Determine the convergence or divergence of <span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} b_k\text{.}\)</span>  You must have a reason for this (e.g. <span class="process-math">\(p\)</span>-series, integral test, divergence test).</p></li>
+<li id="li-4924"><p id="p-8341">Make a conclusion about the convergence or divergence of <span class="process-math">\(\sum_{k=1}^{\infty} a_k\text{.}\)</span>  Again, you must state a reason for this conclusion.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li id="li-4925"><p id="p-8342"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=1}^{\infty} \frac{e^{-k}}{k^2}\)</span></p></li>
+<li id="li-4926"><p id="p-8343"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=1}^{\infty} \frac{k-1}{k^3+3}\)</span></p></li>
+<li id="li-4927"><p id="p-8344"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=1}^{\infty} \frac{6k^2+1}{2k^3-1}\)</span></p></li>
+</ol></article></section><section class="subsection" id="LDP"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.5.2</span> <span class="title">The Limit Comparison Test</span>
+</h3>
+<p id="YgC">The limit comparison test is another test that can be used to determine series convergence and works in many of the same situations that the direct comparison test is used. However, the limit comparison test does not require any inequalities between the series you are comparing, so in some cases it can be easier to use than the direct comparison test.</p>
+<article class="activity project-like" id="act-8-3D-6"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.3</span><span class="period">.</span>
+</h4>
+<p id="p-8350">Once again, consider the series <span class="process-math">\(\sum \frac{k+1}{k^3+2}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-4931">
+<p id="p-8351">Recall that for large <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(\frac{k+1}{k^3+2}\)</span> looks like <span class="process-math">\(\frac{k}{k^3}\text{.}\)</span>  Let's formalize this observation a bit more. Let <span class="process-math">\(a_k =  \frac{k+1}{k^3+2}\)</span> and <span class="process-math">\(b_k =  \frac{k}{k^3}\text{.}\)</span> Calculate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{k \to \infty} \frac{a_k}{b_k}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">What does the value of the limit tell you about <span class="process-math">\(a_k\)</span> and <span class="process-math">\(b_k\)</span> for large values of <span class="process-math">\(k\text{?}\)</span></p>
+</li>
+<li id="li-4932"><p id="p-8352">What do you think that tells us about the convergence or divergence of the series <span class="process-math">\(\sum \frac{k+1}{k^3+2}\text{,}\)</span> based on the convergence of the series <span class="process-math">\(\sum \frac{k}{k^3}\text{?}\)</span>  Explain.</p></li>
+</ol></article><p id="EnL"><a href="" class="xref" data-knowl="./knowl/act-8-3D-6.html" title="Activity 7.5.3">Activity 7.5.3</a> illustrates how we can compare one series with positive terms to another whose convergence status we know. Suppose we have two series <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> with positive terms and we know the convergence status of the series <span class="process-math">\(\sum a_k\text{.}\)</span> Recall that the convergence or divergence of a series depends only on the terms of the series for large values of <span class="process-math">\(k\text{,}\)</span> so if we know that <span class="process-math">\(a_k\)</span> and <span class="process-math">\(b_k\)</span> are proportional for large <span class="process-math">\(k\text{,}\)</span> then the two series <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> should behave the same way. In other words, if there is a positive finite constant <span class="process-math">\(c\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/act-8-3D-6.html">
+\begin{equation*}
+\lim_{k \to \infty} \frac{b_k}{a_k} = c\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then <span class="process-math">\(b_k \approx ca_k\)</span> for large values of <span class="process-math">\(k\text{.}\)</span> So</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/act-8-3D-6.html">
+\begin{equation*}
+\sum b_k \approx \sum ca_k = c  \sum a_k\text{.}
+\end{equation*}
+</div>
+<p id="kuU">Since multiplying by a nonzero constant does not affect the convergence or divergence of a series, it follows that the series <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> either both converge or both diverge. The formal statement of this fact is called the limit comparison test.</p>
+<article class="assemblage assemblage-like" id="QnI"><h4 class="heading"><span class="title">The Limit Comparison Test.</span></h4>
+<p id="QCd">Let <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> be series with positive terms. If</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{k \to \infty} \frac{b_k}{a_k} = c
+\end{equation*}
+</div>
+<p class="continuation">for some positive (finite) constant <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> either both converge or both diverge.</p></article><p id="wJm">The limit comparison test shows that if we have a series <span class="process-math">\(\sum \frac{p(k)}{q(k)}\)</span> of rational functions where <span class="process-math">\(p(k)\)</span> is a polynomial of degree <span class="process-math">\(m\)</span> and <span class="process-math">\(q(k)\)</span> a polynomial of degree <span class="process-math">\(l\text{,}\)</span> then the series <span class="process-math">\(\sum \frac{p(k)}{q(k)}\)</span> will behave like the series <span class="process-math">\(\sum \frac{k^m}{k^l}\text{.}\)</span> So this test allows us to determine the convergence or divergence of series whose terms are rational functions.</p>
+<article class="activity project-like" id="KXe"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.4</span><span class="period">.</span>
+</h4>
+<ol id="SBD" class="lower-alpha">
+<li id="li-4937">
+<p id="p-8364">Use the limit comparison test to determine the convergence or divergence of the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum \frac{3k^2+1}{5k^4+2k+2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">by comparing it to the series <span class="process-math">\(\sum \frac{1}{k^2}\text{.}\)</span></p>
+</li>
+<li id="li-4938">
+<p id="p-8365">Use the limit comparison test to determine if the following series converge or diverge.</p>
+<ol class="lower-roman">
+<li id="li-4939"><p id="p-8366"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=1}^{\infty} \frac{k^2-5}{k^3+k + 2}\)</span></p></li>
+<li id="li-4940"><p id="p-8367"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=1}^{\infty} \sin\left( \frac{1}{k} \right)\)</span></p></li>
+</ol>
+</li>
+</ol></article></section><section class="subsection" id="XSK"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.5.3</span> <span class="title">Summary</span>
+</h3>
+<ul id="p-8379" class="disc">
+<li id="li-4949">
+<p id="p-8380">Even when possible, applying the integral test can be difficult due to integration involved. We can in many cases instead use the direct comparison test to compare the convergence of a challenging series with a much simpler <span class="process-math">\(p\)</span>-series. In particular, if <span class="process-math">\(0 \leq a_k \leq b_k\)</span> for all <span class="process-math">\(k\text{,}\)</span> then</p>
+<ol class="decimal">
+<li id="li-4950"><p id="p-8381">If <span class="process-math">\(\sum b_k\)</span> converges, then <span class="process-math">\(\sum a_k\)</span> also converges.</p></li>
+<li id="li-4951"><p id="p-8382">If <span class="process-math">\(\sum a_k\)</span> diverges, then <span class="process-math">\(\sum b_k\)</span> also diverges.</p></li>
+</ol>
+</li>
+<li id="li-4952"><p id="p-8383">The limit comparison test applies in many of the same situations as the comparison test, but does not require showing any inequality relationship between the two series. If <span class="process-math">\(\lim_{k \rightarrow \infty} \frac{b_k}{a_k} = c\)</span> for some positive (finite) constant <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(\sum a_k\)</span> and <span class="process-math">\(\sum b_k\)</span> either both converge or both diverge.</p></li>
+</ul></section><section class="exercises" id="HXB"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">7.5.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="JFv"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Identify a similar series.</span>
+</h4>
+<div id="webwork-194" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="194" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_4_prob01.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8384">Match the following series with the series below in which you can compare using the Limit Comparison Test.  Then determine whether the series converge or diverge.</p>
+<p id="p-8385">A. <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{1}{n}\text{,}\)</span> B. <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{1}{n^2}\text{,}\)</span> C. <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{1}{n^3}\text{,}\)</span>    and D. <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^{n-1}\)</span></p>
+<p id="p-8386">1. <ul style="list-style:circle;">
+<li id="li-4954"><p id="p-8388">A</p></li>
+<li id="li-4955"><p id="p-8389">B</p></li>
+<li id="li-4956"><p id="p-8390">C</p></li>
+<li id="li-4957"><p id="p-8391">D</p></li>
+</ul> <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{n+5}{n^2}\)</span>   Does this series converge or diverge? <ul style="list-style:circle;">
+<li id="li-4959"><p id="p-8393">Converges</p></li>
+<li id="li-4960"><p id="p-8394">Diverges</p></li>
+</ul></p>
+<p id="p-8395">2. <ul style="list-style:circle;">
+<li id="li-4962"><p id="p-8397">A</p></li>
+<li id="li-4963"><p id="p-8398">B</p></li>
+<li id="li-4964"><p id="p-8399">C</p></li>
+<li id="li-4965"><p id="p-8400">D</p></li>
+</ul> <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\left(\frac{2}{2^{n}+5}\right)\)</span>   Does this series converge or diverge? <ul style="list-style:circle;">
+<li id="li-4967"><p id="p-8402">Converges</p></li>
+<li id="li-4968"><p id="p-8403">Diverges</p></li>
+</ul></p>
+<p id="p-8404">3. <ul style="list-style:circle;">
+<li id="li-4970"><p id="p-8406">A</p></li>
+<li id="li-4971"><p id="p-8407">B</p></li>
+<li id="li-4972"><p id="p-8408">C</p></li>
+<li id="li-4973"><p id="p-8409">D</p></li>
+</ul> <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{1}{n^2+4}\)</span>   Does this series converge or diverge? <ul style="list-style:circle;">
+<li id="li-4975"><p id="p-8411">Converges</p></li>
+<li id="li-4976"><p id="p-8412">Diverges</p></li>
+</ul></p>
+<p id="p-8413">4. <ul style="list-style:circle;">
+<li id="li-4978"><p id="p-8415">A</p></li>
+<li id="li-4979"><p id="p-8416">B</p></li>
+<li id="li-4980"><p id="p-8417">C</p></li>
+<li id="li-4981"><p id="p-8418">D</p></li>
+</ul> <span class="process-math">\(\displaystyle \sum_{n=1}^{\infty}\frac{n-5}{n^4+1}\)</span>   Does this series converge or diverge? <ul style="list-style:circle;">
+<li id="li-4983"><p id="p-8420">Converges</p></li>
+<li id="li-4984"><p id="p-8421">Diverges</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-194')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="dym"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Direct or Limit Comparison Test.</span>
+</h4>
+<div id="webwork-195" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="195" data-sourceFilePath="Library/Wiley/setAnton_Section_9.5/Anton9_5Q30_31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8430">Use any method to determine whether the series converges.</p>
+<p id="p-8431">(a) <span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{k^{5}}{k^{6}+3}\)</span></p>
+<p id="p-8432"><ul style="list-style:circle;">
+<li id="li-4986"><p id="p-8434">Converges</p></li>
+<li id="li-4987"><p id="p-8435">Diverges</p></li>
+</ul></p>
+<p id="p-8436">(b) <span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{\sqrt{k}}{k^{6}+3}\)</span></p>
+<p id="p-8437"><ul style="list-style:circle;">
+<li id="li-4989"><p id="p-8439">Converges</p></li>
+<li id="li-4990"><p id="p-8440">Diverges</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-195')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="pMD"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Compare to a <span class="process-math">\(p\)</span>-series.</span>
+</h4>
+<div id="webwork-196" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="196" data-sourceFilePath="Library/ma123DB/set11/s11_4_11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8443">Determine whether the following series converges or diverges:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{7}{ \sqrt{n(n+4)(n+7)} }
+\end{equation*}
+</div>
+<p id="p-8444">Input <em class="emphasis">C</em> for convergence and <em class="emphasis">D</em> for divergence: <span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span></p>
+<p id="p-8445"><em class="alert">Note:</em> You have only one chance to enter your answer.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-196')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="VTM"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Compare to a familiar series.</span>
+</h4>
+<div id="webwork-197" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="197" data-sourceFilePath="Library/ma123DB/set11/s11_4_5.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8447">Determine whether the following series converges or diverges.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{8}{6 + 9^n}
+\end{equation*}
+</div>
+<p id="p-8448">Input <em class="emphasis">C</em> for convergence and <em class="emphasis">D</em> for divergence: <span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span></p>
+<p id="p-8449"><em class="alert">Note:</em> You have only one chance to enter your answer.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-197')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-355"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-8451">Does</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} \left( \frac{\ln n}{n} \right)^p
+\end{equation*}
+</div>
+<p class="continuation">converge if <span class="process-math">\(p\)</span> is large enough?  If so, for which <span class="process-math">\(p\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-356"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-8453">For which <span class="process-math">\(r &gt; 0\)</span> does the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{2^k}{r^{k^2}}
+\end{equation*}
+</div>
+<p class="continuation">converge?</p></article><article class="exercise exercise-like" id="exercise-357"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>A <dfn class="terminology">depleted harmonic series</dfn> is a series obtained from <span class="process-math">\(\sum_{k=1}^{\infty} \frac{1}{k}\)</span> by removing any term <span class="process-math">\(1/k\)</span> if a given digit, say <span class="process-math">\(9\text{,}\)</span> appears in the decimal expansion of <span class="process-math">\(k\text{.}\)</span>  Argue that this depleted harmonic series converges by answering the following. <ol class="lower-alpha">
+<li id="li-4991"><p id="p-8455">How many whole numbers <span class="process-math">\(k\)</span> have <span class="process-math">\(d\)</span> digits?</p></li>
+<li id="li-4992"><p id="p-8456">How many <span class="process-math">\(d\)</span>-digits whole numbers <span class="process-math">\(h(d)\)</span> do not contain <span class="process-math">\(9\)</span> as one or more of their digits?</p></li>
+<li id="li-4993"><p id="p-8457">What is the smallest <span class="process-math">\(d\)</span>-digit number <span class="process-math">\(m(d)\text{?}\)</span></p></li>
+<li id="li-4994"><p id="p-8458">Explain why the deleted harmonic series is bounded by <span class="process-math">\(\sum_{d=1}^{\infty} \frac{h(d)}{m(d)}\text{.}\)</span></p></li>
+<li id="li-4995"><p id="p-8459">Show that <span class="process-math">\(\sum_{d=1}^{\infty} \frac{h(d)}{m(d)}\)</span> converges.</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Taylor Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-8B-2-Taylor-Polynomials.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-8B-4-applications-series.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-8B-2-Taylor-Polynomials.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-8B-4-applications-series.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="active">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="cnU"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.3</span> <span class="title">Taylor Series</span>
+</h2>
+<article class="objectives goal-like" id="WyI"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="fSs"><p id="JeV">What is a Taylor series?</p></li>
+<li id="LZB"><p id="pme">How do we determine the accuracy when we use a Taylor polynomial to approximate a function?</p></li>
+</ul></article><section class="introduction" id="CFr"><p id="Avf">In <a href="sec-8B-2-Taylor-Polynomials.html" class="internal" title="Section 8.2: Taylor Polynomials">Section 8.2</a>, we began looking at Taylor polynomials as a means of approximating a function. If we continue this approximation with polynomials of higher and higher orders, we can construct a power series, called the Taylor series, which yields an even more accurate representation of the function. In this section, we examine the Taylor series, its connections to Taylor polynomials, the convergence of the Taylor series, and error approximations for Taylor polynomials.</p>
+<article class="exploration project-like" id="DxJ"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.3.1</span><span class="period">.</span>
+</h3>
+<ol id="dZm" class="lower-alpha">
+<li id="BSb"><p id="DHp">Calculate the first four derivatives of <span class="process-math">\(\sin(x)\)</span> at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+<li id="hZk"><p id="jOx">Find the fourth order Taylor polynomial <span class="process-math">\(P_4(x)\)</span> for <span class="process-math">\(\sin(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+<li id="Ogt"><p id="PVG">Based on your results above, determine a general formula for <span class="process-math">\(f^{(k)}(0)\text{.}\)</span>  Think about how <span class="process-math">\(k\)</span> being even or odd affects the value of the <span class="process-math">\(k\)</span>th derivative.</p></li>
+<li id="unc"><p id="wcP">Based on the pattern found above, determine the coefficient of <span class="process-math">\(x^{14}\)</span> in the Taylor polynomial <span class="process-math">\(P_{14}(x)\)</span> for <span class="process-math">\(\sin(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+<li id="unf"><p id="wcY">Using sigma notation <span class="process-math">\(\sum\text{,}\)</span> write a formula for the <span class="process-math">\(n\)</span>th order Taylor polynomial <span class="process-math">\(P_n(x)\)</span> for <span class="process-math">\(\sin(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="oCk"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.3.1</span> <span class="title">Taylor Series</span>
+</h3>
+<p id="TiB">In <a href="" class="xref" data-knowl="./knowl/PA-8B-3.html" title="Preview Activity 8.3.1">Preview Activity 8.3.1</a> we saw that the fourth order Taylor polynomial <span class="process-math">\(P_4(x)\)</span> for <span class="process-math">\(\sin(x)\)</span> centered at <span class="process-math">\(0\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PA-8B-3.html">
+\begin{equation*}
+P_4(x) = x - \frac{x^3}{3!}\text{.}
+\end{equation*}
+</div>
+<p id="zpK">The pattern we found for the derivatives <span class="process-math">\(f^{(k)}(0)\)</span> describe the higher-order Taylor polynomials, e.g.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/F-8-5-T1579.html" id="arB">
+\begin{align*}
+P_5(x) \amp= x - \frac{x^3}{3!} + \frac{x^{(5)}}{5!}\text{,}\\
+P_7(x) \amp= x - \frac{x^3}{3!} + \frac{x^{(5)}}{5!} - \frac{x^{(7)}}{7!}\text{,}\\
+P_9(x) \amp= x - \frac{x^3}{3!} + \frac{x^{(5)}}{5!} - \frac{x^{(7)}}{7!} + \frac{x^{(9)}}{9!}\text{,}
+\end{align*}
+</div>
+<p class="continuation">and so on. It is instructive to consider the graphical behavior of these functions; <a href="" class="xref" data-knowl="./knowl/F-8-5-T1579.html" title="Figure 8.3.1">Figure 8.3.1</a> shows the graphs of a few of the Taylor polynomials centered at <span class="process-math">\(0\)</span> for the sine function.</p>
+<figure class="figure figure-like" id="XSu"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel top" style="width:37.5%;"><img src="external/images/8_5_Taylor1.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:37.5%;"><img src="external/images/8_5_Taylor5.svg" role="img" class="contained"></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel top" style="width:37.5%;"><img src="external/images/8_5_Taylor7.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:37.5%;"><img src="external/images/8_5_Taylor9.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.3.1<span class="period">.</span></span><span class="space"> </span>The order 1, 5, 7, and 9 Taylor polynomials centered at <span class="process-math">\(x = 0\)</span> for <span class="process-math">\(f(x) = \sin(x)\text{.}\)</span></figcaption></figure><p id="fwT">Notice that <span class="process-math">\(P_1(x)\)</span> is close to the sine function only for values of <span class="process-math">\(x\)</span> that are close to <span class="process-math">\(0\text{,}\)</span> but as we increase the degree of the Taylor polynomial the Taylor polynomials provide a better fit to the graph of the sine function over larger intervals. This illustrates the general behavior of Taylor polynomials: for any sufficiently well-behaved function, the sequence <span class="process-math">\(\{P_n(x)\}\)</span> of Taylor polynomials converges to the function <span class="process-math">\(f\)</span> on larger and larger intervals (though those intervals may not necessarily increase without bound). If the Taylor polynomials ultimately converge to <span class="process-math">\(f\)</span> on its entire domain, we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k\text{.}
+\end{equation*}
+</div>
+<article class="definition definition-like" id="FAv"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.3.2</span><span class="period">.</span>
+</h4>
+<p id="vLk">Let <span class="process-math">\(f\)</span> be a function all of whose derivatives exist at <span class="process-math">\(x=a\text{.}\)</span> The <dfn class="terminology">Taylor series</dfn> for <span class="process-math">\(f\)</span> centered at <span class="process-math">\(x=a\)</span> is the series <span class="process-math">\(T_f(x)\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T_f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k\text{.}
+\end{equation*}
+</div></article><p id="LEc">In the special case where <span class="process-math">\(a=0\)</span> in <a href="" class="xref" data-knowl="./knowl/D-8-5-Taylor-series.html" title="Definition 8.3.2">Definition 8.3.2</a>, the Taylor series is also called the <dfn class="terminology">Maclaurin series</dfn>  for <span class="process-math">\(f\text{.}\)</span> From <a href="" class="xref" data-knowl="./knowl/Ex-8-5-1.html" title="Example 8.2.2">Example 8.2.2</a> we know the <span class="process-math">\(n\)</span>th order Taylor polynomial centered at <span class="process-math">\(0\)</span> for the exponential function <span class="process-math">\(e^x\text{;}\)</span> thus, the Maclaurin series for <span class="process-math">\(e^x\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/D-8-5-Taylor-series.html ./knowl/Ex-8-5-1.html">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{x^k}{k!}\text{.}
+\end{equation*}
+</div>
+<article class="example example-like" id="example-79"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">McLaurin series for <span class="process-math">\(\sin(x)\)</span>.</span>
+</h4>
+<p id="p-9222">Find the MacLaurin series for <span class="process-math">\(f(x)=\sin(x)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-498" id="solution-498"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-498"><div class="solution solution-like">
+<p id="p-9223">From <a href="" class="xref" data-knowl="./knowl/PA-8B-3.html" title="Preview Activity 8.3.1">Preview Activity 8.3.1</a>, we see that <span class="process-math">\(f^{(2k+1)}(0)=(-1)^k\)</span> and <span class="process-math">\(f^{(2k)}(0)=0\text{.}\)</span>  So the MacLaurin series for <span class="process-math">\(\sin(x)\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PA-8B-3.html">
+\begin{equation*}
+T_f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!}x^k = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!}x^{2k+1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Writing out the first few terms gives <span class="process-math">\(T_f(x) = x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 - \frac{1}{7!}x^7 + \cdots\text{.}\)</span></p>
+</div></div>
+</div></article><article class="activity project-like" id="iJd"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.2</span><span class="period">.</span>
+</h4>
+<p id="xSb">In <a href="" class="xref" data-knowl="./knowl/act-8-5-1.html" title="Activity 8.2.2">Activity 8.2.2</a> we determined small order Taylor polynomials for a few familiar functions, and also found general patterns in the derivatives evaluated at <span class="process-math">\(0\text{.}\)</span> Use that information to write the Taylor series centered at <span class="process-math">\(x=a\)</span> for the following functions.</p>
+<ol id="dZk" class="lower-alpha">
+<li id="BSa"><p id="DHn"><span class="process-math">\(\displaystyle f(x) = \frac{1}{1-x}; a=0\)</span></p></li>
+<li id="hZj"><p id="jOw"><span class="process-math">\(f(x) = \cos(x); a=0\)</span> (You will need to carefully consider how to indicate that many of the coefficients are 0. Think about a general way to represent an even integer.)</p></li>
+<li id="hZM"><p id="jOC"><span class="process-math">\(\displaystyle f(x) = \ln(x); a=1\)</span></p></li>
+<li id="unB"><p id="wcO"><span class="process-math">\(\displaystyle f(x) = \frac{1}{1+x}; a=0\)</span></p></li>
+</ol></article><article class="activity project-like" id="Ari"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.3</span><span class="period">.</span>
+</h4>
+<ol id="PAg" class="lower-alpha">
+<li id="fOx"><p id="pij">Plot the graphs of several of the Taylor polynomials centered at <span class="process-math">\(0\)</span> (of order at least 5) for <span class="process-math">\(e^x\)</span> and convince yourself that these Taylor polynomials converge to <span class="process-math">\(e^x\)</span> for every value of <span class="process-math">\(x\text{.}\)</span></p></li>
+<li id="LVG"><p id="Vps">Draw the graphs of several of the Taylor polynomials centered at <span class="process-math">\(0\)</span> (of order at least 6) for <span class="process-math">\(\cos(x)\)</span> and convince yourself that these Taylor polynomials converge to <span class="process-math">\(\cos(x)\)</span> for every value of <span class="process-math">\(x\text{.}\)</span> Write the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(\cos(x)\text{.}\)</span></p></li>
+<li id="scP"><p id="BwB">Draw the graphs of several of the Taylor polynomials centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span> Based on your graphs, for what values of <span class="process-math">\(x\)</span> do these Taylor polynomials appear to converge to <span class="process-math">\(\frac{1}{1-x}\text{?}\)</span> How is this situation different from what we observe with <span class="process-math">\(e^x\)</span> and <span class="process-math">\(\cos(x)\text{?}\)</span> In addition, write the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(\frac{1}{1-x}\text{.}\)</span></p></li>
+</ol></article><p id="rLl">The Maclaurin series for <span class="process-math">\(e^x\text{,}\)</span> <span class="process-math">\(\sin(x)\text{,}\)</span> <span class="process-math">\(\cos(x)\text{,}\)</span> and <span class="process-math">\(\frac{1}{1-x}\)</span> will be used frequently, so we should be certain to know and recognize them well.</p>
+<article class="activity project-like" id="iJF"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.4</span><span class="period">.</span>
+</h4>
+<p id="xSd">There is an important connection between power series and Taylor series.  Suppose <span class="process-math">\(f\)</span> is defined by a power series centered at <span class="process-math">\(x=0\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=0}^{\infty} a_kx^k\text{.}
+\end{equation*}
+</div>
+<ol id="dZl" class="lower-alpha">
+<li id="BSc"><p id="DHq">Determine the first 4 derivatives of <span class="process-math">\(f\)</span> evaluated at <span class="process-math">\(0\)</span> in terms of the coefficients <span class="process-math">\(a_k\text{.}\)</span></p></li>
+<li id="hZl"><p id="jOy">Show that <span class="process-math">\(f^{(n)}(0) = n!a_n\)</span> for each positive integer <span class="process-math">\(n\text{.}\)</span></p></li>
+<li id="hZP"><p id="jOF">Explain how the results of (b) tells us the following: <em class="emphasis">On its interval of convergence, a power series is the Taylor series of its sum.</em></p></li>
+</ol></article></section><section class="subsection" id="UJt"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.3.2</span> <span class="title">The Interval of Convergence of a Taylor Series</span>
+</h3>
+<p id="DZD">In the previous section (in <a href="" class="xref" data-knowl="./knowl/F-8-5-T1579.html" title="Figure 8.3.1">Figure 8.3.1</a> and <a href="" class="xref" data-knowl="./knowl/act-8-5-3.html" title="Activity 8.3.3">Activity 8.3.3</a>) we observed that the Taylor polynomials centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\text{,}\)</span> <span class="process-math">\(\cos(x)\text{,}\)</span> and <span class="process-math">\(\sin(x)\)</span> converged to these functions for all values of <span class="process-math">\(x\)</span> in their domain, but that the Taylor polynomials centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(\frac{1}{1-x}\)</span> converge to <span class="process-math">\(\frac{1}{1-x}\)</span> on the interval <span class="process-math">\((-1,1)\)</span> and diverge for all other values of <span class="process-math">\(x\text{.}\)</span> So the Taylor series for a function <span class="process-math">\(f(x)\)</span> does not need to converge for all values of <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f\text{.}\)</span></p>
+<p id="kgM">Our observations suggest two natural questions: can we determine the values of <span class="process-math">\(x\)</span> for which a given Taylor series converges? And does the Taylor series for a function <span class="process-math">\(f\)</span> actually converge to <span class="process-math">\(f(x)\text{?}\)</span></p>
+<article class="example example-like" id="edf"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.4</span><span class="period">.</span>
+</h4>
+<p id="HZC">Graphical evidence suggests that the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\)</span> converges for all values of <span class="process-math">\(x\text{.}\)</span> To verify this, use the Ratio Test to determine all values of <span class="process-math">\(x\)</span> for which the Taylor series</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="yUl">
+\begin{equation}
+\sum_{k=0}^{\infty} \frac{x^k}{k!}\tag{8.5}
+\end{equation}
+</div>
+<p class="continuation">converges absolutely.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-OUh" id="OUh"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-OUh"><div class="solution solution-like">
+<p id="eMZ">Recall that the Ratio Test applies only to series of nonnegative terms. In this example, the variable <span class="process-math">\(x\)</span> may have negative values. But we are interested in absolute convergence, so we apply the Ratio Test to the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \left| \frac{x^k}{k!} \right| = \sum_{k=0}^{\infty} \frac{| x |^k}{k!}\text{.}
+\end{equation*}
+</div>
+<p id="KUi">Now, observe that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-8-5-exponential.html" id="LiD">
+\begin{align*}
+\lim_{k \to \infty} \frac{a_{k+1}}{a_k}   \amp  = \lim_{k \to \infty} \frac{\frac{| x |^{k+1}}{(k+1)!} }{ \frac{| x |^k}{k} }\\
+\amp = \lim_{k \to \infty} \frac{| x |^{k+1}k!}{ | x |^{k}(k+1)! }\\
+\amp = \lim_{k \to \infty} \frac{| x |}{k+1}\\
+\amp = 0
+\end{align*}
+</div>
+<p class="continuation">for any value of <span class="process-math">\(x\text{.}\)</span> So the Taylor series <a href="" class="xref" data-knowl="./knowl/eq-8-5-exponential.html" title="Equation 8.5">(8.5)</a> converges absolutely for every value of <span class="process-math">\(x\text{,}\)</span> and thus converges for every value of <span class="process-math">\(x\text{.}\)</span></p>
+</div></div>
+</div></article><p id="QnV">One question still remains: while the Taylor series for <span class="process-math">\(e^x\)</span> converges for all <span class="process-math">\(x\text{,}\)</span> what we have done does not tell us that this Taylor series actually converges to <span class="process-math">\(e^x\)</span> for each <span class="process-math">\(x\text{.}\)</span> We'll return to this question when we consider the error in a Taylor approximation near the end of this section.</p>
+<p id="p-9276">As we did for power series, we define the interval of convergence of a Taylor series to be the set of values of <span class="process-math">\(x\)</span> for which the series converges. And as we did with power series, we typically use the Ratio Test to find the values of <span class="process-math">\(x\)</span> for which the Taylor series converges absolutely, and then check the endpoints separately if the radius of convergence is finite.</p>
+<article class="activity project-like" id="ygw"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.5</span><span class="period">.</span>
+</h4>
+<ol id="ZDM" class="lower-alpha">
+<li id="pSd"><p id="zlP">Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for <span class="process-math">\(f(x) = \frac{1}{1-x}\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+<li id="VZm"><p id="fsY">Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for <span class="process-math">\(f(x) = \cos(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+<li id="Cgv"><p id="LAh">Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for <span class="process-math">\(f(x) = \sin(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span></p></li>
+</ol></article><p id="Ntp">The Ratio Test allows us to determine the set of <span class="process-math">\(x\)</span> values for which a Taylor series converges absolutely. However, just because a Taylor series for a function <span class="process-math">\(f\)</span> converges, we cannot be certain that the Taylor series actually converges to <span class="process-math">\(f(x)\text{.}\)</span> To show why and where a Taylor series does in fact converge to the function <span class="process-math">\(f\text{,}\)</span> we next consider the error that is present in Taylor polynomials.</p></section><section class="subsection" id="AQC"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.3.3</span> <span class="title">Error Approximations for Taylor Polynomials</span>
+</h3>
+<p id="tAy">We now know how to find Taylor polynomials for functions such as <span class="process-math">\(\sin(x)\text{,}\)</span> and how to determine the interval of convergence of the corresponding Taylor series. We next develop an error bound that will tell us how well an <span class="process-math">\(n\)</span>th order Taylor polynomial <span class="process-math">\(P_n(x)\)</span> approximates its generating function <span class="process-math">\(f(x)\text{.}\)</span> This error bound will also allow us to determine whether a Taylor series on its interval of convergence actually equals the function <span class="process-math">\(f\)</span> from which the Taylor series is derived. Finally, we will be able to use the error bound to determine the order of the Taylor polynomial <span class="process-math">\(P_n(x)\)</span> that we will ensure that <span class="process-math">\(P_n(x)\)</span> approximates <span class="process-math">\(f(x)\)</span> to the desired degree of accuracy.</p>
+<p id="ZHH">For this argument, we assume throughout that we center our approximations at <span class="process-math">\(0\)</span> (but a similar argument holds for approximations centered at <span class="process-math">\(a\)</span>). We define the exact error, <span class="process-math">\(E_n(x)\text{,}\)</span> that results from approximating <span class="process-math">\(f(x)\)</span> with <span class="process-math">\(P_n(x)\)</span> by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_n(x) = f(x) - P_n(x)\text{.}
+\end{equation*}
+</div>
+<p id="FOQ">We are particularly interested in <span class="process-math">\(|E_n(x)|\text{,}\)</span> the distance between <span class="process-math">\(P_n\)</span> and <span class="process-math">\(f\text{.}\)</span> Because</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P^{(k)}_n(0) = f^{(k)}(0)
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(0 \leq k \leq n\text{,}\)</span> we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E^{(k)}_n(0) = 0
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(0 \leq k \leq n\text{.}\)</span> Furthermore, since <span class="process-math">\(P_n(x)\)</span> is a polynomial of degree less than or equal to <span class="process-math">\(n\text{,}\)</span> we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P_n^{(n+1)}(x) = 0\text{.}
+\end{equation*}
+</div>
+<p id="lVZ">Thus, since <span class="process-math">\(E^{(n+1)}_n(x) = f^{(n+1)}(x) - P_n^{(n+1)}(x)\text{,}\)</span> it follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E^{(n+1)}_n(x) = f^{(n+1)}(x)
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\text{.}\)</span></p>
+<p id="Sdi">Suppose that we want to approximate <span class="process-math">\(f(x)\)</span> at a number <span class="process-math">\(c\)</span> close to <span class="process-math">\(0\)</span> using <span class="process-math">\(P_n(c)\text{.}\)</span> If we assume <span class="process-math">\(|f^{(n+1)}(t)|\)</span> is bounded by some number <span class="process-math">\(M\)</span> on <span class="process-math">\([0, c]\text{,}\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneq.html">
+\begin{equation*}
+\left|f^{(n+1)}(t)\right| \leq M
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(0 \leq t \leq c\text{,}\)</span> then we can say that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneq.html">
+\begin{equation*}
+\left|E^{(n+1)}_n(t)\right| = \left|f^{(n+1)}(t)\right| \leq M
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(t\)</span> between <span class="process-math">\(0\)</span> and <span class="process-math">\(c\text{.}\)</span> Equivalently,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneq.html" id="RHJ">
+\begin{equation}
+-M \leq E^{(n+1)}_n(t) \leq M\tag{8.6}
+\end{equation}
+</div>
+<p class="continuation">on <span class="process-math">\([0, c]\text{.}\)</span> Next, we integrate the three terms in <a href="" class="xref" data-knowl="./knowl/E-ErrorIneq.html" title="Equation 8.6">Inequality (8.6)</a> from <span class="process-math">\(t = 0\)</span> to <span class="process-math">\(t = x\text{,}\)</span> and thus find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneq.html">
+\begin{equation*}
+\int_0^x -M \ dt \leq \int_0^x E^{(n+1)}_n(t) \ dt \leq \int_0^x M \ dt
+\end{equation*}
+</div>
+<p class="continuation">for every value of <span class="process-math">\(x\)</span> in <span class="process-math">\([0, c]\text{.}\)</span> Since <span class="process-math">\(E^{(n)}_n(0) = 0\text{,}\)</span> the First FTC tells us that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneq.html">
+\begin{equation*}
+-Mx \leq E^{(n)}_n(x) \leq Mx
+\end{equation*}
+</div>
+<p class="continuation">for every <span class="process-math">\(x\)</span> in <span class="process-math">\([0, c]\text{.}\)</span></p>
+<p id="ykr">Integrating this last inequality, we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^x -Mt \ dt \leq \int_0^x E^{(n)}_n(t) \ dt \leq \int_0^x Mt \ dt
+\end{equation*}
+</div>
+<p class="continuation">and thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-M\frac{x^2}{2} \leq E^{(n-1)}_n(x) \leq M\frac{x^2}{2}
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0, c]\text{.}\)</span></p>
+<p id="erA">Integrating <span class="process-math">\(n\)</span> times, we arrive at</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-M\frac{x^{n+1}}{(n+1)!} \leq E_n(x) \leq M\frac{x^{n+1}}{(n+1)!}
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0, c]\text{.}\)</span> This enables us to conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left|E_n(x)\right| \leq M\frac{|x|^{n+1}}{(n+1)!}
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0, c]\text{,}\)</span> and we have found a bound on the approximation's error, <span class="process-math">\(E_n\text{.}\)</span></p>
+<p id="KyJ">Our work above was based on the approximation centered at <span class="process-math">\(a = 0\text{;}\)</span> the argument may be generalized to hold for any value of <span class="process-math">\(a\text{,}\)</span> which results in the following theorem.</p>
+<article class="assemblage assemblage-like" id="tmd"><h4 class="heading"><span class="title">The Lagrange Error Bound for <span class="process-math">\(P_n(x)\)</span>.</span></h4>
+<p id="qFS">Let <span class="process-math">\(f\)</span> be a continuous function with <span class="process-math">\(n+1\)</span> continuous derivatives. Suppose that <span class="process-math">\(M\)</span> is a positive real number such that <span class="process-math">\(\left|f^{(n+1)}(x)\right| \le M\)</span> on the interval <span class="process-math">\([a, c]\text{.}\)</span> If <span class="process-math">\(P_n(x)\)</span> is the <span class="process-math">\(n\)</span>th order Taylor polynomial for <span class="process-math">\(f(x)\)</span> centered at <span class="process-math">\(x=a\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left|P_n(c) - f(c)\right| \leq M\frac{|c-a|^{n+1}}{(n+1)!}\text{.}
+\end{equation*}
+</div></article><p id="WNb">We can use this error bound to tell us important information about Taylor polynomials and Taylor series, as we see in the following examples and activities.</p>
+<article class="example example-like" id="Kko"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.5</span><span class="period">.</span>
+</h4>
+<p id="ogL">Determine how well the 10th order Taylor polynomial <span class="process-math">\(P_{10}(x)\)</span> for <span class="process-math">\(\sin(x)\text{,}\)</span> centered at <span class="process-math">\(0\text{,}\)</span> approximates <span class="process-math">\(\sin(2)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-vbq" id="vbq"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-vbq"><div class="solution solution-like">
+<p id="rbr">To answer this question we use <span class="process-math">\(f(x) = \sin(x)\text{,}\)</span> <span class="process-math">\(c = 2\text{,}\)</span> <span class="process-math">\(a=0\text{,}\)</span> and <span class="process-math">\(n = 10\)</span> in the Lagrange error bound formula. We also need to find an appropriate value for <span class="process-math">\(M\text{.}\)</span> Note that the derivatives of <span class="process-math">\(f(x) = \sin(x)\)</span> are all equal to <span class="process-math">\(\pm \sin(x)\)</span> or <span class="process-math">\(\pm \cos(x)\text{.}\)</span> Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| f^{(n+1)}(x) \right| \leq 1
+\end{equation*}
+</div>
+<p class="continuation">for any <span class="process-math">\(n\)</span> and <span class="process-math">\(x\text{.}\)</span> Therefore, we can choose <span class="process-math">\(M\)</span> to be <span class="process-math">\(1\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left|P_{10}(2) - f(2)\right| \leq (1)\frac{|2-0|^{11}}{(11)!} = \frac{2^{11}}{(11)!} \approx 0.00005130671797\text{.}
+\end{equation*}
+</div>
+<p id="XiA">So <span class="process-math">\(P_{10}(2)\)</span> approximates <span class="process-math">\(\sin(2)\)</span> to within at most <span class="process-math">\(0.00005130671797\text{.}\)</span> A computer algebra system tells us that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P_{10}(2) \approx 0.9093474427 \ \ \text{ and }  \ \ \sin(2) \approx 0.9092974268
+\end{equation*}
+</div>
+<p class="continuation">with an actual difference of about <span class="process-math">\(0.0000500159\text{.}\)</span></p>
+</div></div>
+</div></article><article class="activity project-like" id="EFC"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.6</span><span class="period">.</span>
+</h4>
+<p id="nHr">Let <span class="process-math">\(P_n(x)\)</span> be the <span class="process-math">\(n\)</span>th order Taylor polynomial for <span class="process-math">\(\sin(x)\)</span> centered at <span class="process-math">\(x=0\text{.}\)</span> Determine how large we need to choose <span class="process-math">\(n\)</span> so that <span class="process-math">\(P_n(2)\)</span> approximates <span class="process-math">\(\sin(2)\)</span> to <span class="process-math">\(20\)</span> decimal places.</p></article><article class="example example-like" id="qrx"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.6</span><span class="period">.</span>
+</h4>
+<p id="UnU">Show that the Taylor series for <span class="process-math">\(\sin(x)\)</span> actually converges to <span class="process-math">\(\sin(x)\)</span> for all <span class="process-math">\(x\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-biz" id="biz"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-biz"><div class="solution solution-like">
+<p id="DpJ">Recall from the previous example that since <span class="process-math">\(f(x) = \sin(x)\text{,}\)</span> we know</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| f^{(n+1)}(x) \right| \leq 1
+\end{equation*}
+</div>
+<p class="continuation">for any <span class="process-math">\(n\)</span> and <span class="process-math">\(x\text{.}\)</span> This allows us to choose <span class="process-math">\(M = 1\)</span> in the Lagrange error bound formula. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="bbv">
+\begin{equation}
+|P_n(x) - \sin(x)| \leq \frac{|x|^{n+1}}{(n+1)!}\tag{8.7}
+\end{equation}
+</div>
+<p class="continuation">for every <span class="process-math">\(x\text{.}\)</span></p>
+<p id="jwS">We showed in earlier work that the Taylor series <span class="process-math">\(\sum_{k=0}^{\infty} \frac{x^k}{k!}\)</span> converges for every value of <span class="process-math">\(x\text{.}\)</span> Because the terms of any convergent series must approach zero, it follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneqSine.html">
+\begin{equation*}
+\lim_{n \to \infty} \frac{x^{n+1}}{(n+1)!} = 0
+\end{equation*}
+</div>
+<p class="continuation">for every value of <span class="process-math">\(x\text{.}\)</span> Thus, taking the limit as <span class="process-math">\(n \to \infty\)</span> in the inequality <a href="" class="xref" data-knowl="./knowl/E-ErrorIneqSine.html" title="Equation 8.7">(8.7)</a>, it follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/E-ErrorIneqSine.html">
+\begin{equation*}
+\lim_{n \to \infty} |P_n(x) - \sin(x)| = 0\text{.}
+\end{equation*}
+</div>
+<p id="PEb">As a result, we can now write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^nx^{2n+1}}{(2n+1)!}
+\end{equation*}
+</div>
+<p class="continuation">for every real number <span class="process-math">\(x\text{.}\)</span></p>
+</div></div>
+</div></article><article class="activity project-like" id="nlS"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.7</span><span class="period">.</span>
+</h4>
+<ol id="iBZ" class="lower-alpha">
+<li id="BKW"><p id="vVK">Show that the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(\cos(x)\)</span> converges to <span class="process-math">\(\cos(x)\)</span> for every real number <span class="process-math">\(x\text{.}\)</span></p></li>
+<li id="hSf">
+<p id="ccT">Next we consider the Taylor series for <span class="process-math">\(e^x\text{.}\)</span></p>
+<ol class="lower-roman">
+<li id="LOC"><p id="Ttb">Show that the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\)</span> converges to <span class="process-math">\(e^x\)</span> for every nonnegative value of <span class="process-math">\(x\text{.}\)</span></p></li>
+<li id="NZo"><p id="Ikc">Show that the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\)</span> converges to <span class="process-math">\(e^x\)</span> for every negative value of <span class="process-math">\(x\text{.}\)</span></p></li>
+<li id="ugx"><p id="orl">Explain why the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\)</span> converges to <span class="process-math">\(e^x\)</span> for every real number <span class="process-math">\(x\text{.}\)</span> Recall that we earlier showed that the Taylor series centered at <span class="process-math">\(0\)</span> for <span class="process-math">\(e^x\)</span> converges for all <span class="process-math">\(x\text{,}\)</span> and we have now completed the argument that the Taylor series for <span class="process-math">\(e^x\)</span> actually converges to <span class="process-math">\(e^x\)</span> for all <span class="process-math">\(x\text{.}\)</span></p></li>
+</ol>
+</li>
+<li id="POB"><p id="Uyu">Let <span class="process-math">\(P_n(x)\)</span> be the <span class="process-math">\(n\)</span>th order Taylor polynomial for <span class="process-math">\(e^x\)</span> centered at <span class="process-math">\(0\text{.}\)</span> Find a value of <span class="process-math">\(n\)</span> so that <span class="process-math">\(P_n(5)\)</span> approximates <span class="process-math">\(e^5\)</span> correct to <span class="process-math">\(8\)</span> decimal places.</p></li>
+</ol></article></section><section class="subsection" id="gXL"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.3.4</span> <span class="title">Summary</span>
+</h3>
+<ul id="CUk" class="disc">
+<li id="QJu">
+<p id="tVX">The Taylor series centered at <span class="process-math">\(x=a\)</span> for a function <span class="process-math">\(f\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The <span class="process-math">\(n\)</span>th order Taylor polynomial centered at <span class="process-math">\(a\)</span> for <span class="process-math">\(f\)</span> is the <span class="process-math">\(n\)</span>th partial sum of its Taylor series centered at <span class="process-math">\(a\text{.}\)</span> So the <span class="process-math">\(n\)</span>th order Taylor polynomial for a function <span class="process-math">\(f\)</span> is an approximation to <span class="process-math">\(f\)</span> on the interval where the Taylor series converges; for the values of <span class="process-math">\(x\)</span> for which the Taylor series converges to <span class="process-math">\(f\)</span> we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-5477"><p id="p-9346">The connection between power series and Taylor series is that they are essentially the same thing: on its interval of convergence a power series is the Taylor series of its sum.</p></li>
+<li id="li-5478"><p id="p-9347">We can often assume a solution to a given problem can be written as a power series, then use the information in the problem to determine the coefficients in the power series. This method allows us to approximate solutions to certain problems using partial sums of the power series; that is, we can find approximate solutions that are polynomials.</p></li>
+<li id="wQD">
+<p id="adg">The Lagrange Error Bound shows us how to determine the accuracy in using a Taylor polynomial to approximate a function. More specifically, if <span class="process-math">\(P_n(x)\)</span> is the <span class="process-math">\(n\)</span>th order Taylor polynomial for <span class="process-math">\(f\)</span> centered at <span class="process-math">\(x=a\)</span> and if <span class="process-math">\(M\)</span> is an upper bound for <span class="process-math">\(\left|f^{(n+1)}(x)\right|\)</span> on the interval <span class="process-math">\([a, c]\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left|P_n(c) - f(c)\right| \leq M\frac{|c-a|^{n+1}}{(n+1)!}\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<article class="assemblage assemblage-like" id="assemblage-70"><h4 class="heading"><span class="title">Important Taylor Series.</span></h4>
+<ul id="p-9349" class="disc">
+<li id="li-5480"><p id="p-9350"><span class="process-math">\(\displaystyle \displaystyle e^x = 1 + x+ \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots = \sum_{k=0}^{\infty} \frac{x^{k}}{k!}\)</span></p></li>
+<li id="li-5481"><p id="p-9351"><span class="process-math">\(\displaystyle \displaystyle \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{(2k+1)!}\)</span></p></li>
+<li id="li-5482"><p id="p-9352"><span class="process-math">\(\displaystyle \displaystyle \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!}\)</span></p></li>
+<li id="li-5483"><p id="p-9353"><span class="process-math">\(\displaystyle \displaystyle \frac{1}{1-x} = 1+ x + x^2 + x^3 +x^4 + \cdots = \sum_{k=0}^{\infty} x^k\)</span></p></li>
+<li id="li-5484"><p id="p-9354"><span class="process-math">\(\displaystyle \displaystyle \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots = \sum_{k=1}^{\infty} \frac{(-1)^{k-1}x^k}{k}\)</span></p></li>
+<li id="li-5485"><p id="p-9355"><span class="process-math">\(\displaystyle \displaystyle (1+x)^p = 1+ px + \frac{p(p-1)}{2!}x^2 + \frac{p(p-1)(p-2)}{3!}x^3 + \cdots = \sum_{k=0}^{\infty} \frac{p!}{{k!}{(p-k)!}} x^k\)</span></p></li>
+</ul></article></section><section class="exercises" id="NyE"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.3.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="iis"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for a given rational function.</span>
+</h4>
+<div id="webwork-216" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="216" data-sourceFilePath="Library/FortLewis/Calc2/10-2-Taylor-series/Taylor-series-01.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9356">Find the first four terms of the Taylor series for the function <span class="process-math">\(\displaystyle \frac{5}{x}\)</span> about the point <span class="process-math">\(a = -2\text{.}\)</span>  (Your answers should include the variable x when appropriate.)</p>
+<p id="p-9357"><span class="process-math">\(\displaystyle \frac{5}{x} =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + ...</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-216')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="OpB"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for a given trigonometric function.</span>
+</h4>
+<div id="webwork-217" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="217" data-sourceFilePath="Library/FortLewis/Calc2/10-2-Taylor-series/Taylor-series-02.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9362">Find the first four terms of the Taylor series for the function <span class="process-math">\(\cos(x)\)</span> about the point <span class="process-math">\(a = -\pi/4\text{.}\)</span>  (Your answers should include the variable x when appropriate.)</p>
+<p id="p-9363"><span class="process-math">\(\cos(x) =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> + <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> + <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> + <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> + ...</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-217')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwK"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for a given logarithmic function.</span>
+</h4>
+<div id="webwork-218" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="218" data-sourceFilePath="Library/FortLewis/Calc2/10-2-Taylor-series/Taylor-series-04.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9368">Find the first five terms of the Taylor series for the function <span class="process-math">\(f(x) = \ln\!\left(x\right)\)</span> about the point <span class="process-math">\(a = 3\text{.}\)</span> (Your answers should include the variable x when appropriate.)</p>
+<p id="p-9369"><span class="process-math">\(\ln\!\left(x\right) =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> + ...</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-218')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwM"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the Taylor series for a square root function.</span>
+</h4>
+<div id="webwork-219" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="219" data-sourceFilePath="Library/FortLewis/Calc2/10-2-Taylor-series/Taylor-series-05.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9375">Find the first three <em class="alert">nonzero</em> terms of the Taylor series for the function <span class="process-math">\(f(x) = \sqrt{4x-x^{2}}\)</span> about the point <span class="process-math">\(a = 2\text{.}\)</span> (Your answers should include the variable x when appropriate.)</p>
+<p id="p-9376"><span class="process-math">\(\sqrt{4x-x^{2}} =\)</span> <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span> + <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span> + <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span> + ...</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-219')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwx"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Recognizing a given Taylor series.</span>
+</h4>
+<div id="webwork-220" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="220" data-sourceFilePath="Library/Michigan/Chap10Sec2/Q31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9380">By recognizing each series below as a Taylor series evaluated at a particular value of <span class="process-math">\(x\text{,}\)</span> find the sum of each convergent series.</p>
+<p id="p-9381"><em class="alert">A.</em> <span class="process-math">\(1 + 4 + {4^2\over 2!} + {4^3\over 3!} + {4^4\over 4!} + \cdots + {4^n\over n!} + \cdots =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+<p id="p-9382"><em class="alert">B.</em> <span class="process-math">\(5 - {5^3\over 3!} + {5^5\over 5!} - {5^7\over 7!} + \cdots + {(-1)^{n} 5^{2n+1}\over (2n+1)!} + \cdots =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-220')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwy"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Error bound for a Taylor approximation.</span>
+</h4>
+<div id="webwork-221" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="221" data-sourceFilePath="Library/Michigan/Chap10Sec4/Q11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9385">Consider the error in using the approximation <span class="process-math">\(\sin\!\left(x\right) \approx x\)</span> on the interval <span class="process-math">\([-1, 1]\text{.}\)</span></p>
+<p id="p-9386"><em class="alert">(a)</em> Reasoning informally, on what interval is this approximation an overestimate?  <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+<p id="p-9387">An underestimate? <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+<p id="p-9388"><em class="emphasis">(For each, give your answer as an interval or list of intervals, e.g., to specify the intervals <span class="process-math">\(-0.25 \le x \lt  0.5\)</span> and <span class="process-math">\(0.75 \lt  x \le 1\text{,}\)</span> enter <em class="alert">[-0.25, 0.75), (0.75,1]</em> Enter <em class="alert">none</em> if there are no such intervals.)</em></p>
+<p id="p-9389"><em class="alert">(b)</em> Use the Error Bound for Taylor Polynomials to find a good smallest bound for the error in approximating <span class="process-math">\(\sin\!\left(x\right)\)</span> with <span class="process-math">\(x\)</span> on this interval:</p>
+<p id="p-9390">error bound = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9391">Now, consider the error in using the approximation <span class="process-math">\(\sin\!\left(x\right) \approx x+\frac{-x^{3}}{3!}+\frac{x^{5}}{5!}\)</span> on the same interval.</p>
+<p id="p-9392"><em class="alert">(c)</em> Reasoning informally, on what interval is this approximation an overestimate?  <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+<p id="p-9393">An underestimate? <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+<p id="p-9394"><em class="emphasis">(For each, give your answer as an interval or list of intervals, e.g., to specify the intervals <span class="process-math">\(-0.25 \le x \lt  0.5\)</span> and <span class="process-math">\(0.75 \lt  x \le 1\text{,}\)</span> enter <em class="alert">[-0.25, 0.75), (0.75,1]</em> Enter <em class="alert">none</em> if there are no such intervals.)</em></p>
+<p id="p-9395"><em class="alert">(d)</em> Use the Error Bound for Taylor Polynomials to find a good smallest bound for the error in approximating <span class="process-math">\(\sin\!\left(x\right)\)</span> with <span class="process-math">\(x+\frac{-x^{3}}{3!}+\frac{x^{5}}{5!}\)</span> on this interval:</p>
+<p id="p-9396">error bound = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-221')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwz"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Bounding the error for a Taylor polynomial approximation.</span>
+</h4>
+<div id="webwork-222" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="222" data-sourceFilePath="Library/Michigan/Chap10Sec4/Q14.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9403">Use the Error Bound for Taylor Polynomials to give a good bound for the error for the <span class="process-math">\(n^{\rm th}\)</span> degree Taylor polynomial about <span class="process-math">\(x = 0\)</span> approximating <span class="process-math">\(\cos\!\left(x\right)\)</span> on the interval <span class="process-math">\([0,1.4]\text{.}\)</span></p>
+<p id="p-9404">error bound = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-222')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwA"><h4 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Minimal degree polynomial needed in an approximation.</span>
+</h4>
+<div id="webwork-223" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="223" data-sourceFilePath="Library/Michigan/Chap10Sec4/Q15.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9406">What is the minimal degree Taylor polynomial about <span class="process-math">\(x= 0\)</span> that you need to calculate <span class="process-math">\(\cos(1)\)</span> to 5 decimal places?</p>
+<p id="p-9407">degree = <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+<p id="p-9408">To 8 decimal places?</p>
+<p id="p-9409">degree = <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-223')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="uwB"><h4 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">Actual vs. maximum error.</span>
+</h4>
+<div id="webwork-224" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="224" data-sourceFilePath="Library/Michigan/Chap10Sec4/Q17.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9412">In this problem, you will investigate the error in the <span class="process-math">\(n^{\rm th}\)</span> degree Taylor approximation, <span class="process-math">\(P_n(x)\text{,}\)</span> to <span class="process-math">\(\ln\!\left(x+1\right)\)</span> about <span class="process-math">\(0\)</span> for various values of <span class="process-math">\(n\text{.}\)</span></p>
+<p id="p-9413"><em class="alert">(a)</em> Let <span class="process-math">\(E_1 = \ln\!\left(x+1\right) - P_1(x) = \ln\!\left(x+1\right) - (x)\text{.}\)</span>  Using a calculator or computer, graph <span class="process-math">\(E_1\)</span>  for <span class="process-math">\(-0.1 \leq x \leq 0.1\text{,}\)</span> and notice what shape the graph is.  Then use the Error Bound for Taylor polynomials to find a formula for the maximum error, as a function of <span class="process-math">\(x\text{,}\)</span> in this case:</p>
+<p id="p-9414"><span class="process-math">\(|E_1(x)| \le\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>.</p>
+<p id="p-9415">Graph the actual error <span class="process-math">\(|E_1(x)|\)</span> and your error bound together to see that the error is in fact below the maximum error bound (but close to it).</p>
+<p id="p-9416"><em class="alert">(b)</em> Let <span class="process-math">\(E_2=\ln\!\left(x+1\right) -P_2(x) = \ln\!\left(x+1\right) - (x-\frac{x^{2}}{2})\text{.}\)</span>  Choose a suitable range and graph  <span class="process-math">\(E_2\)</span>  for  <span class="process-math">\(-0.1\leq x \leq 0.1\)</span> .  Again, notice what shape the graph of <span class="process-math">\(E_2\)</span> is.  Then use the Error Bound for Taylor polynomials to find a formula for the maximum error, as a function of <span class="process-math">\(x\text{,}\)</span> in this case:</p>
+<p id="p-9417"><span class="process-math">\(|E_2(x)| \le\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>.</p>
+<p id="p-9418">Graph the actual error <span class="process-math">\(|E_2(x)|\)</span> and your error bound together to see that the error is in fact below the maximum error bound (but close to it).</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-224')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="aDT"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="ODW">In this exercise we investigation the Taylor series of polynomial functions.</p>
+<ol class="lower-alpha">
+<li id="trq"><p id="VyA">Find the 3rd order Taylor polynomial centered at <span class="process-math">\(a = 0\)</span> for <span class="process-math">\(f(x) = x^3-2x^2+3x-1\text{.}\)</span> Does your answer surprise you? Explain.</p></li>
+<li id="Zyz"><p id="BFJ">Without doing any additional computation, find the 4th, 12th, and 100th order Taylor polynomials (centered at <span class="process-math">\(a = 0\)</span>) for <span class="process-math">\(f(x) = x^3-2x^2+3x-1\text{.}\)</span> Why should you expect this?</p></li>
+<li id="FFI"><p id="hMS">Now suppose <span class="process-math">\(f(x)\)</span> is a degree <span class="process-math">\(m\)</span> polynomial. Completely describe the <span class="process-math">\(n\)</span>th order Taylor polynomial (centered at <span class="process-math">\(a = 0\)</span>) for each <span class="process-math">\(n\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="GLb"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="uLe">The examples we have considered in this section have all been for Taylor polynomials and series centered at 0, but Taylor polynomials and series can be centered at any value of <span class="process-math">\(a\text{.}\)</span> We look at examples of such Taylor polynomials in this exercise.</p>
+<ol id="aSn" class="lower-alpha">
+<li id="WDT"><p id="yLd">Let <span class="process-math">\(f(x) = \sin(x)\text{.}\)</span> Find the Taylor polynomials up through order four of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(x = \frac{\pi}{2}\text{.}\)</span> Then find the Taylor series for <span class="process-math">\(f(x)\)</span> centered at <span class="process-math">\(x = \frac{\pi}{2}\text{.}\)</span> Why should you have expected the result?</p></li>
+<li id="CLc"><p id="eSm">Let <span class="process-math">\(f(x) = \ln(x)\text{.}\)</span> Find the Taylor polynomials up through order four of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(x = 1\text{.}\)</span> Then find the Taylor series for <span class="process-math">\(f(x)\)</span> centered at <span class="process-math">\(x = 1\text{.}\)</span></p></li>
+<li id="iSl"><p id="KZv">Use your result from (b) to determine which Taylor polynomial will approximate <span class="process-math">\(\ln(2)\)</span> to two decimal places. Explain in detail how you know you have the desired accuracy.</p></li>
+</ol></article><article class="exercise exercise-like" id="mSk"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="GZw">We can use known Taylor series to obtain other Taylor series, and we explore that idea in this exercise, as a preview of work in the following section.</p>
+<ol id="ngF" class="lower-alpha">
+<li id="zQw"><p id="bXG">Calculate the first four derivatives of <span class="process-math">\(\sin(x^2)\)</span> and hence find the fourth order Taylor polynomial for <span class="process-math">\(\sin(x^2)\)</span> centered at <span class="process-math">\(a=0\text{.}\)</span></p></li>
+<li id="fXF">
+<p id="IeP">Part (a) demonstrates the brute force approach to computing Taylor polynomials and series. Now we find an easier method that utilizes a known Taylor series. Recall that the Taylor series centered at 0 for <span class="process-math">\(f(x) = \sin(x)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-8-5-Exercise3.html" id="IOJ">
+\begin{equation}
+\sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!}\text{.}\tag{8.8}
+\end{equation}
+</div>
+<ol class="lower-roman">
+<li id="mbm"><p id="tFL">Substitute <span class="process-math">\(x^2\)</span> for <span class="process-math">\(x\)</span> in the Taylor series <a href="" class="xref" data-knowl="./knowl/eq-8-5-Exercise3.html" title="Equation 8.8">(8.8)</a>. Write out the first several terms and compare to your work in part (a). Explain why the substitution in this problem should give the Taylor series for <span class="process-math">\(\sin(x^2)\)</span> centered at 0.</p></li>
+<li id="MeO"><p id="olY">What should we expect the interval of convergence of the series for <span class="process-math">\(\sin(x^2)\)</span> to be? Explain in detail.</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="SZt"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="TnO">Based on the examples we have seen, we might expect that the Taylor series for a function <span class="process-math">\(f\)</span> always converges to the values <span class="process-math">\(f(x)\)</span> on its interval of convergence. We explore that idea in more detail in this exercise. Let <span class="process-math">\(f(x) = \begin{cases}e^{-1/x^2} \amp \text{ if } x \neq 0, \\ 0 \amp \text{ if } x = 0. \end{cases}\)</span></p>
+<ol id="zuX" class="lower-alpha">
+<li id="dcZ"><p id="lrs">Show, using the definition of the derivative, that <span class="process-math">\(f'(0) = 0\text{.}\)</span></p></li>
+<li id="Jki"><p id="RyB">It can be shown that <span class="process-math">\(f^{(n)}(0) = 0\)</span> for all <span class="process-math">\(n \geq 2\text{.}\)</span> Assuming that this is true, find the Taylor series for <span class="process-math">\(f\)</span> centered at 0.</p></li>
+<li id="prr"><p id="xFK">What is the interval of convergence of the Taylor series centered at 0 for <span class="process-math">\(f\text{?}\)</span> Explain. For which values of <span class="process-math">\(x\)</span> the interval of convergence of the Taylor series does the Taylor series converge to <span class="process-math">\(f(x)\text{?}\)</span></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

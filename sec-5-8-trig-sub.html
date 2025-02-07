@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:12:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Trigonometric Substitution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-5-7-trig-integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-5-5-other-options.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-5-7-trig-integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-5-5-other-options.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="active">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="GxJ"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.7</span> <span class="title">Trigonometric Substitution</span>
+</h2>
+<article class="objectives goal-like" id="XvW"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc"><li id="Zlj"><p id="Kcj">How does the method of trigonometric substitution help us find antiderivatives of functions that may include expressions including <span class="process-math">\(\sqrt{a^2-x^2}\text{,}\)</span> <span class="process-math">\(a^2+x^2\text{,}\)</span> and <span class="process-math">\(\sqrt{a^2+x^2}\)</span> where <span class="process-math">\(a\)</span> is any real number?</p></li></ul></article><section class="introduction" id="DDf"><p id="IWS">We've now studied three integration techniques: <span class="process-math">\(u\)</span>-substitution, integration by parts, and the method of partial fractions. However, none of these may be used in situations involving rational functions with a single quadratic factor in the denominator like <span class="process-math">\(\int \frac{1}{4+x^2} \ dx\)</span> or when integrating many functions containing expressions like <span class="process-math">\(\sqrt{9-x^2}\text{.}\)</span></p>
+<article class="exploration project-like" id="XEa"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.7.1</span><span class="period">.</span>
+</h3>
+<p id="rxr">Suppose an angle <span class="process-math">\(\theta\)</span> is such that <span class="process-math">\(0 &lt; \theta &lt; \frac{\pi}{2}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/trigsubtriangle.html" title="Figure 5.7.1">5.7.1</a>.  Further, suppose it is known that <span class="process-math">\(\sin \theta = \frac{x}{a}\text{.}\)</span> <figure class="figure figure-like" id="trigsubtriangle"><div class="image-box" style="width: 15%; margin-left: 42.5%; margin-right: 42.5%;"><img src="generated/latex-image/trigsubtrianglepic.svg" role="img" class="contained" alt="Right Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.1<span class="period">.</span></span><span class="space"> </span>Right triangle used in Preview Activity <a href="" class="xref" data-knowl="./knowl/PA-5-8.html" title="Preview Activity 5.7.1">5.7.1</a>.</figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="urV"><p id="SUH">Label the remaining sides of the right triangle shown in <a href="" class="xref" data-knowl="./knowl/trigsubtriangle.html" title="Figure 5.7.1">5.7.1</a>.</p></li>
+<li id="azh"><p id="zbf">Determine the values of <span class="process-math">\(\cos\theta, \tan\theta, \cot\theta, \sec\theta\text{,}\)</span> and <span class="process-math">\(\csc\theta\)</span> in terms of <span class="process-math">\(x\)</span> and <span class="process-math">\(a\text{.}\)</span></p></li>
+<li id="mNy"><p id="Lqi">Determine the value of <span class="process-math">\(\cos^2(\theta)\sin(\theta)\)</span> in terms of <span class="process-math">\(x\)</span> and <span class="process-math">\(a\)</span></p></li>
+<li id="GGp"><p id="fiz">Write the expression <span class="process-math">\(\displaystyle \frac{x^3}{a^2\sqrt{a^2-x^2}}\)</span> in terms of <span class="process-math">\(\theta\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="mEu"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.1</span> <span class="title">Integrals Involving <span class="process-math">\(\sqrt{a^2-x^2}\)</span></span>
+</h3>
+<p id="Vlk">Before developing a general strategy for integrals containing <span class="process-math">\(\sqrt{a^2-x^2}\text{,}\)</span> we look at an example.</p>
+<article class="example example-like" id="Lhe"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.2</span><span class="period">.</span>
+</h4>
+<p id="wIa">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \sqrt{9-x^2} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKo" id="jKo"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKo"><div class="solution solution-like">
+<p id="uTn">This integral cannot be evaluated using any of the techniques we have discussed so far. However, if we make the substitution <span class="process-math">\(x=3\sin\theta\text{,}\)</span> we have <span class="process-math">\(dx = 3\cos\theta \ d\theta\text{.}\)</span>  After substituting into the integral, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html" id="md-182">
+\begin{align*}
+\int \sqrt{9-x^2} \ dx = \mathstrut \amp \int \sqrt{9-(3\sin\theta)^3}(3\cos\theta) \ d\theta \\
+= \mathstrut \amp \int 9\sqrt{1-\sin^2\theta} \cos\theta \ d\theta \\
+= \mathstrut \amp \int 9\sqrt{\cos^2\theta} \ d\theta.
+\end{align*}
+</div>
+<p class="continuation">Assuming that <span class="process-math">\(\cos\theta \geq 0\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html">
+\begin{equation*}
+\int \sqrt{9-x^2} \ dx = \int 9 \cos^2\theta \ d\theta.
+\end{equation*}
+</div>
+<p class="continuation">We can now evaluate the integral using the techniques developed for integrating powers and products of trigonometric functions.  Since <span class="process-math">\(\sin\theta = \frac{x}{3}\text{,}\)</span>  we can construct the reference triangle shown in Figure <a href="" class="xref" data-knowl="./knowl/sinx3.html" title="Figure 5.7.3">5.7.3</a>.</p>
+<figure class="figure figure-like" id="sinx3"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/sinx3pic.svg" role="img" class="contained" alt="Right Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.3<span class="period">.</span></span><span class="space"> </span>Right triangle used in Example <a href="" class="xref" data-knowl="./knowl/sqrt9minusx2.html" title="Example 5.7.2">5.7.2</a>.</figcaption></figure><p id="p-6048">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html ./knowl/sqrt9minusx2.html" id="md-183">
+\begin{align*}
+\int \sqrt{9-x^2} \ dx = \mathstrut \amp \int 9\sqrt{\cos^2\theta} \ d\theta \\
+= \mathstrut \amp 9\left(\frac{1}{2}+\frac{1}{2}\cos(2\theta)\right) \ d\theta \\
+= \mathstrut \amp \frac{9}{2}\theta + \frac{9}{4}\sin(2\theta) + C\\
+= \mathstrut \amp \frac{9}{2}\theta + \frac{9}{4}(2\sin\theta\cos\theta) + C\\
+= \mathstrut \amp \frac{9}{2}\arcsin\left(\frac{x}{3}\right) + \frac{9}{2}\cdot \frac{x}{3} \cdot \frac{\sqrt{9-x^2}}{3} + C\\
+= \mathstrut \amp \frac{9}{2}\arcsin\left(\frac{x}{3}\right) +  \frac{x\sqrt{9-x^2}}{2} + C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="Lhm"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.4</span><span class="period">.</span>
+</h4>
+<p id="wIt">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \frac{\sqrt{4-x^2}}{x} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKw" id="jKw"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKw"><div class="solution solution-like">
+<p id="uTw">First make the substitution <span class="process-math">\(x=2\sin\theta\text{.}\)</span>  Then <span class="process-math">\(dx = 2\cos\theta \ d\theta\text{.}\)</span>  Since <span class="process-math">\(\sin \theta = \frac{x}{2}\text{,}\)</span> we can construct the reference triangle shown in Figure <a href="" class="xref" data-knowl="./knowl/sinx2.html" title="Figure 5.7.5">5.7.5</a>.</p>
+<figure class="figure figure-like" id="sinx2"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/sinx2pic.svg" role="img" class="contained" alt="Right Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.5<span class="period">.</span></span><span class="space"> </span>Right triangle used in Example <a href="" class="xref" data-knowl="./knowl/sqrt4minusx2.html" title="Example 5.7.4">5.7.4</a>.</figcaption></figure><p id="p-6051">Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-184">
+\begin{align*}
+\int \frac{\sqrt{4-x^2}}{x} \ dx = \mathstrut \amp \int \frac{\sqrt{4-(2\sin\theta)^2}}{2\sin\theta} \ \cdot 2\cos\theta \ d\theta\\
+= \mathstrut \amp \int \frac{2\cos^2\theta}{\sin\theta} \ d\theta\\
+= \mathstrut \amp \int \frac{2(1-\sin^2\theta)}{\sin\theta} \ d\theta\\
+= \mathstrut \amp \int 2\csc\theta - 2\sin\theta \ d\theta\\
+= \mathstrut \amp 2\ln|\csc\theta - \cot\theta| + 2\cos\theta + C\\
+= \mathstrut \amp 2\ln\left\lvert\frac{2}{x} - \frac{\sqrt{4-x^2}}{x}\right\rvert + \sqrt{4-x^2} + C.
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="Lhi">The general trigonometric substitution process for evaluating integrals involving <span class="process-math">\(\sqrt{a^2-x^2}\)</span> makes use of the substitution <span class="process-math">\(x=a\sin\theta\)</span> so that <span class="process-math">\(dx = a\cos\theta\text{.}\)</span>  The domain of <span class="process-math">\(\sqrt{a^2-x^2}\)</span> is <span class="process-math">\([-a,a]\)</span> so that <span class="process-math">\(-a \leq x \leq a\)</span> or <span class="process-math">\(-1 \leq \frac{x}{a} \leq 1\text{.}\)</span>  Since the range of <span class="process-math">\(\sin x\)</span> over <span class="process-math">\([-\pi/2,\pi/2]\)</span> is <span class="process-math">\([-1,1]\text{,}\)</span> there is a unique angle <span class="process-math">\(\theta\)</span> satisfying <span class="process-math">\(-\pi/2 \leq \theta \leq \pi/2\)</span> so that <span class="process-math">\(\sin\theta = \frac{x}{a}\text{,}\)</span> or equivalently, so that <span class="process-math">\(x=a\sin\theta\text{.}\)</span>  If we substitute <span class="process-math">\(x=a\sin\theta\)</span> into <span class="process-math">\(\sqrt{a^2-x^2}\text{,}\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-185">
+\begin{align*}
+\sqrt{a^2-x^2} = \mathstrut \amp \sqrt{a^2-(a\sin\theta)^2}\\
+= \mathstrut \amp \sqrt{a^2-a^2\sin^2\theta}\\
+= \mathstrut \amp \sqrt{a^2(1-\sin^2\theta)}\\
+= \mathstrut \amp \sqrt{a^2\cos^2\theta}\\
+= \mathstrut \amp |a\cos\theta|\\
+= \mathstrut \amp a\cos\theta
+\end{align*}
+</div>
+<p class="continuation">where <span class="process-math">\(|a\cos\theta| = a\cos\theta\)</span> since <span class="process-math">\(\cos\theta \geq 0\)</span> on <span class="process-math">\(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{.}\)</span></p>
+<p id="p-6053">By making the substitution <span class="process-math">\(x=a\sin\theta\text{,}\)</span> we are thus able to convert an integral involving a radical into an integral involving trigonometric functions.  After we evaluate this new integral, we can convert the solution back to an expression involving <span class="process-math">\(x\text{.}\)</span>  To see how this works, begin by assuming that <span class="process-math">\(0 &lt; x &lt; a\text{.}\)</span>  In this case, we have <span class="process-math">\(0 &lt; \theta &lt; \frac{\pi}{2}\text{.}\)</span>  Since <span class="process-math">\(\sin\theta = \frac{x}{a}\text{,}\)</span> we can draw the reference triangle in Figure <a href="" class="xref" data-knowl="./knowl/reftrianglegentrigsub.html" title="Figure 5.7.6">5.7.6</a> to assist in expressing the values of all the trigonometric functions in terms of <span class="process-math">\(x\text{.}\)</span>   It can be shown that this triangle actually produces the correct values of the trigonometric functions evaluated at <span class="process-math">\(\theta\)</span> for all <span class="process-math">\(\theta\)</span> satisfying <span class="process-math">\(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{.}\)</span>  Note that the expression <span class="process-math">\(\sqrt{a^2-x^2}\)</span> appears as the length of one side of this reference triangle.</p>
+<figure class="figure figure-like" id="reftrianglegentrigsub"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/reftrianglegentrigsubpic.svg" role="img" class="contained" alt="Reference Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.6<span class="period">.</span></span><span class="space"> </span>A reference triangle can help express the trigonometric functions evaluated at <span class="process-math">\(\theta\)</span> in terms of <span class="process-math">\(x\text{.}\)</span></figcaption></figure><article class="assemblage assemblage-like" id="RVh"><h4 class="heading"><span class="title">Integrating Expressions Involving <span class="process-math">\(\sqrt{a^2-x^2}\)</span>.</span></h4>
+<ul id="hNY" class="disc">
+<li id="li-3574"><p id="p-6055">Make the substitution <span class="process-math">\(x=a\sin\theta\)</span> so that <span class="process-math">\(dx=a\cos\theta \ d\theta\text{.}\)</span>  It follows that <span class="process-math">\(\sqrt{a^2-x^2} = a\cos\theta\text{.}\)</span></p></li>
+<li id="li-3575"><p id="p-6056">Simplify the integrand which is now in the variable <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li id="li-3576"><p id="p-6057">Evaluate the integral using techniques from Section <a href="sec-5-7-trig-integrals.html" class="internal" title="Section 5.6: Trigonometric Integrals">5.6</a>.</p></li>
+<li id="li-3577"><p id="p-6058">Use the reference triangle from Figure <a href="" class="xref" data-knowl="./knowl/reftrianglegentrigsub.html" title="Figure 5.7.6">5.7.6</a> to rewrite the result in terms of <span class="process-math">\(x\text{.}\)</span></p></li>
+</ul></article><article class="example example-like" id="LhG"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.7</span><span class="period">.</span>
+</h4>
+<p id="wIc">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \frac{1}{\sqrt{9-4x^2}} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKq" id="jKq"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKq"><div class="solution solution-like">
+<p id="uTo">Since <span class="process-math">\(\sqrt{9-4x^2} = \sqrt{9-(2x)^2}\text{,}\)</span> we will want to substitute</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sub2x3sin.html" id="sub2x3sin">
+\begin{equation}
+2x=3\sin\theta\tag{5.21}
+\end{equation}
+</div>
+<p class="continuation">so that we can factor out the 9 and obtain the expression <span class="process-math">\(1-\sin^2\theta\text{.}\)</span>  Assuming <span class="process-math">\(2x=3\sin\theta\text{,}\)</span> then <span class="process-math">\((2x)^2=9\sin^2\theta\)</span> and <span class="process-math">\(2 \ dx = 3\cos\theta \ d\theta\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sub2x3sin.html" id="md-186">
+\begin{align*}
+\int \frac{1}{\sqrt{9-4x^2}} \ dx = \mathstrut \amp \int \frac{1}{\sqrt{9-(2x)^2}} \ dx\\
+= \mathstrut \amp \int \frac{(3/2)\cos\theta}{\sqrt{9-9\sin^2\theta}} \ d\theta\\
+= \mathstrut \amp \frac{3}{2}\int \frac{\cos\theta}{\sqrt{9(1-\sin^2\theta)}} \ d\theta\\
+= \mathstrut \amp \frac{3}{2}\int \frac{\cos\theta}{3\sqrt{\cos^2\theta}} \ d\theta\\
+= \mathstrut \amp \frac{3}{2}\int \frac{\cos\theta}{3\cos\theta} \ d\theta\\
+= \mathstrut \amp \frac{3}{6}\int 1 \ d\theta\\
+= \mathstrut \amp \frac{1}{2}\theta + C.
+\end{align*}
+</div>
+<p class="continuation">We can solve for <span class="process-math">\(\theta\)</span> in Equation <a href="" class="xref" data-knowl="./knowl/sub2x3sin.html" title="Equation 5.21">(5.21)</a> to find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sub2x3sin.html">
+\begin{equation*}
+\int \frac{1}{\sqrt{9-4x^2}} \ dx = \frac{1}{2}\arcsin \left( \frac{2x}{3} \right) + C.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="TTE"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.7.2</span><span class="period">.</span>
+</h4>
+<ol id="bye" class="lower-alpha">
+<li id="rMv"><p id="Nuz">Evaluate <span class="process-math">\(\displaystyle \int \frac{x^2}{\sqrt{9-x^2}} \ dx\text{.}\)</span>  Use <span class="process-math">\(\displaystyle x = 3\sin\theta\)</span> and the double-angle formula <span class="process-math">\(\displaystyle \sin^2 \theta = \frac{1}{2} - \frac{1}{2}\cos(2\theta)\text{.}\)</span></p></li>
+<li id="XTF"><p id="tBJ">Evaluate <span class="process-math">\(\displaystyle \int \frac{\sqrt{1-4x^2}}{x^2} \ dx\text{.}\)</span>  Use <span class="process-math">\(\displaystyle x=\frac{1}{2}\sin \theta\)</span> and the identity <span class="process-math">\(\cot^2 \theta = \csc^2 \theta - 1\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="LhH"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.2</span> <span class="title">Integrals Involving <span class="process-math">\(a^2+x^2\)</span></span>
+</h3>
+<p id="p-6067">Just as the substitution <span class="process-math">\(x=a\sin\theta\)</span> can be useful when <span class="process-math">\(a^2-x^2\)</span> appears in the integrand, the trigonometric substitution <span class="process-math">\(x=a\tan\theta\)</span> may be helpful when dealing with terms involving <span class="process-math">\(a^2+x^2\text{.}\)</span></p>
+<article class="example example-like" id="LhJ"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.8</span><span class="period">.</span>
+</h4>
+<p id="wIv">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \frac{1}{1+x^2} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKt" id="jKt"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKt"><div class="solution solution-like">
+<p id="uTk">The trigonometric substitution</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xtantheta.html" id="xtantheta">
+\begin{equation}
+x=\tan\theta\tag{5.22}
+\end{equation}
+</div>
+<p class="continuation">gives <span class="process-math">\(dx = \sec^2\theta \ d\theta\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xtantheta.html" id="md-187">
+\begin{align*}
+\int \frac{1}{1+x^2} \ dx = \mathstrut \amp \int \frac{\sec^2\theta}{1+\tan^2\theta} \ d\theta\\
+= \mathstrut \amp \int \frac{\sec^2\theta}{\sec^2\theta} \ d\theta\\
+= \mathstrut \amp \int 1 \ d\theta\\
+= \mathstrut \amp \theta + C.
+\end{align*}
+</div>
+<p class="continuation">We can solve for <span class="process-math">\(\theta\)</span> in Equation <a href="" class="xref" data-knowl="./knowl/xtantheta.html" title="Equation 5.22">(5.22)</a> to find <span class="process-math">\(\theta = \arctan(x)\)</span> and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xtantheta.html">
+\begin{equation*}
+\int \frac{1}{1+x^2} \ dx = \arctan(x) + C.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="LhK"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.9</span><span class="period">.</span>
+</h4>
+<p id="wIW">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \frac{1}{x^2\sqrt{4+x^2}} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKu" id="jKu"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKu"><div class="solution solution-like">
+<p id="uTb">Set</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/overx2sqrt4px2.html ./knowl/reftrianglegentrigsub2.html" id="x2tantheta">
+\begin{equation}
+x=2\tan\theta\tag{5.23}
+\end{equation}
+</div>
+<p class="continuation">so that <span class="process-math">\(dx = 2\sec^2\theta \ d\theta\text{.}\)</span>  Since <span class="process-math">\(x^2=4\tan^2\theta\text{,}\)</span> we use the identity <span class="process-math">\(1+\tan^2\theta = \sec^2\theta\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/overx2sqrt4px2.html ./knowl/reftrianglegentrigsub2.html" id="md-188">
+\begin{align*}
+\int \frac{1}{x^2\sqrt{4+x^2}} \ dx = \mathstrut \amp \int \frac{2\sec^2\theta}{4\tan^2\theta \sqrt{4+4\tan^2\theta}} \ d\theta\\
+= \mathstrut \amp \int \frac{2sec^2\theta}{4\tan^2\theta \cdot 2\sec\theta} \ d\theta\\
+= \mathstrut \amp \frac{1}{4} \int \frac{\sec\theta}{\tan^2\theta} \ d\theta\\
+= \mathstrut \amp \frac{1}{4} \int \frac{1}{\cos\theta} \frac{\cos^2\theta}{\sin^2\theta} \ d\theta\\
+= \mathstrut \amp \frac{1}{4} \int \frac{\cos\theta}{\sin^2\theta} \ d\theta.
+\end{align*}
+</div>
+<p class="continuation">This last integral can be evaluated via yet another substitution.  This time, a <span class="process-math">\(u\)</span>-substitution in which we set <span class="process-math">\(u=\sin\theta\)</span> so that <span class="process-math">\(du = \cos\theta \ d\theta\)</span> will be our path forward.  Doing so gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/overx2sqrt4px2.html ./knowl/reftrianglegentrigsub2.html" id="md-189">
+\begin{align*}
+\int \frac{1}{x^2\sqrt{4+x^2}} \ dx = \mathstrut \amp \frac{1}{4} \int \frac{\cos\theta}{\sin^2\theta} \ d\theta\\
+= \mathstrut \amp \frac{1}{4} \int \frac{1}{u^2} \ du\\
+= \mathstrut \amp -\frac{1}{4u} + C\\
+= \mathstrut \amp -\frac{1}{4\sin\theta} + C\\
+= \mathstrut \amp -\frac{\csc\theta}{4} + C
+\end{align*}
+</div>
+<p class="continuation"><figure class="figure figure-like" id="reftrianglegentrigsub2"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/reftrianglegentrigsub2pic.svg" role="img" class="contained" alt="Reference Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.10<span class="period">.</span></span><span class="space"> </span>A reference triangle used in <a href="" class="xref" data-knowl="./knowl/overx2sqrt4px2.html" title="Example 5.7.9">5.7.9</a>.</figcaption></figure> <p id="p-6072">We now use a reference right triangle as shown in Figure <a href="" class="xref" data-knowl="./knowl/reftrianglegentrigsub2.html" title="Figure 5.7.10">5.7.10</a> to relate the angle <span class="process-math">\(\theta\)</span> and the variable <span class="process-math">\(x\text{.}\)</span>  Doing this gives <span class="process-math">\(\csc\theta = \frac{\sqrt{4+x^2}}{x}\text{.}\)</span>  We conclude that</p><div class="displaymath process-math" data-contains-math-knowls="./knowl/reftrianglegentrigsub2.html">
+\begin{equation*}
+\int \frac{1}{x^2\sqrt{4+x^2}} \ dx = -\frac{\csc\theta}{4} + C = -\frac{\sqrt{4+x^2}}{4x} + C.
+\end{equation*}
+</div></p>
+</div></div>
+</div></article><article class="activity project-like" id="TTF"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.7.3</span><span class="period">.</span>
+</h4>
+<ol id="byf" class="lower-alpha">
+<li id="rMw"><p id="Nua">Evaluate <span class="process-math">\(\displaystyle \int \frac{1}{(25+4x^2)^{3/2}} \ dx\)</span> using a trigonometric substitution.  Use technology (such as <em class="emphasis">WolframAlpha</em>) to check your result.</p></li>
+<li id="XTG"><p id="tBK">Evaluate <span class="process-math">\(\displaystyle \int \frac{3}{\sqrt{2x-x^2}} \ dx\text{.}\)</span>  Show how completing the square gives <span class="process-math">\(2x-x^2 = 1-(x-1)^2\)</span> and then use a trigonometric substitution.  Again, check your result using technology.</p></li>
+</ol></article></section><section class="subsection" id="subsection-106"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.3</span> <span class="title">Combined Methods</span>
+</h3>
+<p id="p-6079">Trigonometric substitution can be combined with partial fractions, completing the square, <span class="process-math">\(u\)</span>-substitution, and more to address an ever wider set of integrals.</p>
+<article class="example example-like" id="LhL"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.11</span><span class="period">.</span>
+</h4>
+<p id="wIV">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \frac{2x+7}{x^2+6x+18} \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKW" id="jKW"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKW"><div class="solution solution-like">
+<p id="uTc">We start by completing the square in the denominator to find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-190">
+\begin{align*}
+\int \frac{2x+7}{x^2+6x+18} \ dx = \mathstrut \amp \int \frac{2x+7}{(x+3)^2+9} \ dx\\
+= \mathstrut \amp \int \frac{2(u-3)+7}{u^2+9} \ du\\
+= \mathstrut \amp \int \frac{2u}{u^2+9} \ du + \int \frac{4}{u^2+9} \ du
+\end{align*}
+</div>
+<p class="continuation">where the substitution <span class="process-math">\(u=x+3\)</span> has been employed.  For the first of these integrals, use the substitution <span class="process-math">\(w=u^2+9\)</span> and <span class="process-math">\(dw = 2u \ du\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-191">
+\begin{align*}
+\int \frac{2u}{u^2+9} \ du = \mathstrut \amp  \int \frac{1}{w} \ dw\\
+= \mathstrut \amp  \ln |w| + C_1\\
+= \mathstrut \amp \ln |(x+3)^2 + 9| + C_1
+\end{align*}
+</div>
+<p class="continuation">For the second integral, <span class="process-math">\(\int \frac{4}{u^2+9} \ du\text{,}\)</span> we can use a trigonometric substitution or we can factor out the 9, use the substitution <span class="process-math">\(v=w/3\)</span> and <span class="process-math">\(dv = \frac{1}{3} \ dw\)</span> and use the antidifferentiation rule <span class="process-math">\(\int \frac{1}{1+u^2} \ du = \arctan(u)+C\text{.}\)</span>  This latter technique gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-192">
+\begin{align*}
+\int \frac{4}{u^2+9} \ du = \mathstrut \amp  \frac{4}{9} \int \frac{1}{(u/3)^2+1} \ du\\
+= \mathstrut \amp  \frac{4}{3} \int \frac{1}{v^2+1} \ dv\\
+= \mathstrut \amp \frac{4}{3} \arctan(v) + C_2\\
+= \mathstrut \amp \frac{4}{3} \arctan\left( \frac{x+3}{3}\right) + C_2
+\end{align*}
+</div>
+<p class="continuation">Therefore,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{2x+7}{x^2+6x+18} \ dx = \ln |(x+3)^2+9| + \frac{4}{3}\arctan \left( \frac{x+3}{3} \right) + C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="fav"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.4</span> <span class="title">Summary</span>
+</h3>
+<p id="Cxm">Trigonometric substitutions of the form <span class="process-math">\(u=\sin x\text{,}\)</span> <span class="process-math">\(u=\tan x\text{,}\)</span> or variants thereof let us find integrals like <span class="process-math">\(\int \frac{1}{\sqrt{1-x^2}} \ dx\)</span> and <span class="process-math">\(\int \frac{1}{1+x^2} \ dx\text{.}\)</span>  A tangent-based substitution is essential for finding integrals of the form <span class="process-math">\(\frac{Ax+B}{ax^2+bx+c}\)</span> where <span class="process-math">\(ax^2+bx+c\)</span>  is an irreducible quadratic.</p></section><section class="exercises" id="okm"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.7.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="Yca"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">A Trigonometric Substitution.</span>
+</h4>
+<div id="webwork-144" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="144" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_3_prob02.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6083">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{dx}{(81 + x^2)^2}.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-144')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHz"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Another Trigonometric Substitution.</span>
+</h4>
+<div id="webwork-145" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="145" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_3_prob03.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6085">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{ x^{10} \, dx}{(4 - x^2)^{13/2}}.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-145')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ycd"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Complete the Square First.</span>
+</h4>
+<div id="webwork-146" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="146" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_3_prob01.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6087">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{16 \, dx}{\sqrt{55 -6 x - x^{2}}}.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-146')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ycb"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Yet Another Trigonometric Substitution.</span>
+</h4>
+<div id="webwork-147" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="147" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_3_6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6089">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{\sqrt{x^2-4}}{x}\, dx.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-147')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="krt"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">An Alternative to a Trigonometric Substitution.</span>
+</h4>
+<p id="fVn">In Example <a href="" class="xref" data-knowl="./knowl/trigsub9minus4x2.html" title="Example 5.7.7">5.7.7</a>, we could have also computed the integral using a <span class="process-math">\(u\)</span>-substitution and used the fact that <span class="process-math">\(\int \frac{1}{\sqrt{1-x^2}} \ dx = \arcsin(x) + C\text{.}\)</span>  What would be the correct choice for <span class="process-math">\(u\)</span> in this substitution?</p></article><article class="exercise exercise-like" id="kru"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Integrals Involving <span class="process-math">\(\sqrt{x^2-a^2}\)</span>.</span>
+</h4>
+<p id="fVo">Consider the integral <span class="process-math">\(\displaystyle \int \frac{2}{x^2\sqrt{x^2-9}}\)</span> for <span class="process-math">\(x &gt; 3\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-3586"><p id="p-6094">If <span class="process-math">\(x=3\sec\theta\)</span> for <span class="process-math">\(0 &lt; \theta &lt; \frac{\pi}{2}\text{,}\)</span> what are the possible values of <span class="process-math">\(x\text{?}\)</span>  Is <span class="process-math">\(x\)</span> a one-to-one function of <span class="process-math">\(\theta\text{?}\)</span></p></li>
+<li id="li-3587"><p id="p-6095">For <span class="process-math">\(0 &lt; \theta &lt; \frac{\pi}{2}\text{,}\)</span> is <span class="process-math">\(\tan\theta\)</span> positive or negative?</p></li>
+<li id="li-3588"><p id="p-6096">For <span class="process-math">\(x &gt; 3\text{,}\)</span> transform the integral <span class="process-math">\(\displaystyle \int \frac{2}{x^2\sqrt{x^2-9}}\)</span> to one in the variable <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li id="li-3589"><p id="p-6097">Evaluate <span class="process-math">\(\displaystyle \int \frac{2}{x^2\sqrt{x^2-9}}\)</span> for <span class="process-math">\(x &gt; 3\text{.}\)</span></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

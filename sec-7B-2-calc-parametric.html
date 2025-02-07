@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Calculus of Parametric Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7B-1-parametriceqns.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7B-3-polar-coordinates.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7B-1-parametriceqns.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7B-3-polar-coordinates.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="active">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="KjC"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.2</span> <span class="title">Calculus of Parametric Equations</span>
+</h2>
+<article class="objectives goal-like" id="LYQ"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Jek"><p id="tVm">How can we determine the slope at a point on a parametrically-defined curve?</p></li>
+<li id="pmt"><p id="adv">How do we find the area under a parametric curve?</p></li>
+<li id="VtC"><p id="GkE">What is the arc length of a parametric curve?</p></li>
+</ul></article><section class="introduction" id="VIk"><p id="p-9820">Suppose we would like to represent the location of a baseball after the ball leaves a pitcher’s hand. If the position of the baseball is represented by the plane curve <span class="process-math">\((x(t),y(t))\text{,}\)</span> then we should be able to use calculus to find the speed of the ball at any given time. Furthermore, we should be able to calculate just how far that ball has traveled as a function of time.  In this section, we answer questions such as these and more.</p></section><article class="exploration project-like" id="Moz"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span>
+</h3>
+<p id="ghv">Pictured in <a href="" class="xref" data-knowl="./knowl/rotatedparabola.html" title="Figure 9.2.1">Figure 9.2.1</a> is the plane curve defined parametrically by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rotatedparabola.html">
+\begin{equation*}
+x(t)=3-t^2, \ y(t)=t^2-3t\text{.}
+\end{equation*}
+</div>
+<p class="continuation"><figure class="figure figure-like" id="rotatedparabola"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/rotatedparabola.jpg" class="contained" alt="A rotated parabola."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.1<span class="period">.</span></span><span class="space"> </span>A rotated parabola described by the parametric equations <span class="process-math">\(x(t)=3-t^2, \ y(t) = t^2-3t, \ -\infty &lt; t &lt; \infty\text{.}\)</span></figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="ykT"><p id="Pje">Mark the orientation on the curve (i.e. direction of increasing values of <span class="process-math">\(t\)</span>).  Then, use the applet <a class="external" href="https://www.geogebra.org/m/yJNhQMQa" target="_blank">https://www.geogebra.org/m/yJNhQMQa</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-118" id="fn-118"><sup> 118 </sup></a> to verify your answer.</p></li>
+<li id="li-5635"><p id="p-9823">Compute <span class="process-math">\(\frac{dx}{dt}\)</span> and <span class="process-math">\(\frac{dy}{dt}\text{.}\)</span>  Then, assuming that <span class="process-math">\(\frac{dy}{dx}=\frac{dy/dt}{dx/dt}\text{,}\)</span> determine the value of <span class="process-math">\(\frac{dy}{dx}\)</span> in terms of the parameter <span class="process-math">\(t\text{.}\)</span></p></li>
+<li id="esc"><p id="vqn">Determine the point <span class="process-math">\((0,c)\)</span> on the curve where it cross the positive <span class="process-math">\(y\)</span>-axis.  Then, determine the slope of the curve at this point.</p></li>
+<li id="Kzk"><p id="bxv">Find the point <span class="process-math">\((a,b)\)</span> on the curve where the tangent line is horizontal.</p></li>
+</ol></article><section class="subsection" id="MHg"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.2.1</span> <span class="title">Derivatives of Parametric Equations</span>
+</h3>
+<p id="FEm">We start by asking how to calculate the slope of a line tangent to a parametric curve at a point. Consider the plane curve defined by the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ParametricPlotOS716.html">
+\begin{equation*}
+x(t)=2t+3, \ y(t) = 3t-4, \ -2 \leq t \leq 3\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The graph of this curve appears in <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS716.html" title="Figure 9.2.2">Figure 9.2.2</a>.  It is a line segment starting at <span class="process-math">\((-1,-10)\)</span> and ending at <span class="process-math">\((9,5)\text{.}\)</span></p>
+<figure class="figure figure-like" id="ParametricPlotOS716"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS716.jpg" class="contained" alt="A line of slope 3/2."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.2<span class="period">.</span></span><span class="space"> </span>Graph of the line segment described by the parametric equations <span class="process-math">\(x(t)=2t+3, \ y(t) = 3t-4, \ -2 \leq t \leq 3\text{.}\)</span></figcaption></figure><p id="dnF">We can eliminate the parameter by first solving the equation <span class="process-math">\(x(t)=2t+3\)</span> for <span class="process-math">\(t\)</span> to find <span class="process-math">\(t=\frac{x-3}{2}\text{.}\)</span>  Substituting this into <span class="process-math">\(y(t)\text{,}\)</span> we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-344">
+\begin{align*}
+y(t) = \mathstrut \amp 3t-4\\
+= \mathstrut \amp 3 \left( \frac{x-3}{2} \right) - 4\\
+= \mathstrut \amp \frac{3x}{2} - \frac{17}{2}.
+\end{align*}
+</div>
+<p class="continuation">The slope of this line is given by <span class="process-math">\(\frac{dy}{dx}=\frac{3}{2}\text{.}\)</span>  Next we calculate <span class="process-math">\(x'(t)\)</span> and <span class="process-math">\(y'(t)\text{.}\)</span>  This gives <span class="process-math">\(x'(t)=2\)</span> and <span class="process-math">\(y'(t)=3\text{.}\)</span>  Notice that <span class="process-math">\(\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{3}{2}\text{.}\)</span> This is no coincidence, as outlined in the following theorem.</p>
+<article class="theorem theorem-like" id="FIa"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of Parametric Equations.</span>
+</h4>
+<p id="p-9828">Consider the plane curve defined by the parametric equations <span class="process-math">\(x=x(t)\)</span> and <span class="process-math">\(y=y(t)\text{.}\)</span>  Suppose that <span class="process-math">\(x'(t)\)</span> and <span class="process-math">\(y'(t)\)</span> exist, and assume that <span class="process-math">\(x'(t) \neq 0\text{.}\)</span>  Then the derivative <span class="process-math">\(\frac{dy}{dx}\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="derparaeqns">
+\begin{equation}
+\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{y'(t)}{x'(t)}\text{.}\tag{9.2}
+\end{equation}
+</div></article><p id="NCd"><a href="" class="xref" data-knowl="./knowl/derparaeqns.html" title="Equation 9.2">Equation (9.2)</a> can be used to calculate derivatives of plane curves, as well as critical points. Recall that a critical point of a differentiable function <span class="process-math">\(y=f(x)\)</span> is any point <span class="process-math">\(x=a\)</span> such that either <span class="process-math">\(f'(a)=0\)</span> or <span class="process-math">\(f'(a)\)</span> does not exist. <a href="" class="xref" data-knowl="./knowl/derparaeqns.html" title="Equation 9.2">Equation (9.2)</a> gives a formula for the slope of a tangent line to a curve defined parametrically regardless of whether the curve can be described by a function  <span class="process-math">\(y=f(x)\)</span> or not.</p>
+<article class="example example-like" id="tangentlinepara"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Tangent Line.</span>
+</h4>
+<p id="p-9830">Find the equation of the tangent line to the curve defined by the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="tanlineparaeqn">
+\begin{equation}
+x(t)=t^2-3, \ y(t) = 2t-1, \ -3\leq t \leq 4\tag{9.3}
+\end{equation}
+</div>
+<p class="continuation">when <span class="process-math">\(t=2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-tangentlineparasoln" id="tangentlineparasoln"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-tangentlineparasoln"><div class="solution solution-like">
+<p id="p-9831">First find the slope of the tangent line using <a href="" class="xref" data-knowl="./knowl/derparaeqns.html" title="Equation 9.2">Equation (9.2)</a>, which means calculating <span class="process-math">\(x'(t)\)</span> and <span class="process-math">\(y'(t)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/derparaeqns.html ./knowl/ParametricPlotOS720.html" id="md-345">
+\begin{align*}
+x'(t)= \mathstrut \amp 2t\\
+y'(t) = \mathstrut \amp 2.
+\end{align*}
+</div>
+<p class="continuation">Next substitute these into the equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/derparaeqns.html ./knowl/ParametricPlotOS720.html" id="md-346">
+\begin{align*}
+\frac{dy}{dx} = \mathstrut \amp \frac{dy/dt}{dx/dt}\\
+= \mathstrut \amp \frac{2}{2t}\\
+= \mathstrut \amp \frac{1}{t}.
+\end{align*}
+</div>
+<p class="continuation">When <span class="process-math">\(t=2, \frac{dy}{dx}=\frac{1}{2}\text{,}\)</span> so this is the slope of the tangent line.  Calculating <span class="process-math">\(x(2)\)</span> and <span class="process-math">\(y(2)\)</span> gives <span class="process-math">\(x(2)=(2)^2-3=1\)</span> and <span class="process-math">\(y(2)=2(2)-1=3\text{,}\)</span> which corresponds to the point <span class="process-math">\((1,3)\)</span> on the graph (<a href="" class="xref" data-knowl="./knowl/ParametricPlotOS720.html" title="Figure 9.2.5">Figure 9.2.5</a>).  The point-slope form of the equation of a line then gives an equation of the tangent line to be <span class="process-math">\(y-3=\frac{1}{2}(x-1)\text{,}\)</span> or, in slope intercept-form, <span class="process-math">\(y=\frac{1}{2}x+\frac{5}{2}\text{.}\)</span></p>
+<figure class="figure figure-like" id="ParametricPlotOS720"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS720.jpg" class="contained" alt="A tangent line to a parametric plot."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.5<span class="period">.</span></span><span class="space"> </span>Tangent line to the parabola described by parametric <a href="" class="xref" data-knowl="./knowl/tanlineparaeqn.html" title="Equation 9.3">equations (9.3)</a>.</figcaption></figure><p id="p-9832">Note that the derivative is undefined when <span class="process-math">\(t=0\text{.}\)</span>  Also, <span class="process-math">\(x(0)=-3\)</span> and <span class="process-math">\(y(0)=-1\)</span> correspond to the vertex <span class="process-math">\((-3,-1)\)</span> of the parabola in <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS720.html" title="Figure 9.2.5">Figure 9.2.5</a>.  It makes sense then that the derivative is undefined here since the tangent line at this point is vertical.</p>
+</div></div>
+</div></article><article class="example example-like" id="example-95"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Critical Points on Parametric Curves.</span>
+</h4>
+<p id="p-9833">Calculate the derivative <span class="process-math">\(\frac{dy}{dx}\)</span> for each of the following parametrically defined plane curves, and locate any critical points on their respective graphs.</p>
+<ol class="lower-alpha">
+<li id="li-5638"><p id="p-9834"><span class="process-math">\(\displaystyle x(t)=2t+1, \ y(t)=t^3-3t+4, \ -2 \leq t \leq 5\)</span></p></li>
+<li id="li-5639"><p id="p-9835"><span class="process-math">\(\displaystyle x(t)=5\cos t, \ y(t)=5\sin t, \ 0 \leq t \leq 2\pi\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-538" id="solution-538"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-538"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5640">
+<p id="p-9836">Since <span class="process-math">\(x'(t)=2\)</span> and <span class="process-math">\(y'(t)=3t^2-3\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ParametricPlotOS718.html" id="md-347">
+\begin{align*}
+\frac{dy}{dx}= \mathstrut \amp \frac{dy/dt}{dx/dt}\\
+=\mathstrut \amp \frac{3t^2-3}{2}.
+\end{align*}
+</div>
+<p class="continuation">This derivative is zero when <span class="process-math">\(t=\pm 1\text{.}\)</span>  When <span class="process-math">\(t=-1\)</span> we have <span class="process-math">\(x(-1)=2(-1)+1=-1\)</span> and <span class="process-math">\(y(-1) = (-1)^3 -3(-1)+4=6\)</span> which corresponds to the point <span class="process-math">\((-1,6)\)</span> on the graph.  When <span class="process-math">\(t=1\)</span> we have <span class="process-math">\(x(1)=2(1)+1=3\)</span> and <span class="process-math">\(y(1)=(1)^3-3(1)+4=2\)</span> which corresponds to the point <span class="process-math">\((3,2)\)</span> on the graph.  The point <span class="process-math">\((3,2)\)</span> is a relative minimum and the point <span class="process-math">\((-1,6)\)</span> is a relative maximum, as seen in <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS718.html" title="Figure 9.2.7">Figure 9.2.7</a>.</p>
+<figure class="figure figure-like" id="ParametricPlotOS718"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS718.jpg" class="contained" alt="Minimum and Maximum on a Parametric Curve."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.7<span class="period">.</span></span><span class="space"> </span>Graph of the curve described parametrically by <span class="process-math">\(x(t)=2t+1, \ y(t)=t^3-3t+4, \ -2 \leq t \leq 5\text{.}\)</span></figcaption></figure>
+</li>
+<li id="li-5641">
+<p id="p-9837">Since <span class="process-math">\(x'(t)=-5\sin t\)</span> and <span class="process-math">\(y'(t)=5\cos t\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ParametricPlotOS719.html" id="md-348">
+\begin{align*}
+\frac{dy}{dx} = \mathstrut \amp \frac{dy/dt}{dx/dt}\\
+=\mathstrut \amp \frac{5\cos t}{-5\sin t}\\
+= \mathstrut \amp -\cot t.
+\end{align*}
+</div>
+<p class="continuation">This derivative is zero when <span class="process-math">\(\cos t=0\)</span> and is undefined when <span class="process-math">\(\sin t=0\text{.}\)</span>  This gives <span class="process-math">\(t=0,\frac{\pi}{2}, \pi, \frac{3\pi}{2}\text{,}\)</span> and <span class="process-math">\(2\pi\)</span> as critical points.  Substituting each of these into <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> we obtain ordered pairs <span class="process-math">\((5,0)\text{,}\)</span> <span class="process-math">\((0,5)\text{,}\)</span> <span class="process-math">\((-5,0)\text{,}\)</span> <span class="process-math">\((0,-5)\text{,}\)</span> and <span class="process-math">\((5,0)\)</span> respectively.  These points correspond to the sides, top, and bottom of the circle that is represented by the given parametric equations (<a href="" class="xref" data-knowl="./knowl/ParametricPlotOS719.html" title="Figure 9.2.8">Figure 9.2.8</a>).  On the left and right edges of the circle, the derivative is undefined, and on th etop and bottom, the derivative equals zero.</p>
+<figure class="figure figure-like" id="ParametricPlotOS719"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS719.jpg" class="contained" alt="Critical points on a circle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.8<span class="period">.</span></span><span class="space"> </span>Graph of the curve described parametrically by <span class="process-math">\(x(t)=5\cos t, \ y(t)=5\sin t, \ 0 \leq t \leq 2\pi\text{.}\)</span></figcaption></figure>
+</li>
+</ol></div></div>
+</div></article><article class="activity project-like" id="TTF"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.2</span><span class="period">.</span>
+</h4>
+<p id="byh">The path of a child on a merry-go-round is given by the parametric equations <span class="process-math">\(x = 4 \sin(t/2)\)</span> and <span class="process-math">\(y = 4 \cos(t/2)\)</span> where <span class="process-math">\(t\)</span> is measured in seconds and <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are measured in feet.</p>
+<ol class="lower-alpha">
+<li id="XTK">
+<p id="tBD">Sketch the path of the child for <span class="process-math">\(0 \leq t \leq 6\pi\text{.}\)</span>  Be sure to place arrows on the path to denote direction.</p>
+<figure class="figure figure-like" id="merrygoroundgrid"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/merrygoroundgridpic.svg" role="img" class="contained" alt="Empty Grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.9<span class="period">.</span></span><span class="space"> </span>Grid used for <a href="" class="xref" data-knowl="./knowl/act-7B-2-1.html" title="Activity 9.2.2">Activity 9.2.2</a>.</figcaption></figure>
+</li>
+<li id="li-5643"><p id="p-9840">Where is the child located at time <span class="process-math">\(t=\frac{3\pi}{2}\text{?}\)</span>  Mark that location on the path with a <span class="process-math">\(\circ\text{.}\)</span></p></li>
+<li id="li-5644"><p id="p-9841">Compute <span class="process-math">\(\frac{dx}{dt}\)</span> and <span class="process-math">\(\frac{dy}{dt}\text{.}\)</span>    Without calculating, when <span class="process-math">\(t=\frac{3\pi}{2}\text{,}\)</span>  what do you expect the sign of each to be?  Why?</p></li>
+<li id="li-5645"><p id="p-9842">Evaluate <span class="process-math">\(x' \left( \frac{3\pi}{2} \right)\)</span> and <span class="process-math">\(y' \left( \frac{3\pi}{2} \right)\text{.}\)</span></p></li>
+<li id="li-5646"><p id="p-9843">Using the fact that <span class="process-math">\(\frac{dy}{dx} = \frac{dy/dt}{dx/dt}\text{,}\)</span> calculate the slope of the curve when <span class="process-math">\(t=\frac{3\pi}{2}\text{.}\)</span></p></li>
+<li id="li-5647"><p id="p-9844">When the child is thrown from the merry-go-round, her (horizontal) path follows the tangent line.  Determine the equation of the tangent line to the curve at time <span class="process-math">\(t=\frac{3\pi}{2}\text{.}\)</span>  Sketch this line on your graph above.</p></li>
+</ol></article></section><section class="subsection" id="subsection-177"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.2.2</span> <span class="title">Second-Order Derivatives</span>
+</h3>
+<p id="p-9852">Our next goal is to see how to take the second derivative of a function defined parametrically. The second derivative of a function <span class="process-math">\(y=f(x)\)</span> is defined to be the derivative of the first derivative; that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2} = \frac{d}{dx} \left[ \frac{dy}{dx} \right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(\frac{dy}{dx} = \frac{dy/dt}{dx/dt}\text{,}\)</span> we can replace <span class="process-math">\(y\)</span> on both sides of this equation with <span class="process-math">\(\frac{dy}{dx}\text{.}\)</span>  This gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2}=\frac{d}{dx} \left( \frac{dy}{dx} \right) = \frac{(d/dt)(dy/dx)}{dx/dt}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If we known <span class="process-math">\(dy/dx\text{,}\)</span> as a function of <span class="process-math">\(t\text{,}\)</span> then this formula is straightforward to apply.</p>
+<article class="activity project-like" id="TTV"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.3</span><span class="period">.</span>
+</h4>
+<p id="byn">Calculate the second derivative <span class="process-math">\(\frac{d^2y}{dx^2}\)</span> for the plane curve defined by the parametric equations <span class="process-math">\(x(t)=t^2-3\text{,}\)</span> <span class="process-math">\(y(t)=2t-1\text{,}\)</span> <span class="process-math">\(-3 \leq t \leq 4\text{.}\)</span></p></article></section><section class="subsection" id="subsection-178"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.2.3</span> <span class="title">Area Under a Curve</span>
+</h3>
+<p id="p-9855">Now that we have seen how to calculate the derivative of a plane curve, the next question is this: How do we find the area under a curve defined parametrically?</p>
+<p id="p-9856">Consider a curve parameterized by the functions</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ParametricPlotOS722.html">
+\begin{equation*}
+x=x(t), \ y=y(t), \ a \leq t \leq b\text{.}
+\end{equation*}
+</div>
+<p class="continuation">For now, assume that <span class="process-math">\(x(t)\)</span> is increasing on the interval <span class="process-math">\([a,b]\text{,}\)</span> that <span class="process-math">\(x(t)\)</span> is differentiable, and that we have an equal partition of the interval <span class="process-math">\([a,b]\text{.}\)</span>  Supoose that <span class="process-math">\(t_0=a &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_n=b\)</span> and consider <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS722.html" title="Figure 9.2.12">Figure 9.2.12</a>.</p>
+<figure class="figure figure-like" id="ParametricPlotOS722"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="external/images/ParametricPlotOS722.jpg" class="contained" alt="Partial of Parametric Plot."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.12<span class="period">.</span></span><span class="space"> </span>Approximating the area under a parametrically defined curve.</figcaption></figure><p id="p-9857">Using rectangles determined by left-hand endpoints to approximate the area under the curve, we see that the height of the <span class="process-math">\(i\)</span>th rectangle is <span class="process-math">\(y(t_{i-1})\)</span> and its width is <span class="process-math">\(x(t_i)-x(t_{i-1})\text{.}\)</span>  Denoting <span class="process-math">\(\Delta t_i = t_i - t_{i-1}\text{,}\)</span> we approximate the area under the curve by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-349">
+\begin{align*}
+\sum_{i=1}^n y(t_{i-1})[x(t_i)-x(t_{i-1})] = \mathstrut \amp \sum_{i=1}^n y(t_{i-1}) \frac{x(t_0)-x(t_{i-1})}{\Delta t_i} \Delta t_i \\
+\longrightarrow \mathstrut \amp \int_a^b y(t)x'(t) \ dt
+\end{align*}
+</div>
+<p class="continuation">as <span class="process-math">\(max\{\Delta t_i\} \rightarrow 0\text{.}\)</span></p>
+<article class="theorem theorem-like" id="theorem-2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Area under a Parametric Curve.</span>
+</h4>
+<p id="p-9858">Consider a non-self-intersecting curve defined by the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=x(t), \ y = y(t), \ a \leq t \leq b
+\end{equation*}
+</div>
+<p class="continuation">and assume that <span class="process-math">\(x(t)\)</span> is differentiable.  Depending on whether the region is to the right or left of the oriented curve, the area under this curve is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="areaunderparacurveformula">
+\begin{equation}
+A = \pm \int_a^b y(t) x'(t) \ dt.\tag{9.4}
+\end{equation}
+</div></article><article class="example example-like" id="example-96"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Area Under a Cycloid.</span>
+</h4>
+<p id="p-9859">Find the area under one period of the cycloid defined by the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x(t) = t-\sin t, \ y(t)=1-\cos t, \ 0 \leq t \leq 2\pi\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="ParametricPlotOS721"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/ParametricPlotOS721.jpg" class="contained" alt="Area of a Cycloid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.15<span class="period">.</span></span><span class="space"> </span>Graph of a cycloid with the area under the arch over <span class="process-math">\([0,2\pi]\)</span> highlighted.</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-539" id="solution-539"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-539"><div class="solution solution-like">
+<p id="p-9860">Using <a href="" class="xref" data-knowl="./knowl/areaunderparacurveformula.html" title="Equation 9.4">equation (9.4)</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/areaunderparacurveformula.html" id="md-350">
+\begin{align*}
+A = \mathstrut \amp \int_a^b y(t)x'(t) \ dt\\
+= \mathstrut \amp \int_0^{2\pi} (1-\cos t)(1-\cos t) \ dt\\
+= \mathstrut \amp \int_0^{2\pi} 1-2\cos t + \cos^2 t \ dt\\
+= \mathstrut \amp \int_0^{2\pi} 1-2\cos t + \frac{1+\cos 2t}{2} \ dt \\
+= \mathstrut \amp \int_0^{2\pi} \frac{3}{2} - 2\cos t + \frac{\cos 2t}{2} \ dt\\
+= \mathstrut \amp \int_0^{2\pi} \frac{3t}{2} - 2\sin t + \frac{\sin 2t}{4} \right\rvert_0^{2\pi}\\
+= \mathstrut \amp \int_0^{2\pi} 3\pi.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="TTc"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.4</span><span class="period">.</span>
+</h4>
+<ol id="byM" class="lower-alpha">
+<li id="li-5654">
+<p id="p-9862">To determine the area of a circle of radius <span class="process-math">\(r\text{,}\)</span> do the following.</p>
+<ol class="lower-roman">
+<li id="li-5655"><p id="p-9863">Parameterize the top half of a circle of radius <span class="process-math">\(r\text{.}\)</span>  Be sure to identify bounds on the parameter <span class="process-math">\(t\text{.}\)</span></p></li>
+<li id="li-5656"><p id="p-9864">Compute the value of the area under the top half of a circle of radius <span class="process-math">\(r\)</span> using the parameterization from (i).  Does your answer make sense?  Why?</p></li>
+</ol>
+</li>
+<li id="li-5657">
+<p id="p-9865">We now determine the area of the ellipse having semi-major axis of length <span class="process-math">\(a\)</span> and semi-minor axis of length <span class="process-math">\(b\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/areaofellipse.html" title="Figure 9.2.16">Figure 9.2.16</a>.</p>
+<figure class="figure figure-like" id="areaofellipse"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/areaofellipsepic.svg" role="img" class="contained" alt="An ellipse."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.16<span class="period">.</span></span><span class="space"> </span>An ellipse having semi-major axis of length <span class="process-math">\(a\)</span> and semi-minor axis of length <span class="process-math">\(b\text{.}\)</span></figcaption></figure><ol class="lower-roman">
+<li id="li-5658"><p id="p-9866">Parameterize the top half of the ellipse shown in <a href="" class="xref" data-knowl="./knowl/areaofellipse.html" title="Figure 9.2.16">Figure 9.2.16</a>.  \\ Be sure to identify bounds on your parameter <span class="process-math">\(t\text{.}\)</span></p></li>
+<li id="li-5659"><p id="p-9867">Compute the value of the area under the top half of the ellipse using the parameterization from (i).  Double this value to find the entire area inside the ellipse.  Does your answer make sense when <span class="process-math">\(a=b\text{?}\)</span></p></li>
+</ol>
+</li>
+</ol></article></section><section class="subsection" id="foN"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.2.4</span> <span class="title">Arc Length of a Parametric Curve</span>
+</h3>
+<article class="activity project-like" id="TTd"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.5</span><span class="period">.</span>
+</h4>
+<p id="byN">The cycloid in <a href="" class="xref" data-knowl="./knowl/areaunderparacurveformula.html" title="Equation 9.4">Figure (9.4)</a> is defined by the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/areaunderparacurveformula.html ./knowl/arclengthcycloid4.html">
+\begin{equation*}
+x(t) = t-\sin(t) \text{ and } y(t) = 1-\cos(t)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We aim to determine the length of this curve for <span class="process-math">\(0 \leq t \leq 2\pi\)</span> (one period). We begin by partitioning the interval <span class="process-math">\([0,2\pi]\)</span> into <span class="process-math">\(n\)</span> subintervals of equal length and let <span class="process-math">\(0 = t_0 &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_n = 2\pi\)</span> be the endpoints of the subintervals.  Shown in <a href="" class="xref" data-knowl="./knowl/arclengthcycloid4.html" title="Figure 9.2.17">Figure 9.2.17</a> is the case of <span class="process-math">\(n=4\text{.}\)</span>  We approximate the length of the curve on each subinterval with the length of the segment connecting the endpoints. <figure class="figure figure-like" id="arclengthcycloid4"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/arclengthcycloid4pic.svg" role="img" class="contained" alt="Case of \(n=4\) in our approximation."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.17<span class="period">.</span></span><span class="space"> </span>Approximating the length of one period of a cycloid using <span class="process-math">\(n=4\)</span> line segments.</figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="li-5666"><p id="p-9876">Write a formula for the length of the line segment that connects the endpoints <span class="process-math">\((x(t_{i-1}), y(t_{i-1}))\)</span> and <span class="process-math">\((x(t_i), y(t_i))\)</span> of the <span class="process-math">\(i\)</span>th subinterval <span class="process-math">\([t_{i-1},t_i]\text{.}\)</span>  (This length is our approximation of the length of the curve on this interval.)</p></li>
+<li id="li-5667"><p id="p-9877">Use your formula in (a) to write a sum that adds all <span class="process-math">\(n\)</span> of the approximations to the lengths on each subinterval.</p></li>
+<li id="li-5668">
+<p id="p-9878">True or False?  For <span class="process-math">\(\Delta t = t_i - t_{i-1}\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-351">
+\begin{gather*}
+\sum_{i=1}^n \sqrt{[(x(t_{i})-x(t_{i-1})]^2 + [y(t_{i})-y(t_{i-1})]^2} \\
+= \sum_{i=1}^n \sqrt{\left(\frac{x(t_{i})-x(t_{i-1})}{\Delta t}\right)^2 + \left(\frac{y(t_{i})-y(t_{i-1})}{\Delta t}\right)^2} \cdot \Delta t
+\end{gather*}
+</div>
+</li>
+<li id="li-5669"><p id="p-9879">What do we need to do with the sum in part (c) in order to obtain the exact value of the length of the graph of the curve on <span class="process-math">\([0,2\pi]\text{?}\)</span>  What integral does this produce?  Evaluate, using <em class="emphasis">WolframAlpha</em>, this definite integral to find the length of the cycloid on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></li>
+</ol></article><article class="theorem theorem-like" id="theorem-3"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Arc Length of a Parametric Curve.</span>
+</h4>
+<p id="p-9885">Consider the plane curve defined by the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=x(t), \ y=y(t), \ a \leq t \leq b
+\end{equation*}
+</div>
+<p class="continuation">and assume that <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> are differentiable functions of <span class="process-math">\(t\text{.}\)</span>  Then the arc length of this curve is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="arclengthintegral">
+\begin{equation}
+s=\int_a^b \sqrt{\left( \frac{dx}{dt}\right)^2 + \left( \frac{dy}{dt} \right)^2} \ dt\text{.}\tag{9.5}
+\end{equation}
+</div></article><article class="example example-like" id="example-97"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Arc Length of a Function <span class="process-math">\(y=f(x)\)</span>.</span>
+</h4>
+<p id="p-9886">Consider a plane curve defined by a function <span class="process-math">\(y=f(x)\)</span> between <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\text{.}\)</span>  Show that the arc length formula using a parameterization, <a href="" class="xref" data-knowl="./knowl/arclengthintegral.html" title="Equation 9.5">equation (9.5)</a>, gives the same value</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/arclengthintegral.html ./knowl/sec-6-1-area.html">
+\begin{equation*}
+L=\int_a^b \sqrt{1+f'(x)^2} \ dx
+\end{equation*}
+</div>
+<p class="continuation">as found in <a href="sec-6-1-area.html" class="internal" title="Section 6.1: Using Definite Integrals to Find Area and Length">Section 6.1</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-540" id="solution-540"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-540"><div class="solution solution-like">
+<p id="p-9887">Suppose that <span class="process-math">\(x=x(t), y=y(t), t_1 \leq t \leq t_2\)</span> parameterizes the curve whose graph is <span class="process-math">\(y=f(x)\)</span> between <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\text{.}\)</span>  Then <span class="process-math">\(y(t)=f(x(t))\)</span> and the chain rule gives <span class="process-math">\(y'(t)=f'(x(t))x'(t)\text{.}\)</span>  Using <a href="" class="xref" data-knowl="./knowl/arclengthintegral.html" title="Equation 9.5">equation (9.5)</a> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/arclengthintegral.html ./knowl/sec-6-1-area.html" id="md-353">
+\begin{align*}
+L = \mathstrut \amp \int_{t_1}^{t_2} \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2} \ dt\\
+\mathstrut \amp \int_{t_1}^{t_2} \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( f'(x)\frac{dx}{dt} \right)^2} \ dt\\
+\mathstrut \amp \int_{t_1}^{t_2} \sqrt{ \left( \frac{dx}{dt} \right)^2 \left( 1+ f'(x)^2 \right)} \ dt\\
+\mathstrut \amp \int_{t_1}^{t_2} x'(t) \sqrt{\left( 1+ f'(x)^2 \right)} \ dt \\
+\mathstrut \amp \int_{a}^{b} \sqrt{\left( 1+ f'(x)^2 \right)} \ dx
+\end{align*}
+</div>
+<p class="continuation">where we have <span class="process-math">\(a=x(t_1)\text{,}\)</span> <span class="process-math">\(b=x(t_2)\text{,}\)</span> and we have assumed that <span class="process-math">\(x'(t)&gt;0\)</span> so that <span class="process-math">\(dx = x'(t)\ dt\text{.}\)</span>  Of course this is the formula from <a href="sec-6-1-area.html" class="internal" title="Section 6.1: Using Definite Integrals to Find Area and Length">Section 6.1</a>.</p>
+</div></div>
+</div></article></section><section class="subsection" id="iNn"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.2.5</span> <span class="title">Summary</span>
+</h3>
+<p id="XRj">Parametrization is useful in modeling curves that are not necessarily graphs of functions.  They can also be used to describe the position of an object as it moves along a given path.  Given a parameterized curve, we determined how to find.</p>
+<ul class="disc">
+<li id="li-5674"><p id="p-9889">the first and second derivatives of the parameterization.</p></li>
+<li id="li-5675"><p id="p-9890">a tangent line at any point of the curve.</p></li>
+<li id="li-5676"><p id="p-9891">the area under the curve.</p></li>
+<li id="li-5677"><p id="p-9892">the arc length of the curve.</p></li>
+</ul></section><section class="exercises" id="okq"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.2.6</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="EjV"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Taking a Derivative.</span>
+</h4>
+<div id="webwork-243" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="243" data-sourceFilePath="Library/ma123DB/set8/s10_2_13.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9893">If <span class="process-math">\(x = 5 t^4 + 6\)</span> and <span class="process-math">\(y = 2 t - t^2\text{,}\)</span> find the following derivatives as functions of <span class="process-math">\(t\)</span> .</p>
+<p id="p-9894"><span class="process-math">\(dy/dx=\)</span> <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+<p id="p-9895"><span class="process-math">\(d^2y/dx^2 =\)</span><span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-243')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="ExV"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Horizontal Tangent Lines.</span>
+</h4>
+<div id="webwork-244" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="244" data-sourceFilePath="Library/ma123DB/set8/s10_2_19.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9898">Consider the curve given by the parametric equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9899">
+\begin{equation*}
+x = t (t^2-3) , \quad y = 4 (t^2-3)
+\end{equation*}
+</div>
+<p id="p-9900"><em class="alert">a.)</em> Determine the point on the curve where the tangent is horizontal.</p>
+<p id="p-9901"><span class="process-math">\(t=\)</span><span class="fillin" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-9902"><em class="alert">b.)</em> Determine the points <span class="process-math">\(t_1\text{,}\)</span> <span class="process-math">\(t_2\)</span> where the tangent is vertical and <span class="process-math">\(t_1 \lt  t_2\)</span> .</p>
+<p id="p-9903"><span class="process-math">\(t_1=\)</span><span class="fillin" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-9904"><span class="process-math">\(t_2=\)</span><span class="fillin" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-244')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="EkC"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Find a Tangent Line to a Parametrically-Defined Curve.</span>
+</h4>
+<div id="webwork-245" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="245" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q15.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9908">Find parametric equations for the tangent line at <span class="process-math">\(t = 1\)</span> for the motion of a particle given by <span class="process-math">\(x(t) = 2t^{2}+7\text{,}\)</span> <span class="process-math">\(y(t) = 8t^{3}\text{.}\)</span></p>
+<p id="p-9909">For the line,</p>
+<p id="p-9910"><span class="process-math">\(x(t) =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9911"><span class="process-math">\(y(t) =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9912"><em class="emphasis">(Note that because the correctness of a parametrically described line depends on both <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\text{,}\)</span> both of your answers may be marked incorrect if there is an error in one of them.)</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-245')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="FxH"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Area of an Ellipse.</span>
+</h4>
+<div id="webwork-246" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="246" data-sourceFilePath="Library/ma123DB/set8/s10_2_35.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9915">The following parametric equations define an ellipse.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-9916">
+\begin{equation*}
+x = 3 \cos(\theta), \quad y = 4 \sin(\theta), \quad 0 \le \theta \le 2 \pi
+\end{equation*}
+</div>
+<p id="p-9917">Compute the area enclosed by this ellipse.</p>
+<p id="p-9918">Answer:  <span class="fillin" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-246')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Yce"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">A Spiral.</span>
+</h4>
+<div id="webwork-247" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="247" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q33.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9920"><em class="alert">(a)</em> On a separate sheet of paper, sketch the parameterized curve <span class="process-math">\(x=t \cos t, \ y=t \sin t\)</span> for <span class="process-math">\(0 \leq t \leq 4\pi\text{.}\)</span>  Use your graph to complete the following statement:</p>
+<p id="p-9921">At <span class="process-math">\(t = 3.5\text{,}\)</span> a particle moving along the curve in the direction of increasing <span class="process-math">\(t\)</span> is moving <ul style="list-style:circle;">
+<li id="li-5679"><p id="p-9923">up</p></li>
+<li id="li-5680"><p id="p-9924">down</p></li>
+<li id="li-5681"><p id="p-9925">neither up nor down</p></li>
+</ul> and <ul style="list-style:circle;">
+<li id="li-5683"><p id="p-9927">to the left</p></li>
+<li id="li-5684"><p id="p-9928">to the right</p></li>
+<li id="li-5685"><p id="p-9929">neither to the left nor to the right</p></li>
+</ul></p>
+<p id="p-9930"><em class="alert">(b)</em> By calculating the position at <span class="process-math">\(t = 3.5\)</span> and <span class="process-math">\(t=3.51\text{,}\)</span> estimate the speed at <span class="process-math">\(t=3.5\text{.}\)</span></p>
+<p id="p-9931">speed <span class="process-math">\(\approx\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-9932"><em class="alert">(c)</em> Use derivatives to calculate the speed at <span class="process-math">\(t=3.5\)</span> and compare your answer to part (b).</p>
+<p id="p-9933">speed = <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-247')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ekm"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Motion of a Particle.</span>
+</h4>
+<div id="webwork-248" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="248" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q13.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9938">A particle moves with its position given by <span class="process-math">\(x = \cos\!\left(t\right)\)</span> and <span class="process-math">\(y = \sin\!\left(\frac{t}{4}\right)\text{,}\)</span> where positions are given in feet from the origin and time <span class="process-math">\(t\)</span> is in seconds.</p>
+<p id="p-9939">Find the speed of the particle.</p>
+<p id="p-9940">Speed = <span class="fillin" role="img" aria-label="55-character blank" style="width: 25em;"></span></p>
+<p id="p-9941">(include <a class="external" href="/webwork2_files/helpFiles/Units.html" target="_blank">units</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-119" id="fn-119"><sup> 119 </sup></a>)</p>
+<p id="p-9942">Find the first positive time when the particle comes to a stop.</p>
+<p id="p-9943"><span class="process-math">\(t =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9944">(include <a class="external" href="/webwork2_files/helpFiles/Units.html" target="_blank">units</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-120" id="fn-120"><sup> 120 </sup></a>)</p>
+<p id="p-9945">If <span class="process-math">\(n\)</span> is any odd integer, write a formula (in terms of <span class="process-math">\(n\)</span>) for all positive times <span class="process-math">\(t\)</span> at which the particle comes to a stop.</p>
+<p id="p-9946"><span class="process-math">\(t =\)</span> <span class="fillin" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span></p>
+<p id="p-9947">(include <a class="external" href="/webwork2_files/helpFiles/Units.html" target="_blank">units</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-121" id="fn-121"><sup> 121 </sup></a>)</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-248')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHa"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">A Collision.</span>
+</h4>
+<div id="webwork-249" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="249" data-sourceFilePath="Library/Michigan/Chap4Sec8/Q39.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9951">Two particles move in the <span class="process-math">\(xy\)</span>-plane.  At time <span class="process-math">\(t\text{,}\)</span> the position of particle <span class="process-math">\(A\)</span> is given by <span class="process-math">\(x(t) = 4 t - 4\)</span> and <span class="process-math">\(y(t) = 3 t - k\text{,}\)</span> and the position of particle <span class="process-math">\(B\)</span> is given by <span class="process-math">\(x(t) = 3 t\)</span> and <span class="process-math">\(y(t) = t^2 - 2t - 1\text{.}\)</span></p>
+<p id="p-9952"><em class="alert">(a)</em> If <span class="process-math">\(k = 3\text{,}\)</span> do the particles ever collide? <ul style="list-style:circle;">
+<li id="li-5686"><p id="p-9953">yes</p></li>
+<li id="li-5687"><p id="p-9954">no</p></li>
+<li id="li-5688"><p id="p-9955">it is not possible to determine for certain</p></li>
+</ul></p>
+<p id="p-9956"><em class="emphasis">(Be sure that you are able to explain your answer!)</em></p>
+<p id="p-9957"><em class="alert">(b)</em> Find <span class="process-math">\(k\)</span> so that the two particles are certain to collide.</p>
+<p id="p-9958"><span class="process-math">\(k =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+<p id="p-9959"><em class="alert">(c)</em> At the time the particle collide in (b), which is moving faster? <ul style="list-style:circle;">
+<li id="li-5689"><p id="p-9960">particle A</p></li>
+<li id="li-5690"><p id="p-9961">particle B</p></li>
+<li id="li-5691"><p id="p-9962">neither particle (they are moving at the same speed)</p></li>
+</ul></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-249')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="FFs"><h4 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Examining Path and Speed of a Particle.</span>
+</h4>
+<p id="p-9964">A particle moves in the <span class="process-math">\(xy\)</span>-plane so that its position at time <span class="process-math">\(t\)</span> is given by <span class="process-math">\(x=\sin (2t)\text{,}\)</span> <span class="process-math">\(y=-\cos (2t)\)</span> for <span class="process-math">\(0 \leq t &lt; 2\pi\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-5692"><p id="p-9965">At what time does the particle first touch the <span class="process-math">\(x\)</span>-axis?  What is the speed of the particle at that time?</p></li>
+<li id="li-5693"><p id="p-9966">Is the particle ever at rest?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-135" id="hint-135"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-135"><div class="hint solution-like"><p id="p-9967">Recall the <span class="process-math">\(x\)</span>-axis is where <span class="process-math">\(y=0\text{.}\)</span>  If the particle is at rest, think about what the value of the velocity would need to be.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-434"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-9974">Show that the total length of the ellipse <span class="process-math">\(x=4\sin\theta\text{,}\)</span> <span class="process-math">\(y=3\cos\theta\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L=16 \int_0^{\pi/2} \sqrt{1-e^2\sin^2\theta} \ d\theta\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(e=\frac{c}{a}\)</span> and <span class="process-math">\(c=\sqrt{a^2-b^2}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-435"><h4 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">A Teardrop.</span>
+</h4>
+<p id="p-9975">The "teardrop" is a curve parameterized by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=2a\cos t - a\sin (2t), \ y=b\sin t, \ 0 \leq t &lt; 2\pi
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants defining the shape.</p>
+<ol class="lower-alpha">
+<li id="li-5698"><p id="p-9976">For your choice of positive constants <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> use the applet <a class="external" href="https://www.geogebra.org/m/yJNhQMQa" target="_blank">https://www.geogebra.org/m/yJNhQMQa</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-122" id="fn-122"><sup> 122 </sup></a> to sketch a teardrop curve.</p></li>
+<li id="li-5699"><p id="p-9977">Determine the area enclosed by the general teardrop curve.</p></li>
+</ol></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-118"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/m/yJNhQMQa</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-119"><div class="fn"><code class="code-inline tex2jax_ignore">/webwork2_files/helpFiles/Units.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-120"><div class="fn"><code class="code-inline tex2jax_ignore">/webwork2_files/helpFiles/Units.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-121"><div class="fn"><code class="code-inline tex2jax_ignore">/webwork2_files/helpFiles/Units.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-122"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/m/yJNhQMQa</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Answers to Activities</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="backmatter.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="backmatter.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="exercises-answers.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="backmatter.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="backmatter.html" title="Up">Up</a><a class="next-button button toolbar-item" href="exercises-answers.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link active"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="solutions" id="MzR"><h2 class="heading">
+<span class="type">Appendix</span> <span class="codenumber">A</span> <span class="title">Answers to Activities</span>
+</h2>
+<section class="introduction" id="YOj"><p id="wlA">This appendix contains answers to all activities in the text. Answers for preview activities are not included.</p></section><h3 class="heading hide-type" title="Subsection 1.1.1: Position and average velocity">
+<span class="codenumber">1</span><span class="space"> </span><span class="title">Understanding the Derivative</span><br><span class="codenumber">1.1</span><span class="space"> </span><span class="title">How do we measure velocity?</span><br><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Position and average velocity</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-1-hidden.html" title="Answer 1.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.1.2: Instantaneous Velocity">
+<span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Instantaneous Velocity</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-2-hidden.html" title="Answer 1.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-3-hidden.html" title="Answer 1.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.2.1: The Notion of Limit">
+<span class="codenumber">1.2</span><span class="space"> </span><span class="title">The notion of limit</span><br><span class="codenumber">1.2.1</span><span class="space"> </span><span class="title">The Notion of Limit</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-22-hidden.html" title="Answer 1.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.2.2: Instantaneous Velocity">
+<span class="codenumber">1.2.2</span><span class="space"> </span><span class="title">Instantaneous Velocity</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-23-hidden.html" title="Answer 1.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-24-hidden.html" title="Answer 1.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.3.1: The Derivative of a Function at a Point">
+<span class="codenumber">1.3</span><span class="space"> </span><span class="title">The derivative of a function at a point</span><br><span class="codenumber">1.3.1</span><span class="space"> </span><span class="title">The Derivative of a Function at a Point</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-38-hidden.html" title="Answer 1.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-39-hidden.html" title="Answer 1.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-40-hidden.html" title="Answer 1.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.4.1: How the derivative is itself a function">
+<span class="codenumber">1.4</span><span class="space"> </span><span class="title">The derivative function</span><br><span class="codenumber">1.4.1</span><span class="space"> </span><span class="title">How the derivative is itself a function</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-60-hidden.html" title="Answer 1.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-61-hidden.html" title="Answer 1.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.5.2: Toward more accurate derivative estimates">
+<span class="codenumber">1.5</span><span class="space"> </span><span class="title">Interpreting, estimating, and using the derivative</span><br><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">Toward more accurate derivative estimates</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-81-hidden.html" title="Answer 1.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-82-hidden.html" title="Answer 1.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-83-hidden.html" title="Answer 1.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.6.3: Concavity">
+<span class="codenumber">1.6</span><span class="space"> </span><span class="title">The second derivative</span><br><span class="codenumber">1.6.3</span><span class="space"> </span><span class="title">Concavity</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-113-hidden.html" title="Answer 1.6.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-114-hidden.html" title="Answer 1.6.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-115-hidden.html" title="Answer 1.6.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.7.1: Having a limit at a point">
+<span class="codenumber">1.7</span><span class="space"> </span><span class="title">Limits, Continuity, and Differentiability</span><br><span class="codenumber">1.7.1</span><span class="space"> </span><span class="title">Having a limit at a point</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-150-hidden.html" title="Answer 1.7.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.7.2: Being continuous at a point">
+<span class="codenumber">1.7.2</span><span class="space"> </span><span class="title">Being continuous at a point</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-151-hidden.html" title="Answer 1.7.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.7.3: Being differentiable at a point">
+<span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Being differentiable at a point</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-152-hidden.html" title="Answer 1.7.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 1.8.2: The local linearization">
+<span class="codenumber">1.8</span><span class="space"> </span><span class="title">The Tangent Line Approximation</span><br><span class="codenumber">1.8.2</span><span class="space"> </span><span class="title">The local linearization</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-167-hidden.html" title="Answer 1.8.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-168-hidden.html" title="Answer 1.8.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.1.2: Constant, Power, and Exponential Functions">
+<span class="codenumber">2</span><span class="space"> </span><span class="title">Computing Derivatives</span><br><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Elementary derivative rules</span><br><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Constant, Power, and Exponential Functions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-188-hidden.html" title="Answer 2.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.1.3: Constant Multiples and Sums of Functions">
+<span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Constant Multiples and Sums of Functions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-189-hidden.html" title="Answer 2.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-190-hidden.html" title="Answer 2.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.2.1: The sine and cosine functions">
+<span class="codenumber">2.2</span><span class="space"> </span><span class="title">The sine and cosine functions</span><br><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">The sine and cosine functions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-204-hidden.html" title="Answer 2.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-205-hidden.html" title="Answer 2.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-206-hidden.html" title="Answer 2.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.3.1: The product rule">
+<span class="codenumber">2.3</span><span class="space"> </span><span class="title">The product and quotient rules</span><br><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">The product rule</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-210-hidden.html" title="Answer 2.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.3.2: The quotient rule">
+<span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">The quotient rule</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-211-hidden.html" title="Answer 2.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.3.3: Combining rules">
+<span class="codenumber">2.3.3</span><span class="space"> </span><span class="title">Combining rules</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-212-hidden.html" title="Answer 2.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.4.1: Derivatives of the cotangent, secant, and cosecant functions">
+<span class="codenumber">2.4</span><span class="space"> </span><span class="title">Derivatives of other trigonometric functions</span><br><span class="codenumber">2.4.1</span><span class="space"> </span><span class="title">Derivatives of the cotangent, secant, and cosecant functions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-229-hidden.html" title="Answer 2.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-230-hidden.html" title="Answer 2.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-231-hidden.html" title="Answer 2.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.5.1: The chain rule">
+<span class="codenumber">2.5</span><span class="space"> </span><span class="title">The chain rule</span><br><span class="codenumber">2.5.1</span><span class="space"> </span><span class="title">The chain rule</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-244-hidden.html" title="Answer 2.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.5.2: Using multiple rules simultaneously">
+<span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Using multiple rules simultaneously</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-245-hidden.html" title="Answer 2.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-246-hidden.html" title="Answer 2.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.6.2: The derivative of the natural logarithm function">
+<span class="codenumber">2.6</span><span class="space"> </span><span class="title">Derivatives of Inverse Functions</span><br><span class="codenumber">2.6.2</span><span class="space"> </span><span class="title">The derivative of the natural logarithm function</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-264-hidden.html" title="Answer 2.6.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.6.3: Inverse trigonometric functions and their derivatives">
+<span class="codenumber">2.6.3</span><span class="space"> </span><span class="title">Inverse trigonometric functions and their derivatives</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-265-hidden.html" title="Answer 2.6.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-266-hidden.html" title="Answer 2.6.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.7.1: Implicit Differentiation">
+<span class="codenumber">2.7</span><span class="space"> </span><span class="title">Derivatives of Functions Given Implicitly</span><br><span class="codenumber">2.7.1</span><span class="space"> </span><span class="title">Implicit Differentiation</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-280-hidden.html" title="Answer 2.7.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-281-hidden.html" title="Answer 2.7.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-282-hidden.html" title="Answer 2.7.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.8.1: Using derivatives to evaluate indeterminate limits of the form \frac{0}{0}">
+<span class="codenumber">2.8</span><span class="space"> </span><span class="title">Using Derivatives to Evaluate Limits</span><br><span class="codenumber">2.8.1</span><span class="space"> </span><span class="title">Using derivatives to evaluate indeterminate limits of the form <span class="process-math">\(\frac{0}{0}\text{.}\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-291-hidden.html" title="Answer 2.8.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-292-hidden.html" title="Answer 2.8.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 2.8.2: Limits involving \infty">
+<span class="codenumber">2.8.2</span><span class="space"> </span><span class="title">Limits involving <span class="process-math">\(\infty\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-293-hidden.html" title="Answer 2.8.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.1.1: Critical numbers and the first derivative test">
+<span class="codenumber">3</span><span class="space"> </span><span class="title">Using Derivatives</span><br><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Using derivatives to identify extreme values</span><br><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Critical numbers and the first derivative test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-304-hidden.html" title="Answer 3.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.1.2: The second derivative test">
+<span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">The second derivative test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-305-hidden.html" title="Answer 3.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-306-hidden.html" title="Answer 3.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.2.1: Describing families of functions in terms of parameters">
+<span class="codenumber">3.2</span><span class="space"> </span><span class="title">Using derivatives to describe families of functions</span><br><span class="codenumber">3.2.1</span><span class="space"> </span><span class="title">Describing families of functions in terms of parameters</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-319-hidden.html" title="Answer 3.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-320-hidden.html" title="Answer 3.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-321-hidden.html" title="Answer 3.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.3.1: Global Optimization">
+<span class="codenumber">3.3</span><span class="space"> </span><span class="title">Global Optimization</span><br><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title">Global Optimization</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-332-hidden.html" title="Answer 3.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-333-hidden.html" title="Answer 3.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.3.2: Moving toward applications">
+<span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Moving toward applications</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-334-hidden.html" title="Answer 3.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.4.1: More applied optimization problems">
+<span class="codenumber">3.4</span><span class="space"> </span><span class="title">Applied Optimization</span><br><span class="codenumber">3.4.1</span><span class="space"> </span><span class="title">More applied optimization problems</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-339-hidden.html" title="Answer 3.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-340-hidden.html" title="Answer 3.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-341-hidden.html" title="Answer 3.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-342-hidden.html" title="Answer 3.4.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 3.5.1: Related Rates Problems">
+<span class="codenumber">3.5</span><span class="space"> </span><span class="title">Related Rates</span><br><span class="codenumber">3.5.1</span><span class="space"> </span><span class="title">Related Rates Problems</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-355-hidden.html" title="Answer 3.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-356-hidden.html" title="Answer 3.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-357-hidden.html" title="Answer 3.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-358-hidden.html" title="Answer 3.5.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.1.1: Area under the graph of the velocity function">
+<span class="codenumber">4</span><span class="space"> </span><span class="title">The Definite Integral</span><br><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Determining distance traveled from velocity</span><br><span class="codenumber">4.1.1</span><span class="space"> </span><span class="title">Area under the graph of the velocity function</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-366-hidden.html" title="Answer 4.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.1.2: Two approaches: area and antidifferentiation">
+<span class="codenumber">4.1.2</span><span class="space"> </span><span class="title">Two approaches: area and antidifferentiation</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-367-hidden.html" title="Answer 4.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.1.3: When velocity is negative">
+<span class="codenumber">4.1.3</span><span class="space"> </span><span class="title">When velocity is negative</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-368-hidden.html" title="Answer 4.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.2.1: Sigma Notation">
+<span class="codenumber">4.2</span><span class="space"> </span><span class="title">Riemann Sums</span><br><span class="codenumber">4.2.1</span><span class="space"> </span><span class="title">Sigma Notation</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-380-hidden.html" title="Answer 4.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.2.2: Riemann Sums">
+<span class="codenumber">4.2.2</span><span class="space"> </span><span class="title">Riemann Sums</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-381-hidden.html" title="Answer 4.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.2.3: When the function is sometimes negative">
+<span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">When the function is sometimes negative</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-382-hidden.html" title="Answer 4.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.3.1: The definition of the definite integral">
+<span class="codenumber">4.3</span><span class="space"> </span><span class="title">The Definite Integral</span><br><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">The definition of the definite integral</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-399-hidden.html" title="Answer 4.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.3.2: Some properties of the definite integral">
+<span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Some properties of the definite integral</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-400-hidden.html" title="Answer 4.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.3.3: How the definite integral is connected to a function's average value">
+<span class="codenumber">4.3.3</span><span class="space"> </span><span class="title">How the definite integral is connected to a function's average value</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-401-hidden.html" title="Answer 4.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.4.1: The Fundamental Theorem of Calculus">
+<span class="codenumber">4.4</span><span class="space"> </span><span class="title">The Fundamental Theorem of Calculus</span><br><span class="codenumber">4.4.1</span><span class="space"> </span><span class="title">The Fundamental Theorem of Calculus</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-419-hidden.html" title="Answer 4.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.4.2: Basic antiderivatives">
+<span class="codenumber">4.4.2</span><span class="space"> </span><span class="title">Basic antiderivatives</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-420-hidden.html" title="Answer 4.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 4.4.3: The total change theorem">
+<span class="codenumber">4.4.3</span><span class="space"> </span><span class="title">The total change theorem</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-421-hidden.html" title="Answer 4.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.1.1: Constructing the graph of an antiderivative">
+<span class="codenumber">5</span><span class="space"> </span><span class="title">Evaluating Integrals</span><br><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Constructing Accurate Graphs of Antiderivatives</span><br><span class="codenumber">5.1.1</span><span class="space"> </span><span class="title">Constructing the graph of an antiderivative</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-433-hidden.html" title="Answer 5.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.1.2: Multiple antiderivatives of a single function">
+<span class="codenumber">5.1.2</span><span class="space"> </span><span class="title">Multiple antiderivatives of a single function</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-434-hidden.html" title="Answer 5.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.1.3: Functions defined by integrals">
+<span class="codenumber">5.1.3</span><span class="space"> </span><span class="title">Functions defined by integrals</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-435-hidden.html" title="Answer 5.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.2.1: The Second Fundamental Theorem of Calculus">
+<span class="codenumber">5.2</span><span class="space"> </span><span class="title">The Second Fundamental Theorem of Calculus</span><br><span class="codenumber">5.2.1</span><span class="space"> </span><span class="title">The Second Fundamental Theorem of Calculus</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-452-hidden.html" title="Answer 5.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.2.2: Understanding Integral Functions">
+<span class="codenumber">5.2.2</span><span class="space"> </span><span class="title">Understanding Integral Functions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-453-hidden.html" title="Answer 5.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.2.3: Differentiating an Integral Function">
+<span class="codenumber">5.2.3</span><span class="space"> </span><span class="title">Differentiating an Integral Function</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-454-hidden.html" title="Answer 5.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.3.1: Reversing the Chain Rule: First Steps">
+<span class="codenumber">5.3</span><span class="space"> </span><span class="title">Integration by Substitution</span><br><span class="codenumber">5.3.1</span><span class="space"> </span><span class="title">Reversing the Chain Rule: First Steps</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-464-hidden.html" title="Answer 5.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.3.2: Reversing the Chain Rule: u-substitution">
+<span class="codenumber">5.3.2</span><span class="space"> </span><span class="title">Reversing the Chain Rule: <span class="process-math">\(u\)</span>-substitution</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-465-hidden.html" title="Answer 5.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.3.3: Evaluating Definite Integrals via u-substitution">
+<span class="codenumber">5.3.3</span><span class="space"> </span><span class="title">Evaluating Definite Integrals via <span class="process-math">\(u\)</span>-substitution</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-466-hidden.html" title="Answer 5.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.4.1: Reversing the Product Rule: Integration by Parts">
+<span class="codenumber">5.4</span><span class="space"> </span><span class="title">Integration by Parts</span><br><span class="codenumber">5.4.1</span><span class="space"> </span><span class="title">Reversing the Product Rule: Integration by Parts</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-477-hidden.html" title="Answer 5.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.4.2: Some Subtleties with Integration by Parts">
+<span class="codenumber">5.4.2</span><span class="space"> </span><span class="title">Some Subtleties with Integration by Parts</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-478-hidden.html" title="Answer 5.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.4.3: Using Integration by Parts Multiple Times">
+<span class="codenumber">5.4.3</span><span class="space"> </span><span class="title">Using Integration by Parts Multiple Times</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-479-hidden.html" title="Answer 5.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.5.1: The Method of Partial Fractions">
+<span class="codenumber">5.5</span><span class="space"> </span><span class="title">Partial Fractions</span><br><span class="codenumber">5.5.1</span><span class="space"> </span><span class="title">The Method of Partial Fractions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-486-hidden.html" title="Answer 5.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-487-hidden.html" title="Answer 5.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.5.2: Technology and Partial Fractions">
+<span class="codenumber">5.5.2</span><span class="space"> </span><span class="title">Technology and Partial Fractions</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-488-hidden.html" title="Answer 5.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.6.2: Integrating Products of Sines and Cosines of Different Angles">
+<span class="codenumber">5.6</span><span class="space"> </span><span class="title">Trigonometric Integrals</span><br><span class="codenumber">5.6.2</span><span class="space"> </span><span class="title">Integrating Products of Sines and Cosines of Different Angles</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.6.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-509-hidden.html" title="Answer 5.6.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.6.3: Integrating Products and Powers of \tan x and \sec x">
+<span class="codenumber">5.6.3</span><span class="space"> </span><span class="title">Integrating Products and Powers of <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.6.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-510-hidden.html" title="Answer 5.6.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.7.1: Integrals Involving \sqrt{a^2-x^2}">
+<span class="codenumber">5.7</span><span class="space"> </span><span class="title">Trigonometric Substitution</span><br><span class="codenumber">5.7.1</span><span class="space"> </span><span class="title">Integrals Involving <span class="process-math">\(\sqrt{a^2-x^2}\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.7.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-516-hidden.html" title="Answer 5.7.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.7.2: Integrals Involving a^2+x^2">
+<span class="codenumber">5.7.2</span><span class="space"> </span><span class="title">Integrals Involving <span class="process-math">\(a^2+x^2\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.7.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-517-hidden.html" title="Answer 5.7.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.8.1: Using an Integral Table">
+<span class="codenumber">5.8</span><span class="space"> </span><span class="title">Using Tables and Technology to Integrate</span><br><span class="codenumber">5.8.1</span><span class="space"> </span><span class="title">Using an Integral Table</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.8.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-524-hidden.html" title="Answer 5.8.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.8.2: Using Computer Algebra Systems">
+<span class="codenumber">5.8.2</span><span class="space"> </span><span class="title">Using Computer Algebra Systems</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.8.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-525-hidden.html" title="Answer 5.8.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.9.1: The Trapezoid Rule">
+<span class="codenumber">5.9</span><span class="space"> </span><span class="title">Numerical Integration</span><br><span class="codenumber">5.9.1</span><span class="space"> </span><span class="title">The Trapezoid Rule</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.9.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-529-hidden.html" title="Answer 5.9.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.9.3: Simpson's Rule">
+<span class="codenumber">5.9.3</span><span class="space"> </span><span class="title">Simpson's Rule</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.9.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-530-hidden.html" title="Answer 5.9.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 5.9.4: Overall observations regarding L_n R_n T_n M_n and S_{2n}">
+<span class="codenumber">5.9.4</span><span class="space"> </span><span class="title">Overall observations regarding <span class="process-math">\(L_n\text{,}\)</span> <span class="process-math">\(R_n\text{,}\)</span> <span class="process-math">\(T_n\text{,}\)</span> <span class="process-math">\(M_n\text{,}\)</span> and <span class="process-math">\(S_{2n}\text{.}\)</span></span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.9.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-531-hidden.html" title="Answer 5.9.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.1.1: The Area Between Two Curves">
+<span class="codenumber">6</span><span class="space"> </span><span class="title">Using Definite Integrals</span><br><span class="codenumber">6.1</span><span class="space"> </span><span class="title">Using Definite Integrals to Find Area and Length</span><br><span class="codenumber">6.1.1</span><span class="space"> </span><span class="title">The Area Between Two Curves</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-566-hidden.html" title="Answer 6.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.1.2: Finding Area with Horizontal Slices">
+<span class="codenumber">6.1.2</span><span class="space"> </span><span class="title">Finding Area with Horizontal Slices</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-567-hidden.html" title="Answer 6.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.1.3: Finding the length of a curve">
+<span class="codenumber">6.1.3</span><span class="space"> </span><span class="title">Finding the length of a curve</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-568-hidden.html" title="Answer 6.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.2.1: The Volume of a Solid of Revolution">
+<span class="codenumber">6.2</span><span class="space"> </span><span class="title">Using Definite Integrals to Find Volume</span><br><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">The Volume of a Solid of Revolution</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-576-hidden.html" title="Answer 6.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.2.2: Revolving about the y-axis">
+<span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Revolving about the <span class="process-math">\(y\)</span>-axis</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-577-hidden.html" title="Answer 6.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.2.3: Revolving about horizontal and vertical lines other than the coordinate axes">
+<span class="codenumber">6.2.3</span><span class="space"> </span><span class="title">Revolving about horizontal and vertical lines other than the coordinate axes</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-578-hidden.html" title="Answer 6.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.2.4: The Method of Cylindrical Shells">
+<span class="codenumber">6.2.4</span><span class="space"> </span><span class="title">The Method of Cylindrical Shells</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-579-hidden.html" title="Answer 6.2.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.3.1: Density">
+<span class="codenumber">6.3</span><span class="space"> </span><span class="title">Density, Mass, and Center of Mass</span><br><span class="codenumber">6.3.1</span><span class="space"> </span><span class="title">Density</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-594-hidden.html" title="Answer 6.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.3.2: Weighted Averages">
+<span class="codenumber">6.3.2</span><span class="space"> </span><span class="title">Weighted Averages</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-595-hidden.html" title="Answer 6.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.3.3: Center of Mass">
+<span class="codenumber">6.3.3</span><span class="space"> </span><span class="title">Center of Mass</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-596-hidden.html" title="Answer 6.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.4.1: Work">
+<span class="codenumber">6.4</span><span class="space"> </span><span class="title">Physics Applications:  Work, Force, and Pressure</span><br><span class="codenumber">6.4.1</span><span class="space"> </span><span class="title">Work</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-608-hidden.html" title="Answer 6.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.4.2: Work: Pumping Liquid from a Tank">
+<span class="codenumber">6.4.2</span><span class="space"> </span><span class="title">Work: Pumping Liquid from a Tank</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-609-hidden.html" title="Answer 6.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.4.3: Force due to Hydrostatic Pressure">
+<span class="codenumber">6.4.3</span><span class="space"> </span><span class="title">Force due to Hydrostatic Pressure</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-610-hidden.html" title="Answer 6.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.5.1: Improper Integrals Involving Unbounded Intervals">
+<span class="codenumber">6.5</span><span class="space"> </span><span class="title">Improper Integrals</span><br><span class="codenumber">6.5.1</span><span class="space"> </span><span class="title">Improper Integrals Involving Unbounded Intervals</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-622-hidden.html" title="Answer 6.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.5.2: Convergence and Divergence">
+<span class="codenumber">6.5.2</span><span class="space"> </span><span class="title">Convergence and Divergence</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-623-hidden.html" title="Answer 6.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 6.5.3: Improper Integrals Involving Unbounded Integrands">
+<span class="codenumber">6.5.3</span><span class="space"> </span><span class="title">Improper Integrals Involving Unbounded Integrands</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-624-hidden.html" title="Answer 6.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.1.1: Sequences">
+<span class="codenumber">7</span><span class="space"> </span><span class="title">Sequences and Series</span><br><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Sequences</span><br><span class="codenumber">7.1.1</span><span class="space"> </span><span class="title">Sequences</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-632-hidden.html" title="Answer 7.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-633-hidden.html" title="Answer 7.1.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.1.2: Bounded and Monotone Sequences">
+<span class="codenumber">7.1.2</span><span class="space"> </span><span class="title">Bounded and Monotone Sequences</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-634-hidden.html" title="Answer 7.1.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.2.1: Geometric Series">
+<span class="codenumber">7.2</span><span class="space"> </span><span class="title">Geometric Series</span><br><span class="codenumber">7.2.1</span><span class="space"> </span><span class="title">Geometric Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-648-hidden.html" title="Answer 7.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-649-hidden.html" title="Answer 7.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-650-hidden.html" title="Answer 7.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.3.1: Infinite Series">
+<span class="codenumber">7.3</span><span class="space"> </span><span class="title">Infinite Series of Real Numbers</span><br><span class="codenumber">7.3.1</span><span class="space"> </span><span class="title">Infinite Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-661-hidden.html" title="Answer 7.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-662-hidden.html" title="Answer 7.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.4.1: The Divergence Test">
+<span class="codenumber">7.4</span><span class="space"> </span><span class="title">The Divergence and Integral Tests</span><br><span class="codenumber">7.4.1</span><span class="space"> </span><span class="title">The Divergence Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-671-hidden.html" title="Answer 7.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-672-hidden.html" title="Answer 7.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.4.2: The Integral Test">
+<span class="codenumber">7.4.2</span><span class="space"> </span><span class="title">The Integral Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-673-hidden.html" title="Answer 7.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-674-hidden.html" title="Answer 7.4.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.5.1: The Direct Comparison Test">
+<span class="codenumber">7.5</span><span class="space"> </span><span class="title">Comparison Tests</span><br><span class="codenumber">7.5.1</span><span class="space"> </span><span class="title">The Direct Comparison Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-693-hidden.html" title="Answer 7.5.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.5.2: The Limit Comparison Test">
+<span class="codenumber">7.5.2</span><span class="space"> </span><span class="title">The Limit Comparison Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-694-hidden.html" title="Answer 7.5.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.5.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-695-hidden.html" title="Answer 7.5.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.6.1: The Ratio Test">
+<span class="codenumber">7.6</span><span class="space"> </span><span class="title">The Ratio Test</span><br><span class="codenumber">7.6.1</span><span class="space"> </span><span class="title">The Ratio Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.6.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-711-hidden.html" title="Answer 7.6.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.6.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-712-hidden.html" title="Answer 7.6.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.6.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-713-hidden.html" title="Answer 7.6.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.7.1: The Alternating Series Test">
+<span class="codenumber">7.7</span><span class="space"> </span><span class="title">Alternating Series</span><br><span class="codenumber">7.7.1</span><span class="space"> </span><span class="title">The Alternating Series Test</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-725-hidden.html" title="Answer 7.7.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-726-hidden.html" title="Answer 7.7.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.7.2: Estimating Alternating Sums">
+<span class="codenumber">7.7.2</span><span class="space"> </span><span class="title">Estimating Alternating Sums</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-727-hidden.html" title="Answer 7.7.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.7.3: Absolute and Conditional Convergence">
+<span class="codenumber">7.7.3</span><span class="space"> </span><span class="title">Absolute and Conditional Convergence</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-728-hidden.html" title="Answer 7.7.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.6</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-729-hidden.html" title="Answer 7.7.6.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 7.7.4: Summary of Tests for Convergence of Series">
+<span class="codenumber">7.7.4</span><span class="space"> </span><span class="title">Summary of Tests for Convergence of Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.7.7</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-730-hidden.html" title="Answer 7.7.7.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.1.1: Power Series">
+<span class="codenumber">8</span><span class="space"> </span><span class="title">Power Series</span><br><span class="codenumber">8.1</span><span class="space"> </span><span class="title">Power Series</span><br><span class="codenumber">8.1.1</span><span class="space"> </span><span class="title">Power Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-737-hidden.html" title="Answer 8.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.1.2: Finding the Interval of Convergence">
+<span class="codenumber">8.1.2</span><span class="space"> </span><span class="title">Finding the Interval of Convergence</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-738-hidden.html" title="Answer 8.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.2.1: Taylor Polynomials">
+<span class="codenumber">8.2</span><span class="space"> </span><span class="title">Taylor Polynomials</span><br><span class="codenumber">8.2.1</span><span class="space"> </span><span class="title">Taylor Polynomials</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-758-hidden.html" title="Answer 8.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.3.1: Taylor Series">
+<span class="codenumber">8.3</span><span class="space"> </span><span class="title">Taylor Series</span><br><span class="codenumber">8.3.1</span><span class="space"> </span><span class="title">Taylor Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-771-hidden.html" title="Answer 8.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-772-hidden.html" title="Answer 8.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-773-hidden.html" title="Answer 8.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.3.2: The Interval of Convergence of a Taylor Series">
+<span class="codenumber">8.3.2</span><span class="space"> </span><span class="title">The Interval of Convergence of a Taylor Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-774-hidden.html" title="Answer 8.3.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.3.3: Error Approximations for Taylor Polynomials">
+<span class="codenumber">8.3.3</span><span class="space"> </span><span class="title">Error Approximations for Taylor Polynomials</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.6</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-775-hidden.html" title="Answer 8.3.6.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.7</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-776-hidden.html" title="Answer 8.3.7.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.4.1: New Taylor Series from Old">
+<span class="codenumber">8.4</span><span class="space"> </span><span class="title">Applications of Taylor Series</span><br><span class="codenumber">8.4.1</span><span class="space"> </span><span class="title">New Taylor Series from Old</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-810-hidden.html" title="Answer 8.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-811-hidden.html" title="Answer 8.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-812-hidden.html" title="Answer 8.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.4.2: Using Taylor Series to Evaluate Limits">
+<span class="codenumber">8.4.2</span><span class="space"> </span><span class="title">Using Taylor Series to Evaluate Limits</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-813-hidden.html" title="Answer 8.4.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 8.4.3: Computing with Taylor Series">
+<span class="codenumber">8.4.3</span><span class="space"> </span><span class="title">Computing with Taylor Series</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-814-hidden.html" title="Answer 8.4.6.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.1.2: Eliminating the Parameter">
+<span class="codenumber">9</span><span class="space"> </span><span class="title">Parametric Equations and Polar Coordinates</span><br><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Parametric Equations</span><br><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Eliminating the Parameter</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-853-hidden.html" title="Answer 9.1.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-854-hidden.html" title="Answer 9.1.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.2.1: Derivatives of Parametric Equations">
+<span class="codenumber">9.2</span><span class="space"> </span><span class="title">Calculus of Parametric Equations</span><br><span class="codenumber">9.2.1</span><span class="space"> </span><span class="title">Derivatives of Parametric Equations</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-875-hidden.html" title="Answer 9.2.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.2.2: Second-Order Derivatives">
+<span class="codenumber">9.2.2</span><span class="space"> </span><span class="title">Second-Order Derivatives</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-876-hidden.html" title="Answer 9.2.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.2.3: Area Under a Curve">
+<span class="codenumber">9.2.3</span><span class="space"> </span><span class="title">Area Under a Curve</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-877-hidden.html" title="Answer 9.2.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.2.4: Arc Length of a Parametric Curve">
+<span class="codenumber">9.2.4</span><span class="space"> </span><span class="title">Arc Length of a Parametric Curve</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.5</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-878-hidden.html" title="Answer 9.2.5.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.3.1: Polar Coordinates">
+<span class="codenumber">9.3</span><span class="space"> </span><span class="title">Polar Coordinates</span><br><span class="codenumber">9.3.1</span><span class="space"> </span><span class="title">Polar Coordinates</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-897-hidden.html" title="Answer 9.3.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.3.2: Polar Curves">
+<span class="codenumber">9.3.2</span><span class="space"> </span><span class="title">Polar Curves</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-898-hidden.html" title="Answer 9.3.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.3.3: Symmetry in Polar Coordinates">
+<span class="codenumber">9.3.3</span><span class="space"> </span><span class="title">Symmetry in Polar Coordinates</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-899-hidden.html" title="Answer 9.3.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.4.1: Areas of Regions Bounded by Polar Curves">
+<span class="codenumber">9.4</span><span class="space"> </span><span class="title">Area and Arc Length in Polar Coordinates</span><br><span class="codenumber">9.4.1</span><span class="space"> </span><span class="title">Areas of Regions Bounded by Polar Curves</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.2</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-927-hidden.html" title="Answer 9.4.2.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><h3 class="heading hide-type" title="Subsection 9.4.2: Arc Length in Polar Curves">
+<span class="codenumber">9.4.2</span><span class="space"> </span><span class="title">Arc Length in Polar Curves</span>
+</h3>
+<article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.3</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-928-hidden.html" title="Answer 9.4.3.1"><span class="type">Answer</span><span class="period">.</span></a></div></article><article class="project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.4</span><span class="period">.</span>
+</h4>
+<div class="solutions"><a href="" class="answer-knowl original" data-knowl="./knowl/answer-929-hidden.html" title="Answer 9.4.4.1"><span class="type">Answer</span><span class="period">.</span></a></div></article></section></div></main>
+</div>
+</body>
+</html>

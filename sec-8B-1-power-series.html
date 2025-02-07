@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:14:55Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Power Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="C-8B.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-8B-2-Taylor-Polynomials.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="C-8B.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-8B.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-8B-2-Taylor-Polynomials.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="active">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="YgQ"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.1</span> <span class="title">Power Series</span>
+</h2>
+<article class="objectives goal-like" id="hAB"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="yyM"><p id="jpO">What is a power series?</p></li>
+<li id="eFV"><p id="PwX">What are some important uses of power series?</p></li>
+<li id="KNe"><p id="vEg">What is the interval of convergence?  For what values does a power series converge?</p></li>
+</ul></article><section class="introduction" id="NHL"><p id="mUp">So far, each infinite series we have discussed has been a series of real numbers, such as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="powerseries12">
+\begin{equation}
+1 + \frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^k} + \cdots = \sum_{k=0}^{\infty} \frac{1}{2^k}\text{.}\tag{8.1}
+\end{equation}
+</div>
+<p id="Tbx">In the remainder of this chapter, we will include series that involve a variable. For instance, if in the geometric series in <a href="" class="xref" data-knowl="./knowl/powerseries12.html" title="Equation 8.1">Equation (8.1)</a> we replace the ratio <span class="process-math">\(r=\frac{1}{2}\)</span> with the variable <span class="process-math">\(x\text{,}\)</span> we have the infinite (still geometric) series</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/powerseries12.html">
+\begin{equation*}
+1+x+x^2 + \cdots + x^k + \cdots = \sum_{k=0}^{\infty} x^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In this section we will focus on these general series of powers.</p>
+<article class="exploration project-like" id="DxG"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.1.1</span><span class="period">.</span>
+</h3>
+<p id="p-8888">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x)=\sum_{k=0}^{\infty} \frac{x^k}{2^k}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-5252"><p id="p-8889">Determine the values of <span class="process-math">\(f(1)\)</span> and <span class="process-math">\(f \left( \frac{3}{2} \right)\text{.}\)</span></p></li>
+<li id="li-5253"><p id="p-8890">For some values of <span class="process-math">\(x\text{,}\)</span> this is a geometric series.  For these values, find a general formula for the sum and hence <span class="process-math">\(f(x)\text{.}\)</span></p></li>
+<li id="li-5254"><p id="p-8891">Determine the values for which this power series converges.</p></li>
+</ol></article><p id="p-8897">As <a href="" class="xref" data-knowl="./knowl/PA-8B-1.html" title="Preview Activity 8.1.1">Preview Activity 8.1.1</a> illustrates, a power series may converge for some values of <span class="process-math">\(x\)</span> and not for others. In this section, we will learn how to determine the interval of <span class="process-math">\(x\)</span>-values where a power series converges. In the following sections we investigate how power series may be used to obtain polynomial approximations of functions.</p></section><section class="subsection" id="EnZ"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.1</span> <span class="title">Power Series</span>
+</h3>
+<article class="definition definition-like" id="IXS"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.1</span><span class="period">.</span>
+</h4>
+<p id="ikw">A <dfn class="terminology">power series</dfn> centered at <span class="process-math">\(x = a\)</span> is a function of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="ttv">
+\begin{equation}
+\sum_{k=0}^{\infty} c_k(x-a)^k\tag{8.2}
+\end{equation}
+</div>
+<p class="continuation">where <span class="process-math">\(\{c_k\}\)</span> is a sequence of real numbers and <span class="process-math">\(x\)</span> is an independent variable.</p></article><p id="p-8899">For example, the series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1+(x-2)+(x-2)^2 + (x-2)^3 + \cdots
+\end{equation*}
+</div>
+<p class="continuation">is a power series centered at <span class="process-math">\(x=2\text{,}\)</span> with <span class="process-math">\(c_k=1\)</span> for <span class="process-math">\(k \geq 0\text{,}\)</span> and a geometric series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} bx^k = b + bx + bx^2 + bx^3 + \cdots = \sum_{k=0}^{\infty} b(x-0)^k
+\end{equation*}
+</div>
+<p class="continuation">is a power series centered at <span class="process-math">\(x=0\)</span> with <span class="process-math">\(c_k = b\)</span> for <span class="process-math">\(k \geq 0\text{.}\)</span></p>
+<article class="activity project-like" id="BRr"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h4>
+<p id="kTg">Which of the following are geometric series?  Which are power series?  Which are both?  Which are neither?</p>
+<ol class="lower-alpha cols2">
+<li id="IMu"><p id="KBH"><span class="process-math">\(\displaystyle \displaystyle 1+\frac{x}{2} + \frac{x^2}{4} + \frac{x^3}{8} + \frac{x^4}{16} + \cdots\)</span></p></li>
+<li id="oTE"><p id="qIr"><span class="process-math">\(\displaystyle \displaystyle 1+1.1+1.21+1.331+1.4641+1.6105+\cdots\)</span></p></li>
+<li id="VaM"><p id="WPZ"><span class="process-math">\(\displaystyle \left( \frac{1}{3} \right)^2 + \left( \frac{1}{3} \right)^4 + \left( \frac{1}{3} \right)^6  + \cdots\)</span></p></li>
+<li id="li-5261"><p id="p-8904"><span class="process-math">\(\displaystyle \displaystyle 1+x+\frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots \)</span></p></li>
+<li id="li-5262"><p id="p-8905"><span class="process-math">\(\displaystyle \displaystyle 1+\frac{1}{2} + \frac{1}{3}+\frac{1}{4}+\frac{1}{5} + \cdots \)</span></p></li>
+<li id="li-5263"><p id="p-8906"><span class="process-math">\(\displaystyle \displaystyle \frac{1}{x^2} + \frac{1}{x} + 1 + x + x^2 + x^3 + x^4 + \cdots \)</span></p></li>
+</ol></article><p id="p-8914">Convergence of power series is similar to convergence of series. Namely, a power series will converge if its sequence of partial sums converges. In general, a power series may converge for some values of <span class="process-math">\(x\text{,}\)</span> and diverge for others.</p>
+<article class="definition definition-like" id="fkI"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-8915">For a fixed value of <span class="process-math">\(x\text{,}\)</span> the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} c_k(x-a)^k
+\end{equation*}
+</div>
+<p class="continuation"><dfn class="terminology">converges</dfn> to <span class="process-math">\(L\)</span> if the sequence of partial sums <span class="process-math">\(S_0(x), S_1(x), S_2(x), \ldots\)</span> converges to <span class="process-math">\(L\text{.}\)</span>  That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{n \rightarrow \infty} S_n(x) = L\text{.}
+\end{equation*}
+</div></article><p id="p-8916">The natural question then becomes that of determining the values of <span class="process-math">\(x\)</span> for which a series converges and for which it diverges.  Perhaps strikingly, the answer to this question always takes on the same form.</p>
+<article class="assemblage assemblage-like" id="assemblage-66"><h4 class="heading"><span class="title">Convergence of Power Series.</span></h4>
+<p id="p-8917">The set of <span class="process-math">\(x\)</span> values at which a power series <span class="process-math">\(\sum_{k=0}^{\infty} c_k(x-a)^k\)</span> converges is <em class="emphasis">always</em> an interval centered at <span class="process-math">\(x=a\text{.}\)</span>  For this reason, the set on which a power series converges is called the <dfn class="terminology">interval of convergence</dfn>. Half the length of the interval of convergence is called the <dfn class="terminology">radius of convergence</dfn>.</p></article><p id="p-8918">One may ask if the interval defined above is an open interval, a closed interval, or half-open and half-closed.  It turns out that each of these cases is possible.  That is, in general, the series may converge or diverge at the endpoints of the interval of convergence.</p></section><section class="subsection" id="subsection-160"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.2</span> <span class="title">Finding the Interval of Convergence</span>
+</h3>
+<p id="fpP">A power series defines a function <span class="process-math">\(f\)</span> whose domain is the set of <span class="process-math">\(x\)</span> values for which the power series converges. We therefore write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=0}^{\infty} c_k(x-a)^k\text{.}
+\end{equation*}
+</div>
+<p class="continuation">To determine the interval of convergence for a power series, we typically apply the ratio test.</p>
+<article class="example example-like" id="Vmj"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<p id="aFW">Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{k=1}^{\infty} \frac{x^k}{k^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Determine the interval of convergence of this power series.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-ZWc" id="ZWc"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-ZWc"><div class="solution solution-like">
+<p id="MCr">First we will plot some of the partial sums of this power series to get an idea of the interval of convergence. Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/F-8-6-Power-Series.html">
+\begin{equation*}
+S_n(x) = \sum_{k=1}^{n} \frac{x^k}{k^2}
+\end{equation*}
+</div>
+<p class="continuation">for each <span class="process-math">\(n \geq 1\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/F-8-6-Power-Series.html" title="Figure 8.1.4">Figure 8.1.4</a> shows plots of <span class="process-math">\(S_{10}(x)\)</span> (in red), <span class="process-math">\(S_{25}(x)\)</span> (in blue), and <span class="process-math">\(S_{50}(x)\)</span> (in green).</p>
+<figure class="figure figure-like" id="xtt"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="external/images/8_6_Power_Series.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.4<span class="period">.</span></span><span class="space"> </span>Graphs of some partial sums of the power series <span class="process-math">\(\sum_{k=1}^{\infty} \frac{x^k}{k^2}\text{.}\)</span></figcaption></figure><p id="sJA">The behavior of <span class="process-math">\(S_{50}\)</span> in particular suggests that <span class="process-math">\(f(x)\)</span> appears to be converging to a particular curve on the interval <span class="process-math">\((-1,1)\text{,}\)</span> while growing without bound outside of that interval. Thus, the interval of convergence might be <span class="process-math">\(-1 \lt  x \lt  1\text{.}\)</span> To verify our conjecture, we apply the Ratio Test. Now,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_k = \frac{x^k}{k^2}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="WFX">
+\begin{align*}
+\lim_{k \to \infty} \frac{\left| a_{k+1} \right|}{ \left| a_k \right|} \amp = \lim_{k \to \infty} \frac{ \frac{|x|^{k+1}}{(k+1)^2} }{ \frac{| x|^{k}}{k^2} }\\
+\amp = \lim_{k \to \infty} |x| \left(\frac{k}{k+1}\right)^2\\
+\amp = |x| \lim_{k \to \infty}  \left(\frac{k}{k+1}\right)^2\\
+\amp = |x|\text{.}
+\end{align*}
+</div>
+<p id="YQJ">Therefore, the Ratio Test tells us that <span class="process-math">\(f(x)\)</span> converges absolutely when <span class="process-math">\(| x | \lt 1\)</span> and diverges when <span class="process-math">\(| x | \gt 1\text{.}\)</span> Because the Ratio Test is inconclusive when <span class="process-math">\(|x| = 1\text{,}\)</span> we need to check <span class="process-math">\(x = 1\)</span> and <span class="process-math">\(x = -1\)</span> individually.</p>
+<p id="EXS">When <span class="process-math">\(x = 1\text{,}\)</span> observe that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(1) = \sum_{k=1}^{\infty} \frac{1}{k^2}\text{.}
+\end{equation*}
+</div>
+<p id="lfb">This is a <span class="process-math">\(p\)</span>-series with <span class="process-math">\(p \gt 1\text{,}\)</span> which we know converges. When <span class="process-math">\(x = -1\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(-1) = \sum_{k=1}^{\infty} \frac{(-1)^k}{k^2}\text{.}
+\end{equation*}
+</div>
+<p id="Rmk">This is an alternating series, and since the sequence <span class="process-math">\(\left\{ \frac{1}{n^2} \right\}\)</span> decreases to 0, the power series converges by the Alternating Series Test. Thus, the interval of convergence of this power series is <span class="process-math">\(-1 \le x \le 1\text{.}\)</span></p>
+</div></div>
+</div></article><article class="example example-like" id="pfc"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.5</span><span class="period">.</span>
+</h4>
+<p id="OrF">For each of the following series, find the interval of convergence.</p>
+<ol class="lower-alpha">
+<li id="li-5270"><p id="p-8928"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=0}^{\infty} \frac{x^k}{k!}\)</span></p></li>
+<li id="li-5271"><p id="p-8929"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=0}^{\infty} (k!)^2x^k\)</span></p></li>
+<li id="li-5272"><p id="p-8930"><span class="process-math">\(\displaystyle \displaystyle \sum_{k=0}^{\infty} \frac{(x-2)^k}{(k+1)3^k}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-tOV" id="tOV"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-tOV"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5273">
+<p id="p-8931">To check for convergence, we apply the ratio test.  Here <span class="process-math">\(a_k = \frac{x^k}{k!}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-295">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{\left| a_{k+1}\right|}{\left| a_k \right|} \amp =  \lim_{k \rightarrow \infty} \frac{\left| \frac{x^{k+1}}{(k+1)!} \right|}{\left| \frac{x^k}{k!} \right|}\\
+\amp =  \lim_{k \rightarrow \infty} \left| \frac{x^{k+1}}{(k+1)!} \cdot \frac{k!}{x^k} \right|\\
+\amp =  \lim_{k \rightarrow \infty} \left| \frac{x^k\cdot x}{(k+1)\cdot k!} \cdot \frac{k!}{x^k} \right|\\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{x}{k+1} \right|\\
+\amp =  \left| x \right| \lim_{k \rightarrow \infty}  \frac{1}{k+1}\\
+\amp =  0 &lt; 1
+\end{align*}
+</div>
+<p class="continuation">for all values of <span class="process-math">\(x\text{.}\)</span>  So the series converges for all real numbers <span class="process-math">\(x\)</span> and the interval of convergence is <span class="process-math">\((-\infty, \infty)\text{.}\)</span></p>
+</li>
+<li id="li-5274">
+<p id="p-8932">Again we apply the ratio test.  This time we use <span class="process-math">\(a_k = (k!)^2x^k\text{.}\)</span>  For <span class="process-math">\(x \neq 0\text{,}\)</span> we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-296">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{ \left| a_{k+1} \right|}{\left| a_k \right|} \amp = \lim_{k \rightarrow \infty} \frac{ \left| [(k+1)!]^2x^{k+1} \right|}{\left| (k!)^2x^k \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| (k+1)^2x\right|\\
+\amp = \left| x \right| \lim_{k \rightarrow \infty} (k+1)^2\\
+\amp = \infty
+\end{align*}
+</div>
+<p class="continuation">Therefore, the series diverges for all <span class="process-math">\(x \neq 0\text{.}\)</span>  Since the series is centered at <span class="process-math">\(x=0\text{,}\)</span> it must converge there so the series converges only for <span class="process-math">\(x=0\text{.}\)</span>  The interval of convergence is the single value <span class="process-math">\(x=0\text{.}\)</span></p>
+</li>
+<li id="li-5275">
+<p id="p-8933">In order to apply the ratio test, we investigate</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-297">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{\left| a_{k+1} \right|} {\left| a_k \right|} \amp = \lim_{k \rightarrow \infty} \frac{\left| \frac{(x-2)^{k+1}}{(k+2)3^{k+1}} \right|} {\left| \frac{(x-2)^k}{(k+1)3^k} \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{(x-2)^{k+1}}{(k+2)3^{k+1}} \cdot \frac{(k+1)3^k}{(x-2)^k} \right| \\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{(x-2)(k+1)}{3(k+2)} \right|\\
+\amp = \left| \frac{x-2}{3} \right|
+\end{align*}
+</div>
+<p class="continuation">This ratio <span class="process-math">\(r &lt; 1\)</span> if <span class="process-math">\(|x-2| &lt; 3\text{.}\)</span>  Since <span class="process-math">\(|x-2| &lt; 3\)</span> implies that <span class="process-math">\(-3 &lt; x-2 &lt; 3\text{,}\)</span> the series converges absolutely if <span class="process-math">\(-1 &lt; x &lt; 5\text{.}\)</span>  The ratio <span class="process-math">\(r &gt; 1\)</span> if <span class="process-math">\(|x-2| &gt; 3\text{.}\)</span>  Therefore, the sereis diverges if <span class="process-math">\(x &lt; -1\)</span> or <span class="process-math">\(x &gt; 5\text{.}\)</span>  The ratio test is inconclusive if <span class="process-math">\(r=1\text{.}\)</span>  That is, when <span class="process-math">\(x=-1\)</span> or <span class="process-math">\(x=5\text{.}\)</span>  We test these values of <span class="process-math">\(x\)</span> separately.</p>
+<p id="p-8934">For <span class="process-math">\(x=-1\text{,}\)</span> the series is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{(-1)^k}{k+1} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since this is the alternating harmonic series, it converges.  So the series converges at <span class="process-math">\(x=-1\text{.}\)</span>  For <span class="process-math">\(x=5\text{,}\)</span> the series is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{1}{k+1} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is the harmonic series, which is divergent.  Therefore the power series diverges at <span class="process-math">\(x=5\text{.}\)</span>  We conclude that the interval of convergence is <span class="process-math">\([-1,5)\text{.}\)</span></p>
+</li>
+</ol></div></div>
+</div></article><p id="p-8935"><a href="" class="xref" data-knowl="./knowl/FindingIntevalConvergePowerSeries.html" title="Example 8.1.5">Example 8.1.5</a> gives us significant insight as to the process of determining the values of <span class="process-math">\(x\)</span> for which a power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/FindingIntevalConvergePowerSeries.html">
+\begin{equation*}
+\sum_{k =0}^{\infty} c_k(x-a)^k\text{,}
+\end{equation*}
+</div>
+<p class="continuation">centered at <span class="process-math">\(x=a\)</span> will converge.  In general we apply the Ratio Test with <span class="process-math">\(a_k = \left|c_k (x-a)^k \right|\text{.}\)</span>  This series converges if <span class="process-math">\(\lim_{k \rightarrow \infty} \frac{a_{k+1}}{a_k} &lt; 1\text{.}\)</span>  But if we have <span class="process-math">\(\lim_{k \rightarrow \infty} \frac{\left| c_{k+1} \right|}{\left| c_k \right|} = L\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/FindingIntevalConvergePowerSeries.html" id="md-298">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{a_{k+1}}{a_k} \amp = \lim_{k \rightarrow \infty} \left| x-a \right| \frac{ \left| c_{k+1}\right|}{\left| c_k \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| x-a \right| \cdot L
+\end{align*}
+</div>
+<p class="continuation">There are three possibilities for <span class="process-math">\(L\text{:}\)</span> <span class="process-math">\(L\)</span> can be <span class="process-math">\(0\text{,}\)</span> it can be a finite positive value, or it can be infinite.  Based on this value of <span class="process-math">\(L\text{,}\)</span> we can determine for which values of <span class="process-math">\(x\)</span> the original power series converges.</p>
+<ul class="disc">
+<li id="li-5276"><p id="p-8936">If <span class="process-math">\(L=0\text{,}\)</span> then the power series converges on <span class="process-math">\((-\infty, \infty)\text{.}\)</span></p></li>
+<li id="li-5277"><p id="p-8937">If <span class="process-math">\(L\)</span> is infinite, then the power series converges only at <span class="process-math">\(x=a\text{.}\)</span></p></li>
+<li id="li-5278">
+<p id="p-8938">If <span class="process-math">\(L\)</span> is finite and nonzero, then the power series converges absolutely for all <span class="process-math">\(x\)</span> that satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| x-a \right| \cdot L &lt; 1
+\end{equation*}
+</div>
+<p class="continuation">or for all <span class="process-math">\(x\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left| x-a \right| &lt; \frac{1}{L}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is the interval</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left( a - \frac{1}{L}, a+\frac{1}{L} \right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This interval is centered at <span class="process-math">\(x=a\)</span> and has radius <span class="process-math">\(R=\frac{1}{L}\text{.}\)</span>  Because the Ratio Test is inconclusive when <span class="process-math">\(\left| x-a \right| \cdot L = 1\text{,}\)</span> the endpoints <span class="process-math">\(x=a\pm \frac{1}{L}\)</span> must be checked separately.</p>
+</li>
+</ul>
+<article class="assemblage assemblage-like" id="assemblage-67"><h4 class="heading"><span class="title">Finding the Interval of Convergence.</span></h4>
+<p id="p-8939">To find the interval of convergence of the power series <span class="process-math">\(\sum_{k=0}^{\infty} c_k (x-a)^k\text{,}\)</span> calculate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L = \lim_{k \rightarrow \infty} \frac{\left| c_{k+1} \right|}{\left| c_k \right|} \text{.}
+\end{equation*}
+</div>
+<ul class="disc">
+<li id="li-5279"><p id="p-8940">If <span class="process-math">\(L=0\text{,}\)</span> then the power series converges on <span class="process-math">\((-\infty,\infty)\text{.}\)</span></p></li>
+<li id="li-5280"><p id="p-8941">If <span class="process-math">\(L=\infty\text{,}\)</span> then the power series converges only at <span class="process-math">\(x=a\text{.}\)</span></p></li>
+<li id="li-5281"><p id="p-8942">If <span class="process-math">\(L\)</span> is finite and nonzero, then the power series converges on the interval <span class="process-math">\(\left( a-\frac{1}{L}, a+\frac{1}{L}\right)\text{.}\)</span>  The series may or may not converge at each endpoint of this interval.  Convergence at these endpoints must be checked separately.</p></li>
+</ul></article><article class="activity project-like" id="KnK"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<p id="tpz">Determine the interval of convergence of each power series.</p>
+<ol id="ZwI" class="lower-alpha cols2">
+<li id="qQs"><p id="lbg"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{(x-1)^k}{3k}\)</span></p></li>
+<li id="WXB"><p id="Rip"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} kx^k\)</span></p></li>
+<li id="DeK"><p id="xpy"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{k^2(x+1)^k}{4^k}\)</span></p></li>
+<li id="jlT"><p id="dwH"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} \frac{x^k}{(2k)!}\)</span></p></li>
+<li id="Ptc"><p id="JDQ"><span class="process-math">\(\displaystyle \sum_{k=1}^{\infty} k!x^k\)</span></p></li>
+</ol></article><article class="example example-like" id="Ex-ConvergenceIsInterval"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.6</span><span class="period">.</span>
+</h4>
+<p id="p-8976">Suppose that the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} C_k (x+2)^k
+\end{equation*}
+</div>
+<p class="continuation">converges at <span class="process-math">\(x=2\)</span> and diverges at <span class="process-math">\(x=-8\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-5304"><p id="p-8977">Does the series converge or diverge at <span class="process-math">\(x=-5\text{?}\)</span></p></li>
+<li id="li-5305"><p id="p-8978">Does the series converge or diverge at <span class="process-math">\(x=5\text{?}\)</span></p></li>
+<li id="li-5306"><p id="p-8979">What are all the possibilities for the radius of convergence of the power series?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-492" id="solution-492"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-492"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5307"><p id="p-8980">Since the power series is centered at <span class="process-math">\(x=-2\text{,}\)</span> the fact that the series converges at <span class="process-math">\(x=2\)</span> tells us that the radius of convergence is greater than or equal to <span class="process-math">\(4\text{,}\)</span> since <span class="process-math">\(4\)</span> is the distance between <span class="process-math">\(2\)</span> and <span class="process-math">\(-2\text{.}\)</span>  Since <span class="process-math">\(-5\)</span> is <span class="process-math">\(3\)</span> away from <span class="process-math">\(-2\)</span> the series will converge at <span class="process-math">\(x=-5\text{.}\)</span></p></li>
+<li id="li-5308"><p id="p-8981">Since the series diverges at <span class="process-math">\(x=-8\text{,}\)</span> we know the radius of convergence is less than or equal to <span class="process-math">\(6\text{.}\)</span>  Since <span class="process-math">\(5\)</span> is <span class="process-math">\(7\)</span> away from <span class="process-math">\(-2\)</span> the series will diverge at <span class="process-math">\(x=5\text{.}\)</span></p></li>
+<li id="li-5309"><p id="p-8982">The previous discussion tells us that the radius of convergence is <span class="process-math">\(R\)</span> where <span class="process-math">\(4 \leq R \leq 6\text{.}\)</span></p></li>
+</ol></div></div>
+</div></article></section><section class="subsection" id="QCr"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.3</span> <span class="title">Summary</span>
+</h3>
+<ul id="UQL" class="disc">
+<li id="qUi">
+<p id="bLq">A power series is a series of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} c_k(x-a)^k\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="Xbx"><p id="HSz">A power series always converges at at least one point.  If the power series is centered at <span class="process-math">\(x=a\text{,}\)</span> the power series either converges only at <span class="process-math">\(x=a\text{,}\)</span> or it converges for all <span class="process-math">\(x\)</span> (i.e. the interval <span class="process-math">\((-\infty, \infty)\)</span>), or it converges for all <span class="process-math">\(x\)</span> in some finite interval <span class="process-math">\((a-R, a+R)\)</span> where <span class="process-math">\(R&gt;0\)</span> is the radius of convergence.  In this last case, the power series may or may not converge at the endpoints <span class="process-math">\(x=a-R\)</span> and <span class="process-math">\(x=a+R\)</span> of the interval.</p></li>
+</ul></section><section class="exercises" id="BNb"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.1.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ez-8B-1-WW1"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-205" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="205" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8986">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} (n+6)x^n.
+\end{equation*}
+</div>
+<p id="p-8987">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-8988">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-8989">What is the interval of convergence?</p>
+<p id="p-8990">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-205')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="ez-8B-1-WW2"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-206" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="206" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-8993">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{(-1)^nx^n}{\sqrt{n+5}}.
+\end{equation*}
+</div>
+<p id="p-8994">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-8995">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-8996">What is the interval of convergence?</p>
+<p id="p-8997">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-206')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="ez-8B-1-WW3"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-207" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="207" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_8.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9000">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} n^n(x-8)^n.
+\end{equation*}
+</div>
+<p id="p-9001">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-9002">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9003">What is the interval of convergence?</p>
+<p id="p-9004">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-207')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="CZy"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-208" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="208" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_18.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9007">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{(-2)^n}{\sqrt{n}}(x+8)^n.
+\end{equation*}
+</div>
+<p id="p-9008">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-9009">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9010">What is the interval of convergence?</p>
+<p id="p-9011">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-208')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="WSo"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-209" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="209" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_7.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9014">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} \frac{2^n x^n}{n!}.
+\end{equation*}
+</div>
+<p id="p-9015">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-9016">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9017">What is the interval of convergence?</p>
+<p id="p-9018">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-209')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="CZA"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Finding the interval of convergence of a power series.</span>
+</h4>
+<div id="webwork-210" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="210" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_9.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9021">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=1}^{\infty} (-1)^n n 3^n x^n.
+\end{equation*}
+</div>
+<p id="p-9022">Find the radius of convergence <span class="process-math">\(R.\)</span>  If it is infinite, type "infinity" or "inf".</p>
+<p id="p-9023">Answer: <span class="process-math">\(R =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-9024">What is the interval of convergence?</p>
+<p id="p-9025">Answer (in interval notation): <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-210')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="CZC"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Deducing points of convergence.</span>
+</h4>
+<div id="webwork-211" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="211" data-sourceFilePath="Library/UMN/calculusStewartCCC/s_11_8_30.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-9028">Suppose that <span class="process-math">\(\sum_{n=0}^{\infty} c_n x^n\)</span> converges when <span class="process-math">\(x=-4\)</span> and diverges when <span class="process-math">\(x=8.\)</span>  Determine whether the following series <em class="emphasis">converge</em> or <em class="emphasis">diverge.</em>  Answer "Converges" or "Diverges."</p>
+<p id="p-9029"><ul style="list-style:circle;">
+<li id="li-5313"><p id="p-9031">Converges</p></li>
+<li id="li-5314"><p id="p-9032">Diverges</p></li>
+</ul> <em class="alert">1.</em>  <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} c_n\)</span></p>
+<p id="p-9033"><ul style="list-style:circle;">
+<li id="li-5316"><p id="p-9035">Converges</p></li>
+<li id="li-5317"><p id="p-9036">Diverges</p></li>
+</ul> <em class="alert">2.</em>  <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} c_n 9^n\)</span></p>
+<p id="p-9037"><ul style="list-style:circle;">
+<li id="li-5319"><p id="p-9039">Converges</p></li>
+<li id="li-5320"><p id="p-9040">Diverges</p></li>
+</ul> <em class="alert">3.</em>   <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} c_n (-10)^n\)</span></p>
+<p id="p-9041"><ul style="list-style:circle;">
+<li id="li-5322"><p id="p-9043">Converges</p></li>
+<li id="li-5323"><p id="p-9044">Diverges</p></li>
+</ul> <em class="alert">3.</em>   <span class="process-math">\(\displaystyle \sum_{n=0}^{\infty} (-1)^n c_n 12^n\)</span></p>
+<p id="p-9045"><em class="alert">Note:</em>  <em class="emphasis">You only have two attempts at this problem.</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-211')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-380"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-9050">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} c_k (x-1)^k
+\end{equation*}
+</div>
+<p class="continuation">with radius of convergence <span class="process-math">\(R\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-5324"><p id="p-9051">If the series converges at <span class="process-math">\(x=3\)</span> and diverges at <span class="process-math">\(x=5\text{,}\)</span> what are the possible values for <span class="process-math">\(R\text{?}\)</span></p></li>
+<li id="li-5325"><p id="p-9052">If the series converges at <span class="process-math">\(x=4\)</span> and diverges at <span class="process-math">\(x=-2\text{,}\)</span> what are the possible values for <span class="process-math">\(R\text{?}\)</span></p></li>
+<li id="li-5326"><p id="p-9053">Is <span class="process-math">\(-3 &lt; x &lt; 3\)</span> a possible interval of convergence for the series?</p></li>
+<li id="li-5327"><p id="p-9054">Is <span class="process-math">\(-2 \leq x &lt; 4\)</span> a possible interval of convergence for the series?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-381"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-9059">State whether each statement is true or give an example to show that it is false.</p>
+<ol class="lower-alpha">
+<li id="li-5332"><p id="p-9060">If <span class="process-math">\(\sum_{k=1}^{\infty} a_kx^k\)</span> converges, then <span class="process-math">\(a_kx^k \rightarrow 0\)</span> as <span class="process-math">\(k \rightarrow \infty\text{.}\)</span></p></li>
+<li id="li-5333"><p id="p-9061"><span class="process-math">\(\sum_{k=1}^{\infty} a_kx^k\)</span> converges at <span class="process-math">\(x=0\)</span> for any real numbers <span class="process-math">\(a_k\text{.}\)</span></p></li>
+<li id="li-5334"><p id="p-9062">Given any sequence <span class="process-math">\(a_k\text{,}\)</span> there is always some <span class="process-math">\(R &gt; 0\text{,}\)</span> possibly very small, such that <span class="process-math">\(\sum_{k=1}^{\infty} a_kx^k\)</span> converges on <span class="process-math">\((-R,R)\text{.}\)</span></p></li>
+<li id="li-5335"><p id="p-9063">If <span class="process-math">\(\sum_{k=1}^{\infty} a_kx^k\)</span> has radius of convergence <span class="process-math">\(R &gt; 0\)</span> and if <span class="process-math">\(\left| b_k \right| \leq \left| a_k \right|\)</span> for all <span class="process-math">\(k\text{,}\)</span> then the radius of convergence of <span class="process-math">\(\sum_{k=1}^{\infty} b_kx^k\)</span> is greater than or equal to <span class="process-math">\(R\text{.}\)</span></p></li>
+<li id="li-5336"><p id="p-9064">If <span class="process-math">\(\sum_{k=1}^{\infty} a_kx^k\)</span> has radius of convergence <span class="process-math">\(R &gt; 0\)</span> and if <span class="process-math">\(\left| b_k \right| \leq \left| a_k \right|\)</span> for all <span class="process-math">\(k\text{,}\)</span> then the radius of convergence of <span class="process-math">\(\sum_{k=1}^{\infty} b_k(x-1)^k\)</span> is greater than or equal to <span class="process-math">\(R\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-382"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>Suppose that <span class="process-math">\(p(x)=\sum_{k=0}^{\infty} a_kx^k\)</span> converges on <span class="process-math">\((-1,1]\text{.}\)</span> Find the interval of convergence of <span class="process-math">\(p(2x-1)\text{.}\)</span></article><article class="exercise exercise-like" id="vuY"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="DXM">In this exercise we will begin with a strange power series and then find its sum. The Fibonacci sequence <span class="process-math">\(\{f_n\}\)</span> is a famous sequence whose first few terms are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_0 = 0, f_1 = 1, f_2 = 1, f_3 = 2, f_4 = 3, f_5 = 5, f_6 = 8, f_7 = 13, \cdots\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where each term in the sequence after the first two is the sum of the preceding two terms. That is, <span class="process-math">\(f_0 = 0\text{,}\)</span> <span class="process-math">\(f_1 = 1\)</span> and for <span class="process-math">\(n \geq 2\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_n = f_{n-1} + f_{n-2}\text{.}
+\end{equation*}
+</div>
+<p id="keV">Now consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) = \sum_{k=0}^{\infty} f_kx^k\text{.}
+\end{equation*}
+</div>
+<p id="Qme">We will determine the sum of this power series in this exercise.</p>
+<ol id="wtn" class="lower-alpha">
+<li id="AOL">
+<p id="Giy">Explain why each of the following is true.</p>
+<ol id="mpH" class="lower-roman">
+<li id="uiB"><p id="hUj"><span class="process-math">\(\displaystyle xF(x) = \sum_{k=1}^{\infty} f_{k-1}x^k\)</span></p></li>
+<li id="gVU"><p id="SwQ"><span class="process-math">\(\displaystyle x^2F(x) = \sum_{k=2}^{\infty} f_{k-2}x^k\)</span></p></li>
+</ol>
+</li>
+<li id="bgI">
+<p id="yDZ">Show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) - xF(x) - x^2F(x) = x\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="HnR">
+<p id="eLi">Now use the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) - xF(x) - x^2F(x) = x
+\end{equation*}
+</div>
+<p class="continuation">to find a simple form for <span class="process-math">\(F(x)\)</span> that doesn't involve a sum.</p>
+</li>
+<li id="nva"><p id="KSr">Use a computer algebra system or some other method to calculate the first 8 derivatives of <span class="process-math">\(\frac{x}{1-x-x^2}\)</span> evaluated at 0.  What do you notice?</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:56Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Area and Arc Length in Polar Coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7B-3-polar-coordinates.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7B-3-polar-coordinates.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="active">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="KjD"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.4</span> <span class="title">Area and Arc Length in Polar Coordinates</span>
+</h2>
+<article class="objectives goal-like" id="LYP"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Jel"><p id="tVn">How can we determine the area of a region described in polar coordinates?</p></li>
+<li id="pmv"><p id="adx">How can we find the arc length of a polar curve?</p></li>
+</ul></article><section class="introduction" id="VIL"><p id="p-10193">In the rectangular coordinate system, the definite integral provides a way to calculate the area under a curve. In particular, if we have a function <span class="process-math">\(y=f(x)\)</span> defined from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> where <span class="process-math">\(f(x) &gt; 0\)</span> on this interval, the area between the curve and the <span class="process-math">\(x\)</span>-axis is given by <span class="process-math">\(A=\int_a^b f(x) \ dx\text{.}\)</span>  This fact, along with the formula for evaluating this integral, is summarized in the Fundamental Theorem of Calculus. Similarly, the arc length of this curve is given by <span class="process-math">\(L = \int_a^b \sqrt{1+f'(x)^2} \ dx\text{.}\)</span>  In this section, we study analogous formulas for area and arc length in the polar coordinate system.</p></section><article class="exploration project-like" id="MoB"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.4.1</span><span class="period">.</span>
+</h3>
+<p id="p-10194">Areas of circular sectors and arc lengths of circles will be fundamental in finding areas and arc lengths of general regions described in polar coordinates.</p>
+<figure class="figure figure-like" id="whatisradian"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/whatisradianpic.svg" role="img" class="contained" alt="Two sectors"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.1<span class="period">.</span></span><span class="space"> </span>A circle of radius <span class="process-math">\(r\)</span> and arc lengths (<span class="process-math">\(s\)</span> and <span class="process-math">\(s_1\)</span>) and areas (<span class="process-math">\(A\)</span> and <span class="process-math">\(A_1\)</span>) of two sectors.</figcaption></figure><ol class="lower-alpha">
+<li id="li-5810">
+<p id="p-10195">From geometry, we know that for the sectors in <a href="" class="xref" data-knowl="./knowl/whatisradian.html" title="Figure 9.4.1">Figure 9.4.1</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/whatisradian.html">
+\begin{equation*}
+\frac{\theta}{\theta_1} = \frac{s}{s_1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Determine the arc length <span class="process-math">\(s\)</span> in terms of <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> by taking <span class="process-math">\(\theta_1\)</span> to be <span class="process-math">\(1\)</span> radian.</p>
+</li>
+<li id="li-5811">
+<p id="p-10196">From geometry, we also know that for the sectors in <a href="" class="xref" data-knowl="./knowl/whatisradian.html" title="Figure 9.4.1">Figure 9.4.1</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/whatisradian.html">
+\begin{equation*}
+\frac{\theta}{\theta_1} = \frac{A}{A_1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Determine the area <span class="process-math">\(A\)</span> in terms of <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> by taking <span class="process-math">\(\theta_1\)</span> to be <span class="process-math">\(2\pi\)</span> radians.</p>
+</li>
+</ol></article><section class="subsection" id="MHh"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.4.1</span> <span class="title">Areas of Regions Bounded by Polar Curves</span>
+</h3>
+<p id="FEn">In rectangular coordinates, we used a Riemann sum to approximate the area under a curve by using rectangles. For polar curves we use the Riemann sum again, but the rectangles are replaced by sectors of a circle (i.e. polar rectangles).</p>
+<figure class="figure figure-like" id="PolarPlotOS739"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/PolarPlotOS739.jpg" class="contained" alt="Polar rectangles."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.2<span class="period">.</span></span><span class="space"> </span>A partition of a typical curve in polar coordinates.</figcaption></figure><p id="dnG">Consider a curve defined by the function <span class="process-math">\(r=f(\theta)\text{,}\)</span> where <span class="process-math">\(\alpha \leq \theta \leq \beta\text{.}\)</span>  Our first step is to partition the interval <span class="process-math">\([\alpha, \beta]\)</span> into <span class="process-math">\(n\)</span> equal-width subintervals. The width of each subinterval is given by the formula <span class="process-math">\((\beta-\alpha)/n\text{,}\)</span>  and the <span class="process-math">\(i\)</span>th partition point <span class="process-math">\(\theta_i\)</span> is given by the formula <span class="process-math">\(\theta_i = \alpha + i\Delta \theta\text{.}\)</span>  Each partition point <span class="process-math">\(\theta = \theta_i\)</span> defines a line with slope <span class="process-math">\(\tan \theta_i\)</span> passing through the pole as shown in <a href="" class="xref" data-knowl="./knowl/PolarPlotOS739.html" title="Figure 9.4.2">Figure 9.4.2</a>.</p>
+<p id="p-10199">The line segments are connected by arcs of constant radius. This defines sectors whose areas can be calculated by using a geometric formula. The area of each sector is then used to approximate the area between successive line segments. We then sum the areas of the sectors to approximate the total area. This approach gives a Riemann sum approximation for the total area. As found in <a href="" class="xref" data-knowl="./knowl/PA-7B-4.html" title="Preview Activity 9.4.1">Preview Activity 9.4.1</a>, the area of a sector of a circle having central angle <span class="process-math">\(\theta\)</span> and radius <span class="process-math">\(r\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PA-7B-4.html">
+\begin{equation*}
+A=\frac{1}{2} r^2 \theta\text{.}
+\end{equation*}
+</div>
+<p id="p-10200">Since the radius of a typical sector in <a href="" class="xref" data-knowl="./knowl/PolarPlotOS739.html" title="Figure 9.4.2">Figure 9.4.2</a> is given by <span class="process-math">\(r_i=f(\theta_i)\text{,}\)</span>  the area of the <span class="process-math">\(i\)</span>th sector is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PolarPlotOS739.html">
+\begin{equation*}
+A_i = \frac{1}{2} f(\theta_i)^2 \Delta \theta\text{.}
+\end{equation*}
+</div>
+<p id="p-10201">Therefore a Riemann sum that approximates the area is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A_n = \sum_{i=1}^n A_i \approx \sum_{i=1}^n \frac{1}{2}f(\theta_i)\Delta \theta\text{.}
+\end{equation*}
+</div>
+<p id="p-10202">We take the limit as <span class="process-math">\(n \rightarrow \infty\)</span> to get the exact area:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \lim_{n \rightarrow \infty} A_n = \frac{1}{2} \int_{\alpha}^{\beta} f(\theta)^2 \ d\theta\text{.}
+\end{equation*}
+</div>
+<article class="assemblage assemblage-like" id="FIb"><h4 class="heading"><span class="title">Area of a Region Bounded by a Polar Curve.</span></h4>
+<p id="p-10203">Suppose <span class="process-math">\(f\)</span> is continuous and nonnegative on the interval <span class="process-math">\(\alpha \leq \theta \leq \beta\)</span> with <span class="process-math">\(0 &lt; \beta - \alpha \leq 2\pi\text{.}\)</span>  The area of the region bounded by the graph of <span class="process-math">\(r=f(\theta)\)</span> between the radial lines <span class="process-math">\(\theta = \alpha\)</span> and <span class="process-math">\(\theta = \beta\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="polarareaint">
+\begin{equation}
+A = \frac{1}{2} \int_{\alpha}^{\beta} f(\theta)^2 \ d\theta = \frac{1}{2} \int_{\alpha}^{\beta} r^2 \ d\theta\text{.}\tag{9.8}
+\end{equation}
+</div></article><article class="example example-like" id="areaofpetalrose"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an area of a polar region.</span>
+</h4>
+<p id="p-10204">Find the area of one petal of the rose defined by the equation <span class="process-math">\(r=3\sin (2\theta)\text{.}\)</span></p>
+<figure class="figure figure-like" id="PolarPlotOS741"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="external/images/PolarPlotOS741.jpg" class="contained" alt="The graph of a rose."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.4<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(r=3 \sin (2\theta)\text{.}\)</span></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-areaofpetalrosesoln" id="areaofpetalrosesoln"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-areaofpetalrosesoln"><div class="solution solution-like">
+<p id="p-10205">When <span class="process-math">\(\theta = 0\)</span> we have <span class="process-math">\(r=3\sin (2\cdot 0) = 0\text{.}\)</span>  The next value for which <span class="process-math">\(r=0\)</span> is <span class="process-math">\(\theta = \frac{\pi}{2}\text{.}\)</span>  This can be seen by solving the equation <span class="process-math">\(3\sin (2\theta)=0\)</span>  for <span class="process-math">\(\theta\text{.}\)</span>  Therefore the values <span class="process-math">\(\theta=0\)</span> to <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> trace out the first petal of the rose. To find the area inside this petal, use <a href="" class="xref" data-knowl="./knowl/polarareaint.html" title="Equation 9.8">equation (9.8)</a> with  <span class="process-math">\(f(\theta=3\sin (2\theta)\text{,}\)</span> <span class="process-math">\(\alpha=0\text{,}\)</span>  and <span class="process-math">\(\beta=\frac{\pi}{2}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/polarareaint.html" id="md-357">
+\begin{align*}
+A = \mathstrut \amp \frac{1}{2} \int_{\alpha}^{\beta} f(\theta)^2 \ d\theta\\
+= \mathstrut \amp \frac{1}{2} \int_0^{\pi/2} [3\sin (2\theta)]^2 \ d\theta\\
+= \mathstrut \amp \frac{1}{2} \int_0^{\pi/2} 9\sin^2 (2\theta) \ d\theta\\
+= \mathstrut \amp \frac{9}{2} \int_0^{\pi/2} \frac{1-\cos (4\theta)}{2} \ d\theta\\
+= \mathstrut \amp \frac{9}{4} \int_0^{\pi/2} 1-\cos (4\theta) \ d\theta\\
+= \mathstrut \amp \frac{9}{4} \left( \theta - \frac{\sin(4\theta)}{4} \right) \big\rvert_0^{\pi/2}\\
+= \mathstrut \amp \frac{9}{4} \left( \frac{\pi}{2} - \frac{\sin 2\pi}{4} \right) - \frac{9}{4} \left( 0 - \frac{\sin 4(0)}{4} \right)\\
+= \mathstrut \amp \frac{9\pi}{8}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="TTp"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.2</span><span class="period">.</span>
+</h4>
+<p id="byv">In this activity, we find the area outside the cardioid <span class="process-math">\(r=2+2\sin\theta\)</span> and inside the circle <span class="process-math">\(r=6\sin\theta\)</span></p>
+<ol class="lower-alpha">
+<li id="li-5812">
+<p id="p-10207">Sketch a graph of both curves.</p>
+<figure class="figure figure-like" id="EmptyGridAct7B41"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained" alt="Polar grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.5<span class="period">.</span></span><span class="space"> </span>A polar grid.</figcaption></figure>
+</li>
+<li id="li-5813"><p id="p-10208">Determine the limits of integration for a definite integral giving the area between the two curves.  That is, find their points of intersection by setting the two functions equal to each other and solving for <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li id="li-5814"><p id="p-10209">The area of the region bound by the two curves is the difference of two definite integrals.  Calculate the value of each integral and then subtract to find the desired area.</p></li>
+<li id="li-5815"><p id="p-10210">The graph shows that there are actually three intersection points of these curves with third intersection point being at the origin.  Explain why this intersection point did not show up as a solution in (b).</p></li>
+</ol></article></section><section class="subsection" id="subsection-186"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.4.2</span> <span class="title">Arc Length in Polar Curves</span>
+</h3>
+<p id="p-10216">In rectangular coordinates, the arc length of a parameterized curve</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=x(t), \ y=y(t), \ a \leq t \leq b
+\end{equation*}
+</div>
+<p class="continuation">is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L = \int_a^b \sqrt{\left( \frac{dx}{dt}\right)^2 + \left( \frac{dy}{dt}\right)^2} \ dt\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In polar coordinates we define the curve by the equation <span class="process-math">\(r=f(\theta)\text{,}\)</span>  where <span class="process-math">\(\alpha \leq \theta \leq \beta\text{.}\)</span>  In order to adapt the arc length formula for a polar curve, we use the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-359">
+\begin{align*}
+x = \mathstrut \amp r\cos \theta = f(\theta)\cos\theta\\
+y = \mathstrut \amp r\sin\theta = f(\theta)\sin\theta
+\end{align*}
+</div>
+<p class="continuation">and we replace the parameter <span class="process-math">\(t\)</span> by <span class="process-math">\(\theta\text{.}\)</span>  Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-360">
+\begin{align*}
+\frac{dx}{d\theta} = \mathstrut \amp f'(\theta) \cos \theta - f(\theta)\sin \theta\\
+\frac{dy}{d\theta} = \mathstrut \amp f'(\theta)\sin\theta + f(\theta)\cos\theta.
+\end{align*}
+</div>
+<p class="continuation">We replace <span class="process-math">\(dt\)</span> by <span class="process-math">\(d\theta\text{,}\)</span> and the lower and upper limits of integration are <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> respectively.  Then the arc length formula becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-361">
+\begin{align*}
+L = \mathstrut \amp \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2} \ dt\\
+= \mathstrut \amp \int_{\alpha}^{\beta} \sqrt{ \left( \frac{dx}{d\theta} \right)^2 + \left( \frac{dy}{d\theta} \right)^2} \ d\theta\\
+= \mathstrut \amp \int_{\alpha}^{\beta} \sqrt{ [f'(\theta)\cos\theta - f(\theta)\sin\theta ]^2 + [f'(\theta)\sin\theta + f(\theta)\cos\theta ]^2} \ d\theta\\
+= \mathstrut \amp \int_{\alpha}^{\beta} \sqrt{ f'(\theta)^2 [\cos^2\theta + \sin^2 \theta] + f(\theta)^2 [\cos^2\theta + \sin^2\theta]} \ d\theta\\
+= \mathstrut \amp \int_{\alpha}^{\beta} \sqrt{ f'(\theta)^2 + f(\theta)^2} \ d\theta\\
+= \mathstrut \amp \int_{\alpha}^{\beta} \sqrt{ r^2 + \left( \frac{dr}{d\theta} \right)^2 } \ d\theta.
+\end{align*}
+</div>
+<article class="assemblage assemblage-like" id="FIc"><h4 class="heading"><span class="title">Arc Length of a Curve Defined by a Polar Function.</span></h4>
+<p id="p-10217">Let <span class="process-math">\(f\)</span> be a function whose derivative is continuous on an interval <span class="process-math">\(\alpha \leq \theta \leq \beta\text{.}\)</span>  The length of the graph of <span class="process-math">\(r=f(\theta)\)</span> from <span class="process-math">\(\theta = \alpha\)</span> to <span class="process-math">\(\theta = \beta\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="polararclength">
+\begin{equation}
+L = \int_{\alpha}^{\beta} \sqrt{ f(\theta)^2 + f'(\theta)^2} \ d\theta = \int_{\alpha}^{\beta} \sqrt{ r^2 + \left( \frac{dr}{d\theta} \right)^2 } \ d\theta\text{.}\tag{9.9}
+\end{equation}
+</div></article><article class="example example-like" id="example-103"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the arc length of a polar curve.</span>
+</h4>
+<p id="p-10218">Find the arc length of the cardioid <span class="process-math">\(r=2+2\cos\theta\text{.}\)</span> <figure class="figure figure-like" id="arclengthexample"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/arclengthexamplepic.svg" role="img" class="contained" alt="Graph of a cardioid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.8<span class="period">.</span></span><span class="space"> </span>The graph of cardioid <span class="process-math">\(r=2+2\cos\theta\text{.}\)</span></figcaption></figure></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-556" id="solution-556"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-556"><div class="solution solution-like">
+<p id="p-10219">When <span class="process-math">\(\theta = 0\text{,}\)</span> <span class="process-math">\(r=2+2\cos(0)=4\text{.}\)</span>  Furthermore, as <span class="process-math">\(\theta\)</span> goes from <span class="process-math">\(0\)</span> to <span class="process-math">\(2\pi\text{,}\)</span>  the cardioid is traced out exactly once. Therefore these are the limits of integration. Using <span class="process-math">\(f(\theta)=2+2\cos\theta\text{,}\)</span> <span class="process-math">\(\alpha=0\text{,}\)</span>  and <span class="process-math">\(\beta = 2\pi\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/polararclength.html" title="Equation 9.9">equation (9.9)</a> becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/polararclength.html" id="md-362">
+\begin{align*}
+L = \mathstrut \amp = \int_{\alpha}^{\beta} \sqrt{ f(\theta)^2 + f'(\theta)^2} \ d\theta\\
+= \mathstrut \amp \int_0^{2\pi} \sqrt{ [2+2\cos\theta]^2 + [-2\sin\theta]^2} \ d\theta\\
+=\mathstrut \amp \int_0^{2\pi} \sqrt{ 4 + 8\cos\theta + 4\cos^2\theta + 4\sin^2\theta} \ d\theta\\
+=\mathstrut \amp \int_0^{2\pi} \sqrt{4 + 8\cos\theta + 4(\cos^2\theta + \sin^2\theta)} \ d\theta\\
+=\mathstrut \amp \int_0^{2\pi} \sqrt{8 + 8\cos\theta} \ d\theta\\
+= \mathstrut \amp 16.
+\end{align*}
+</div>
+<p class="continuation">In the last step, we utilized <em class="emphasis">WolframAlpha</em>.  However, we could have utilized trigonometric identities to find this solution as well.</p>
+</div></div>
+</div></article><article class="activity project-like" id="TTr"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.3</span><span class="period">.</span>
+</h4>
+<p id="byz">Suppose <span class="process-math">\(r=3\sin\theta\)</span> for <span class="process-math">\(0 \leq \theta \leq \pi\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-5820">
+<p id="p-10221">Sketch this curve.</p>
+<figure class="figure figure-like" id="EmptyGridAct7B42"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained" alt="Polar grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.9<span class="period">.</span></span><span class="space"> </span>A polar grid.</figcaption></figure>
+</li>
+<li id="li-5821"><p id="p-10222">Set up and evaluate an integral representing the arc length of this curve.  Does your answer match what one would expect?  Explain.</p></li>
+<li id="li-5822"><p id="p-10223">Set up and evaluate an integral representing the area inside this curve.  Does your answer match what one would expect?  Explain.</p></li>
+</ol></article><article class="activity project-like" id="TTs"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.4.4</span><span class="period">.</span>
+</h4>
+<p id="byA">Consider the curve <span class="process-math">\(r=1-2\cos\theta\)</span> for <span class="process-math">\(0 \leq \theta \leq 2\pi\)</span>m graphed in <a href="" class="xref" data-knowl="./knowl/act7B43.html" title="Figure 9.4.11">Figure 9.4.11</a>. <figure class="figure figure-like" id="act7B43"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/act7B43pic.svg" role="img" class="contained" alt="Graph of \(r=1-2\cos\theta\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.11<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(r=1-2\cos\theta\text{.}\)</span></figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="li-5826"><p id="p-10229">At what point does this parameterized curve begin?</p></li>
+<li id="li-5827"><p id="p-10230">This curve intersects itself at the origin.  At what values of the parameter <span class="process-math">\(\theta\)</span> does this occur?</p></li>
+<li id="li-5828"><p id="p-10231">Give an expression that determines the area of the region enclosed by this curve but outside the inner loop.  Suggestion: Use symmetry and focus on the region above the <span class="process-math">\(x\)</span>-axis.</p></li>
+</ol></article></section><section class="subsection" id="iNn"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.4.3</span> <span class="title">Summary</span>
+</h3>
+<p id="XRj">Though care must be taken in determining the limits of integration, we have found formulas that compute</p>
+<ul class="disc">
+<li id="li-5832"><p id="p-10237">the area inside a polar curve.</p></li>
+<li id="li-5833"><p id="p-10238">the arc length of a curve described using polar coordinates.</p></li>
+</ul></section><section class="exercises" id="oks"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="Eku"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Find area enclosed by a polar graph.</span>
+</h4>
+<div id="webwork-260" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="260" data-sourceFilePath="Library/ma123DB/set9/s10_5_11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10239">Find the area of the region bounded by <span class="process-math">\(r^{2} =  162 \cos 2 \theta\)</span></p>
+<p id="p-10240">Answer: <span class="fillin" role="img" aria-label="45-character blank" style="width: 20.4545454545455em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-260')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="EjY"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Find another area enclosed by a polar graph.</span>
+</h4>
+<div id="webwork-261" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="261" data-sourceFilePath="Library/ma123DB/set9/s10_5_13.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10242">Find the area of the region bounded by <span class="process-math">\(r = 10 - 2 \sin \theta\text{.}\)</span></p>
+<p id="p-10243">Answer: <span class="fillin" role="img" aria-label="45-character blank" style="width: 20.4545454545455em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-261')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="YcG"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Find area inside one loop of a limacon.</span>
+</h4>
+<div id="webwork-262" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="262" data-sourceFilePath="Library/ma123DB/set9/s10_5_21.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10245">Find the area inside the loop of the limacon given by <span class="process-math">\(r = 5 - 10 \sin \theta\)</span></p>
+<p id="p-10246">Answer: <span class="fillin" role="img" aria-label="45-character blank" style="width: 20.4545454545455em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-262')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHe"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Find the length of a polar graph.</span>
+</h4>
+<div id="webwork-263" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="263" data-sourceFilePath="Library/ma123DB/set9/s10_5_24.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10248">Find the length of the  entire perimeter of the region inside <span class="process-math">\(r = 6 \sin \theta\)</span> but outside <span class="process-math">\(r = 3\text{.}\)</span></p>
+<p id="p-10249">Answer: <span class="fillin" role="img" aria-label="50-character blank" style="width: 22.7272727272727em;"></span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-137" id="hint-137"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-137"><div class="hint solution-like"></div></div>
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-263')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHf"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Find the length of another polar graph.</span>
+</h4>
+<div id="webwork-264" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="264" data-sourceFilePath="Library/ma123DB/set9/s10_5_47.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10251">Find the length of the polar curve given by <span class="process-math">\(r = 4 e^{0.4 \theta}\)</span> on the interval <span class="process-math">\(0 \leq \theta \leq  \frac{1}{8}\text{.}\)</span></p>
+<p id="p-10252">Answer: <span class="fillin" role="img" aria-label="65-character blank" style="width: 29.5454545454545em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-264')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-452"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-10254">A polar curve <span class="process-math">\(r=f(\theta)\)</span> can be written in parametric form</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-363">
+\begin{align*}
+x= \mathstrut \amp r\cos\theta = f(\theta)\cos\theta\\
+y = \mathstrut \amp r\sin\theta = f(\theta)\sin\theta
+\end{align*}
+</div>
+<p class="continuation">where we treat <span class="process-math">\(\theta\)</span> as the parameter.  The derivative is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-5834"><p id="p-10255">Find the slope of the tangent line to <span class="process-math">\(r=\cos\theta\)</span> at <span class="process-math">\(\left( 2, \frac{\pi}{3} \right)\text{.}\)</span></p></li>
+<li id="li-5835"><p id="p-10256">Find the slope of the tangent line to the polar curve <span class="process-math">\(r=\theta\)</span> at the point given by <span class="process-math">\(\theta = \frac{\pi}{2}\text{.}\)</span></p></li>
+<li id="li-5836">
+<p id="p-10257">Find the points on the interval <span class="process-math">\(-\pi \leq \theta \leq \pi\)</span> at which the cardioid <span class="process-math">\(r=1-\cos\theta\)</span> has a vertical or horizontal tangent line.</p>
+<figure class="figure figure-like" id="horizontaltangents"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/horizontaltangentspic.svg" role="img" class="contained" alt="Graph of a cardioid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.4.12<span class="period">.</span></span><span class="space"> </span>The graph of cardioid <span class="process-math">\(r=1-\cos\theta\text{.}\)</span></figcaption></figure>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-453"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-10264">Find the points at which the following polar curves have a horizontal or vertical tangent line.</p>
+<ol class="lower-alpha">
+<li id="li-5843"><p id="p-10265"><span class="process-math">\(\displaystyle r^2 = 4\cos (2\theta)\)</span></p></li>
+<li id="li-5844"><p id="p-10266">The cardioid <span class="process-math">\(r = 1+\sin\theta\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-454"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-10269">Sketch the polar region described by the following integral expression for area:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{2}\int_{-\pi/2}^{\pi/2} 4\cos^2\theta \ d\theta\text{.}
+\end{equation*}
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

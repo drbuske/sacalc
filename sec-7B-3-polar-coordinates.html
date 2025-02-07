@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:15:52Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Polar Coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7B-2-calc-parametric.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7B-4-area-arclength-polar.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7B-2-calc-parametric.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7B-4-area-arclength-polar.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="active">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="KjD"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">Polar Coordinates</span>
+</h2>
+<article class="objectives goal-like" id="LYP"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Jel"><p id="tVn">What are the polar coordinates of a point in two-space?</p></li>
+<li id="pmu"><p id="adw">How do we convert between polar coordinates and rectangular coordinates?</p></li>
+<li id="VtD"><p id="GkF">How do we sketch polar curves from given equations?</p></li>
+</ul></article><section class="introduction" id="VIm"><p id="p-9983">The rectangular coordinate system can be thought of as a means to provide directions to a particular location in the plane.  From a "home" position (the origin), if we walked <span class="process-math">\(1\)</span> unit right and <span class="process-math">\(\sqrt{3}\)</span> units down to reach a location <span class="process-math">\(P\text{,}\)</span> we would denote such directions by the ordered pair <span class="process-math">\((1,-\sqrt{3})\)</span> (see <a href="" class="xref" data-knowl="./knowl/polarcoordsintro.html" title="Figure 9.3.1">Figure 9.3.1</a>).  But there are other ways we could describe how to reach point <span class="process-math">\(P\)</span> from the origin.  If we are standing at the origin facing to the right (in the direction of the positive <span class="process-math">\(x\)</span>-axis), we could reach <span class="process-math">\(P\)</span> by turning our body <span class="process-math">\(\frac{\pi}{3}\)</span> radians clockwise and walking <span class="process-math">\(2\)</span> units forward.  Such directions could be represented by the ordered pair <span class="process-math">\(\left( 2,-\frac{\pi}{3}\right)\text{.}\)</span>  We use a negative sign for the angle of rotation since counterclockwise is normally treated positively in mathematics.  These ordered pairs, or directions, are the polar coordinates we study in this section.</p>
+<figure class="figure figure-like" id="polarcoordsintro"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/polarcoordsintropic.svg" role="img" class="contained" alt="Polar Coordinates"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.1<span class="period">.</span></span><span class="space"> </span>Different directions to reach point <span class="process-math">\(P\text{.}\)</span></figcaption></figure><article class="exploration project-like" id="MoA"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-9984">The coordinates of a point determine its location. In particular, the rectangular coordinates of a point <span class="process-math">\(P\)</span> are given by an ordered pair <span class="process-math">\((x,y)\text{,}\)</span> where <span class="process-math">\(x\)</span> is the (signed) distance the point lies from the <span class="process-math">\(y\)</span>-axis to <span class="process-math">\(P\)</span> and <span class="process-math">\(y\)</span> is the (signed) distance the point lies from the <span class="process-math">\(x\)</span>-axis to <span class="process-math">\(P\text{.}\)</span> In polar coordinates, we locate the point by considering the distance the point lies from the origin, <span class="process-math">\(O = (0,0)\text{,}\)</span> and the angle the line segment from the origin to <span class="process-math">\(P\)</span> forms with the positive <span class="process-math">\(x\)</span>-axis.</p>
+<ol class="lower-alpha">
+<li id="li-5705">
+<p id="p-9985">Determine the rectangular coordinates of the following points:</p>
+<ol class="lower-roman">
+<li id="li-5706"><p id="p-9986">The point <span class="process-math">\(P\)</span> that lies 1 unit from the origin on the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+<li id="li-5707"><p id="p-9987">The point <span class="process-math">\(Q\)</span> that lies 2 units from the origin and such that <span class="process-math">\(\overline{OQ}\)</span> makes an angle of <span class="process-math">\(\frac{\pi}{2}\)</span> with the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+<li id="li-5708"><p id="p-9988">The point <span class="process-math">\(R\)</span> that lies 3 units from the origin such that <span class="process-math">\(\overline{OR}\)</span> makes an angle of <span class="process-math">\(\frac{2\pi}{3}\)</span> with the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+</ol>
+</li>
+<li id="li-5709">
+<p id="p-9989">Part (a) indicates that the two pieces of information completely determine the location of a point:  either the traditional <span class="process-math">\((x,y)\)</span> coordinates, or alternately, the distance <span class="process-math">\(r\)</span> from the point to the origin along with the angle <span class="process-math">\(\theta\)</span> that the line through the origin and the point makes with the positive <span class="process-math">\(x\)</span>-axis. We write “<span class="process-math">\((r, \theta)\)</span>” to denote the point's location in its polar coordinate representation. Find polar coordinates for the points with the given rectangular coordinates.</p>
+<ol class="lower-roman"><li id="li-5710"><p id="p-9990"><span class="process-math">\((0,-1)\)</span>   ii.  <span class="process-math">\((-2,0)\)</span>   iii.  <span class="process-math">\((-1,1)\)</span></p></li></ol>
+</li>
+<li id="li-5711">
+<p id="p-9991">For each of the following points whose coordinates are given in polar form, determine the rectangular coordinates of the point.</p>
+<ol class="lower-roman"><li id="li-5712"><p id="p-9992"><span class="process-math">\((5, \frac{\pi}{4})\)</span>          ii. <span class="process-math">\((2, \frac{5\pi}{6})\)</span>    iii. <span class="process-math">\((\sqrt{3}, \frac{5\pi}{3})\)</span></p></li></ol>
+</li>
+</ol></article></section><section class="subsection" id="subsection-181"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.1</span> <span class="title">Polar Coordinates</span>
+</h3>
+<p id="p-9993">The rectangular coordinate system is best suited for graphs and regions that are naturally considered over a rectangular grid. The polar coordinate system is an alternative that offers good options for functions and domains that have more circular characteristics. A point <span class="process-math">\(P\)</span> in rectangular coordinates that is described by an ordered pair <span class="process-math">\((x,y)\text{,}\)</span> where <span class="process-math">\(x\)</span> is the displacement from <span class="process-math">\(P\)</span> to the <span class="process-math">\(y\)</span>-axis and <span class="process-math">\(y\)</span> is the displacement from <span class="process-math">\(P\)</span> to the <span class="process-math">\(x\)</span>-axis, as seen in <a href="" class="xref" data-knowl="./knowl/PA-7B-3.html" title="Preview Activity 9.3.1">Preview Activity 9.3.1</a>, can also be described with polar coordinates <span class="process-math">\((r,\theta)\text{,}\)</span> where <span class="process-math">\(r\)</span> is the distance from <span class="process-math">\(P\)</span> to the origin and <span class="process-math">\(\theta\)</span> is the angle formed by the line segment <span class="process-math">\(\overline{OP}\)</span> and the positive <span class="process-math">\(x\)</span>-axis, as shown at left in <a href="" class="xref" data-knowl="./knowl/F_11_5_Polar_coords.html" title="Figure 9.3.2">Figure 9.3.2</a>.</p>
+<figure class="figure figure-like" id="F_11_5_Polar_coords"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_11_5_polar_def.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.2<span class="period">.</span></span><span class="space"> </span>The polar coordinates of a point and the polar coordinate grid.</figcaption></figure><p id="p-9994">Trigonometry and the Pythagorean Theorem allow for straightforward conversion from rectangular to polar, and vice versa.</p>
+<article class="assemblage assemblage-like" id="Polar-coordinates"><h4 class="heading"><span class="title">Converting between rectangular and polar coordinates.</span></h4>
+<ul id="p-9995" class="disc">
+<li id="li-5713">
+<span class="heading"><span class="title">Converting from rectangular to polar.</span></span><p id="p-9996">If we are given the rectangular coordinates <span class="process-math">\((x,y)\)</span> of a point <span class="process-math">\(P\text{,}\)</span> then the polar coordinates <span class="process-math">\((r,\theta)\)</span> of <span class="process-math">\(P\)</span> satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="rect2polareqns">
+\begin{equation}
+r = \sqrt{x^2+y^2} \ \ \ \ \ \text{ and }  \ \ \ \ \ \tan(\theta) = \frac{y}{x}, \text{ assuming }  x \neq 0.\tag{9.6}
+\end{equation}
+</div>
+</li>
+<li id="li-5714">
+<span class="heading"><span class="title">Converting from polar to rectangular.</span></span><p id="p-9997">If we are given the polar coordinates <span class="process-math">\((r,\theta)\)</span> of a point <span class="process-math">\(P\text{,}\)</span> then the rectangular coordinates <span class="process-math">\((x,y)\)</span> of <span class="process-math">\(P\)</span> satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="polar2recteqns">
+\begin{equation}
+x = r\cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r\sin(\theta).\tag{9.7}
+\end{equation}
+</div>
+</li>
+</ul></article><p id="p-9998"><em class="emphasis">Note:</em> The angle <span class="process-math">\(\theta\)</span> in the polar coordinates of a point is not unique. We could replace <span class="process-math">\(\theta\)</span> with <span class="process-math">\(\theta  + 2 \pi\)</span> and still be at the same terminal point. In addition, the sign of <span class="process-math">\(\tan(\theta)\)</span> does not uniquely determine the quadrant in which <span class="process-math">\(\theta\)</span> lies, so we have to determine the value of <span class="process-math">\(\theta\)</span> from the location of the point. In other words, more care has to be paid when using polar coordinates than rectangular coordinates.</p>
+<article class="example example-like" id="example-98"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Converting from rectangular to polar coordinates.</span>
+</h4>
+<p id="p-9999">Convert each of the following points from rectangular to polar coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-5715"><p id="p-10000"><span class="process-math">\(\displaystyle (1,1)\)</span></p></li>
+<li id="li-5716"><p id="p-10001"><span class="process-math">\(\displaystyle (-3,4)\)</span></p></li>
+<li id="li-5717"><p id="p-10002"><span class="process-math">\(\displaystyle (0,3)\)</span></p></li>
+<li id="li-5718"><p id="p-10003"><span class="process-math">\(\displaystyle (5\sqrt{3},-5)\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-546" id="solution-546"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-546"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5719"><p id="p-10004">Using <a href="" class="xref" data-knowl="./knowl/rect2polareqns.html" title="Equation 9.6">equations (9.6)</a>, with <span class="process-math">\(x=1\)</span> and <span class="process-math">\(y=1\)</span> gives <span class="process-math">\(r^2=1^2+1^2=2\)</span> or <span class="process-math">\(r=\sqrt{2}\)</span> and <span class="process-math">\(\tan\theta = \frac{1}{1} = 1\)</span> or <span class="process-math">\(\theta = \frac{\pi}{4}\text{.}\)</span>  The point <span class="process-math">\((1,1)\)</span> can be represented as <span class="process-math">\(\left( \sqrt{2}, \frac{\pi}{4} \right)\)</span> in polar coordinates.</p></li>
+<li id="li-5720"><p id="p-10005">Again using <a href="" class="xref" data-knowl="./knowl/rect2polareqns.html" title="Equation 9.6">equations (9.6)</a>, but this time with <span class="process-math">\(x=-3\)</span> and <span class="process-math">\(y=4\)</span> gives <span class="process-math">\(r^2=(-3)^2+4^2=25\)</span> or <span class="process-math">\(r=5\)</span> and <span class="process-math">\(\tan\theta = -\frac{4}{3}\text{.}\)</span>  Since the point <span class="process-math">\((-3,4)\)</span> lies in quadrant II, we compute <span class="process-math">\(\theta = \pi+\arctan(-4/3) \approx 2.21\)</span> radians.</p></li>
+<li id="li-5721"><p id="p-10006">Here <span class="process-math">\(r^2=0^2+3^2 = 9\)</span> so that <span class="process-math">\(r=3\text{.}\)</span>  From <a href="" class="xref" data-knowl="./knowl/rect2polareqns.html" title="Equation 9.6">equations (9.6)</a> v we also have <span class="process-math">\(\tan\theta = \frac{3}{0}\text{.}\)</span>  Direct application of the second equation leads to division by zero! Graphing the point <span class="process-math">\((0,3)\)</span> on the rectangular coordinate system reveals that the point is located on the positive <span class="process-math">\(y\)</span>-axis. The angle between the positive <span class="process-math">\(x\)</span>-axis and the positive <span class="process-math">\(y\)</span>-axis is <span class="process-math">\(\frac{\pi}{2}\text{.}\)</span>  Therefore this point can be represented as <span class="process-math">\(\left(3,\frac{\pi}{2}\right)\)</span> in polar coordinates.</p></li>
+<li id="li-5722"><p id="p-10007">Using <a href="" class="xref" data-knowl="./knowl/rect2polareqns.html" title="Equation 9.6">equations (9.6)</a>, with <span class="process-math">\(x=5\sqrt{3}\)</span> and <span class="process-math">\(y=-5\)</span> gives <span class="process-math">\(r^2=(5\sqrt{3})^2+(-5)^2=100\)</span> or <span class="process-math">\(r=10\)</span> and <span class="process-math">\(\tan\theta = \frac{-5}{5\sqrt{3}} = -\frac{\sqrt{3}}{3}\)</span> or <span class="process-math">\(\theta = -\frac{\pi}{6}\text{.}\)</span>  The point <span class="process-math">\((5\sqrt{3},-5)\)</span> can thus be represented as <span class="process-math">\(\left( 10, -\frac{\pi}{6} \right)\)</span> in polar coordinates.</p></li>
+</ol></div></div>
+</div></article><article class="example example-like" id="example-99"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Converting from polar to rectangular coordinates.</span>
+</h4>
+<p id="p-10008">Convert each of the following from polar to rectangular coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-5723"><p id="p-10009"><span class="process-math">\(\displaystyle (3,\pi/3)\)</span></p></li>
+<li id="li-5724"><p id="p-10010"><span class="process-math">\(\displaystyle (2,3\pi/2)\)</span></p></li>
+<li id="li-5725"><p id="p-10011"><span class="process-math">\(\displaystyle (6,-5\pi/6)\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-547" id="solution-547"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-547"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5726"><p id="p-10012">Using <a href="" class="xref" data-knowl="./knowl/polar2recteqns.html" title="Equation 9.7">equations (9.7)</a> with <span class="process-math">\(r=3\)</span> and <span class="process-math">\(\theta = \frac{\pi}{3}\)</span> gives <span class="process-math">\(x=3\cos (\pi/3) = \frac{3}{2}\)</span> and <span class="process-math">\(y=3\sin (\pi/3) = \frac{3\sqrt{3}}{2}\text{.}\)</span>  Therefore this point can be represented as <span class="process-math">\(\left( \frac{3}{2}, \frac{3\sqrt{3}}{2} \right)\)</span> in rectangular coordinates.</p></li>
+<li id="li-5727"><p id="p-10013">Using <a href="" class="xref" data-knowl="./knowl/polar2recteqns.html" title="Equation 9.7">equations (9.7)</a> with <span class="process-math">\(r=2\)</span> and <span class="process-math">\(\theta = \frac{3\pi}{2}\)</span> gives <span class="process-math">\(x=2\cos (3\pi/2) = 0\)</span> and <span class="process-math">\(y=2\sin (3\pi/2) = -2\text{.}\)</span>  Therefore this point can be represented as <span class="process-math">\(0, -2 \right)\)</span> in rectangular coordinates.</p></li>
+<li id="li-5728"><p id="p-10014">Using <a href="" class="xref" data-knowl="./knowl/polar2recteqns.html" title="Equation 9.7">equations (9.7)</a> with <span class="process-math">\(r=6\)</span> and <span class="process-math">\(\theta = -\frac{5\pi}{6}\)</span> gives <span class="process-math">\(x=6\cos (-5\pi/6) = -3\sqrt{3}\)</span> and <span class="process-math">\(y=6\sin (-5\pi/6) = -3\text{.}\)</span>  Therefore this point can be represented as <span class="process-math">\(\left( -3\sqrt{3}, -3 \right)\)</span> in rectangular coordinates.</p></li>
+</ol></div></div>
+</div></article><article class="activity project-like" id="TTg"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h4>
+<ol id="byO" class="lower-alpha">
+<li id="li-5729">
+<p id="p-10016">Determine the rectangular coordinates of the following points.  Then, plot each on the grid in <a href="" class="xref" data-knowl="./knowl/EmptyGridAct7B31.html" title="Figure 9.3.5">Figure 9.3.5</a>.</p>
+<ol class="lower-roman">
+<li id="li-5730"><p id="p-10017">The point <span class="process-math">\(P\)</span> that lies <span class="process-math">\(1\)</span> unit from the origin on the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+<li id="li-5731"><p id="p-10018">The point <span class="process-math">\(Q\)</span> that lies <span class="process-math">\(2\)</span> units from the origin and such that <span class="process-math">\(\overline{OQ}\)</span> makes an angle of <span class="process-math">\(\frac{\pi}{2}\)</span> with the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+<li id="li-5732"><p id="p-10019">The point <span class="process-math">\(R\)</span> that lies <span class="process-math">\(3\)</span> units from the origin such that <span class="process-math">\(\overline{OR}\)</span> makes an angle of <span class="process-math">\(\frac{2\pi}{3}\)</span> with the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+</ol>
+<figure class="figure figure-like" id="EmptyGridAct7B31"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained" alt="Polar grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.5<span class="period">.</span></span><span class="space"> </span>A polar grid.</figcaption></figure>
+</li>
+<li id="li-5733">
+<p id="p-10020">Find polar coordinates for the points with the given rectangular coordinates.</p>
+<ol class="lower-roman">
+<li id="li-5734"><p id="p-10021"><span class="process-math">\(\displaystyle (0,-1)\)</span></p></li>
+<li id="li-5735"><p id="p-10022"><span class="process-math">\(\displaystyle (-2,0)\)</span></p></li>
+<li id="li-5736"><p id="p-10023"><span class="process-math">\(\displaystyle (-1,1)\)</span></p></li>
+</ol>
+</li>
+<li id="li-5737">
+<p id="p-10024">For each of the following points whose coordinates are given in polar form, determine the rectangular coordinates of the point.</p>
+<ol class="lower-roman">
+<li id="li-5738"><p id="p-10025"><span class="process-math">\(\displaystyle \left(5,\frac{\pi}{4}\right)\)</span></p></li>
+<li id="li-5739"><p id="p-10026"><span class="process-math">\(\displaystyle \left(2,\frac{5\pi}{6}\right)\)</span></p></li>
+<li id="li-5740"><p id="p-10027"><span class="process-math">\(\displaystyle \left(\sqrt{3},\frac{5\pi}{3}\right)\)</span></p></li>
+</ol>
+</li>
+</ol></article><p id="p-10041">The polar representation of a point is not unique. For example, the polar coordinates <span class="process-math">\(\left( 2, \frac{\pi}{3} \right)\)</span> and <span class="process-math">\(\left( 2, \frac{7\pi}{3}\right)\)</span> both represent the point <span class="process-math">\((1,\sqrt{3})\)</span> in the rectangular system. Also, the value of <span class="process-math">\(r\)</span> can be negative. Therefore, the point with polar coordinates <span class="process-math">\(\left(-2,\frac{4\pi}{3}\right)\)</span> also represents the point <span class="process-math">\((1,\sqrt{3})\)</span> in the rectangular system.  Every point in the plane has an infinite number of representations in polar coordinates. However, each point in the plane has only one representation in the rectangular coordinate system.</p></section><section class="subsection" id="subsection-182"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.2</span> <span class="title">Polar Curves</span>
+</h3>
+<p id="p-10042">Now that we know how to plot points in the polar coordinate system, we can discuss how to plot curves. In the rectangular coordinate system, we can graph a function <span class="process-math">\(y=f(x)\)</span> and create a curve in the Cartesian plane. In a similar fashion, we can graph a curve that is generated by a function <span class="process-math">\(r=f(θ)\text{.}\)</span></p>
+<p id="p-10043">The general idea behind graphing a function in polar coordinates is the same as graphing a function in rectangular coordinates. Start with a list of values for the independent variable (<span class="process-math">\(\theta\)</span> in this case) and calculate the corresponding values of the dependent variable <span class="process-math">\(r\text{.}\)</span>  This process generates a list of ordered pairs, which can be plotted in the polar coordinate system. Finally, connect the points, and take advantage of any patterns that may appear. The function may be periodic, for example, which indicates that only a limited number of values for the independent variable are needed.</p>
+<article class="example example-like" id="graphfunctionpolarcircle"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Graphing a function in polar coordinates.</span>
+</h4>
+<p id="p-10044">Graph the curve defined by the function <span class="process-math">\(r=4\sin\theta\text{.}\)</span>  Identify the curve and rewrite the equation in rectangular coordinates.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-548" id="solution-548"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-548"><div class="solution solution-like">
+<p id="p-10045">Because the function is a multiple of a sine function, it is periodic with period <span class="process-math">\(2\pi\text{,}\)</span> so use values for <span class="process-math">\(\theta\)</span> between <span class="process-math">\(0\)</span> and <span class="process-math">\(2\pi\)</span> in creating a table (see <a href="" class="xref" data-knowl="./knowl/table712.html" title="Table 9.3.7">Table 9.3.7</a>) of ordered pairs to be plotted (see <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS730.html" title="Figure 9.3.8">Figure 9.3.8</a>).</p>
+<figure class="table table-like" id="table712"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.3.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(\theta\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(r=4\sin\theta\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(\text{     }\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(\theta\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(r=4\sin\theta\)</span></th>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\pi\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{6}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{7\pi}{6}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{4}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{2} \approx 2.8\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{5\pi}{4}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{2} \approx -2.8\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{3}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3} \approx 3.4\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{4\pi}{3}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3} \approx -3.4\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{\pi}{2}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{3\pi}{2}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-4 \approx -2.8\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{2\pi}{3}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{3} \approx 3.4\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{5\pi}{3}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{3} \approx -3.4\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{3\pi}{4}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\sqrt{2} \approx 2.8\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{7\pi}{4}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\sqrt{2} \approx -2.8\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{5\pi}{6}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\text{     }\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\frac{11\pi}{6}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="ParametricPlotOS730"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/ParametricPlotOS730.jpg" class="contained" alt="The graph of \(r=4\sin\theta\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.8<span class="period">.</span></span><span class="space"> </span>The graph of the function <span class="process-math">\(r=4\sin\theta\)</span> is a circle.</figcaption></figure><p id="p-10046">This is the graph of a circle. The equation <span class="process-math">\(r=4\sin\theta\)</span> can be converted into rectangular coordinates by first multiplying both sides by <span class="process-math">\(r\text{.}\)</span>  This gives the equation <span class="process-math">\(r^2=4r\sin\theta\text{.}\)</span>  Next use the facts that  <span class="process-math">\(r^2=x^2+y^2\)</span>and <span class="process-math">\(y=r\sin\theta\text{.}\)</span>  This gives <span class="process-math">\(x^2+y^2=4y\text{.}\)</span>  To put this equation into standard form, subtract <span class="process-math">\(4y\)</span> from both sides of the equation and complete the square:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-354">
+\begin{align*}
+x^2+y^2 - 4y = \mathstrut \amp 0\\
+x^2 + (y^2-4y) = \mathstrut \amp 0\\
+x^2+(y^2-4y+4) = \mathstrut \amp 0+4\\
+x^2 + (y-2)^2 = \mathstrut \amp 4.
+\end{align*}
+</div>
+<p class="continuation">This is the equation of a circle with radius <span class="process-math">\(2\)</span> and center <span class="process-math">\((0,2)\)</span> in the rectangular coordinate system.</p>
+</div></div>
+</div></article><p id="p-10047">The graph in <a href="" class="xref" data-knowl="./knowl/graphfunctionpolarcircle.html" title="Example 9.3.6: Graphing a function in polar coordinates">Example 9.3.6</a> was that of a circle. The equation of the circle can be transformed into rectangular coordinates using the coordinate transformation formulas in <a href="" class="xref" data-knowl="./knowl/polar2recteqns.html" title="Equation 9.7">equations (9.7)</a>.</p>
+<article class="example example-like" id="example-101"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Transforming polar equations to rectangle coordinates.</span>
+</h4>
+<p id="p-10048">Rewrite each of the following equations in rectangular coordinates and identify the graph.</p>
+<ol class="lower-alpha">
+<li id="li-5753"><p id="p-10049"><span class="process-math">\(\displaystyle \theta = \frac{\pi}{3}\)</span></p></li>
+<li id="li-5754"><p id="p-10050"><span class="process-math">\(\displaystyle r=3\)</span></p></li>
+<li id="li-5755"><p id="p-10051"><span class="process-math">\(\displaystyle r=6\cos\theta - 8\sin\theta\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-549" id="solution-549"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-549"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-5756"><p id="p-10052">Take the tangent of both sides. This gives <span class="process-math">\(\tan\theta = \tan(\pi/3) = \sqrt{3}\text{.}\)</span>  Since  <span class="process-math">\(\tan\theta = \frac{y}{x}\)</span> we can replace the left-hand side of this equation by <span class="process-math">\(\frac{y}{x}\text{.}\)</span>  This gives  <span class="process-math">\(\frac{y}{x}=\sqrt{3}\text{,}\)</span> which can be rewritten as <span class="process-math">\(y=\sqrt{3}x\text{.}\)</span></p></li>
+<li id="li-5757"><p id="p-10053">First, square both sides of the equation. This gives <span class="process-math">\(r^2=9\text{.}\)</span>  Next replace <span class="process-math">\(r^2\)</span> with  <span class="process-math">\(x^2+y^2\text{.}\)</span>  This gives the equation <span class="process-math">\(x^2+y^2=9\text{,}\)</span>  which is the equation of a circle centered at the origin with radius 3. (Note: when squaring both sides of an equation it is possible to introduce new points unintentionally. This should always be taken into consideration. However, in this case we do not introduce new points. For example, <span class="process-math">\(\left(-3,\frac{\pi}{3}\right)\)</span> is the same point as <span class="process-math">\(\left( 3,\frac{4\pi}{3}\right)\text{.}\)</span>)</p></li>
+<li id="li-5758">
+<p id="p-10054">Multiply both sides of the equation by <span class="process-math">\(r\text{.}\)</span>  This leads to <span class="process-math">\(r^2=6r\cos\theta - 8r\sin\theta\text{.}\)</span>  Next use the formulas</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+r^2=x^2+y^2, \ x=r\cos\theta, \ y=r\sin\theta\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-355">
+\begin{align*}
+r^2 = \mathstrut \amp 6(r\cos\theta) - 8(r\sin\theta)\\
+x^2+y^2 = \mathstrut \amp 6x-8y.
+\end{align*}
+</div>
+<p class="continuation">To put this equation into standard form, first move the variables from the right-hand side of the equation to the left-hand side, then complete the square.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-356">
+\begin{align*}
+x^2+y^2 = \mathstrut \amp 6x-8y\\
+x^2-6x+y^2+8y = \mathstrut \amp 0\\
+(x^2-6x)+(y^2+8y) = \mathstrut \amp 0\\
+(x^2-6x+9)+(y^2+8y+16) = \mathstrut \amp 9+16\\
+(x-3)^2+(y+4)^2 = \mathstrut \amp 25.
+\end{align*}
+</div>
+<p class="continuation">This is the equation of a circle with center at <span class="process-math">\((3,-4)\)</span> and radius <span class="process-math">\(5\text{.}\)</span> Notice that the circle passes through the origin since the center is <span class="process-math">\(5\)</span> units away.</p>
+</li>
+</ol></div></div>
+</div></article><article class="activity project-like" id="TTm"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h4>
+<ol id="byP" class="lower-alpha">
+<li id="li-5759">
+<p id="p-10056">Sketch a plot of the polar curve <span class="process-math">\(r=1\)</span> (where <span class="process-math">\(\theta\)</span> can have any value).  Think about what shape it should have, in light of how <span class="process-math">\(r\)</span> is connected to <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p>
+<figure class="figure figure-like" id="EmptyGridAct7B31"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained" alt="Polar grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.10<span class="period">.</span></span><span class="space"> </span>A polar grid.</figcaption></figure>
+</li>
+<li id="li-5760"><p id="p-10057">What do you think the graph of the polar curve <span class="process-math">\(\theta = 1\)</span> looks like?  Why?  Sketch it.</p></li>
+<li id="li-5761"><p id="p-10058">What do you think the graph of <span class="process-math">\(r=\theta\)</span> looks like?</p></li>
+<li id="li-5762"><p id="p-10059">What does the region defined by <span class="process-math">\(1 \leq r \leq 3\)</span> (where <span class="process-math">\(\theta\)</span> can have any value) look like?</p></li>
+<li id="li-5763"><p id="p-10060">What does the region defined by <span class="process-math">\(1 \leq r \leq 3\)</span> and <span class="process-math">\(\pi/4 \leq \theta \leq \pi/2\)</span> look like?</p></li>
+<li id="li-5764"><p id="p-10061">Consider the curve <span class="process-math">\(r=\sin(\theta)\text{.}\)</span>  For some values of <span class="process-math">\(\theta\)</span> we will have <span class="process-math">\(r &lt; 0\text{.}\)</span>  In these situations, we plot the point <span class="process-math">\((r,\theta)\)</span> as <span class="process-math">\((|r|, \theta+\pi)\)</span> (in other words, when <span class="process-math">\(r &lt; 0\text{,}\)</span> we reflect the point through the origin).  With that in mind, what do you think the graph of <span class="process-math">\(r=\sin(\theta)\)</span> looks like?</p></li>
+</ol></article><p id="p-10075">Technology is helpful in plotting polar curves.  For example, <em class="emphasis">WolframAlpha</em> can be utilized to produce the graph of <span class="process-math">\(r=3\sin (3\theta)\)</span> using syntax <blockquote class="blockquote" id="UBq"><p id="EmZ"><code class="code-inline tex2jax_ignore">plot(r=3*sin(3*theta),theta=0..2*pi)</code></p></blockquote> The resulting graph is shown in <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS733.html" title="Figure 9.3.11">Figure 9.3.11</a>.  One should always be careful in utilizing technology however. It turns out that the plot of <span class="process-math">\(r=3\sin (3\theta)\)</span> is the same if we let the parameter <span class="process-math">\(\theta\)</span> range over any interval of length at least <span class="process-math">\(2\pi\text{.}\)</span>  For example, <blockquote class="blockquote" id="UBr"><p id="EmA"><code class="code-inline tex2jax_ignore">plot(r=3*sin(3*theta),theta=0..100)</code></p></blockquote> also produces the output shown in <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS733.html" title="Figure 9.3.11">Figure 9.3.11</a>.  So <a href="" class="xref" data-knowl="./knowl/ParametricPlotOS733.html" title="Figure 9.3.11">Figure 9.3.11</a> is indeed the plot of the curve <span class="process-math">\(r=3\sin (3\theta)\text{.}\)</span></p>
+<figure class="figure figure-like" id="ParametricPlotOS733"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/ParametricPlotOS733.jpg" class="contained" alt="The graph of \(r=3\sin(3\theta)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.11<span class="period">.</span></span><span class="space"> </span>The graph of the function <span class="process-math">\(r=3\sin (3\theta)\text{.}\)</span></figcaption></figure><p id="p-10078">Now, what happens if we try to plot the polar equation <span class="process-math">\(r=3\sin (\pi \theta)\)</span> using x<em class="emphasis">WolframAlpha</em>? Plotting the polar equations over the intervals <span class="process-math">\(0 \leq \theta \leq 3\text{,}\)</span> <span class="process-math">\(0 \leq \theta \leq 100\text{,}\)</span> and <span class="process-math">\(0 \leq \theta \leq 1000\)</span> respectively will produce the output shown in <a href="" class="xref" data-knowl="./knowl/PolarPlotWrong.html" title="Figure 9.3.12">Figure 9.3.12</a>.  Since the curve defined by the graph of <span class="process-math">\(r=3\sin (\pi \theta)\)</span> never closes, the curves depicted in <a href="" class="xref" data-knowl="./knowl/PolarPlotWrong.html" title="Figure 9.3.12">Figure 9.3.12</a> are only partial depictions.  In fact, this is an example of a <dfn class="terminology">space-filling curve</dfn>. A space-filling curve is one that occupies a two-dimensional subset of the real plane. In this case the curve occupies the circle of radius <span class="process-math">\(3\)</span> centered at the origin.</p>
+<figure class="figure figure-like" id="PolarPlotWrong"><div class="sidebyside"><div class="sbsrow" style="margin-left:0.0166666666666657%;margin-right:0.0166666666666657%;">
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="external/images/ParametricPlotOS733b.jpg" class="contained"></div>
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="external/images/ParametricPlotOS733c.jpg" class="contained"></div>
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="external/images/ParametricPlotOS733d.jpg" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.12<span class="period">.</span></span><span class="space"> </span>Plots of the polar equation <span class="process-math">\(r=3\sin (\pi \theta)\)</span> on intervals <span class="process-math">\(0 \leq \theta \leq 3\text{,}\)</span> <span class="process-math">\(0 \leq \theta \leq 100\text{,}\)</span> and <span class="process-math">\(0 \leq \theta \leq 1000\)</span> respectively.</figcaption></figure></section><section class="subsection" id="subsection-183"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.3</span> <span class="title">Symmetry in Polar Coordinates</span>
+</h3>
+<p id="p-10079">Using rectangular coordinates, there are three types of symmetry - <span class="process-math">\(y\)</span>-axis, <span class="process-math">\(x\)</span>-axis, and origin.</p>
+<ul class="disc">
+<li id="li-5777"><p id="p-10080">A graph has symmetry with respect to the <span class="process-math">\(y\)</span>-axis if, whenever <span class="process-math">\((x,y)\)</span> is on the graph, so is the point <span class="process-math">\((-x,y)\text{.}\)</span></p></li>
+<li id="li-5778"><p id="p-10081">A graph has symmetry with respect to the <span class="process-math">\(x\)</span>-axis if, whenever <span class="process-math">\((x,y)\)</span> is on the graph, so is the point <span class="process-math">\((x,-y)\text{.}\)</span></p></li>
+<li id="li-5779"><p id="p-10082">A graph has symmetry with respect to the origin if, whenever <span class="process-math">\((x,y)\)</span> is on the graph, so is the point <span class="process-math">\((-x,-y)\text{.}\)</span></p></li>
+</ul>
+<p id="p-10083">Similarly, we describe three types of symmetry in polar coordinates.</p>
+<ul class="disc">
+<li id="li-5780">
+<p id="p-10084"><em class="emphasis">Symmetry with respect to the polar axis:</em> For every point <span class="process-math">\((r,\theta)\)</span> on the graph, there is also a point reflected directly across the horizontal (polar) axis.</p>
+<figure class="figure figure-like" id="PolarPlotOSSymmetryA"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/PolarPlotOSSymmetryA.jpg" class="contained" alt="Polar axis symmetry."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.13<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(r=2-2\cos\theta\)</span> has polar axis symmetry.</figcaption></figure>
+</li>
+<li id="li-5781">
+<p id="p-10085"><em class="emphasis">Symmetry with respect to the pole:</em> For every point <span class="process-math">\((r,\theta)\)</span> on the graph, there is also a point on the graph that is reflected through the pole as well.</p>
+<figure class="figure figure-like" id="PolarPlotOSSymmetryB"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/PolarPlotOSSymmetryB.jpg" class="contained" alt="Symmetry with respect to the pole."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.14<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(r=9\cos \left(2\theta-\frac{\pi}{2}\right)\)</span> has symmetry with respect to the pole.</figcaption></figure>
+</li>
+<li id="li-5782">
+<p id="p-10086"><em class="emphasis">Symmetry with respect to the vertical line <span class="process-math">\(\theta=\frac{\pi}{2}\text{:}\)</span></em> For every point <span class="process-math">\((r,\theta)\)</span> on the graph, there is also a point on the graph reflected directly across the vertical axis.</p>
+<figure class="figure figure-like" id="PolarPlotOSSymmetryC"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/PolarPlotOSSymmetryC.jpg" class="contained" alt="Symmetry with respect to the vertical axis."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.15<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(r=2-2\sin\theta\)</span> has symmetry with respect to the vertical line <span class="process-math">\(\theta = \frac{\pi}{2}\text{.}\)</span></figcaption></figure>
+</li>
+</ul>
+<article class="assemblage assemblage-like" id="SymmetryPolarCoordinates"><h4 class="heading"><span class="title">Symmetry tests in polar coordinates.</span></h4>
+<ul id="p-10087" class="disc">
+<li id="li-5783"><p id="p-10088">A graph has symmetry with respect to the polar axis if, whenever <span class="process-math">\((r,\theta)\)</span> is on the graph, so is the point <span class="process-math">\((r,-\theta)\text{.}\)</span></p></li>
+<li id="li-5784"><p id="p-10089">A graph has symmetry with respect to the vertical axis if, whenever <span class="process-math">\((r,\theta)\)</span> is on the graph, so is the point <span class="process-math">\((-r,-\theta)\text{.}\)</span></p></li>
+<li id="li-5785"><p id="p-10090">A graph has symmetry with respect to the pole if, whenever <span class="process-math">\((r,\theta)\)</span> is on the graph, so is the point <span class="process-math">\((r,\pi+\theta)\text{.}\)</span></p></li>
+</ul>
+<p class="continuation"><figure class="figure figure-like" id="PolarSymmetryTests"><div class="sidebyside"><div class="sbsrow" style="margin-left:0.0166666666666657%;margin-right:0.0166666666666657%;">
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="generated/latex-image/PolarSymmetryTestsPolarAxis.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="generated/latex-image/PolarSymmetryTestsVerticalAxis.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:33.3111037012337%;"><img src="generated/latex-image/PolarSymmetryTestsPole.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.16<span class="period">.</span></span><span class="space"> </span>Testing for symmetry in polar coordinates.</figcaption></figure></p></article><article class="activity project-like" id="TTn"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span>
+</h4>
+<ol id="byQ" class="lower-alpha">
+<li id="li-5786">
+<p id="p-10092">Consider the curve <span class="process-math">\(r=2+2\cos\theta\text{.}\)</span></p>
+<ol class="lower-roman">
+<li id="li-5787"><p id="p-10093">If <span class="process-math">\((r,\theta)\)</span> is on the graph, will <span class="process-math">\((r,-\theta)\)</span> also be on the graph?  Is the graph symmetric with respect to the <span class="process-math">\(x\)</span>-axis?</p></li>
+<li id="li-5788"><p id="p-10094">If <span class="process-math">\((r,\theta)\)</span> is on the graph, will <span class="process-math">\((-r,-\theta)\)</span> also be on the graph?  Is the graph symmetric with respect to the <span class="process-math">\(y\)</span>-axis?</p></li>
+<li id="li-5789"><p id="p-10095">If <span class="process-math">\((r,\theta)\)</span> is on the graph, will <span class="process-math">\((-r,\theta)\)</span> also be on the graph?  Is the graph symmetric with respect to the origin?</p></li>
+<li id="li-5790">
+<p id="p-10096">Sketch the graph of <span class="process-math">\(r=2+2\cos\theta\text{.}\)</span></p>
+<figure class="figure figure-like" id="EmptyGridAct7B33"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_11_5_polar_grid.svg" role="img" class="contained" alt="Polar grid."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.17<span class="period">.</span></span><span class="space"> </span>A polar grid.</figcaption></figure>
+</li>
+</ol>
+</li>
+<li id="li-5791">
+<p id="p-10097">Now consider the curve <span class="process-math">\(r=2+\sin\theta\text{.}\)</span></p>
+<ol class="lower-roman">
+<li id="li-5792"><p id="p-10098">If <span class="process-math">\((r,\theta)\)</span> is on the graph, will <span class="process-math">\((r,-\theta)\)</span> also be on the graph?  Is the graph symmetric with respect to the <span class="process-math">\(x\)</span>-axis?</p></li>
+<li id="li-5793"><p id="p-10099">If <span class="process-math">\((r,\theta)\)</span> is on the graph, will <span class="process-math">\((-r,-\theta)\)</span> also be on the graph?  Is the graph symmetric with respect to the <span class="process-math">\(y\)</span>-axis?</p></li>
+<li id="li-5794"><p id="p-10100">Sketch the graph of <span class="process-math">\(r=2+\sin\theta\)</span> and <span class="process-math">\(-r=2+\sin(-\theta)\)</span> which is the same as <span class="process-math">\(r=-2+\sin\theta\)</span> since sine is an odd function.  Is your answer to (ii) correct? Explain.</p></li>
+</ol>
+</li>
+</ol></article></section><section class="subsection" id="Vuk"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.4</span> <span class="title">Summary</span>
+</h3>
+<ul class="disc">
+<li id="li-5804"><p id="p-10111">The polar representation of a point <span class="process-math">\(P\)</span> is the ordered pair <span class="process-math">\((r,\theta)\)</span> where <span class="process-math">\(r\)</span> is the distance from the origin to <span class="process-math">\(P\)</span> and <span class="process-math">\(\theta\)</span> is the angle the ray through the origin and <span class="process-math">\(P\)</span> makes with the positive <span class="process-math">\(x\)</span>-axis.</p></li>
+<li id="li-5805">
+<p id="p-10112">The polar coordinates <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> of a point <span class="process-math">\((x,y)\)</span> in rectangular coordinates satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+r = \sqrt{x^2+y^2} \ \ \ \ \ \text{ and }  \ \ \ \ \ \tan(\theta) = \frac{y}{x};
+\end{equation*}
+</div>
+<p class="continuation">the rectangular coordinates <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> of a point <span class="process-math">\((r,\theta)\)</span> in polar coordinates satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x = r\cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r\sin(\theta).
+\end{equation*}
+</div>
+</li>
+<li id="li-5806"><p id="p-10113">Just as one can convert between rectangular coordinates and polar coordinates, equations in these coordinate systems can also be converted.</p></li>
+<li id="li-5807"><p id="p-10114">Testing for symmetry in polar equations is similar to testing for symmetry in rectangular coordinates.</p></li>
+</ul></section><section class="exercises" id="okr"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.3.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="EjX"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Convert polar coordinates to rectangular coordinates.</span>
+</h4>
+<div id="webwork-250" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="250" data-sourceFilePath="Library/Michigan/Chap8Sec3/Q01.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10115">Convert the polar coordinates below to Cartesian coordinates. Give exact answers.</p>
+<p id="p-10116"><em class="alert">A.</em> <span class="process-math">\((4, 3\pi/2) =\)</span> ( <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span>, <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> )</p>
+<p id="p-10117"><em class="alert">B.</em> <span class="process-math">\((4, \pi/2) =\)</span> ( <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span>, <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> )</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-250')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="ExB"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Convert rectangular coordinates to polar coordinates.</span>
+</h4>
+<div id="webwork-251" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="251" data-sourceFilePath="Library/Michigan/Chap8Sec3/Q05.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10122">Convert the Cartesian coordinates below to polar coordinates.  Give an angle <span class="process-math">\(\theta\)</span> in the range <span class="process-math">\(0 \lt  \theta \le 2\pi\text{,}\)</span> and take <span class="process-math">\(r&gt;0\text{.}\)</span></p>
+<p id="p-10123"><em class="alert">A.</em> <span class="process-math">\(({5\over 2}, -{5\sqrt{3}\over 2}) =\)</span> ( <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span>, <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> )</p>
+<p id="p-10124"><em class="alert">B.</em> <span class="process-math">\(({5\sqrt{3}\over 2}, -{5\over 2}) =\)</span> ( <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span>, <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> )</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-251')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="EkD"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Describe a region using polar coordinates.</span>
+</h4>
+<div id="webwork-252" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="252" data-sourceFilePath="Library/Michigan/Chap8Sec3/Q17.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10129">Give inequalities for <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> which describe the region below in polar coordinates.</p>
+<div class="image-box" style="width: 16.6666666666667%; margin-left: 41.6666666666667%; margin-right: 41.6666666666667%;"><img src="generated/webwork/images/webwork-252-image-1.png" class="contained"></div>
+<p id="p-10130"><em class="emphasis">(Click on the graph for a larger version.)</em></p>
+<p id="p-10131">The two arcs shown are circular, and the region is between the two arcs and between the <span class="process-math">\(y\)</span>-axis and line graphed, which is <span class="process-math">\(y = {\sqrt{3}} x\text{.}\)</span></p>
+<p id="p-10132"><span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(\le r \le\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-10133"><span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(\le \theta \le\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-10134"><em class="emphasis">(Write</em> <em class="alert">infinity</em> <em class="emphasis">to indicate a boundary at infinity.)</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-252')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="FxI"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Describe another region using polar coordinates.</span>
+</h4>
+<div id="webwork-253" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="253" data-sourceFilePath="Library/Michigan/Chap8Sec3/Q19.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10139">Give inequalities for <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> which describe the region below in polar coordinates.</p>
+<div class="image-box" style="width: 16.6666666666667%; margin-left: 41.6666666666667%; margin-right: 41.6666666666667%;"><img src="generated/webwork/images/webwork-253-image-1.png" class="contained"></div>
+<p id="p-10140"><em class="emphasis">(Click on the graph for a larger version.)</em></p>
+<p id="p-10141">The arc shown is circular, and the region extends indefinitely in the <span class="process-math">\(y\)</span>-direction.</p>
+<p id="p-10142"><span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(\le r \le\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-10143"><span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> <span class="process-math">\(\le \theta \le\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-10144"><em class="emphasis">(Write</em> <em class="alert">infinity</em> <em class="emphasis">to indicate a boundary at infinity, and use</em> <em class="alert">t</em> <em class="emphasis">for <span class="process-math">\(\theta\)</span> if necessary.)</em></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-253')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="YcF"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Are they the same?</span>
+</h4>
+<div id="webwork-254" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="254" data-sourceFilePath="Library/ma123DB/set9/s10_4_1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10149">Decide if the points given in polar coordinates are the same. If they are the same, enter <em class="emphasis">T</em> . If they are different, enter <em class="emphasis">F</em> .</p>
+<p id="p-10150"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> a.) <span class="process-math">\((2, \frac{\pi}{3}), (-2, \frac{-\pi}{3})\)</span></p>
+<p id="p-10151"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> b.) <span class="process-math">\((2, \frac{67 \pi}{4}), (2,- \frac{67 \pi}{4})\)</span></p>
+<p id="p-10152"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> c.) <span class="process-math">\((0, 2 \pi), (0, \frac{8 \pi}{4})\)</span></p>
+<p id="p-10153"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> d.) <span class="process-math">\((1, \frac{109 \pi}{4}), (-1, \frac{\pi}{4})\)</span></p>
+<p id="p-10154"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> e.) <span class="process-math">\((11, \frac{80 \pi}{3}), (-11, \frac{- \pi}{3})\)</span></p>
+<p id="p-10155"><span class="fillin" role="img" aria-label="1-character blank" style="width: 0.454545454545455em;"></span> f.)<span class="process-math">\((2,13 \pi), (-2, 13 \pi)\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-254')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ekn"><h4 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Matching coordinates.</span>
+</h4>
+<div id="webwork-255" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="255" data-sourceFilePath="Library/ma123DB/set9/s10_4_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10162">For each set of Polar coordinates, match the equivalent Cartesian coordinates.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-255')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHb"><h4 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Convert a polar equation to a rectangular equation.</span>
+</h4>
+<div id="webwork-256" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="256" data-sourceFilePath="Library/ma123DB/set9/s10_4_15.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10163">A Cartesian equation for the polar equation <span class="process-math">\(r=4\)</span> can be written as:</p>
+<p id="p-10164"><span class="process-math">\(x^2+y^2 =\)</span> <span class="fillin" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-256')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHc"><h4 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Convert another polar equation.</span>
+</h4>
+<div id="webwork-257" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="257" data-sourceFilePath="Library/ma123DB/set9/s10_4_16.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10169">A curve with polar equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-10170">
+\begin{equation*}
+r=\frac{46 }{6 \sin \theta+43 \cos \theta}
+\end{equation*}
+</div>
+<p id="p-10171">represents a line.  Write this line in the given Cartesian form.</p>
+<p id="p-10172"><span class="process-math">\(y =\)</span> <span class="fillin" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span></p>
+<p id="p-10173"><em class="alert">Note:</em> Your answer should be a function of <span class="process-math">\(x\)</span> .</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-257')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHd"><h4 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">Intersecting circles.</span>
+</h4>
+<div id="webwork-258" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="258" data-sourceFilePath="Library/ma123DB/set9/s10_4_21.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10175">A circle <span class="process-math">\(C\)</span> has center at the origin and radius <span class="process-math">\(6\text{.}\)</span> Another circle <span class="process-math">\(K\)</span> has a diameter with one end at the origin and the other end at the point <span class="process-math">\((0,14)\text{.}\)</span> The circles <span class="process-math">\(C\)</span> and <span class="process-math">\(K\)</span> intersect in two points.  Let <span class="process-math">\(P\)</span> be the point of intersection of <span class="process-math">\(C\)</span> and <span class="process-math">\(K\)</span>  which lies in the first quadrant. Let <span class="process-math">\((r, \theta )\)</span> be the polar coordinates of <span class="process-math">\(P\text{,}\)</span>  chosen so that <span class="process-math">\(r\)</span> is positive and <span class="process-math">\(0 \leq \theta \leq 2\text{.}\)</span> Find <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10176"><span class="process-math">\(r =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+<p id="p-10177"><span class="process-math">\(\theta =\)</span> <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-258')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fIz"><h4 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">Match polar equation to description.</span>
+</h4>
+<div id="webwork-259" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="259" data-sourceFilePath="Library/ma123DB/set9/s10_4_33.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10180">Match each polar equation below to the best description.</p>
+<p id="p-10181"><em class="emphasis">C.</em> Circle</p>
+<p id="p-10182"><em class="emphasis">E.</em> Ellipse</p>
+<p id="p-10183"><em class="emphasis">F.</em> Figure eight</p>
+<p id="p-10184"><em class="emphasis">H.</em> Hyperbola</p>
+<p id="p-10185"><em class="emphasis">L.</em>  Line</p>
+<p id="p-10186"><em class="emphasis">P.</em> Parabola</p>
+<p id="p-10187"><em class="emphasis">S.</em> Spiral</p>
+<p id="p-10188">POLAR EQUATIONS</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-259')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-446"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-10189">Convert the polar equation <span class="process-math">\(r=4\sin\theta\)</span> to rectangular form and then sketch its graph.</p></article></section></section></div></main>
+</div>
+</body>
+</html>

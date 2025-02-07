@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:12:46Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SACalc Trigonometric Integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Sculpted, Active Calculus">
+<meta property="book:author" content="Dale Buske">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body id="buske-SACS" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\dollar}{\$}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\arctanh}{arctanh}
+      \DeclareMathOperator{\arcsec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://web.stcloudstate.edu/drbuske/" target="_blank"><img src="external/./SCSU_StC_Pri_DkBlkBG.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Sculpted, Active Calculus</span></a></h1>
+<p class="byline">Dale Buske</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-5-5-partial-fractions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-5-8-trig-sub.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-5-5-partial-fractions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-5-8-trig-sub.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-1.html" data-scroll="UOk" class="internal"><span class="codenumber">1</span> <span class="title">Understanding the Derivative</span></a><ul>
+<li><a href="sec-1-1-vel.html" data-scroll="Cph" class="internal">How do we measure velocity?</a></li>
+<li><a href="sec-1-2-lim.html" data-scroll="VMz" class="internal">The notion of limit</a></li>
+<li><a href="sec-1-3-derivative-pt.html" data-scroll="xyk" class="internal">The derivative of a function at a point</a></li>
+<li><a href="sec-1-4-derivative-fxn.html" data-scroll="eZh" class="internal">The derivative function</a></li>
+<li><a href="sec-1-5-units.html" data-scroll="IVE" class="internal">Interpreting, estimating, and using the derivative</a></li>
+<li><a href="sec-1-6-second-d.html" data-scroll="QeE" class="internal">The second derivative</a></li>
+<li><a href="sec-1-7-lim-cont-diff.html" data-scroll="UsY" class="internal">Limits, Continuity, and Differentiability</a></li>
+<li><a href="sec-1-8-tan-line-approx.html" data-scroll="fgy" class="internal">The Tangent Line Approximation</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-2.html" data-scroll="AVt" class="internal"><span class="codenumber">2</span> <span class="title">Computing Derivatives</span></a><ul>
+<li><a href="sec-2-1-elem-rules.html" data-scroll="SwH" class="internal">Elementary derivative rules</a></li>
+<li><a href="sec-2-2-sin-cos.html" data-scroll="kOG" class="internal">The sine and cosine functions</a></li>
+<li><a href="sec-2-3-prod-quot.html" data-scroll="gOH" class="internal">The product and quotient rules</a></li>
+<li><a href="sec-2-4-other-trig.html" data-scroll="ybn" class="internal">Derivatives of other trigonometric functions</a></li>
+<li><a href="sec-2-5-chain.html" data-scroll="omc" class="internal">The chain rule</a></li>
+<li><a href="sec-2-6-inverse.html" data-scroll="iLl" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec-2-7-implicit.html" data-scroll="kOT" class="internal">Derivatives of Functions Given Implicitly</a></li>
+<li><a href="sec-2-8-LHR.html" data-scroll="miH" class="internal">Using Derivatives to Evaluate Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-3.html" data-scroll="hcC" class="internal"><span class="codenumber">3</span> <span class="title">Using Derivatives</span></a><ul>
+<li><a href="sec-3-1-tests.html" data-scroll="ubB" class="internal">Using derivatives to identify extreme values</a></li>
+<li><a href="sec-3-2-families.html" data-scroll="sAJ" class="internal">Using derivatives to describe families of functions</a></li>
+<li><a href="sec-3-3-optimization.html" data-scroll="bgZ" class="internal">Global Optimization</a></li>
+<li><a href="sec-3-4-applied-opt.html" data-scroll="ZGh" class="internal">Applied Optimization</a></li>
+<li><a href="sec-3-5-rel-rates.html" data-scroll="uiS" class="internal">Related Rates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-4.html" data-scroll="NjL" class="internal"><span class="codenumber">4</span> <span class="title">The Definite Integral</span></a><ul>
+<li><a href="sec-4-1-velocity-distance.html" data-scroll="YPj" class="internal">Determining distance traveled from velocity</a></li>
+<li><a href="sec-4-2-Riemann.html" data-scroll="DvA" class="internal">Riemann Sums</a></li>
+<li><a href="sec-4-3-definite-integral.html" data-scroll="Oja" class="internal">The Definite Integral</a></li>
+<li><a href="sec-4-4-FTC.html" data-scroll="LCP" class="internal">The Fundamental Theorem of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-5.html" data-scroll="tqU" class="internal"><span class="codenumber">5</span> <span class="title">Evaluating Integrals</span></a><ul>
+<li><a href="sec-5-1-antid-graphs.html" data-scroll="mjh" class="internal">Constructing Accurate Graphs of Antiderivatives</a></li>
+<li><a href="sec-5-2-FTC2.html" data-scroll="lNI" class="internal">The Second Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-5-3-substitution.html" data-scroll="wBi" class="internal">Integration by Substitution</a></li>
+<li><a href="sec-5-4-parts.html" data-scroll="cWM" class="internal">Integration by Parts</a></li>
+<li><a href="sec-5-5-partial-fractions.html" data-scroll="GxK" class="internal">Partial Fractions</a></li>
+<li><a href="sec-5-7-trig-integrals.html" data-scroll="GxI" class="active">Trigonometric Integrals</a></li>
+<li><a href="sec-5-8-trig-sub.html" data-scroll="GxJ" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec-5-5-other-options.html" data-scroll="GxM" class="internal">Using Tables and Technology to Integrate</a></li>
+<li><a href="sec-5-6-num-int.html" data-scroll="sec-5-6-num-int" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-6.html" data-scroll="Zyd" class="internal"><span class="codenumber">6</span> <span class="title">Using Definite Integrals</span></a><ul>
+<li><a href="sec-6-1-area.html" data-scroll="HaA" class="internal">Using Definite Integrals to Find Area and Length</a></li>
+<li><a href="sec-6-2B-volume.html" data-scroll="KjB" class="internal">Using Definite Integrals to Find Volume</a></li>
+<li><a href="sec-6-3-mass.html" data-scroll="ZGU" class="internal">Density, Mass, and Center of Mass</a></li>
+<li><a href="sec-6-4-physics.html" data-scroll="Enl" class="internal">Physics Applications:  Work, Force, and Pressure</a></li>
+<li><a href="sec-6-5-improper.html" data-scroll="EBG" class="internal">Improper Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8.html" data-scroll="lMv" class="internal"><span class="codenumber">7</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec-8-1B-sequences.html" data-scroll="kXx" class="internal">Sequences</a></li>
+<li><a href="sec-8-2-geometric.html" data-scroll="Kkb" class="internal">Geometric Series</a></li>
+<li><a href="sec-8-3B-series.html" data-scroll="nbg" class="internal">Infinite Series of Real Numbers</a></li>
+<li><a href="sec-8-3C-divergence.html" data-scroll="nbh" class="internal">The Divergence and Integral Tests</a></li>
+<li><a href="sec-8-3D-comparisons.html" data-scroll="nbV" class="internal">Comparison Tests</a></li>
+<li><a href="sec-8-3E-ratio-test.html" data-scroll="nbn" class="internal">The Ratio Test</a></li>
+<li><a href="sec-8-4-alternating.html" data-scroll="GMS" class="internal">Alternating Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-8B.html" data-scroll="lMv" class="internal"><span class="codenumber">8</span> <span class="title">Power Series</span></a><ul>
+<li><a href="sec-8B-1-power-series.html" data-scroll="YgQ" class="internal">Power Series</a></li>
+<li><a href="sec-8B-2-Taylor-Polynomials.html" data-scroll="cnT" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec-8B-3-taylor-series.html" data-scroll="cnU" class="internal">Taylor Series</a></li>
+<li><a href="sec-8B-4-applications-series.html" data-scroll="cnW" class="internal">Applications of Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C-7.html" data-scroll="FFm" class="internal"><span class="codenumber">9</span> <span class="title">Parametric Equations and Polar Coordinates</span></a><ul>
+<li><a href="sec-7B-1-parametriceqns.html" data-scroll="KjB" class="internal">Parametric Equations</a></li>
+<li><a href="sec-7B-2-calc-parametric.html" data-scroll="KjC" class="internal">Calculus of Parametric Equations</a></li>
+<li><a href="sec-7B-3-polar-coordinates.html" data-scroll="KjD" class="internal">Polar Coordinates</a></li>
+<li><a href="sec-7B-4-area-arclength-polar.html" data-scroll="KjD" class="internal">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="gsI" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="activities-answers.html" data-scroll="MzR" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Activities</span></a></li>
+<li class="link"><a href="exercises-answers.html" data-scroll="sHa" class="internal"><span class="codenumber">B</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="integral-table.html" data-scroll="Alz" class="internal"><span class="codenumber">C</span> <span class="title">A Short Table of Integrals</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="GxI"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.6</span> <span class="title">Trigonometric Integrals</span>
+</h2>
+<article class="objectives goal-like" id="XvV"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="Zli"><p id="Kck">How do we solve integration problems involving products and powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\text{?}\)</span></p></li>
+<li id="Zli"><p id="Kck">How do we solve integration problems involving products and powers of <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\text{?}\)</span></p></li>
+</ul></article><section class="introduction" id="DDe"><p id="IWR">In this section we look at how to integrate a variety of products of trigonometric functions. These integrals are called <dfn class="terminology">trigonometric integrals</dfn>. They are an important part of the integration technique called trigonometric substitution. This technique allows us to convert algebraic expressions that we may not be able to integrate into expressions involving trigonometric functions, which we may be able to integrate using the techniques described in this section. In addition, these types of integrals appear frequently when we study polar, cylindrical, and spherical coordinate systems.</p>
+<article class="exploration project-like" id="XEz"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.6.1</span><span class="period">.</span>
+</h3>
+<ol id="rxq" class="lower-alpha">
+<li id="urW"><p id="SUG">Evaluate <span class="process-math">\(\displaystyle \int \cos^3 x \sin x \ dx\)</span> by using the <span class="process-math">\(u\)</span>-substitution <span class="process-math">\(u=\cos x\text{.}\)</span></p></li>
+<li id="azf"><p id="zbP">Evaluate <span class="process-math">\(\displaystyle \int \sin^4 x \cos x \ dx\text{.}\)</span></p></li>
+<li id="mNx"><p id="Lqh">Evaluate <span class="process-math">\(\displaystyle \int \sin^3 x \ dx\)</span> by rewriting <span class="process-math">\(\sin^3 x = \sin^2 x \sin x\)</span> and using the identity <span class="process-math">\(\sin^2 x = 1-\cos^2 x\)</span> followed by the <span class="process-math">\(u\)</span>-substitution <span class="process-math">\(u=\cos x\text{.}\)</span></p></li>
+<li id="GGo"><p id="fiY">Evaluate <span class="process-math">\(\displaystyle \int \cos^2 x \sin^3 x \ dx\)</span> by rewriting <span class="process-math">\(\sin^3 x = \sin^2 x \sin x\)</span> and using the identity <span class="process-math">\(\sin^2 x = 1-\cos^2 x\)</span> followed by the <span class="process-math">\(u\)</span>-substitution <span class="process-math">\(u=\cos x\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="mET"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.1</span> <span class="title">Integrating Products and Powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\)</span></span>
+</h3>
+<p id="Vlj">One type of integral commonly appearing in practice is that of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PA-5-7.html">
+\begin{equation*}
+\int \cos^j x \sin^k x \ dx
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(j\)</span> and <span class="process-math">\(k\)</span> are nonnegative integers.  Preview Activity <a href="" class="xref" data-knowl="./knowl/PA-5-7.html" title="Preview Activity 5.6.1">5.6.1</a> demonstrated how to handle the case in which <span class="process-math">\(k\)</span> is odd - we break off one power of <span class="process-math">\(\sin x\)</span> and use the trigonometric identity <span class="process-math">\(\sin^2x + \cos^2x = 1\)</span> to convert the rest of the integrand so that it involves powers of <span class="process-math">\(\cos x\)</span> followed by use of the substitution <span class="process-math">\(u=\cos x\text{.}\)</span></p>
+<p id="p-5988">A similar strategy is useful when the power of <span class="process-math">\(\cos x\)</span> in the integral, <span class="process-math">\(j\text{,}\)</span> is odd.</p>
+<article class="example example-like" id="LhD"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.1</span><span class="period">.</span>
+</h4>
+<p id="wIz">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \cos^3 x \sin^2 x \ dx\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKn" id="jKn"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKn"><div class="solution solution-like">
+<p id="uTm">We compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="oddpowercos">
+\begin{align*}
+\int \cos^3 x \sin^2 x \ dx = \mathstrut \amp \int \cos^2 x \sin^2 x (\cos x) \ dx \\
+= \mathstrut \amp \int (1-\sin^2 x)(\sin^2 x) (\cos x) \ dx \\
+= \mathstrut \amp \int (\sin^2 x - \sin^4 x) \cos x \ dx\\
+= \mathstrut \amp \int (u^2 - u^4) \ du\\
+= \mathstrut \amp \frac{1}{3}u^3 - \frac{1}{5}u^5 + C \\
+= \mathstrut \amp \frac{1}{3}\sin^3x - \frac{1}{5}\sin^5x + C
+\end{align*}
+</div>
+<p class="continuation">where <span class="process-math">\(u = \sin x\)</span> so that <span class="process-math">\(du = \cos x \ dx\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-5991">In the next example, we discover a strategy that can be successfully applied when there are only even powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\text{.}\)</span>  For integrals of this type, the power-reducing identities</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="reducesin">
+\begin{equation}
+\sin^2 x = \frac{1}{2} - \frac{1}{2}\cos(2x) = \frac{1-\cos(2x)}{2}\tag{5.15}
+\end{equation}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="reducecos">
+\begin{equation}
+\cos^2 x = \frac{1}{2} + \frac{1}{2}\cos(2x) = \frac{1+\cos(2x)}{2}\tag{5.16}
+\end{equation}
+</div>
+<p class="continuation">are used.</p>
+<article class="example example-like" id="LhE"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.2</span><span class="period">.</span>
+</h4>
+<p id="wIa">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \sin^2 x \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKo" id="jKo"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKo"><div class="solution solution-like">
+<p id="uTm">The trigonometric identity in <a href="" class="xref" data-knowl="./knowl/reducesin.html" title="Equation 5.15">(5.15)</a> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/reducesin.html" id="md-177">
+\begin{align*}
+\int \sin^2 x \ dx = \mathstrut \amp \int \frac{1}{2} - \frac{1}{2}\cos(2x) \ dx\\
+= \mathstrut \amp \frac{1}{2}x - \frac{1}{4}\sin(2x) + C.
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="LhH">The general process for integrating products of powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\)</span> is summarized in the following set of guidelines.</p>
+<article class="assemblage assemblage-like" id="RVf"><h4 class="heading"><span class="title">Integrating Products and Powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\)</span>.</span></h4>
+<p id="hNX">To integrate <span class="process-math">\(\displaystyle \int \cos^j x \sin^k x \ dx\text{,}\)</span> use the following strategies:</p>
+<ul class="disc">
+<li id="li-3542"><p id="p-5996">If <span class="process-math">\(k\)</span> is odd, rewrite <span class="process-math">\(\sin^k x = \sin^{k-1}x \sin x\)</span> and use the identity <span class="process-math">\(\sin^2 x = 1-\cos^2 x\)</span> to rewrite <span class="process-math">\(\sin^{k-1}x\)</span> in terms of <span class="process-math">\(\cos x\text{.}\)</span>  Integrate using the substitution <span class="process-math">\(u=\cos x\text{.}\)</span></p></li>
+<li id="li-3543"><p id="p-5997">If <span class="process-math">\(j\)</span> is odd, rewrite <span class="process-math">\(\cos^j x = \cos^{j-1}x \cos x\)</span> and use the identity <span class="process-math">\(\cos^2 x = 1-\sin^2 x\)</span> to rewrite <span class="process-math">\(\cos^{j-1}x\)</span> in terms of <span class="process-math">\(\sin x\text{.}\)</span>  Integrate using the substitution <span class="process-math">\(u=\sin x\text{.}\)</span></p></li>
+<li id="li-3544"><p id="p-5998">If both <span class="process-math">\(j\)</span> and <span class="process-math">\(k\)</span> are even, use identities <a href="" class="xref" data-knowl="./knowl/reducesin.html" title="Equation 5.15">(5.15)</a> and <a href="" class="xref" data-knowl="./knowl/reducecos.html" title="Equation 5.16">(5.16)</a>.  Then, simplify, and reapply these three strategies as appropriate.</p></li>
+</ul></article><article class="example example-like" id="LhF"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.3</span><span class="period">.</span>
+</h4>
+<p id="wIb">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \sin^4 x \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKp" id="jKp"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKp"><div class="solution solution-like">
+<p id="uTn">Since the power of <span class="process-math">\(\sin x\)</span> is even (<span class="process-math">\(k=4\)</span>), we proceed as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-178">
+\begin{align*}
+\int \sin^4x \ dx = \mathstrut \amp \int (\sin^2 x)^2 \ dx\\
+= \mathstrut \amp \int \left( \frac{1}{2} - \frac{1}{2}\cos(2x)\right)^2 \ dx\\
+= \mathstrut \amp \int \frac{1}{4} - \frac{1}{2}\cos(2x) + \frac{1}{4}\cos^2(2x) \ dx
+\end{align*}
+</div>
+<p class="continuation">Then, since <span class="process-math">\(\cos^2(2x)\)</span> has an even power, we substitute <span class="process-math">\(\displaystyle \cos^2(2x) = \frac{1}{2} + \frac{1}{2}\cos(4x)\)</span> to see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-179">
+\begin{align*}
+\int \sin^4x \ dx = \mathstrut \amp \int \frac{3}{8} - \frac{1}{2}\cos(2x) + \frac{1}{4}\left( \frac{1}{2} + \frac{1}{2}\cos(4x)\right) \ dx\\
+= \mathstrut \amp \int \frac{3}{8} - \frac{1}{2}\cos(2x) + \frac{1}{8}\cos(4x) \ dx\\
+= \mathstrut \amp \frac{3}{8}x - \frac{1}{4}\sin(2x) + \frac{1}{32}\sin(4x) + C.
+\end{align*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="LhG"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.2</span> <span class="title">Integrating Products of Sines and Cosines of Different Angles</span>
+</h3>
+<p id="p-6001">In some areas of physics, such as quantum mechanics, signal processing, and the computation of Fourier series, it is often necessary to integrate products that include <span class="process-math">\(\sin(ax)\text{,}\)</span> <span class="process-math">\(\sin(bx)\text{,}\)</span> <span class="process-math">\(\cos(ax)\text{,}\)</span> and <span class="process-math">\(\cos(bx)\text{.}\)</span>  These integrals are evaluated by applying the following trigonometric identities.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="sinasinb">
+\begin{equation}
+\sin(ax)\sin(bx) = \frac{1}{2}\cos((a-b)x)-\frac{1}{2}\cos((a+b)x)\tag{5.17}
+\end{equation}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="sinacosb">
+\begin{equation}
+\sin(ax)\cos(bx) = \frac{1}{2}\sin((a-b)x)+\frac{1}{2}\sin((a+b)x)\tag{5.18}
+\end{equation}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="cosacosb">
+\begin{equation}
+\cos(ax)\cos(bx) = \frac{1}{2}\cos((a-b)x)+\frac{1}{2}\cos((a+b)x)\tag{5.19}
+\end{equation}
+</div>
+<article class="activity project-like" id="TTE"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.6.2</span><span class="period">.</span>
+</h4>
+<p id="byd">Evaluate each of the following.</p>
+<ol class="lower-alpha">
+<li id="rMu"><p id="Nuy"><span class="process-math">\(\displaystyle \displaystyle \int \sin(5x)\cos(3x) \ dx\)</span></p></li>
+<li id="XTD"><p id="tBH"><span class="process-math">\(\displaystyle \displaystyle \int_{-\pi}^{\pi} \sin(mx)\sin(nx) \ dx\)</span></p></li>
+</ol></article></section><section class="subsection" id="subsection-102"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.3</span> <span class="title">Integrating Products and Powers of <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\)</span></span>
+</h3>
+<p id="hzB">Let's start by recalling the integrals involving <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\)</span> we have already learned:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \sec^2 x \ dx = \tan x + C
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \sec x \tan x \ dx = \sec x + C
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \tan x \ dx = \ln|\sec x| + C
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \sec x \ dx = \ln|\sec x + \tan x| + C
+\end{equation*}
+</div>
+<p id="NGK">For most integrals of products and powers of <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\text{,}\)</span>  we rewrite the expression we wish to integrate as the sum or difference of integrals of the form <span class="process-math">\(\displaystyle \int \tan^j x \sec^2 x \ dx\)</span> or <span class="process-math">\(\displaystyle \int \sec^j x \tan x \ dx\text{.}\)</span>  We can evaluate these new integrals by using substitution.</p>
+<article class="example example-like" id="LhF"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.4</span><span class="period">.</span>
+</h4>
+<p id="wIb">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \sec^5 x \tan x \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKq" id="jKq"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKq"><div class="solution solution-like">
+<p id="uTp">We start by rewriting <span class="process-math">\(\sec^5x \tan x\)</span> as <span class="process-math">\(\sec^4x \sec x \tan x\text{.}\)</span>  Then, we use the substitution <span class="process-math">\(u=\sec x\)</span> so that <span class="process-math">\(du = \sec x \tan x \ dx\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-180">
+\begin{align*}
+\int \sec^5 x \tan x \ dx = \mathstrut \amp \int \sec^4x (\sec x \tan x) \ dx\\
+= \mathstrut \amp \int u^4 \ du\\
+= \mathstrut \amp \frac{1}{5}u^5 + C\\
+= \mathstrut \amp \frac{1}{5}\sec^5 x + C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="assemblage assemblage-like" id="RVg"><h4 class="heading"><span class="title">Integrating <span class="process-math">\(\displaystyle \int \tan^k x \sec^j x \ dx\)</span>.</span></h4>
+<ul id="hNZ" class="disc">
+<li id="li-3549"><p id="p-6013">If <span class="process-math">\(j\)</span> is even and <span class="process-math">\(j \geq 2\text{,}\)</span> rewrite <span class="process-math">\(\sec^j x = \sec^{j-2}x \sec^2 x\)</span> and use the identity <span class="process-math">\(\sec^2 x = \tan^2x + 1\)</span> to rewrite <span class="process-math">\(\sec^{j-2}x\)</span> in terms of <span class="process-math">\(\tan x\text{.}\)</span>  Integrate using the substitution <span class="process-math">\(u=\tan x\text{.}\)</span></p></li>
+<li id="li-3550"><p id="p-6014">If <span class="process-math">\(k\)</span> is odd and <span class="process-math">\(j \geq 1\text{,}\)</span> rewrite <span class="process-math">\(\tan^kx \sec^j x = \tan^{k-1}x \sec^{j-1} x \sec x \tan x\)</span> and use the identity <span class="process-math">\(\tan^2 x = \sec^2x - 1\)</span> to rewrite <span class="process-math">\(\tan^{k-1}x\)</span> in terms of <span class="process-math">\(\sec x\text{.}\)</span>  Integrate using the substitution <span class="process-math">\(u=\sec x\text{.}\)</span></p></li>
+<li id="li-3551"><p id="p-6015">If <span class="process-math">\(k\)</span> is odd where <span class="process-math">\(k \geq 3\)</span> and <span class="process-math">\(j=0\text{,}\)</span> rewrite <span class="process-math">\(\tan^kx = \tan^{k-2}x\tan^2x = \tan^{k-2}(\sec^2x-1) = \tan^{k-2}x\sec^2x - \tan^{k-2}x\text{.}\)</span>  It may then be necessary to repeat this process on the <span class="process-math">\(\tan^{k-2}x\)</span> term.</p></li>
+<li id="li-3552"><p id="p-6016">If <span class="process-math">\(k\)</span> is even and <span class="process-math">\(j\)</span> is odd, use <span class="process-math">\(\tan^2x = \sec^2x-1\)</span> to express <span class="process-math">\(\tan^kx\)</span> in terms of <span class="process-math">\(\sec x\text{.}\)</span>  Then, use integration by parts to integra odd powers of <span class="process-math">\(\sec x\text{.}\)</span></p></li>
+</ul></article><article class="example example-like" id="LhH"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.5</span><span class="period">.</span>
+</h4>
+<p id="wIh">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle \int \sec^3 x \ dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-jKg" id="jKg"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-jKg"><div class="solution solution-like">
+<p id="uTg">This integral requires integration by parts.  Let <span class="process-math">\(u=\sec x\)</span> and <span class="process-math">\(dv = \sec^2 x \ dx\text{.}\)</span>  These choices make <span class="process-math">\(du = \sec x \tan x\)</span> and <span class="process-math">\(v=\tan x\text{.}\)</span>  Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seccubed.html" id="md-181">
+\begin{align*}
+\int \sec^3 x \ dx = \mathstrut \amp \sec x \tan x - \int \tan x \sec x \tan x \ dx\\
+= \mathstrut \amp \sec x \tan x- \int \tan^2x \sec x \ dx \\
+= \mathstrut \amp \sec x \tan x - \int (\sec^2x-1)\sec x \ dx\\
+= \mathstrut \amp \sec x \tan x - \int \sec x \ dx - \int \sec^3 x \ dx\\
+= \mathstrut \amp \sec x \tan x + \ln|\sec x + \tan x| - \int \sec^3 x \ dx.
+\end{align*}
+</div>
+<p class="continuation">We now have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seccubed.html" id="seccubed">
+\begin{equation}
+\int \sec^3 x = \sec x \tan x +\ln|\sec x + \tan x| - \int \sec^3 x \ dx. \tag{5.20}
+\end{equation}
+</div>
+<p class="continuation">Since the integral <span class="process-math">\(\displaystyle \int \sec^3x \ dx\)</span> has reappeared on the right-hand side, we can solve equation <a href="" class="xref" data-knowl="./knowl/seccubed.html" title="Equation 5.20">(5.20)</a> for <span class="process-math">\(\displaystyle \int \sec^3 x \ dx\)</span> by adding it to both sides.  In doing so, we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seccubed.html">
+\begin{equation*}
+2\int \sec^3x \ dx = \sec x \tan x + \ln|\sec x + \tan x|.
+\end{equation*}
+</div>
+<p class="continuation">Dividing by 2, we arrive at</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seccubed.html">
+\begin{equation*}
+\int \sec^3 x \ dx = \frac{1}{2}\sec x \tan x + \frac{1}{2}\ln|\sec x + \tan x| + C.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="activity project-like" id="TTF"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.6.3</span><span class="period">.</span>
+</h4>
+<p id="byd">Evaluate each of the following.</p>
+<ol class="lower-alpha">
+<li id="rMs"><p id="Nus"><span class="process-math">\(\displaystyle \displaystyle \int \tan^5 x \sec^2 x \ dx\)</span></p></li>
+<li id="XTs"><p id="tBs"><span class="process-math">\(\displaystyle \displaystyle \int \tan^6 x \sec^4 x \ dx\)</span></p></li>
+<li id="XTs"><p id="tBs"><span class="process-math">\(\displaystyle \displaystyle \int \tan^3 x \ dx\)</span></p></li>
+</ol></article></section><section class="subsection" id="fav"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.4</span> <span class="title">Summary</span>
+</h3>
+<p id="Cxm">Integrating products and powers of many trigonometric functions can be done through strategic use of trigonometric identities and existing integration techniques.  Also useful is the ability to integrate products of sines and cosines of different angles.  These too are handled by the use of trigonometric identities.</p></section><section class="exercises" id="okm"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.6.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="Ycz"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Product of Powers of <span class="process-math">\(\sin x\)</span> and <span class="process-math">\(\cos x\)</span>.</span>
+</h4>
+<div id="webwork-140" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="140" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_2_prob01.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6028">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \sin^3(10 x)\cos^{7}(10 x)\,dx.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-140')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="fHy"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Definite Integral of Product of Sines of Different Angles.</span>
+</h4>
+<div id="webwork-141" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="141" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_2_20.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6030">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^{\pi/4} \sin (2x) \sin x \,dx.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-141')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Ycz"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Integral of <span class="process-math">\(\tan^2 x\)</span>.</span>
+</h4>
+<div id="webwork-142" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="142" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_2_23.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6032">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \tan^2 (5 x) \,dx.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-142')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="Yca"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Integral of Product of Powers of <span class="process-math">\(\tan x\)</span> and <span class="process-math">\(\sec x\)</span>.</span>
+</h4>
+<div id="webwork-143" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="143" data-sourceFilePath="Library/UMN/calculusStewartET/s_7_2_28.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6034">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \tan^3 (5 x) \sec^5(5 x) \,dx.
+\end{equation*}
+</div>
+<p class="continuation">Answer: <span class="fillin" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-143')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="krs"><h4 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Average Value of a Product of Trigonometric Functions.</span>
+</h4>
+<ol id="fVu" class="lower-alpha">
+<li id="li-3559"><p id="p-derived-li-3559">Graph the function <span class="process-math">\(f(x)=\sin^2x\cos^3x\)</span> on the interval <span class="process-math">\([-\pi,\pi]\text{.}\)</span></p></li>
+<li id="evalintsin2cos3"><p id="p-derived-evalintsin2cos3">Evaluate <span class="process-math">\(\displaystyle \int \sin^2x \cos^3x \ dx\text{.}\)</span></p></li>
+<li id="li-3561"><p id="p-derived-li-3561">Using your answer to <a href="" class="xref" data-knowl="./knowl/evalintsin2cos3.html" title="Item 5.6.5.5.b">5.6.5.5.b</a>, calculate the average value of the function <span class="process-math">\(f(x)=\sin^2x\cos^3x\)</span> over the interval <span class="process-math">\([-\pi,\pi]\text{.}\)</span></p></li>
+<li id="li-3562"><p id="p-derived-li-3562">Use technology to directly compute the value of the definite integral <span class="process-math">\(\displaystyle \frac{1}{2\pi}\int_{-\pi}^{\pi} \sin^2x \cos^3x \ dx\text{.}\)</span></p></li>
+<li id="li-3563"><p id="p-derived-li-3563">Calculate the average value of the function <span class="process-math">\(f(x)=\sin^2x\cos^3x\)</span> over the interval <span class="process-math">\([-\pi/2,\pi/2]\text{.}\)</span></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

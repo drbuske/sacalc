@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:44:23Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="lower-alpha">
+<li>
+<p>First, note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx} = \frac{1}{\sqrt{1-x^2}} = (1-x^2)^{-\frac{1}{2}}
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(|x| &lt; 1\text{.}\)</span>  Using the fact that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(1+x)^p = 1+px + \frac{p(p-1)}{2!}x^2 + \frac{p(p-1)(p-2)}{3!}x^3 + \cdots\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+(1-x^2)^{-\frac{1}{2}} \amp = 1 - \frac{1}{2}(-x^2) + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right)}{2!} (-x^2)^2 + \frac{ \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right) \left( -\frac{5}{2} \right) }{3!} (-x^2)^3 + \cdots \\
+\amp = 1 + \frac{1}{2}x^2 + \frac{3}{8}x^4 + \frac{15}{48}x^6 + \cdots
+\end{align*}
+</div>
+<p class="continuation">So, by integrating term by term and using the fact that <span class="process-math">\(\arcsin(0)=0\text{,}\)</span> we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\arcsin (x) = x + \frac{1}{6}x^3 + \frac{3}{40}x^5 + \frac{5}{112}x^7 + \cdots\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{p=1}^{\infty} px^{p-1} = \frac{d}{dx} \left( \sum_{p=0}^{\infty} x^p \right) = \frac{d}{dx} \left( \frac{1}{1-x} \right) = \frac{1}{(1-x)^2} 
+\end{equation*}
+</div>
+<p class="continuation">for <span class="process-math">\(|x| &lt; 1\text{.}\)</span></p>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{2}e^x + \frac{1}{2}e^{-x} = \frac{1}{2}\sum_{k=0}^{\infty} \frac{x^k}{k!} + \frac{1}{2} \sum_{k=0}^{\infty} \frac{(-x)^k}{k!} = \sum_{k=0}^{\infty} \frac{x^{2k}}{(2k)!}
+\end{equation*}
+</div>
+<p class="continuation">Since each term in this series is even, the function <span class="process-math">\(f(x)\)</span> is even.  The Taylor series for <span class="process-math">\(f'(x)\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=1}^{\infty} \frac{x^{2k-1}}{(2k-1)!}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since each term is odd, the function <span class="process-math">\(f'(x)\)</span> is odd.  <span class="process-math">\(f''(x)\)</span> will be even based on the fact that its Taylor series will only consist of even powers.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-8B-4-applications-series.html#lDr" class="internal">in-context</a></span>
+</body>
+</html>

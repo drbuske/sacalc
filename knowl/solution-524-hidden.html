@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:44:29Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We build three Maclaurin series and then compare them.</p>
+<p>For <span class="process-math">\(\sin(y^2)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sin(x) \amp = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \cdots\\
+\sin(y^2) \amp = y^2 - \frac{y^6}{3!} + \frac{y^{10}}{5!} - \frac{y^{14}}{7!} + \frac{y^{18}}{9!} - \cdots
+\end{align*}
+</div>
+<p>For <span class="process-math">\(1-\cos(y)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\cos(y) \amp = 1 - \frac{y^2}{2!} + \frac{y^4}{4!} - \frac{y^6}{6!} + \frac{y^8}{8!} - \cdots\\
+1-\cos(y) \amp = \frac{y^2}{2!} - \frac{y^4}{4!} + \frac{y^{6}}{6!} - \frac{y^{8}}{8!} +  \cdots
+\end{align*}
+</div>
+<p>For <span class="process-math">\(\ln (1+y^2)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\ln (1+t) \amp = t - \frac{t^2}{2} + \frac{t^3}{3} - \frac{t^4}{4} + \frac{t^5}{5} - \cdots\\
+\ln (1+y^2) \amp = y^2 - \frac{y^4}{2} + \frac{y^{6}}{3} - \frac{y^{8}}{4} + \frac{y^{10}}{5} -  \cdots
+\end{align*}
+</div>
+<p>Now, let's use, say, the degree six Taylor polynomials as an estimate, and compare the three series.  For values of <span class="process-math">\(y\)</span> near <span class="process-math">\(0\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sin(y^2) \amp \approx y^2 - \frac{y^6}{3!}\\
+1-\cos(y) \amp \approx \frac{y^2}{2!} - \frac{y^4}{4!} + \frac{y^6}{6!}\\
+\ln (1+y^2) \amp \approx y^2 - \frac{y^4}{2} + \frac{y^6}{3}
+\end{align*}
+</div>
+<p>We can compare term by term and decide which is smaller, or we can substitute in a value near <span class="process-math">\(0\)</span> to all three approximations; say, <span class="process-math">\(y=0.5\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sin((0.5)^2) \amp \approx (0.5)^2 - \frac{(0.5)^6}{3!} \approx 0.2474\\
+1-\cos(0.5) \amp \approx \frac{(0.5)^2}{2!} - \frac{(0.5)^4}{4!} + \frac{ (0.5)^6}{6!} \approx 0.1224\\
+\ln (1+(0.5)^2) \amp \approx (0.5)^2 - \frac{ (0.5)^4}{2} + \frac{ (0.5)^6 }{3} \approx 0.2234
+\end{align*}
+</div>
+<p>Thus, the order is <span class="process-math">\(1 - \cos(y) \leq \ln (1+y^2) \leq \sin(y^2)\text{.}\)</span></p>
+</div></body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:33:08Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>This integral cannot be evaluated using any of the techniques we have discussed so far. However, if we make the substitution <span class="process-math">\(x=3\sin\theta\text{,}\)</span> we have <span class="process-math">\(dx = 3\cos\theta \ d\theta\text{.}\)</span>  After substituting into the integral, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html">
+\begin{align*}
+\int \sqrt{9-x^2} \ dx = \mathstrut \amp \int \sqrt{9-(3\sin\theta)^3}(3\cos\theta) \ d\theta \\
+= \mathstrut \amp \int 9\sqrt{1-\sin^2\theta} \cos\theta \ d\theta \\
+= \mathstrut \amp \int 9\sqrt{\cos^2\theta} \ d\theta.
+\end{align*}
+</div>
+<p class="continuation">Assuming that <span class="process-math">\(\cos\theta \geq 0\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html">
+\begin{equation*}
+\int \sqrt{9-x^2} \ dx = \int 9 \cos^2\theta \ d\theta.
+\end{equation*}
+</div>
+<p class="continuation">We can now evaluate the integral using the techniques developed for integrating powers and products of trigonometric functions.  Since <span class="process-math">\(\sin\theta = \frac{x}{3}\text{,}\)</span>  we can construct the reference triangle shown in Figure <a href="" class="xref" data-knowl="./knowl/sinx3.html" title="Figure 5.7.3">5.7.3</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/sinx3pic.svg" role="img" class="contained" alt="Right Triangle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.3<span class="period">.</span></span><span class="space"> </span>Right triangle used in Example <a href="" class="xref" data-knowl="./knowl/sqrt9minusx2.html" title="Example 5.7.2">5.7.2</a>.</figcaption></figure><p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sinx3.html ./knowl/sqrt9minusx2.html">
+\begin{align*}
+\int \sqrt{9-x^2} \ dx = \mathstrut \amp \int 9\sqrt{\cos^2\theta} \ d\theta \\
+= \mathstrut \amp 9\left(\frac{1}{2}+\frac{1}{2}\cos(2\theta)\right) \ d\theta \\
+= \mathstrut \amp \frac{9}{2}\theta + \frac{9}{4}\sin(2\theta) + C\\
+= \mathstrut \amp \frac{9}{2}\theta + \frac{9}{4}(2\sin\theta\cos\theta) + C\\
+= \mathstrut \amp \frac{9}{2}\arcsin\left(\frac{x}{3}\right) + \frac{9}{2}\cdot \frac{x}{3} \cdot \frac{\sqrt{9-x^2}}{3} + C\\
+= \mathstrut \amp \frac{9}{2}\arcsin\left(\frac{x}{3}\right) +  \frac{x\sqrt{9-x^2}}{2} + C
+\end{align*}
+</div>
+</div></body>
+</html>

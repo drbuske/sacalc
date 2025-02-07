@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-09T02:42:25Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.1.5.1</span><span class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li>
+<p>To check for convergence, we apply the ratio test.  Here <span class="process-math">\(a_k = \frac{x^k}{k!}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{\left| a_{k+1}\right|}{\left| a_k \right|} \amp =  \lim_{k \rightarrow \infty} \frac{\left| \frac{x^{k+1}}{(k+1)!} \right|}{\left| \frac{x^k}{k!} \right|}\\
+\amp =  \lim_{k \rightarrow \infty} \left| \frac{x^{k+1}}{(k+1)!} \cdot \frac{k!}{x^k} \right|\\
+\amp =  \lim_{k \rightarrow \infty} \left| \frac{x^k\cdot x}{(k+1)\cdot k!} \cdot \frac{k!}{x^k} \right|\\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{x}{k+1} \right|\\
+\amp =  \left| x \right| \lim_{k \rightarrow \infty}  \frac{1}{k+1}\\
+\amp =  0 &lt; 1
+\end{align*}
+</div>
+<p class="continuation">for all values of <span class="process-math">\(x\text{.}\)</span>  So the series converges for all real numbers <span class="process-math">\(x\)</span> and the interval of convergence is <span class="process-math">\((-\infty, \infty)\text{.}\)</span></p>
+</li>
+<li>
+<p>Again we apply the ratio test.  This time we use <span class="process-math">\(a_k = (k!)^2x^k\text{.}\)</span>  For <span class="process-math">\(x \neq 0\text{,}\)</span> we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{ \left| a_{k+1} \right|}{\left| a_k \right|} \amp = \lim_{k \rightarrow \infty} \frac{ \left| [(k+1)!]^2x^{k+1} \right|}{\left| (k!)^2x^k \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| (k+1)^2x\right|\\
+\amp = \left| x \right| \lim_{k \rightarrow \infty} (k+1)^2\\
+\amp = \infty
+\end{align*}
+</div>
+<p class="continuation">Therefore, the series diverges for all <span class="process-math">\(x \neq 0\text{.}\)</span>  Since the series is centered at <span class="process-math">\(x=0\text{,}\)</span> it must converge there so the series converges only for <span class="process-math">\(x=0\text{.}\)</span>  The interval of convergence is the single value <span class="process-math">\(x=0\text{.}\)</span></p>
+</li>
+<li>
+<p>In order to apply the ratio test, we investigate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{k \rightarrow \infty} \frac{\left| a_{k+1} \right|} {\left| a_k \right|} \amp = \lim_{k \rightarrow \infty} \frac{\left| \frac{(x-2)^{k+1}}{(k+2)3^{k+1}} \right|} {\left| \frac{(x-2)^k}{(k+1)3^k} \right|}\\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{(x-2)^{k+1}}{(k+2)3^{k+1}} \cdot \frac{(k+1)3^k}{(x-2)^k} \right| \\
+\amp = \lim_{k \rightarrow \infty} \left| \frac{(x-2)(k+1)}{3(k+2)} \right|\\
+\amp = \left| \frac{x-2}{3} \right|
+\end{align*}
+</div>
+<p class="continuation">This ratio <span class="process-math">\(r &lt; 1\)</span> if <span class="process-math">\(|x-2| &lt; 3\text{.}\)</span>  Since <span class="process-math">\(|x-2| &lt; 3\)</span> implies that <span class="process-math">\(-3 &lt; x-2 &lt; 3\text{,}\)</span> the series converges absolutely if <span class="process-math">\(-1 &lt; x &lt; 5\text{.}\)</span>  The ratio <span class="process-math">\(r &gt; 1\)</span> if <span class="process-math">\(|x-2| &gt; 3\text{.}\)</span>  Therefore, the sereis diverges if <span class="process-math">\(x &lt; -1\)</span> or <span class="process-math">\(x &gt; 5\text{.}\)</span>  The ratio test is inconclusive if <span class="process-math">\(r=1\text{.}\)</span>  That is, when <span class="process-math">\(x=-1\)</span> or <span class="process-math">\(x=5\text{.}\)</span>  We test these values of <span class="process-math">\(x\)</span> separately.</p>
+<p>For <span class="process-math">\(x=-1\text{,}\)</span> the series is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{(-1)^k}{k+1} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since this is the alternating harmonic series, it converges.  So the series converges at <span class="process-math">\(x=-1\text{.}\)</span>  For <span class="process-math">\(x=5\text{,}\)</span> the series is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{1}{k+1} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is the harmonic series, which is divergent.  Therefore the power series diverges at <span class="process-math">\(x=5\text{.}\)</span>  We conclude that the interval of convergence is <span class="process-math">\([-1,5)\text{.}\)</span></p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-8B-1-power-series.html#tOV" class="internal">in-context</a></span>
+</body>
+</html>
